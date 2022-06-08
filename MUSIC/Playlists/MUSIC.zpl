@@ -1,13 +1,3 @@
-<?zpl version="2.0"?>
-<smil>
-  <head>
-    <meta name="totalDuration" content="50331150" />
-    <meta name="itemCount" content="223" />
-    <meta name="generator" content="Entertainment Platform -- 10.21102.1141.0" />
-    <title>MUSIC</title>
-  </head>
-  <body>
-    <seq>
       <media src="D:\MUSIC\失眠的夜 (DJ版).mp3"/>
       <media src="D:\MUSIC\Colorful World.mp3"/>
       <media src="D:\MUSIC\爱不得忘不舍.mp3"/>
@@ -246,6 +236,3 @@
       <media src="D:\MUSIC\牛奶咖啡 - 一个人的风景.mp3" albumTitle="夏至未至 电视剧原声带" albumArtist="未知艺术家" trackTitle="一个人的风景" trackArtist="牛奶咖啡" duration="253622" />
       <media src="D:\MUSIC\岑宁儿 - 追光者.mp3" albumTitle="夏至未至 电视剧原声带" albumArtist="未知艺术家" trackTitle="追光者" trackArtist="岑宁儿" duration="235937" />
       <media src="D:\MUSIC\张镐哲 - 再回到从前.mp3" albumTitle="国语经典101 Vol.3" albumArtist="张镐哲" trackTitle="再回到从前" trackArtist="张镐哲" duration="266631" />
-    </seq>
-  </body>
-</smil>
