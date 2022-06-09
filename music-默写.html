@@ -1,0 +1,22 @@
+<html>
+<head><link rel="icon" type="image/x-icon" href="icon/favicon.ico" /></head>
+<title>Listen Music（好运来）</title>
+<p>当前时间：</p><p id = 'TimeShow'> </p>
+<script>
+   function getTime(){
+           document.getElementById("TimeShow").innerHTML =  Date();
+        }
+ 
+        setInterval(getTime, 1000)
+</script>
+<body>
+<body background="./background/background4.jpg" style=" background-repeat: no-repeat ;background-size: 100% 100%;background-attachment: fixed;">
+<h1>Listen Music</h1>
+<p>Copyright 2022 WKZ@0215<p>
+	<h2>好运来</h2>
+	<p>服务器源（速度可能较慢）</p>
+	<audio src="./MUSIC/好运来.m4a" controls="controls" loop="loop"></audio>
+	<p>QQ音乐源（速度较快）</p>
+	<audio src="https://dl.stream.qqmusic.qq.com/C400000491MM0CyBv8.m4a?guid=6104145895&vkey=228B800730889EC5FA34B27D4B76FA4294B8689DC4BAF79777D5DCD8A1E559241D1EFE5A4E9AC65D085D2F7013EA952FEF883E3B7EF5952C&uin=1152921504930912792&fromtag=120032" controls="controls" loop="loop"></audio>
+</body>
+</html>
