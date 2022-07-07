@@ -1,0 +1,32 @@
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
+	<style type="text/css">
+		body{
+			margin-left: 13%;
+			margin-right: 13%;
+			border: 2px dotted black;
+			padding: 10px 10px 10px 10px;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<title>MusicdlGUI Software Introduction</title>
+<p>当前时间：</p><p id = 'TimeShow'> </p>
+<script>
+   function getTime(){
+           document.getElementById("TimeShow").innerHTML =  Date();
+        }
+ 
+        setInterval(getTime, 1000)
+</script>
+<body>
+    <h1 align="center">MusicdlGUI Software Introduction</h1>
+    <h2>Copyright 2022 WKZ@0215</h2>
+    <h3>Welcome! WebFile & Scriptfile Version : V1.4</h3>
+	<Hr />
+	<h2 align="center">MusicdlGUI软件简介及使用说明</h2>
+	<p><strong>1.软件简介与下载方式：</strong><br>软件由Python编程语言与vbs文件构成，自带一个GUI界面，软件支持自动检索9个平台的音乐<br><strong>软件下载方式：</strong><a target="_blank" href="https://pan.baidu.com/s/1xoHhjxl8_82ybEj5ch_vGw?pwd=1234">https://pan.baidu.com/s/1xoHhjxl8_82ybEj5ch_vGw?pwd=1234</a></p>
+	<p><strong>2.软件的使用：</strong><br>将软件下载到电脑后解压，<strong>将.exe文件与.vbs文件放在同一个文件夹内</strong>，双击运行<br>软件运行后会出现vbs提示框与GUI界面，<strong>请仔细阅读vbs提示框中的内容！</strong>阅读完成后关闭提示框，接着在GUI界面中进行操作<br>进入GUI，<strong>请在“搜索关键词”一栏内填入需检索的歌曲名，并在“搜索源”一栏内找到想要检索的平台并在对应的方框内单击打勾（默认全选），设置完成后点击“搜索”按钮(搜索过程需要抓取各个平台的数据并生成表格，速度可能较慢，并出现未响应的情况，请耐心等待）</strong><br>检索完成后软件会显示歌曲列表，<strong>将光标移动至想要下载的歌曲上方，并右键单击，选择“下载”按钮，歌曲将自动下载，路径为之前存放.exe文件的文件夹里的“downloaded”文件夹内</strong></p>
+</body>
+</html>
