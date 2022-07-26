@@ -46,10 +46,10 @@ AI.init = function(pace){
 		var nowTime= new Date().getTime();
 		com.get("moveInfo").innerHTML='<h3>AI计算结果：</h3>最佳着法：'+
 										com.createMove(com.arr2Clone(play.map),man.x,man.y,val.x,val.y)+
-										'<br />搜索深度：'+AI.treeDepth+'<br />搜索分支：'+
+										'<br />计算深度：'+AI.treeDepth+'<br />计算分支：'+
 										AI.number+'个 <br />最佳着法评估：'+
 										val.value+'分'+
-										' <br />搜索用时：'+
+										' <br />计算用时：'+
 										(nowTime-initTime)+'毫秒'
 		return [man.x,man.y,val.x,val.y]
 	}else {
