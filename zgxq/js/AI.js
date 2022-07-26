@@ -1,4 +1,4 @@
-
+/*! 一叶孤舟 | qq:28701884 | 欢迎指教 */
 
 var AI = AI||{};
 
@@ -44,7 +44,7 @@ AI.init = function(pace){
 	if (val&&val.value!=-8888) {
 		var man = play.mans[val.key];
 		var nowTime= new Date().getTime();
-		com.get("moveInfo").innerHTML='<h3>AI计算结果：</h3>最佳着法：'+
+		com.get("moveInfo").innerHTML='<h3>AI搜索结果：</h3>最佳着法：'+
 										com.createMove(com.arr2Clone(play.map),man.x,man.y,val.x,val.y)+
 										'<br />搜索深度：'+AI.treeDepth+'<br />搜索分支：'+
 										AI.number+'个 <br />最佳着法评估：'+
