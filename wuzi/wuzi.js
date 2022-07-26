@@ -91,11 +91,11 @@ var judge = function(color) {
       }
    }
    // 判断4条线上，有没有连续的4个w,或4个b
-   color = color == 'black' ? 'black' : 'white'; //赢家的颜色
+   color = color == 'black' ? 'bbbbb' : 'wwwww'; //赢家的颜色
 
    for (var i = 0; i < 4; i++) {
       if (line[i].indexOf(color) >= 0) {
-         alert(color + '胜了！(black表示黑方胜，white表示白方胜)');
+         alert(color + '胜了！(b表示黑方胜，w表示白方胜)');
          iswin = true; // 标志已经分出胜负
          break;
       }
