@@ -1,0 +1,1 @@
+本scripts文件夹内的js文件为jsMind项目的JAVASCRIPT文件
