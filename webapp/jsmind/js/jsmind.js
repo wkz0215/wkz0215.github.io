@@ -14,7 +14,7 @@
     // library version
     var __version__ = '0.4.9';
     // author
-    var __author__ = 'hizzgdev@163.com';
+    var __author__ = 'WKZ';
 
     // an noop function define
     var _noop = function () { };
