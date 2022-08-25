@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+                <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+	<meta charset="UTF-8">
+	<title>所见即所得文本编辑工具</title>
+</head>
+<body>
+                <h2 align="center">欢迎使用所见即所得(WYSIWYG)文本编辑工具</h2>
+	<!-- 加载编辑器的容器 -->
+	<script id="container" name="content" type="text/plain">请在文本框内像使用Word那样写入内容，点击左上角的"HTML"按钮可将内容自动转换为HTML代码，另外，此编辑器也支持常见编程语言的代码编辑</script>
+	<!-- 配置文件 -->
+	<script type="text/javascript" src="ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="ueditor.all.js"></script>
+	<!-- 实例化编辑器 -->
+	<script type="text/javascript">
+	    var ue = UE.getEditor('container');
+	</script>
+</body>
+</html>
