@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="zh-cn" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="mode" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mode" />
+			<meta property="og:description" content="Mode 命令的参考文章，其中显示系统状态、更改系统设置或重新配置端口或设备。" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@docsmsft" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="author" content="JasonGerend" />
+<meta name="breadcrumb_path" content="/windows-server/breadcrumbs/toc.json" />
+<meta name="depot_name" content="MSDN.WindowsServerDocs-pr" />
+<meta name="description" content="Mode 命令的参考文章，其中显示系统状态、更改系统设置或重新配置端口或设备。" />
+<meta name="document_id" content="c7f512a7-41c3-176f-2d32-401af16acbb5" />
+<meta name="document_version_independent_id" content="2c754a97-4ce2-a43f-336e-ae4cfc1c0eae" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/b3b2066730378125a6c2c2dbad56a91bbc0ffb5e/WindowsServerDocs/administration/windows-commands/mode.md" />
+<meta name="loc_file_id" content="Github-175290469.live.MSDN.WindowsServerDocs-pr.administration/windows-commands/mode.md" />
+<meta name="loc_source_id" content="Github-175290469#live" />
+<meta name="loc_version" content="2021-11-25T10:02:08.9633969Z" />
+<meta name="locale" content="zh-cn" />
+<meta name="manager" content="mtillman" />
+<meta name="ms.assetid" content="b59b04f2-b41d-42df-b5be-19c3721445b1" />
+<meta name="ms.author" content="jgerend" />
+<meta name="ms.contentlocale" content="zh-cn" />
+<meta name="ms.date" content="10/16/2017" />
+<meta name="ms.prod" content="windows-server" />
+<meta name="ms.technology" content="windows-commands" />
+<meta name="ms.topic" content="reference" />
+<meta name="ms.translationtype" content="MT" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/live/WindowsServerDocs/administration/windows-commands/mode.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="recommendations" content="true" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="updated_at" content="2022-09-21 09:35 PM" />
+<meta name="word_count" content="2042" />
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7a950aaa-e8db-44f8-8997-82f27e0852f3" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/1ae5c491-970a-4062-8301-6336e69f9026" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/windows-commands/mode.md" />
+<link href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mode" rel="canonical">
+	<title>mode | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="89972844.site-ltr.css" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/styles/89972844.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-cn',
+			contentDir: 'ltr',
+			userLocale: 'zh-cn',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			extendBreadcrumb: true,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "JasonGerend", url: "https://github.com/JasonGerend" },
+						{ name: "eross-msft", url: "https://github.com/eross-msft" },
+						{ name: "john-par", url: "https://github.com/john-par" },
+						{ name: "mijacobs", url: "https://github.com/mijacobs" },
+						{ name: "coreyp-at-msft", url: "https://github.com/coreyp-at-msft" },
+						{ name: "b-r-o-c-k", url: "https://github.com/b-r-o-c-k" },
+						{ name: "lizap", url: "https://github.com/lizap" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="wcp-consent.js" tppabs="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="ms.jsll-3.min.js" tppabs="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="67a45209.deprecation.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/global/67a45209.deprecation.js"></script>
+		<script src="12bd6430.index-docs.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/scripts/12bd6430.index-docs.js"></script>
+</head>
+
+<body lang="zh-cn" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">跳转至主内容</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">此浏览器不再受支持。</p>
+				<p style="font-size: 16px; margin-top: 16px;">请升级到 Microsoft Edge 以使用最新的功能、安全更新和技术支持。</p>
+				<div style="margin-top: 12px;">
+					<a href="javascript:if(confirm('https://go.microsoft.com/fwlink/p/?LinkID=2092881  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/p/?LinkID=2092881'" tppabs="https://go.microsoft.com/fwlink/p/?LinkID=2092881"
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+下载 Microsoft Edge					</a>
+					<a href="javascript:if(confirm('https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge'" tppabs="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+有关 Internet Explorer 和 Microsoft Edge 的详细信息					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="javascript:if(confirm('https://www.microsoft.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/'" tppabs="https://www.microsoft.com/" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="is-hidden"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+目录						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>退出焦点模式</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="主要"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="zh-cn" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm" aria-label="所有痕迹">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="使用英语阅读" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>使用英语阅读</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="添加到集合">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">保存</span>
+											</button>
+										
+
+										
+
+										
+
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="更多操作">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														aria-label="目录"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">目录</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="使用英语阅读" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>使用英语阅读</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="添加到集合"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">保存</span>
+													</button>
+
+
+
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="打印"
+														type="button"
+														aria-label="打印"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true"
+														hidden>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>打印</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>电子邮件</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="目录" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">目录</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="mode">mode</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-cn" dir="ltr">
+												<li>
+项目												</li>
+												<li>
+													<time class="is-invisible" data-article-date aria-label="文章评审日期" datetime="2022-09-21T21:35:00Z" data-article-date-source="git">09/21/2022</time>
+												</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="查看所有参与者" class="contributors-button link-button" data-bi-name="contributors" title="查看所有参与者">
+																7 个参与者
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived>
+	<button
+		class="thumb-rating-button like link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-yes"
+		title="本文非常有用"
+		type="button"
+		data-bi-name="rating-yes"
+		data-bi-sat="1"
+	>
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button
+		class="thumb-rating-button dislike link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-no"
+		title="本文没有用"
+		type="button"
+		data-bi-name="rating-no"
+		data-bi-sat="0"
+	>
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+											<h3>本文内容</h3>
+										</nav>
+
+								<!-- <content> -->
+									<p>显示系统状态、更改系统设置或重新配置端口或设备。 如果在没有参数的情况下使用，则 <strong>mode</strong> 显示控制台和可用 COM 设备的所有可控制属性。</p>
+<h2 id="serial-port">串行端口</h2>
+<p>配置串行通信端口并设置输出握手。</p>
+<h3 id="syntax">语法</h3>
+<pre><code>mode com&lt;m&gt;[:] [baud=&lt;b&gt;] [parity=&lt;p&gt;] [data=&lt;d&gt;] [stop=&lt;s&gt;] [to={on|off}] [xon={on|off}] [odsr={on|off}] [octs={on|off}] [dtr={on|off|hs}] [rts={on|off|hs|tg}] [idsr={on|off}]
+</code></pre>
+<h4 id="parameters">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>com&lt;m&gt;[:]</code></td>
+<td>指定 async Prncnfg vbshronous 通信端口的编号。</td>
+</tr>
+<tr>
+<td><code>baud=&lt;b&gt;</code></td>
+<td>指定传输速率（以每秒位数为单位）。 有效值包括：<ul><li><strong>11</strong> -110 波特</li><li><strong>15</strong> -150 波特</li><li><strong>30</strong> -300 波特</li><li><strong>60</strong> -600 波特</li><li><strong>12</strong> -1200 波特</li><li><strong>24</strong> -2400 波特</li><li><strong>48</strong> -4800 波特</li><li><strong>96</strong> -9600 波特</li><li><strong>19</strong> -19200 波特</li></ul></td>
+</tr>
+<tr>
+<td><code>parity=&lt;p&gt;</code></td>
+<td>指定系统如何使用奇偶校验位检查传输错误。 有效值包括：<ul><li>无（ <strong>n</strong> ）</li><li><strong>电子</strong> (默认值) </li><li><strong>o</strong> -奇数</li><li><strong>m</strong> -标记</li><li><strong>s</strong> -空间</li></ul>并非所有设备都支持使用 <strong>m</strong> 或 <strong>s</strong> 参数。</td>
+</tr>
+<tr>
+<td><code>data=&lt;d&gt;</code></td>
+<td>指定字符中的数据位数。 有效值的范围为 <strong>5</strong> 到 <strong>8</strong>。 默认值为 7。 并非所有设备都支持值 <strong>5</strong> 和 <strong>6</strong>。</td>
+</tr>
+<tr>
+<td><code>stop=&lt;s&gt;</code></td>
+<td>指定定义字符结尾的停止位的数目： <strong>1</strong>、 <strong>1.5</strong>或 <strong>2</strong>。 如果波特率为 <strong>110</strong>，则默认值为 <strong>2</strong>。 否则，默认值为 <strong>1</strong>。 并非所有设备都支持值 <strong>1.5</strong>。</td>
+</tr>
+<tr>
+<td><code>to={on | off}</code></td>
+<td>指定设备是否使用无限期超时处理。 默认值为 <strong>off</strong>。 <strong>启用此选项意味着</strong>设备将永远不会停止等待接收来自主机或客户端计算机的响应。</td>
+</tr>
+<tr>
+<td><code>xon={on | off}</code></td>
+<td>指定系统是否允许 XON/XOFF 协议。 此协议提供了串行通信的流控制，从而提高了可靠性，但降低了性能。</td>
+</tr>
+<tr>
+<td><code>odsr={on | off}</code></td>
+<td>指定系统是否打开准备好 (DSR) 输出握手的数据集。</td>
+</tr>
+<tr>
+<td><code>octs={on | off}</code></td>
+<td>指定系统是否打开 Clear 以将 (CTS 发送) 输出握手。</td>
+</tr>
+<tr>
+<td><code>dtr={on | off | hs}</code></td>
+<td>指定系统是否打开 (DTR) 输出握手的数据终端就绪。 如果将此值设置为 <strong>"开</strong> " 模式，则会提供一个常数信号来显示终端已准备好发送数据。 将此值设置为 <strong>hs</strong> 模式可提供两个终端之间的握手信号。</td>
+</tr>
+<tr>
+<td><code>rts={on | off | hs | tg}</code></td>
+<td>指定系统是否启用发送 (RTS) 输出握手的请求。 如果将此值设置为 <strong>"开</strong> " 模式，则会提供一个常数信号来显示终端已准备好发送数据。 将此值设置为 <strong>hs</strong> 模式可提供两个终端之间的握手信号。 如果将此值设置为 <strong>tg</strong> 模式，则可以在就绪状态和未就绪状态之间切换。</td>
+</tr>
+<tr>
+<td><code>idsr={on | off}</code></td>
+<td>指定系统是否启用 DSR 灵敏度。 必须启用此选项，才能使用 DSR 握手。</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="device-status">服务状态</h2>
+<p>显示指定设备的状态。 如果在没有参数的情况下使用，则 <strong>mode</strong> 显示系统上安装的所有设备的状态。</p>
+<h3 id="syntax-1">语法</h3>
+<pre><code>mode [&lt;device&gt;] [/status]
+</code></pre>
+<h4 id="parameters-1">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;device&gt;</code></td>
+<td>指定要显示其状态的设备的名称。 标准名称包括 LPT1：到 LPT3：、COM1：通过 COM9：和 CON。</td>
+</tr>
+<tr>
+<td>/status</td>
+<td>请求任何重定向的并行打印机的状态。 还可以使用 <strong>/sta</strong> 作为此命令的缩写形式。</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="redirect-printing">重定向打印</h2>
+<p>重定向打印机输出。 您必须是 Administrators 组的成员才能重定向打印。</p>
+<div class="NOTE">
+<p>注意</p>
+</div>
+<p>若要设置系统以便将并行打印机输出发送到串行打印机，必须使用 <strong>模式</strong> 命令两次。 第一次时，必须使用 <strong>模式</strong> 来配置串行端口。 第二次，您必须使用 <strong>mode</strong> 将并行打印机输出重定向到在第一 <strong>模式</strong> 命令中指定的串行端口。</p>
+<h3 id="syntax-2">语法</h3>
+<pre><code>mode LPT&lt;n&gt;[:]=COM&lt;m&gt;[:]
+</code></pre>
+<h4 id="parameters-2">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LPT <code>&lt;n&gt;</code> [：]</td>
+<td>指定要配置的 LPT 的编号。 通常，这意味着提供从 <strong>LTP1：到 LTP3：</strong>的值，除非你的系统包含特殊的并行端口支持。 此参数是必需的。</td>
+</tr>
+<tr>
+<td>COM <code>&lt;m&gt;</code> [：]</td>
+<td>指定要配置的 COM 端口。 通常，这意味着提供 <strong>COM1：到 COM9：</strong>的值，除非你的系统有其他 COM 端口的特殊硬件。 此参数是必需的。</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples">示例</h4>
+<p>若要重定向在4800波特上以偶校验运行的串行打印机，并连接到 COM1 端口 (计算机上的第一串行连接) ，请键入：</p>
+<pre><code>mode com1 48,e,,,b
+mode lpt1=com1
+</code></pre>
+<p>若要将并行打印机输出从 LPT1 重定向到 COM1，然后使用 LPT1 打印文件，请在打印文件之前键入以下命令：</p>
+<pre><code>mode lpt1
+</code></pre>
+<p>此命令可防止将文件从 LPT1 重定向到 COM1。</p>
+<h2 id="select-code-page">选择代码页</h2>
+<p>配置或查询所选设备的代码页信息。</p>
+<h3 id="syntax-3">语法</h3>
+<pre><code>mode &lt;device&gt; codepage select=&lt;yyy&gt;
+mode &lt;device&gt; codepage [/status]
+</code></pre>
+<h4 id="parameters-3">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;device&gt;</code></td>
+<td>指定要为其选择代码页的设备。 CON 是设备的唯一有效名称。 此参数是必需的。</td>
+</tr>
+<tr>
+<td>codepage</td>
+<td>指定要与指定设备一起使用的代码页。 还可使用 <strong>cp</strong> 作为此命令的缩写版本。 此参数是必需的。</td>
+</tr>
+<tr>
+<td>select=<code>&lt;yyy&gt;</code></td>
+<td>指定要与设备一起使用的代码页号。 支持的代码页（按国家/地区或语言）包括：<ul><li><strong>437：</strong> 美国</li><li><strong>850：</strong> 多语言 (拉丁语) </li><li><strong>852：</strong> 斯拉维 (拉丁语 II) </li><li><strong>855：</strong> 西里尔语 (俄语) </li><li><strong>857：</strong> 土耳其语</li><li><strong>860：</strong> 葡萄牙语</li><li><strong>861：</strong> 冰岛语</li><li><strong>863：</strong> Canadian-French</li><li><strong>865：</strong> 北欧</li><li><strong>866：</strong> 俄语</li><li><strong>869：</strong> 现代希腊语</li></ul> 此参数是必需的。</td>
+</tr>
+<tr>
+<td>/status</td>
+<td>显示为指定设备选择的当前代码页数。 还可使用 <strong>/sta</strong> 作为此命令的缩写版本。 无论你是否指定 <strong>/status，</strong><strong>mode codepage</strong> 命令都会显示为指定设备选择的代码页数。</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="display-mode">显示模式</h2>
+<p>更改命令提示符屏幕缓冲区的大小</p>
+<h3 id="syntax-4">语法</h3>
+<pre><code>mode con[:] [cols=&lt;c&gt;] [lines=&lt;n&gt;]
+</code></pre>
+<h4 id="parameters-4">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>con[：]</td>
+<td>指示更改适用于"命令提示符"窗口。 此参数是必需的。</td>
+</tr>
+<tr>
+<td>cols=<code>&lt;c&gt;</code></td>
+<td>指定命令提示符屏幕缓冲区中的列数。 默认设置为 80 列，但可设置为任何值。 如果不使用默认值，则典型值为 40 和 135 列。 使用非标准值可能会导致命令提示符应用出现问题。</td>
+</tr>
+<tr>
+<td>lines=<code>&lt;n&gt;</code></td>
+<td>指定命令提示符屏幕缓冲区中的行数。 默认值为 25，但你可以将此值设置为任何值。 如果不使用默认值，则另一个典型值为 50 行。</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typematic-rate">类型化速率</h2>
+<p>设置键盘类型化速率。 类型化速率是按键盘Windows键时可以重复字符的速度。</p>
+<div class="NOTE">
+<p>注意</p>
+<p>某些键盘无法识别此命令。</p>
+</div>
+<h3 id="syntax-5">语法</h3>
+<pre><code>mode con[:] [rate=&lt;r&gt; delay=&lt;d&gt;]
+</code></pre>
+<h4 id="parameters-5">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>con[：]</td>
+<td>指定键盘。 此参数是必需的。</td>
+</tr>
+<tr>
+<td>rate=<code>&lt;r&gt;</code></td>
+<td>指定按住键时在屏幕上重复字符的速率。 对于与 IBM AT 兼容的键盘，默认值为每秒 20 个字符，对于与 IBM PS/2 兼容的键盘，默认值为 21 个字符，但可以使用 1 到 32 之间的任何值。 如果设置此参数，则还必须设置 <strong>delay</strong> 参数。</td>
+</tr>
+<tr>
+<td>delay=<code>&lt;d&gt;</code></td>
+<td>指定在字符输出重复之前按下并按住键后将经过的时间。 默认值为 2 (.50 秒) ，但也可使用 1 (.25 秒) 、3 (.75 秒) 或 4 (1 秒) 。 如果设置此参数，则还必须设置 <strong>rate</strong> 参数。</td>
+</tr>
+<tr>
+<td>/?</td>
+<td>在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-references">其他参考</h2>
+<ul>
+<li><a href="command-line-syntax-key.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/command-line-syntax-key" data-linktype="relative-path">命令行语法项</a></li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							class="font-size-sm right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="页面操作">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+									<h3>本文内容</h3>
+								</nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="操作面板" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

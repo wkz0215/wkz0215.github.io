@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="zh-cn" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="certreq" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/certreq_1" />
+			<meta property="og:description" content="certreq 命令的参考文章，该命令从证书颁发机构请求证书 (CA) ，从 CA 检索对以前的请求的响应，从 .inf 文件创建新请求，接受并安装对请求的响应，从现有 CA 证书或请求构造交叉认证或限定的次序请求， 并签署交叉认证或限定的下级请求。" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@docsmsft" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="author" content="JasonGerend" />
+<meta name="breadcrumb_path" content="/windows-server/breadcrumbs/toc.json" />
+<meta name="depot_name" content="MSDN.WindowsServerDocs-pr" />
+<meta name="description" content="certreq 命令的参考文章，该命令从证书颁发机构请求证书 (CA) ，从 CA 检索对以前的请求的响应，从 .inf 文件创建新请求，接受并安装对请求的响应，从现有 CA 证书或请求构造交叉认证或限定的次序请求， 并签署交叉认证或限定的下级请求。" />
+<meta name="document_id" content="912a2faa-63c4-43c7-056b-16f5a5c71038" />
+<meta name="document_version_independent_id" content="cbec348f-53ad-a5b7-5a6e-f1cc5540d212" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/fdb6b7d6d60e52ffaef28472f7c440f0ecdfef8e/WindowsServerDocs/administration/windows-commands/certreq_1.md" />
+<meta name="loc_file_id" content="Github-175290469.live.MSDN.WindowsServerDocs-pr.administration/windows-commands/certreq_1.md" />
+<meta name="loc_source_id" content="Github-175290469#live" />
+<meta name="loc_version" content="2022-04-15T17:37:34.7158244Z" />
+<meta name="locale" content="zh-cn" />
+<meta name="manager" content="mtillman" />
+<meta name="ms.assetid" content="7a04e51f-f395-4bff-b57a-0e9efcadf973" />
+<meta name="ms.author" content="jgerend" />
+<meta name="ms.contentlocale" content="zh-cn" />
+<meta name="ms.date" content="10/16/2017" />
+<meta name="ms.prod" content="windows-server" />
+<meta name="ms.technology" content="windows-commands" />
+<meta name="ms.topic" content="reference" />
+<meta name="ms.translationtype" content="MT" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/live/WindowsServerDocs/administration/windows-commands/certreq_1.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="recommendations" content="true" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="updated_at" content="2022-09-21 09:35 PM" />
+<meta name="word_count" content="5830" />
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7a950aaa-e8db-44f8-8997-82f27e0852f3" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/de8ce683-cbe1-461b-bae7-77db0888ec6d" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/windows-commands/certreq_1.md" />
+<link href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/certreq_1" rel="canonical">
+	<title>certreq | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="89972844.site-ltr.css" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/styles/89972844.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-cn',
+			contentDir: 'ltr',
+			userLocale: 'zh-cn',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			extendBreadcrumb: true,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "JasonGerend", url: "https://github.com/JasonGerend" },
+						{ name: "v-thepet", url: "https://github.com/v-thepet" },
+						{ name: "eross-msft", url: "https://github.com/eross-msft" },
+						{ name: "RAJU2529", url: "https://github.com/RAJU2529" },
+						{ name: "john-par", url: "https://github.com/john-par" },
+						{ name: "DCtheGeek", url: "https://github.com/DCtheGeek" },
+						{ name: "mijacobs", url: "https://github.com/mijacobs" },
+						{ name: "bb-froggy", url: "https://github.com/bb-froggy" },
+						{ name: "kaushika-msft", url: "https://github.com/kaushika-msft" },
+						{ name: "coreyp-at-msft", url: "https://github.com/coreyp-at-msft" },
+						{ name: "lizap", url: "https://github.com/lizap" },
+						{ name: "kevin-schultz", url: "https://github.com/kevin-schultz" },
+						{ name: "b-r-o-c-k", url: "https://github.com/b-r-o-c-k" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="wcp-consent.js" tppabs="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="ms.jsll-3.min.js" tppabs="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="67a45209.deprecation.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/global/67a45209.deprecation.js"></script>
+		<script src="12bd6430.index-docs.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/scripts/12bd6430.index-docs.js"></script>
+</head>
+
+<body lang="zh-cn" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">跳转至主内容</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">此浏览器不再受支持。</p>
+				<p style="font-size: 16px; margin-top: 16px;">请升级到 Microsoft Edge 以使用最新的功能、安全更新和技术支持。</p>
+				<div style="margin-top: 12px;">
+					<a href="javascript:if(confirm('https://go.microsoft.com/fwlink/p/?LinkID=2092881  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/p/?LinkID=2092881'" tppabs="https://go.microsoft.com/fwlink/p/?LinkID=2092881"
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+下载 Microsoft Edge					</a>
+					<a href="javascript:if(confirm('https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge'" tppabs="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+有关 Internet Explorer 和 Microsoft Edge 的详细信息					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="javascript:if(confirm('https://www.microsoft.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/'" tppabs="https://www.microsoft.com/" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="is-hidden"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+目录						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>退出焦点模式</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="主要"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="zh-cn" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm" aria-label="所有痕迹">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="使用英语阅读" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>使用英语阅读</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="添加到集合">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">保存</span>
+											</button>
+										
+
+										
+
+										
+
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="更多操作">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														aria-label="目录"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">目录</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="使用英语阅读" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>使用英语阅读</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="添加到集合"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">保存</span>
+													</button>
+
+
+
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="打印"
+														type="button"
+														aria-label="打印"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true"
+														hidden>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>打印</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>电子邮件</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="目录" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">目录</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="certreq">certreq</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-cn" dir="ltr">
+												<li>
+项目												</li>
+												<li>
+													<time class="is-invisible" data-article-date aria-label="文章评审日期" datetime="2022-09-21T21:35:00Z" data-article-date-source="git">09/21/2022</time>
+												</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="查看所有参与者" class="contributors-button link-button" data-bi-name="contributors" title="查看所有参与者">
+																13 个参与者
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived>
+	<button
+		class="thumb-rating-button like link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-yes"
+		title="本文非常有用"
+		type="button"
+		data-bi-name="rating-yes"
+		data-bi-sat="1"
+	>
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button
+		class="thumb-rating-button dislike link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-no"
+		title="本文没有用"
+		type="button"
+		data-bi-name="rating-no"
+		data-bi-sat="0"
+	>
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+											<h3>本文内容</h3>
+										</nav>
+
+								<!-- <content> -->
+									<p>certreq 命令可用于从证书颁发机构请求证书 (CA) ，从 CA 检索对以前的请求的响应，从 .inf 文件创建新请求，以接受和安装对请求的响应，以从现有 CA 证书或请求构造交叉认证或限定的次序请求， 并签署交叉认证或限定的下级请求。</p>
+<div class="IMPORTANT">
+<p>重要</p>
+<p>certreq 命令的早期版本可能无法提供此处介绍的所有选项。 若要查看基于特定版本的 certreq 支持的选项，请运行命令行帮助选项 <code>certreq -v -?</code>。</p>
+<p>certreq 命令不支持在 CEP/CES 环境中基于密钥证明模板创建新的证书请求。</p>
+</div>
+<div class="WARNING">
+<p>警告</p>
+<p>本主题的内容基于 Windows 服务器的默认设置;例如，将密钥长度设置为 2048，选择 Microsoft 软件密钥存储提供程序作为 CSP，并使用安全哈希算法 1 (SHA1) 。 根据公司安全策略的要求评估这些选择。</p>
+</div>
+<h2 id="syntax">语法</h2>
+<pre><code>certreq [-submit] [options] [requestfilein [certfileout [certchainfileout [fullresponsefileOut]]]]
+certreq -retrieve [options] requestid [certfileout [certchainfileout [fullresponsefileOut]]]
+certreq -new [options] [policyfilein [requestfileout]]
+certreq -accept [options] [certchainfilein | fullresponsefilein | certfilein]
+certreq -sign [options] [requestfilein [requestfileout]]
+certreq –enroll [options] templatename
+certreq –enroll –cert certId [options] renew [reusekeys]
+</code></pre>
+<h3 id="parameters">参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-submit</td>
+<td>向证书颁发机构提交请求。</td>
+</tr>
+<tr>
+<td>-retrieve <code>&lt;requestid&gt;</code></td>
+<td>从证书颁发机构检索对以前的请求的响应。</td>
+</tr>
+<tr>
+<td>-new</td>
+<td>从 .inf 文件创建新请求。</td>
+</tr>
+<tr>
+<td>-accept</td>
+<td>接受并安装对证书请求的响应。</td>
+</tr>
+<tr>
+<td>-policy</td>
+<td>设置请求的策略。</td>
+</tr>
+<tr>
+<td>-sign</td>
+<td>签署交叉认证或限定的次序号请求。</td>
+</tr>
+<tr>
+<td>-enroll</td>
+<td>注册或续订证书。</td>
+</tr>
+<tr>
+<td>-?</td>
+<td>显示 certreq 语法、选项和说明的列表。</td>
+</tr>
+<tr>
+<td><code>&lt;parameter&gt;</code> -?</td>
+<td>显示指定参数的帮助。</td>
+</tr>
+<tr>
+<td>-v -？</td>
+<td>显示 certreq 语法、选项和说明的详细列表。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">示例</h2>
+<h3 id="certreq--submit">certreq -submit</h3>
+<p>提交简单的证书请求：</p>
+<pre><code>certreq –submit certrequest.req certnew.cer certnew.pfx
+</code></pre>
+<h4 id="remarks">注解</h4>
+<ul>
+<li><p>这是默认certreq.exe参数。 如果未在命令行提示符下指定任何选项，certreq.exe尝试向证书颁发机构提交证书请求。 使用 <strong>–submit</strong> 选项时，必须指定证书请求文件。 如果省略此参数，将显示一个常见的 <strong>“文件打开</strong> ”窗口，让你选择相应的证书请求文件。</p>
+</li>
+<li><p>若要通过指定 SAN 属性来请求证书，请参阅 <em>如何使用 certreq.exe 实用工具创建和提交</em> Microsoft 知识库文章的证书请求部分，931351 <a href="javascript:if(confirm('https://support.microsoft.com/kb/931351  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://support.microsoft.com/kb/931351'" tppabs="https://support.microsoft.com/kb/931351" data-linktype="external">如何将使用者可选名称添加到安全 LDAP 证书</a>。</p>
+</li>
+</ul>
+<h3 id="certreq--retrieve">certreq -retrieve</h3>
+<p>若要检索证书 ID 20 并创建名为 <em>MyCertificate</em> 的证书文件 (.cer) ：</p>
+<pre><code>certreq -retrieve 20 MyCertificate.cer
+</code></pre>
+<h4 id="remarks-1">注解</h4>
+<ul>
+<li><p>使用 certreq -retrieve <em>requestid</em> 在证书颁发机构颁发证书后检索证书。 <em>requestid</em> PKC 可以是带 0x 前缀的十进制或十六进制，可以是没有 0x 前缀的证书序列号。 还可以使用它来检索证书颁发机构颁发的任何证书，包括已吊销或过期的证书，而不考虑证书的请求是否处于挂起状态。</p>
+</li>
+<li><p>如果向证书颁发机构提交请求，证书颁发机构的策略模块可能会使请求处于挂起状态，并将 <em>requestid</em> 返回到 certreq 调用方进行显示。 最终，证书颁发机构的管理员将颁发证书或拒绝请求。</p>
+</li>
+</ul>
+<h3 id="certreq--new">certreq -new</h3>
+<p>创建新请求：</p>
+<pre><code>[newrequest]
+; At least one value must be set in this section
+subject = CN=W2K8-BO-DC.contoso2.com
+</code></pre>
+<p>以下是可能添加到 INF 文件中的一些可能部分：</p>
+<h4 id="newrequest">[newrequest]</h4>
+<p>对于任何新的证书请求模板，INF 文件的此区域是必需的，并且必须至少包含一个具有值的参数。</p>
+<table>
+<thead>
+<tr>
+<th><sup>Key1</sup></th>
+<th>说明</th>
+<th><sup>Value2</sup></th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>使用者</td>
+<td>多个应用依赖于证书中的使用者信息。 建议为此键指定值。 如果未在此处设置使用者，建议将使用者名称作为使用者可选名称证书扩展的一部分包含。</td>
+<td>相对可分辨名称字符串值</td>
+<td>Subject = CN=computer1.contoso.com Subject=CN=John Smith，CN=Users，DC=Contoso，DC=com</td>
+</tr>
+<tr>
+<td>Exportable</td>
+<td>如果设置为 TRUE，则可以使用证书导出私钥。 为了确保高级别的安全性，私钥不应导出;但是，在某些情况下，如果多个计算机或用户必须共享同一私钥，则可能需要这样做。</td>
+<td><code>true | false</code></td>
+<td><code>Exportable = TRUE</code>. CNG 键可以区分此密钥和纯文本可导出。 CAPI1 键无法。</td>
+</tr>
+<tr>
+<td>ExportableEncrypted</td>
+<td>指定是否应将私钥设置为可导出。</td>
+<td><code>true | false</code></td>
+<td><code>ExportableEncrypted = true</code><p><strong>提示：</strong> 并非所有公钥大小和算法都适用于所有哈希算法。 指定的 CSP 还必须支持指定的哈希算法。 若要查看支持的哈希算法列表，可以运行以下命令： <code>certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo</code></td>
+</tr>
+<tr>
+<td>HashAlgorithm</td>
+<td>要用于此请求的哈希算法。</td>
+<td><code>Sha256, sha384, sha512, sha1, md5, md4, md2</code></td>
+<td><code>HashAlgorithm = sha1</code>. 若要查看支持的哈希算法列表，请使用：certutil -oid 1 |findstr pwszCNGAlgid |findstr /v CryptOIDInfo</td>
+</tr>
+<tr>
+<td>KeyAlgorithm</td>
+<td>服务提供商将使用的算法生成公钥和私钥对。</td>
+<td><code>RSA, DH, DSA, ECDH_P256, ECDH_P521, ECDSA_P256, ECDSA_P384, ECDSA_P521</code></td>
+<td><code>KeyAlgorithm = RSA</code></td>
+</tr>
+<tr>
+<td>KeyContainer</td>
+<td>不建议为生成新密钥材料的新请求设置此参数。 密钥容器由系统自动生成和维护。<p>对于应使用现有密钥材料的请求，可以将此值设置为现有密钥的密钥容器名称。 <code>certutil –key</code>使用命令显示计算机上下文的可用密钥容器列表。 对 <code>certutil –key –user</code> 当前用户的上下文使用命令。</td>
+<td>随机字符串值<p><strong>提示：</strong> 对具有空白或特殊字符的任何 INF 键值使用双引号以避免潜在的 INF 分析问题。</td>
+<td><code>KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}</code></td>
+</tr>
+<tr>
+<td>KeyLength</td>
+<td>定义公钥和私钥的长度。 密钥长度会影响证书的安全级别。 更大的密钥长度通常提供更高的安全级别;但是，某些应用程序可能会对密钥长度有限制。</td>
+<td>加密服务提供程序支持的任何有效密钥长度。</td>
+<td><code>KeyLength = 2048</code></td>
+</tr>
+<tr>
+<td>KeySpec</td>
+<td>确定密钥是否可以用于签名、Exchange (加密) 或两者。</td>
+<td><code>AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE</code></td>
+<td><code>KeySpec = AT_KEYEXCHANGE</code></td>
+</tr>
+<tr>
+<td>KeyUsage</td>
+<td>定义应用于证书密钥的内容。</td>
+<td><ul><li><code>CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)</code></li><li><code>CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)</code></li><li><code>CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)</code></li><li><code>CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)</code></li><li><code>CERT_KEY_AGREEMENT_KEY_USAGE -- 8</code></li><li><code>CERT_KEY_CERT_SIGN_KEY_USAGE -- 4</code></li><li><code>CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2</code></li><li><code>CERT_CRL_SIGN_KEY_USAGE -- 2</code></li><li><code>CERT_ENCIPHER_ONLY_KEY_USAGE -- 1</code></li><li><code>CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)</code></li></ul></td>
+<td><code>KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE</code><p><strong>提示：</strong> 多个值使用管道 (|) 符号分隔符。 确保在使用多个值以避免 INF 分析问题时使用双引号。 显示的值为十六进制 (每个位定义的十六进制) 值。 也可以使用较旧的语法：设置多个位的单个十六进制值，而不是符号表示形式。 例如，<code>KeyUsage = 0xa0</code>。</td>
+</tr>
+<tr>
+<td>KeyUsageProperty</td>
+<td>检索一个值，该值标识可以使用私钥的特定用途。</td>
+<td><ul><li><code>NCRYPT_ALLOW_DECRYPT_FLAG -- 1</code></li><li><code>NCRYPT_ALLOW_SIGNING_FLAG -- 2</code></li><li><code>NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4</code></li><li><code>NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)</code></li></ul></td>
+<td><code>KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG</code></td>
+</tr>
+<tr>
+<td>MachineKeySet</td>
+<td>当需要创建由计算机而不是用户拥有的证书时，此密钥非常重要。 生成的密钥材料在已创建请求的安全主体 (用户或计算机) 帐户的安全上下文中维护。 当管理员代表计算机创建证书请求时，必须在计算机的安全上下文而不是管理员的安全上下文中创建密钥材料。 否则，计算机无法访问其私钥，因为它将位于管理员的安全上下文中。</td>
+<td><code>true | false</code>. 默认值为 false。</td>
+<td><code>MachineKeySet = true</code></td>
+</tr>
+<tr>
+<td>NotBefore</td>
+<td>指定无法发出请求的日期或日期和时间。 <code>NotBefore</code> 可用于 <code>ValidityPeriod</code> 和 <code>ValidityPeriodUnits</code>.</td>
+<td>日期或日期和时间</td>
+<td><code>NotBefore = 7/24/2012 10:31 AM</code><p><strong>提示：</strong><code>NotBefore</code> 并且 <code>NotAfter</code> 仅适用于 R<code>equestType=cert</code> 。 日期分析尝试区分区域设置。 使用月份名称将消除歧义，并且应在每个区域设置中工作。</td>
+</tr>
+<tr>
+<td>NotAfter</td>
+<td>指定一个日期或日期和时间，之后无法发出请求。 <code>NotAfter</code> 不能与 <code>ValidityPeriod</code> 或 <code>ValidityPeriodUnits</code> 一起使用。</td>
+<td>日期或日期和时间</td>
+<td><code>NotAfter = 9/23/2014 10:31 AM</code><p><strong>提示：</strong><code>NotBefore</code> 仅限 <code>NotAfter</code> 使用 <code>RequestType=cert</code> 。 日期分析尝试区分区域设置。 使用月份名称将消除歧义，并且应在每个区域设置中工作。</td>
+</tr>
+<tr>
+<td>PrivateKeyArchive</td>
+<td>仅当相应的 RequestType 设置为 CMC 时，PrivateKeyArchive 设置才有效，因为只有通过 CMS (CMC 的证书管理消息) 请求格式，才能安全地将请求者的私钥传输到 CA 进行密钥存档。</td>
+<td><code>true | false</code></td>
+<td><code>PrivateKeyArchive = true</code></td>
+</tr>
+<tr>
+<td>EncryptionAlgorithm</td>
+<td>要使用的加密算法。</td>
+<td>可能的选项因操作系统版本和已安装的加密提供程序集而异。 若要查看可用算法的列表，请运行以下命令： <code>certutil -oid 2 | findstr pwszCNGAlgid</code> 使用的指定 CSP 还必须支持指定的对称加密算法和长度。</td>
+<td><code>EncryptionAlgorithm = 3des</code></td>
+</tr>
+<tr>
+<td>EncryptionLength</td>
+<td>要使用的加密算法的长度。</td>
+<td>指定的 EncryptionAlgorithm 允许的任何长度。</td>
+<td><code>EncryptionLength = 128</code></td>
+</tr>
+<tr>
+<td>ProviderName</td>
+<td>提供程序名称是 CSP 的显示名称。</td>
+<td>如果不知道正在使用的 CSP 的提供程序名称，请从命令行运行 <code>certutil –csplist</code> 。 此命令将显示本地系统上可用的所有 CSP 的名称</td>
+<td><code>ProviderName = Microsoft RSA SChannel Cryptographic Provider</code></td>
+</tr>
+<tr>
+<td>ProviderType</td>
+<td>提供程序类型用于根据特定算法功能（如 RSA Full）选择特定提供程序。</td>
+<td>如果不知道正在使用的 CSP 的提供程序类型，请从命令行提示符运行 <code>certutil –csplist</code> 。 此命令将显示本地系统上可用的所有 CSP 的提供程序类型。</td>
+<td><code>ProviderType = 1</code></td>
+</tr>
+<tr>
+<td>RenewalCert</td>
+<td>如果需要续订生成证书请求的系统上存在的证书，则必须将其证书哈希指定为此密钥的值。</td>
+<td>在创建证书请求的计算机中可用的任何证书的证书哈希。 如果不知道证书哈希，请使用证书 MMC Snap-In并查看应续订的证书。 打开证书属性并查看 <code>Thumbprint</code> 证书的属性。 证书续订需要一 <code>PKCS#7</code> 种或请求 <code>CMC</code> 格式。</td>
+<td><code>RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D</code></td>
+</tr>
+<tr>
+<td>RequesterName</td>
+<td>发出代表其他用户请求注册的请求。该请求还必须使用注册代理证书进行签名，否则 CA 将拒绝请求。 <code>-cert</code>使用选项指定注册代理证书。 如果请求者名称设置为<code>PKCS#7</code>或设置为证书<code>CMC</code>请求，<code>RequestType</code>则可以为证书请求指定名称。 如果设置为 <code>PKCS#10</code><code>RequestType</code>，则忽略此键。 <code>Requestername</code>只能将它设置为请求的一部分。 不能在挂起的请求中操作 <code>Requestername</code> 。</td>
+<td><code>Domain\User</code></td>
+<td><code>Requestername = Contoso\BSmith</code></td>
+</tr>
+<tr>
+<td>RequestType</td>
+<td>确定用于生成和发送证书请求的标准。</td>
+<td><ul><li><code>PKCS10 -- 1</code></li><li><code>PKCS7 -- 2</code></li><li><code>CMC -- 3</code></li><li><code>Cert -- 4</code></li><li><code>SCEP -- fd00 (64768)</code></li></ul><strong>提示：</strong> 此选项指示自签名证书或自颁发证书。 它不会生成请求，而是生成新证书，然后安装证书。 自签名是默认值。 使用 –cert 选项指定签名证书，以创建不自签名的自颁发证书。</td>
+<td><code>RequestType = CMC</code></td>
+</tr>
+<tr>
+<td>SecurityDescriptor</td>
+<td>包含与安全对象关联的安全信息。 对于大多数安全对象，可以在创建对象的函数调用中指定对象的安全描述符。基于 <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/windows/win32/secauthz/security-descriptor-definition-language  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/windows/win32/secauthz/security-descriptor-definition-language'" tppabs="https://learn.microsoft.com/zh-cn/windows/win32/secauthz/security-descriptor-definition-language" data-linktype="absolute-path">安全描述符定义语言</a>的字符串。<p><strong>提示：</strong> 这仅适用于计算机上下文非智能卡密钥。</td>
+<td><code>SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>AlternateSignatureAlgorithm</td>
+<td>指定并检索一个布尔值，该值指示 PKCS#10 请求或证书签名的签名算法对象标识符 (OID) 是离散的还是组合的。</td>
+<td><code>true | false</code></td>
+<td><code>AlternateSignatureAlgorithm = false</code><p>对于 RSA 签名， <code>false</code> 指示一个 <code>Pkcs1 v1.5</code>，同时 <code>true</code> 指示签名 <code>v2.1</code> 。</td>
+</tr>
+<tr>
+<td>无提示</td>
+<td>默认情况下，此选项允许 CSP 访问交互式用户桌面，并从用户请求智能卡 PIN 等信息。 如果此密钥设置为 TRUE，则 CSP 不得与桌面交互，并且将被阻止向用户显示任何用户界面。</td>
+<td><code>true | false</code></td>
+<td><code>Silent = true</code></td>
+</tr>
+<tr>
+<td>SMIME</td>
+<td>如果此参数设置为 TRUE，则会将对象标识符值为 1.2.840.113549.1.9.15 的扩展添加到请求中。 对象标识符的数量取决于安装的操作系统版本和 CSP 功能，该功能是指安全多用途 Internet 邮件扩展 (S/MIME) 应用程序（如Outlook）可以使用的对称加密算法。</td>
+<td><code>true | false</code></td>
+<td><code>SMIME = true</code></td>
+</tr>
+<tr>
+<td>UseExistingKeySet</td>
+<td>此参数用于指定在生成证书请求时应使用现有密钥对。 如果此密钥设置为 TRUE，则还必须为 RenewalCert 密钥或 KeyContainer 名称指定值。 不能设置可导出密钥，因为无法更改现有密钥的属性。 在这种情况下，生成证书请求时不会生成任何密钥材料。</td>
+<td><code>true | false</code></td>
+<td><code>UseExistingKeySet = true</code></td>
+</tr>
+<tr>
+<td>KeyProtection</td>
+<td>指定一个值，该值指示在使用之前如何保护私钥。</td>
+<td><ul><li><code>XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0</code></li><li><code>XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1</code></li><li><code>XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2</code></li></ul></td>
+<td><code>KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG</code></td>
+</tr>
+<tr>
+<td>SuppressDefaults</td>
+<td>指定一个布尔值，该值指示默认扩展和属性是否包含在请求中。 默认值由其对象标识符 (OID) 表示。</td>
+<td><code>true | false</code></td>
+<td><code>SuppressDefaults = true</code></td>
+</tr>
+<tr>
+<td>FriendlyName</td>
+<td>新证书的友好名称。</td>
+<td>文本</td>
+<td><code>FriendlyName = Server1</code></td>
+</tr>
+<tr>
+<td>ValidityPeriodUnits</td>
+<td>指定要与 ValidityPeriod 一起使用的多个单元。 Note: This is used only when the <code>request type=cert</code>.</td>
+<td>数值</td>
+<td><code>ValidityPeriodUnits = 3</code></td>
+</tr>
+<tr>
+<td>ValidityPeriod</td>
+<td>ValidityPeriod 必须是美国英语复数时间段。 注意：仅当请求类型=cert 时，才使用此功能。</td>
+<td><code>Years |  Months | Weeks | Days | Hours | Minutes | Seconds</code></td>
+<td><code>ValidityPeriod = Years</code></td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup>等号左侧的参数 (=) </p>
+<p><sup>2</sup>等号右侧的参数 (=) </p>
+<h4 id="extensions">[extensions]</h4>
+<p>本部分是可选的。</p>
+<table>
+<thead>
+<tr>
+<th>扩展 OID</th>
+<th>定义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.5.29.17</td>
+<td></td>
+<td>2.5.29.17 = {text}</td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = UPN=User@Domain.com&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = EMail=User@Domain.com&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = DNS=host.domain.com&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = DirectoryName=CN=Name,DC=Domain,DC=com&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = URL=&lt;http://host.domain.com/default.html&amp;&gt;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = IPAddress=10.0.0.1&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = RegisteredId=1.2.3.4.5&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = 1.2.3.4.6.1={utf8}String&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = 1.2.3.4.6.2={octet}AAECAwQFBgc=&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = 1.2.3.4.6.2={octet}{hex}00 01 02 03 04 05 06 07&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = 1.2.3.4.6.3={asn}BAgAAQIDBAUGBw==&amp;</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = 1.2.3.4.6.3={hex}04 08 00 01 02 03 04 05 06 07</code></td>
+</tr>
+<tr>
+<td>2.5.29.37</td>
+<td></td>
+<td><code>2.5.29.37={text}</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = 1.3.6.1.5.5.7</code></td>
+</tr>
+<tr>
+<td><em>continue</em></td>
+<td></td>
+<td><code>continue = 1.3.6.1.5.5.7.3.1</code></td>
+</tr>
+<tr>
+<td>2.5.29.19</td>
+<td></td>
+<td><code>{text}ca=0pathlength=3</code></td>
+</tr>
+<tr>
+<td>严重</td>
+<td></td>
+<td><code>Critical=2.5.29.19</code></td>
+</tr>
+<tr>
+<td>KeySpec</td>
+<td></td>
+<td><ul><li><code>AT_NONE -- 0</code></li><li><code>AT_SIGNATURE -- 2</code></li><li><code>AT_KEYEXCHANGE -- 1</code></ul></li></td>
+</tr>
+<tr>
+<td>RequestType</td>
+<td></td>
+<td><ul><li><code>PKCS10 -- 1</code></li><li><code>PKCS7 -- 2</code></li><li><code>CMC -- 3</code></li><li><code>Cert -- 4</code></li><li><code>SCEP -- fd00 (64768)</code></li></ul></td>
+</tr>
+<tr>
+<td>KeyUsage</td>
+<td></td>
+<td><ul><li><code>CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)</code></li><li><code>CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)</code></li><li><code>CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)</code></li><li><code>CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)</code></li><li><code>CERT_KEY_AGREEMENT_KEY_USAGE -- 8</code></li><li><code>CERT_KEY_CERT_SIGN_KEY_USAGE -- 4</code></li><li><code>CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2</code></li><li><code>CERT_CRL_SIGN_KEY_USAGE -- 2</code></li><li><code>CERT_ENCIPHER_ONLY_KEY_USAGE -- 1</code></li><li><code>CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)</code></li></ul></td>
+</tr>
+<tr>
+<td>KeyUsageProperty</td>
+<td></td>
+<td><ul><li><code>NCRYPT_ALLOW_DECRYPT_FLAG -- 1</code></li><li><code>NCRYPT_ALLOW_SIGNING_FLAG -- 2</code></li><li><code>NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4</code></li><li><code>NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)</code></li></ul></td>
+</tr>
+<tr>
+<td>KeyProtection</td>
+<td></td>
+<td><ul><li><code>NCRYPT_UI_NO_PROTECTION_FLAG -- 0</code></li><li><code>NCRYPT_UI_PROTECT_KEY_FLAG -- 1</code></li><li><code>NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2</code></li></ul></td>
+</tr>
+<tr>
+<td>SubjectNameFlags</td>
+<td>template</td>
+<td><ul><li><code>CT_FLAG_SUBJECT_REQUIRE_COMMON_NAME -- 40000000 (1073741824)</code></li><li><code>CT_FLAG_SUBJECT_REQUIRE_DIRECTORY_PATH -- 80000000 (2147483648)</code></li><li><code>CT_FLAG_SUBJECT_REQUIRE_DNS_AS_CN -- 10000000 (268435456)</code></li><li><code>CT_FLAG_SUBJECT_REQUIRE_EMAIL -- 20000000 (536870912)</code></li><li><code>CT_FLAG_OLD_CERT_SUPPLIES_SUBJECT_AND_ALT_NAME -- 8</code></li><li><code>CT_FLAG_SUBJECT_ALT_REQUIRE_DIRECTORY_GUID -- 1000000 (16777216)</code></li><li><code>CT_FLAG_SUBJECT_ALT_REQUIRE_DNS -- 8000000 (134217728)</code></li><li><code>CT_FLAG_SUBJECT_ALT_REQUIRE_DOMAIN_DNS -- 400000 (4194304)</code></li><li><code>CT_FLAG_SUBJECT_ALT_REQUIRE_EMAIL -- 4000000 (67108864)</code></li><li><code>CT_FLAG_SUBJECT_ALT_REQUIRE_SPN -- 800000 (8388608)</code></li><li><code>CT_FLAG_SUBJECT_ALT_REQUIRE_UPN -- 2000000 (33554432)</code></li></ul></td>
+</tr>
+<tr>
+<td>X500NameFlags</td>
+<td></td>
+<td><ul><li><code>CERT_NAME_STR_NONE -- 0</code></li><li><code>CERT_OID_NAME_STR -- 2</code></li><li><code>CERT_X500_NAME_STR -- 3</code></li><li><code>CERT_NAME_STR_SEMICOLON_FLAG -- 40000000 (1073741824)</code></li><li><code>CERT_NAME_STR_NO_PLUS_FLAG -- 20000000 (536870912)</code></li><li><code>CERT_NAME_STR_NO_QUOTING_FLAG -- 10000000 (268435456)</code></li><li><code>CERT_NAME_STR_CRLF_FLAG -- 8000000 (134217728)</code></li><li><code>CERT_NAME_STR_COMMA_FLAG -- 4000000 (67108864)</code></li><li><code>CERT_NAME_STR_REVERSE_FLAG -- 2000000 (33554432)</code></li><li><code>CERT_NAME_STR_FORWARD_FLAG -- 1000000 (16777216)</code></li><li><code>CERT_NAME_STR_DISABLE_IE4_UTF8_FLAG -- 10000 (65536)</code></li><li><code>CERT_NAME_STR_ENABLE_T61_UNICODE_FLAG -- 20000 (131072)</code></li><li><code>CERT_NAME_STR_ENABLE_UTF8_UNICODE_FLAG -- 40000 (262144)</code></li><li><code>CERT_NAME_STR_FORCE_UTF8_DIR_STR_FLAG -- 80000 (524288)</code></li><li><code>CERT_NAME_STR_DISABLE_UTF8_DIR_STR_FLAG -- 100000 (1048576)</code></li><li><code>CERT_NAME_STR_ENABLE_PUNYCODE_FLAG -- 200000 (2097152)</code></li></ul></td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<p>注意</p>
+<p><code>SubjectNameFlags</code> 允许 INF 文件根据当前用户或当前计算机属性（DNS 名称、UPN 等）由 certreq 自动填充哪些 <strong>Subject 和</strong><strong>SubjectAltName</strong> 扩展字段。 使用文本模板意味着改用模板名称标志。 这允许在多个上下文中使用单个 INF 文件来生成具有特定于上下文的主题信息的请求。</p>
+<p><code>X500NameFlags</code>指定要在值转换为 ASN.1 编码的可分辨<strong>名称</strong>时<code>Subject INF keys</code>直接<code>CertStrToName</code>传递给 API 的标志。</p>
+</div>
+<h4 id="example">示例</h4>
+<p>若要在 记事本 中创建策略文件 (.inf) ，并将其保存为 <em>requestconfig.inf</em>：</p>
+<pre><code>[NewRequest]
+Subject = CN=&lt;FQDN of computer you are creating the certificate&gt;
+Exportable = TRUE
+KeyLength = 2048
+KeySpec = 1
+KeyUsage = 0xf0
+MachineKeySet = TRUE
+[RequestAttributes]
+CertificateTemplate=WebServer
+[Extensions]
+OID = 1.3.6.1.5.5.7.3.1
+OID = 1.3.6.1.5.5.7.3.2
+</code></pre>
+<p>在要为其请求证书的计算机上：</p>
+<pre><code>certreq –new requestconfig.inf certrequest.req
+</code></pre>
+<p>对 OID 和其他难以解释数据使用 [Strings] 节语法。 EKU 扩展的新 {text} 语法示例，该扩展使用逗号分隔的 OID 列表：</p>
+<pre><code>[Version]
+Signature=$Windows NT$
+
+[Strings]
+szOID_ENHANCED_KEY_USAGE = 2.5.29.37
+szOID_PKIX_KP_SERVER_AUTH = 1.3.6.1.5.5.7.3.1
+szOID_PKIX_KP_CLIENT_AUTH = 1.3.6.1.5.5.7.3.2
+
+[NewRequest]
+Subject = CN=TestSelfSignedCert
+Requesttype = Cert
+
+[Extensions]
+%szOID_ENHANCED_KEY_USAGE%={text}%szOID_PKIX_KP_SERVER_AUTH%,
+_continue_ = %szOID_PKIX_KP_CLIENT_AUTH%
+</code></pre>
+<h3 id="certreq--accept">certreq -accept</h3>
+<p>该 <code>–accept</code> 参数将先前生成的私钥与颁发的证书链接在一起，并从请求证书的系统中删除挂起的证书请求， (如果存在匹配的请求) 。</p>
+<p>若要手动接受证书，请执行以下操作：</p>
+<pre><code>certreq -accept certnew.cer
+</code></pre>
+<div class="WARNING">
+<p>警告</p>
+<p>使用<code>-accept</code>参数和<code>-user</code><code>–machine</code>选项指示安装证书是否应在<strong>用户</strong>或<strong>计算机</strong>上下文中安装。 如果任一上下文中有一个与所安装的公钥匹配的未完成请求，则不需要这些选项。 如果没有未完成的请求，则必须指定其中一个请求。</p>
+</div>
+<h3 id="certreq--policy">certreq -policy</h3>
+<p>policy.inf 文件是一个配置文件，用于定义在定义限定的次序号时应用于 CA 认证的约束。</p>
+<p>若要生成跨证书请求，请执行以下操作：</p>
+<pre><code>certreq -policy certsrv.req policy.inf newcertsrv.req
+</code></pre>
+<p>无需 <code>certreq -policy</code> 任何其他参数即可打开对话框窗口，使你可以选择请求的文件 (.req、.cmc、.txt、.der、.cer 或 .crt) 。 选择请求的文件并单击“ <strong>打开</strong>”后，将打开另一个对话框窗口，允许你选择 policy.inf 文件。</p>
+<h4 id="examples-1">示例</h4>
+<p>在 <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file'" tppabs="https://learn.microsoft.com/zh-cn/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file" data-linktype="relative-path">CAPolicy.inf 语法中查找 policy.inf</a> 文件的示例。</p>
+<h3 id="certreq--sign">certreq -sign</h3>
+<p>若要创建新的证书请求，请对其进行签名并提交：</p>
+<pre><code>certreq -new policyfile.inf myrequest.req
+certreq -sign myrequest.req myrequest.req
+certreq -submit myrequest_sign.req myrequest_cert.cer
+</code></pre>
+<h4 id="remarks-2">注解</h4>
+<ul>
+<li><p>如果不使用 <code>certreq -sign</code> 任何其他参数，它将打开对话框窗口，以便你可以选择请求的文件 (req、cmc、txt、der、cer 或 crt) 。</p>
+</li>
+<li><p>对限定的次序号请求进行签名可能需要<strong>Enterprise管理员</strong>凭据。 这是颁发合格次序签名证书的最佳做法。</p>
+</li>
+<li><p>用于对限定的次序号请求进行签名的证书使用限定的次序模板。 Enterprise管理员必须对请求进行签名或向用户授予对证书签名的个人权限。</p>
+</li>
+<li><p>可能需要在 CMC 请求后让其他人员对 CMC 请求进行签名。 这取决于与限定的次序关联的保证级别。</p>
+</li>
+<li><p>如果要安装的合格从属 CA 的父 CA 处于脱机状态，则必须从脱机父级获取限定的从属 CA 的 CA 证书。 如果父 CA 处于联机状态，请在 <strong>证书服务安装</strong> 向导中为限定的从属 CA 指定 CA 证书。</p>
+</li>
+</ul>
+<h3 id="certreq--enroll">certreq -enroll</h3>
+<p>可以使用此注释来注册或续订证书。</p>
+<h4 id="examples-2">示例</h4>
+<p>若要使用 <em>WebServer</em> 模板注册证书，并使用 U/I 选择策略服务器：</p>
+<pre><code>certreq -enroll –machine –policyserver * WebServer
+</code></pre>
+<p>若要使用序列号续订证书，请执行以下操作：</p>
+<pre><code>certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
+</code></pre>
+<p>只能续订有效的证书。 无法续订过期的证书，并且必须替换为新证书。</p>
+<h2 id="options">选项</h2>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-any</td>
+<td><code>Force ICertRequest::Submit</code> 确定编码类型。</td>
+</tr>
+<tr>
+<td>-attrib <code>&lt;attributestring&gt;</code></td>
+<td>指定<strong>名称和</strong><strong>值</strong>字符串对，用冒号分隔。<p>使用 <code>\n</code> (分隔<strong>名称和</strong><strong>值</strong>字符串对，例如 Name1：value1\nName2：value2) 。</td>
+</tr>
+<tr>
+<td>-binary</td>
+<td>将输出文件格式化为二进制文件，而不是 base64 编码。</td>
+</tr>
+<tr>
+<td>-policyserver <code>&lt;policyserver&gt;</code></td>
+<td>Ldap： <code>&lt;path&gt;</code><br>为运行证书注册策略 Web 服务的计算机插入 URI 或唯一 ID。<p>若要指定要通过浏览使用请求文件，只需使用减号 () 符号 <code>&lt;policyserver&gt;</code>。</td>
+</tr>
+<tr>
+<td>-config <code>&lt;ConfigString&gt;</code></td>
+<td>使用配置字符串中指定的 CA（即 <strong>CAHostName\CAName</strong>）处理操作。 对于 https：\\ 连接，请指定注册服务器 URI。 对于本地计算机存储 CA，请使用减号 () 符号。</td>
+</tr>
+<tr>
+<td>-anonymous</td>
+<td>对证书注册 Web 服务使用匿名凭据。</td>
+</tr>
+<tr>
+<td>-kerberos</td>
+<td>将 Kerberos (域) 凭据用于证书注册 Web 服务。</td>
+</tr>
+<tr>
+<td>-clientcertificate <code>&lt;ClientCertId&gt;</code></td>
+<td>可以将证书 <code>&lt;ClientCertId&gt;</code> 指纹、CN、EKU、模板、电子邮件、UPN 或新 <code>name=value</code> 语法替换。</td>
+</tr>
+<tr>
+<td>-username <code>&lt;username&gt;</code></td>
+<td>与证书注册 Web 服务一起使用。 可以替换为 <code>&lt;username&gt;</code> SAM 名称或 <strong>域\用户</strong> 值。 此选项用于选项 <code>-p</code> 。</td>
+</tr>
+<tr>
+<td>-p <code>&lt;password&gt;</code></td>
+<td>与证书注册 Web 服务一起使用。 替换为 <code>&lt;password&gt;</code> 实际用户的密码。 此选项与选项一起使用 <code>-username</code> 。</td>
+</tr>
+<tr>
+<td>-user</td>
+<td><code>-user</code>为新证书请求配置上下文，或指定证书接受的上下文。 如果 INF 或模板中未指定任何上下文，则为默认上下文。</td>
+</tr>
+<tr>
+<td>-machine</td>
+<td>配置新的证书请求或指定计算机上下文的证书接受的上下文。 对于新请求，它必须与 MachineKeyset INF 密钥和模板上下文一致。 如果未指定此选项，并且模板未设置上下文，则默认值为用户上下文。</td>
+</tr>
+<tr>
+<td>-crl</td>
+<td>在输出中包括证书吊销列表， (CRL) 到 base64 编码的 PKCS #7 文件或 <code>certchainfileout</code> 由 <code>requestfileout</code>base64 编码的文件指定。</td>
+</tr>
+<tr>
+<td>-rpc</td>
+<td>指示 Active Directory 证书服务 (AD CS) 使用远程过程调用 (RPC) 服务器连接，而不是分布式 COM。</td>
+</tr>
+<tr>
+<td>-adminforcemachine</td>
+<td>使用密钥服务或模拟从本地系统上下文提交请求。 要求调用此选项的用户是本地管理员的成员。</td>
+</tr>
+<tr>
+<td>-renewonbehalfof</td>
+<td>代表签名证书中标识的使用者提交续订。 这会在调用 <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/windows/win32/api/certcli/nf-certcli-icertrequest-submit  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/windows/win32/api/certcli/nf-certcli-icertrequest-submit'" tppabs="https://learn.microsoft.com/zh-cn/windows/win32/api/certcli/nf-certcli-icertrequest-submit" data-linktype="absolute-path">ICertRequest：：Submit 方法</a>时设置CR_IN_ROBO</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强制覆盖现有文件。 这还会绕过缓存模板和策略。</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>使用无提示模式;禁止显示所有交互式提示。</td>
+</tr>
+<tr>
+<td>-unicode</td>
+<td>将标准输出重定向或通过管道传输到另一个命令时写入 Unicode 输出，这有助于从Windows PowerShell脚本调用。</td>
+</tr>
+<tr>
+<td>-unicodetext</td>
+<td>将 base64 文本编码的数据 Blob 写入文件时，发送 Unicode 输出。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formats">格式</h2>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestfilein</td>
+<td>Base64 编码或二进制输入文件名：PKCS #10 证书请求、CMS 证书请求、PKCS #7 证书续订请求、要交叉认证的 X.509 证书或 KeyGen 标记格式证书请求。</td>
+</tr>
+<tr>
+<td>requestfileout</td>
+<td>Base64 编码的输出文件名。</td>
+</tr>
+<tr>
+<td>certfileout</td>
+<td>Base64 编码的 X-509 文件名。</td>
+</tr>
+<tr>
+<td>PKCS10fileout</td>
+<td><code>certreq -policy</code>仅用于参数。 Base64 编码的 PKCS10 输出文件名。</td>
+</tr>
+<tr>
+<td>certchainfileout</td>
+<td>Base64 编码的 PKCS #7 文件名。</td>
+</tr>
+<tr>
+<td>fullresponsefileout</td>
+<td>Base64 编码的完整响应文件名。</td>
+</tr>
+<tr>
+<td>policyfilein</td>
+<td><code>certreq -policy</code>仅用于参数。 INF 文件，其中包含用于限定请求的扩展的文本表示形式。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-resources">其他资源</h2>
+<p>以下文章包含 certreq 用法的示例：</p>
+<ul>
+<li><p><a href="javascript:if(confirm('https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate'" tppabs="https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate" data-linktype="external">如何将使用者可选名称添加到安全 LDAP 证书</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831348(v=ws.11)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831348(v=ws.11)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831348(v=ws.11)" data-linktype="absolute-path">Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10)" data-linktype="absolute-path">附录 3：Certreq.exe语法</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529'" tppabs="https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529" data-linktype="external">如何手动创建 Web 服务器 SSL 证书</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/system-center/scom/plan-planning-agent-deployment  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/system-center/scom/plan-planning-agent-deployment'" tppabs="https://learn.microsoft.com/zh-cn/system-center/scom/plan-planning-agent-deployment" data-linktype="absolute-path">System Center Operations Manager 代理的证书注册</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)" data-linktype="absolute-path">Active Directory 证书服务概述</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority'" tppabs="https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority" data-linktype="external">如何使用第三方证书颁发机构通过 SSL 启用 LDAP</a></p>
+</li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							class="font-size-sm right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="页面操作">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+									<h3>本文内容</h3>
+								</nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="操作面板" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

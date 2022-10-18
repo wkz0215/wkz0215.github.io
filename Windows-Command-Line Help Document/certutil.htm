@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="zh-cn" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="certutil" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/certutil" />
+			<meta property="og:description" content="certutil 命令的参考文章，它是一个命令行程序，用于转储和显示证书颁发机构 (CA) 配置信息、配置证书服务、备份和还原 CA 组件，并验证证书、密钥对和证书链。" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@docsmsft" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="author" content="JasonGerend" />
+<meta name="breadcrumb_path" content="/windows-server/breadcrumbs/toc.json" />
+<meta name="depot_name" content="MSDN.WindowsServerDocs-pr" />
+<meta name="description" content="certutil 命令的参考文章，它是一个命令行程序，用于转储和显示证书颁发机构 (CA) 配置信息、配置证书服务、备份和还原 CA 组件，并验证证书、密钥对和证书链。" />
+<meta name="document_id" content="d238db2c-10e1-d418-e780-54b421779754" />
+<meta name="document_version_independent_id" content="d1313e31-d990-2f0b-3f70-ae0fcdb4ba5c" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/17627c7e11562dfa434109f0ca877f05645b6597/WindowsServerDocs/administration/windows-commands/certutil.md" />
+<meta name="loc_file_id" content="Github-175290469.live.MSDN.WindowsServerDocs-pr.administration/windows-commands/certutil.md" />
+<meta name="loc_source_id" content="Github-175290469#live" />
+<meta name="loc_version" content="2022-04-13T17:36:48.9507401Z" />
+<meta name="locale" content="zh-cn" />
+<meta name="manager" content="mtillman" />
+<meta name="ms.assetid" content="c264ccf0-ba1e-412b-9dd3-d77dd9345ad9" />
+<meta name="ms.author" content="jgerend" />
+<meta name="ms.contentlocale" content="zh-cn" />
+<meta name="ms.date" content="10/16/2017" />
+<meta name="ms.prod" content="windows-server" />
+<meta name="ms.technology" content="windows-commands" />
+<meta name="ms.topic" content="reference" />
+<meta name="ms.translationtype" content="MT" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/live/WindowsServerDocs/administration/windows-commands/certutil.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="recommendations" content="true" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="updated_at" content="2022-09-21 09:35 PM" />
+<meta name="word_count" content="10505" />
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e" data-source="generated" />
+
+	<meta name="cmProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/b65b6118-d894-4103-b2a3-0331bc81655a" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/aebdc4a3-c54b-4eea-94e3-663d5e166f57" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/windows-commands/certutil.md" />
+<link href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/certutil" rel="canonical">
+	<title>certutil | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="89972844.site-ltr.css" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/styles/89972844.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-cn',
+			contentDir: 'ltr',
+			userLocale: 'zh-cn',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			extendBreadcrumb: true,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "JasonGerend", url: "https://github.com/JasonGerend" },
+						{ name: "robinharwood", url: "https://github.com/robinharwood" },
+						{ name: "rdbahm", url: "https://github.com/rdbahm" },
+						{ name: "x509cert", url: "https://github.com/x509cert" },
+						{ name: "eross-msft", url: "https://github.com/eross-msft" },
+						{ name: "p-mx", url: "https://github.com/p-mx" },
+						{ name: "john-par", url: "https://github.com/john-par" },
+						{ name: "DCtheGeek", url: "https://github.com/DCtheGeek" },
+						{ name: "colichri", url: "https://github.com/colichri" },
+						{ name: "v-maudel", url: "https://github.com/v-maudel" },
+						{ name: "mijacobs", url: "https://github.com/mijacobs" },
+						{ name: "iangpgh", url: "https://github.com/iangpgh" },
+						{ name: "nschonni", url: "https://github.com/nschonni" },
+						{ name: "BiNZGi", url: "https://github.com/BiNZGi" },
+						{ name: "alfredmyers", url: "https://github.com/alfredmyers" },
+						{ name: "coreyp-at-msft", url: "https://github.com/coreyp-at-msft" },
+						{ name: "lizap", url: "https://github.com/lizap" },
+						{ name: "b-r-o-c-k", url: "https://github.com/b-r-o-c-k" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="wcp-consent.js" tppabs="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="ms.jsll-3.min.js" tppabs="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="67a45209.deprecation.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/global/67a45209.deprecation.js"></script>
+		<script src="12bd6430.index-docs.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/scripts/12bd6430.index-docs.js"></script>
+</head>
+
+<body lang="zh-cn" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">跳转至主内容</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">此浏览器不再受支持。</p>
+				<p style="font-size: 16px; margin-top: 16px;">请升级到 Microsoft Edge 以使用最新的功能、安全更新和技术支持。</p>
+				<div style="margin-top: 12px;">
+					<a href="javascript:if(confirm('https://go.microsoft.com/fwlink/p/?LinkID=2092881  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/p/?LinkID=2092881'" tppabs="https://go.microsoft.com/fwlink/p/?LinkID=2092881"
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+下载 Microsoft Edge					</a>
+					<a href="javascript:if(confirm('https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge'" tppabs="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+有关 Internet Explorer 和 Microsoft Edge 的详细信息					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="javascript:if(confirm('https://www.microsoft.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/'" tppabs="https://www.microsoft.com/" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="is-hidden"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+目录						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>退出焦点模式</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="主要"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="zh-cn" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm" aria-label="所有痕迹">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="使用英语阅读" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>使用英语阅读</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="添加到集合">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">保存</span>
+											</button>
+										
+
+										
+
+										
+
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="更多操作">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														aria-label="目录"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">目录</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="使用英语阅读" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>使用英语阅读</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="添加到集合"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">保存</span>
+													</button>
+
+
+
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="打印"
+														type="button"
+														aria-label="打印"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true"
+														hidden>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>打印</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>电子邮件</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="目录" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">目录</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="certutil">certutil</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-cn" dir="ltr">
+												<li>
+项目												</li>
+												<li>
+													<time class="is-invisible" data-article-date aria-label="文章评审日期" datetime="2022-09-21T21:35:00Z" data-article-date-source="git">09/21/2022</time>
+												</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="查看所有参与者" class="contributors-button link-button" data-bi-name="contributors" title="查看所有参与者">
+																18 个参与者
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived>
+	<button
+		class="thumb-rating-button like link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-yes"
+		title="本文非常有用"
+		type="button"
+		data-bi-name="rating-yes"
+		data-bi-sat="1"
+	>
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button
+		class="thumb-rating-button dislike link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-no"
+		title="本文没有用"
+		type="button"
+		data-bi-name="rating-no"
+		data-bi-sat="0"
+	>
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+											<h3>本文内容</h3>
+										</nav>
+
+								<!-- <content> -->
+									<p>Certutil.exe是作为证书服务的一部分安装的命令行程序。 可以使用certutil.exe转储和显示证书颁发机构 (CA) 配置信息、配置证书服务、备份和还原 CA 组件，以及验证证书、密钥对和证书链。</p>
+<p>如果在证书颁发机构上运行 certutil 且没有其他参数，则会显示当前的证书颁发机构配置。 如果 certutil 在非证书颁发机构上运行，则命令默认为运行该 <code>certutil [-dump]</code> 命令。</p>
+<div class="IMPORTANT">
+<p>重要</p>
+<p>早期版本的 certutil 可能无法提供本文档中所述的所有选项。 可以通过运行 <code>certutil -?</code> 或 <code>certutil &lt;parameter&gt; -?</code>查看特定版本的 certutil 提供的所有选项。</p>
+</div>
+<h2 id="parameters">parameters</h2>
+<h3 id="-dump">-dump</h3>
+<p>转储配置信息或文件。</p>
+<pre><code>certutil [options] [-dump]
+certutil [options] [-dump] file
+</code></pre>
+<pre><code>[-f] [-silent] [-split] [-p password] [-t timeout]
+</code></pre>
+<h3 id="-asn">-asn</h3>
+<p>使用抽象语法表示法分析并显示文件的内容， (ASN.1) 语法。 文件类型包括 。CER。DER 和 PKCS #7 格式化文件。</p>
+<pre><code>certutil [options] -asn file [type]
+</code></pre>
+<p><code>[type]</code>：数值CRYPT_STRING_* 解码类型</p>
+<h3 id="-decodehex">-decodehex</h3>
+<p>解码十六进制编码的文件。</p>
+<pre><code>certutil [options] -decodehex infile outfile [type]
+</code></pre>
+<p><code>[type]</code>：numeric CRYPT_STRING_* 编码类型</p>
+<pre><code>[-f]
+</code></pre>
+<h3 id="-decode">-decode</h3>
+<p>解码 Base64 编码的文件。</p>
+<pre><code>certutil [options] -decode infile outfile
+</code></pre>
+<pre><code>[-f]
+</code></pre>
+<h3 id="-encode">-encode</h3>
+<p>将文件编码为 Base64。</p>
+<pre><code>certutil [options] -encode infile outfile
+</code></pre>
+<pre><code>[-f] [-unicodetext]
+</code></pre>
+<h3 id="-deny">-deny</h3>
+<p>拒绝挂起的请求。</p>
+<pre><code>certutil [options] -deny requestID
+</code></pre>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-resubmit">-resubmit</h3>
+<p>重新提交挂起的请求。</p>
+<pre><code>certutil [options] -resubmit requestId
+</code></pre>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-setattributes">-setattributes</h3>
+<p>设置挂起的证书请求的属性。</p>
+<pre><code>certutil [options] -setattributes RequestID attributestring
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>requestID</strong> 是挂起请求的数值请求 ID。</p>
+</li>
+<li><p><strong>attributestring</strong> 是请求属性名称和值对。</p>
+</li>
+</ul>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h4 id="remarks">注解</h4>
+<ul>
+<li>名称和值必须冒号分隔，而多个名称，值对必须换行分隔。 例如： <code>CertificateTemplate:User\nEMail:User@Domain.com</code> 序列 <code>\n</code> 转换为换行符的位置。</li>
+</ul>
+<h3 id="-setextension">-setextension</h3>
+<p>为挂起的证书请求设置扩展。</p>
+<pre><code>certutil [options] -setextension requestID extensionname flags {long | date | string | \@infile}
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>requestID</strong> 是挂起请求的数值请求 ID。</p>
+</li>
+<li><p><strong>extensionname</strong> 是扩展的 ObjectId 字符串。</p>
+</li>
+<li><p><strong>标志</strong> 设置扩展的优先级。 <code>0</code> 建议在将扩展设置为关键时 <code>1</code> 禁用 <code>2</code> 该扩展，并 <code>3</code> 同时执行这两项操作。</p>
+</li>
+</ul>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h4 id="remarks-1">注解</h4>
+<ul>
+<li><p>如果最后一个参数为数值，则将其视为 <strong>Long</strong>。</p>
+</li>
+<li><p>如果最后一个参数可以分析为日期，则它被视为 <strong>Date</strong>。</p>
+</li>
+<li><p>如果最后一个参数以 <code>\@</code>开头，则其余的令牌将用作包含二进制数据的文件名或 ascii 文本十六进制转储。</p>
+</li>
+<li><p>如果最后一个参数是任何其他参数，则它被视为字符串。</p>
+</li>
+</ul>
+<h3 id="-revoke">-revoke</h3>
+<p>撤销证书。</p>
+<pre><code>certutil [options] -revoke serialnumber [reason]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>serialnumber</strong> 是要撤销的证书序列号的逗号分隔列表。</p>
+</li>
+<li><p><strong>reason</strong> 是吊销原因的数字或符号表示形式，包括：</p>
+<ul>
+<li><p><strong>0. CRL_REASON_UNSPECIFIED</strong> - 未指定的默认 (默认) </p>
+</li>
+<li><p><strong>1. CRL_REASON_KEY_COMPROMISE</strong> - 密钥泄露</p>
+</li>
+<li><p><strong>2. CRL_REASON_CA_COMPROMISE</strong> - 证书颁发机构泄露</p>
+</li>
+<li><p><strong>3. CRL_REASON_AFFILIATION_CHANGED</strong> - 关联已更改</p>
+</li>
+<li><p><strong>4. CRL_REASON_SUPERSEDED</strong> - 取代</p>
+</li>
+<li><p><strong>5. CRL_REASON_CESSATION_OF_OPERATION</strong> - 停止操作</p>
+</li>
+<li><p><strong>6. CRL_REASON_CERTIFICATE_HOLD</strong> - 证书保留</p>
+</li>
+<li><p><strong>8. CRL_REASON_REMOVE_FROM_CRL</strong> - 从 CRL 中删除</p>
+</li>
+<li><p><strong>-1. Unrevoke - Unrevoke</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-isvalid">-isvalid</h3>
+<p>显示当前证书的处置。</p>
+<pre><code>certutil [options] -isvalid serialnumber | certhash
+</code></pre>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-getconfig">-getconfig</h3>
+<p>获取默认配置字符串。</p>
+<pre><code>certutil [options] -getconfig
+</code></pre>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-ping">-ping</h3>
+<p>尝试联系 Active Directory 证书服务请求接口。</p>
+<pre><code>certutil [options] -ping [maxsecondstowait | camachinelist]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><strong>camachinelist</strong> 是 CA 计算机名称的逗号分隔列表。 对于单个计算机，请使用终止逗号。 此选项还显示每个 CA 计算机的站点成本。</li>
+</ul>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-cainfo">-cainfo</h3>
+<p>显示有关证书颁发机构的信息。</p>
+<pre><code>certutil [options] -cainfo [infoname [index | errorcode]]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>infoname</strong> 根据以下 infoname 参数语法指示要显示的 CA 属性：</p>
+<ul>
+<li><p><strong>文件</strong> - 文件版本</p>
+</li>
+<li><p><strong>product - 产品</strong> 版本</p>
+</li>
+<li><p><strong>exitcount - Exit module count</strong></p>
+</li>
+<li><p><strong>退出 <code>[index]</code></strong> - 退出模块说明</p>
+</li>
+<li><p><strong>策略 - 策略</strong> 模块说明</p>
+</li>
+<li><p><strong>name</strong> - CA 名称</p>
+</li>
+<li><p><strong>sanitizedname</strong> - Sanitized CA 名称</p>
+</li>
+<li><p><strong>dsname</strong> - Sanitized CA short name (DS name) </p>
+</li>
+<li><p><strong>sharedfolder</strong> - 共享文件夹</p>
+</li>
+<li><p><strong>error1 ErrorCode</strong> - 错误消息文本</p>
+</li>
+<li><p><strong>error2 ErrorCode</strong> - 错误消息文本和错误代码</p>
+</li>
+<li><p><strong>type</strong> - CA 类型</p>
+</li>
+<li><p><strong>info</strong> - CA 信息</p>
+</li>
+<li><p><strong>父</strong> 级 - 父 CA</p>
+</li>
+<li><p><strong>certcount</strong> - CA 证书计数</p>
+</li>
+<li><p><strong>xchgcount</strong> - CA exchange 证书计数</p>
+</li>
+<li><p><strong>kracount</strong> - KRA 证书计数</p>
+</li>
+<li><p><strong>kraused</strong> - KRA 证书已用计数</p>
+</li>
+<li><p><strong>propidmax</strong> - 最大 CA PropId</p>
+</li>
+<li><p><strong>certstate <code>[index]</code></strong> - CA 证书</p>
+</li>
+<li><p><strong>certversion <code>[index]</code></strong> - CA 证书版本</p>
+</li>
+<li><p><strong>certstatuscode <code>[index]</code></strong> - CA 证书验证状态</p>
+</li>
+<li><p><strong>crlstate <code>[index]</code></strong> - CRL</p>
+</li>
+<li><p><strong>krastate <code>[index]</code></strong> - KRA 证书</p>
+</li>
+<li><p><strong>crossstate+ <code>[index]</code></strong> - 转发交叉证书</p>
+</li>
+<li><p><strong>crossstate- <code>[index]</code></strong> - 向后交叉证书</p>
+</li>
+<li><p><strong>证书 <code>[index]</code></strong> - CA 证书</p>
+</li>
+<li><p><strong>证书链 <code>[index]</code></strong> - CA 证书链</p>
+</li>
+<li><p><strong>certcrlchain <code>[index]</code></strong> - 包含 CRL 的 CA 证书链</p>
+</li>
+<li><p><strong>xchg <code>[index]</code></strong> - CA 交换证书</p>
+</li>
+<li><p><strong>xchgchain <code>[index]</code></strong> - CA 交换证书链</p>
+</li>
+<li><p><strong>xchgcrlchain <code>[index]</code></strong> - CA 交换证书链与 CRL</p>
+</li>
+<li><p><strong>kra <code>[index]</code></strong> - KRA 证书</p>
+</li>
+<li><p><strong>cross+ <code>[index]</code></strong> - 转发交叉证书</p>
+</li>
+<li><p><strong>cross- <code>[index]</code></strong> - 向后交叉证书</p>
+</li>
+<li><p><strong>CRL <code>[index]</code></strong> - 基本 CRL</p>
+</li>
+<li><p><strong>deltacrl <code>[index]</code></strong> - Delta CRL</p>
+</li>
+<li><p><strong>crlstatus <code>[index]</code></strong> - CRL 发布状态</p>
+</li>
+<li><p><strong>deltacrlstatus <code>[index]</code></strong> - 增量 CRL 发布状态</p>
+</li>
+<li><p><strong>dns</strong> - DNS 名称</p>
+</li>
+<li><p><strong>role - 角色</strong> 分离</p>
+</li>
+<li><p><strong>广告</strong> - 高级服务器</p>
+</li>
+<li><p><strong>模板 - 模板</strong></p>
+</li>
+<li><p><strong>Csp <code>[index]</code></strong> - OCSP URL</p>
+</li>
+<li><p><strong>友邦 保险 <code>[index]</code></strong> - AIA URL</p>
+</li>
+<li><p><strong>Cdp <code>[index]</code></strong> - CDP URL</p>
+</li>
+<li><p><strong>localename</strong> - CA 区域设置名称</p>
+</li>
+<li><p><strong>subjecttemplateoids</strong> - 主题模板 OID</p>
+</li>
+<li><p><strong>*</strong> - 显示所有属性</p>
+</li>
+</ul>
+</li>
+<li><p><strong>索引</strong> 是可选的从零开始的属性索引。</p>
+</li>
+<li><p><strong>errorcode</strong> 是数值错误代码。</p>
+</li>
+</ul>
+<pre><code>[-f] [-split] [-config Machine\CAName]
+</code></pre>
+<h3 id="-cacert">-ca.cert</h3>
+<p>检索证书颁发机构的证书。</p>
+<pre><code>certutil [options] -ca.cert outcacertfile [index]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>outcacertfile</strong> 是输出文件。</p>
+</li>
+<li><p><strong>索引</strong> 是 CA 证书续订索引， (默认为最新的) 。</p>
+</li>
+</ul>
+<pre><code>[-f] [-split] [-config Machine\CAName]
+</code></pre>
+<h3 id="-cachain">-ca.chain</h3>
+<p>检索证书颁发机构的证书链。</p>
+<pre><code>certutil [options] -ca.chain outcacertchainfile [index]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>outcacertchainfile</strong> 是输出文件。</p>
+</li>
+<li><p><strong>索引</strong> 是 CA 证书续订索引， (默认为最新的) 。</p>
+</li>
+</ul>
+<pre><code>[-f] [-split] [-config Machine\CAName]
+</code></pre>
+<h3 id="-getcrl">-getcrl</h3>
+<p>获取 CRL)  (证书吊销列表。</p>
+<pre><code>certutil [options] -getcrl outfile [index] [delta]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>index</strong> 是 CRL 索引或键索引， (最近键) 默认为 CRL。</p>
+</li>
+<li><p><strong>delta 是增量</strong> CRL (默认值为基 CRL) 。</p>
+</li>
+</ul>
+<pre><code>[-f] [-split] [-config Machine\CAName]
+</code></pre>
+<h3 id="-crl">-crl</h3>
+<p>发布新的证书吊销列表 (CRL) 或增量 CRL。</p>
+<pre><code>certutil [options] -crl [dd:hh | republish] [delta]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>dd：hh</strong> 是新的 CRL 有效期（以天和小时为单位）。</p>
+</li>
+<li><p><strong>重新发布</strong> 最新 CRL。</p>
+</li>
+<li><p><strong>增量</strong> 仅发布增量 CRL， (默认值为基数，增量 CRL) 。</p>
+</li>
+</ul>
+<pre><code>[-split] [-config Machine\CAName]
+</code></pre>
+<h3 id="-shutdown">-shutdown</h3>
+<p>关闭 Active Directory 证书服务。</p>
+<pre><code>certutil [options] -shutdown
+</code></pre>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-installcert">-installcert</h3>
+<p>安装证书颁发机构证书。</p>
+<pre><code>certutil [options] -installcert [cacertfile]
+</code></pre>
+<pre><code>[-f] [-silent] [-config Machine\CAName]
+</code></pre>
+<h3 id="-renewcert">-renewcert</h3>
+<p>续订证书颁发机构证书。</p>
+<pre><code>certutil [options] -renewcert [reusekeys] [Machine\ParentCAName]
+</code></pre>
+<ul>
+<li>用于 <code>-f</code> 忽略未完成的续订请求并生成新请求。</li>
+</ul>
+<pre><code>[-f] [-silent] [-config Machine\CAName]
+</code></pre>
+<h3 id="-schema">-schema</h3>
+<p>转储证书的架构。</p>
+<pre><code>certutil [options] -schema [ext | attrib | cRL]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p>该命令默认为“请求”和“证书”表。</p>
+</li>
+<li><p><strong>ext</strong> 是扩展表。</p>
+</li>
+<li><p><strong>属性</strong> 是属性表。</p>
+</li>
+<li><p><strong>crl 是 CRL</strong> 表。</p>
+</li>
+</ul>
+<pre><code>[-split] [-config Machine\CAName]
+</code></pre>
+<h3 id="-view">-view</h3>
+<p>转储证书视图。</p>
+<pre><code>certutil [options] -view [queue | log | logfail | revoked | ext | attrib | crl] [csv]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>队列</strong> 会转储特定的请求队列。</p>
+</li>
+<li><p><strong>日志</strong> 会转储已颁发或吊销的证书，以及任何失败的请求。</p>
+</li>
+<li><p><strong>logfail</strong> 转储失败的请求。</p>
+</li>
+<li><p><strong>已吊销</strong> 的转储已吊销的证书。</p>
+</li>
+<li><p><strong>ext</strong> 转储扩展表。</p>
+</li>
+<li><p><strong>属性</strong> 转储属性表。</p>
+</li>
+<li><p><strong>crl</strong> 转储 CRL 表。</p>
+</li>
+<li><p><strong>csv</strong> 使用逗号分隔的值提供输出。</p>
+</li>
+</ul>
+<pre><code>[-silent] [-split] [-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
+</code></pre>
+<h4 id="remarks-2">注解</h4>
+<ul>
+<li><p>若要显示所有条目的 <strong>StatusCode</strong> 列，请键入 <code>-out StatusCode</code></p>
+</li>
+<li><p>若要显示最后一个条目的所有列，请键入： <code>-restrict RequestId==$</code></p>
+</li>
+<li><p>若要显示三个请求的 <strong>RequestID</strong> 和 <strong>处置</strong> ，请键入： <code>-restrict requestID&gt;37,requestID&lt;40 -out requestID,disposition</code></p>
+</li>
+<li><p>若要显示所有基 CRL 的行 <strong>ID</strong> 和 <strong>CRL 编号</strong> ，请键入： <code>-restrict crlminbase=0 -out crlrowID,crlnumber crl</code></p>
+</li>
+<li><p>若要显示，请键入： <code>-v -restrict crlminbase=0,crlnumber=3 -out crlrawcrl crl</code></p>
+</li>
+<li><p>若要显示整个 CRL 表，请键入： <code>CRL</code></p>
+</li>
+<li><p>用于 <code>Date[+|-dd:hh]</code> 日期限制。</p>
+</li>
+<li><p>用于 <code>now+dd:hh</code> 相对于当前时间的日期。</p>
+</li>
+</ul>
+<h3 id="-db">-db</h3>
+<p>转储原始数据库。</p>
+<pre><code>certutil [options] -db
+</code></pre>
+<pre><code>[-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
+</code></pre>
+<h3 id="-deleterow">-deleterow</h3>
+<p>从服务器数据库中删除行。</p>
+<pre><code>certutil [options] -deleterow rowID | date [request | cert | ext | attrib | crl]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>请求</strong> 根据提交日期删除失败和挂起的请求。</p>
+</li>
+<li><p><strong>证书</strong> 根据到期日期删除已过期和吊销的证书。</p>
+</li>
+<li><p><strong>ext</strong> 删除扩展表。</p>
+</li>
+<li><p><strong>属性</strong> 将删除属性表。</p>
+</li>
+<li><p><strong>crl</strong> 删除 CRL 表。</p>
+</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName]
+</code></pre>
+<h4 id="examples">示例</h4>
+<ul>
+<li><p>若要删除在 2001 年 1 月 22 日之前提交的失败和挂起请求，请键入： <code>1/22/2001 request</code></p>
+</li>
+<li><p>若要删除到 2001 年 1 月 22 日到期的所有证书，请键入： <code>1/22/2001 cert</code></p>
+</li>
+<li><p>若要删除 RequestID 37 的证书行、属性和扩展，请键入： <code>37</code></p>
+</li>
+<li><p>若要删除 2001 年 1 月 22 日到期的 CRL，请键入： <code>1/22/2001 crl</code></p>
+</li>
+</ul>
+<h3 id="-backup">-backup</h3>
+<p>备份 Active Directory 证书服务。</p>
+<pre><code>certutil [options] -backup backupdirectory [incremental] [keeplog]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>backupdirectory</strong> 是用于存储备份数据的目录。</p>
+</li>
+<li><p><strong>增量</strong> 仅执行增量备份， (默认值为完整备份) 。</p>
+</li>
+<li><p><strong>keeplog</strong> 保留数据库日志文件 (默认值为截断日志文件) 。</p>
+</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName] [-p Password]
+</code></pre>
+<h3 id="-backupdb">-backupdb</h3>
+<p>备份 Active Directory 证书服务数据库。</p>
+<pre><code>certutil [options] -backupdb backupdirectory [incremental] [keeplog]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>backupdirectory</strong> 是用于存储备份的数据库文件的目录。</p>
+</li>
+<li><p><strong>增量</strong> 仅执行增量备份， (默认值为完整备份) 。</p>
+</li>
+<li><p><strong>keeplog</strong> 保留数据库日志文件 (默认值为截断日志文件) 。</p>
+</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName]
+</code></pre>
+<h3 id="-backupkey">-backupkey</h3>
+<p>备份 Active Directory 证书服务证书和私钥。</p>
+<pre><code>certutil [options] -backupkey backupdirectory
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><strong>backupdirectory</strong> 是用于存储备份的 PFX 文件的目录。</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName] [-p password] [-t timeout]
+</code></pre>
+<h3 id="-restore">-restore</h3>
+<p>还原 Active Directory 证书服务。</p>
+<pre><code>certutil [options] -restore backupdirectory
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><strong>backupdirectory</strong> 是包含要还原的数据的目录。</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName] [-p password]
+</code></pre>
+<h3 id="-restoredb">-restoredb</h3>
+<p>还原 Active Directory 证书服务数据库。</p>
+<pre><code>certutil [options] -restoredb backupdirectory
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><strong>backupdirectory</strong> 是包含要还原的数据库文件的目录。</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName]
+</code></pre>
+<h3 id="-restorekey">-restorekey</h3>
+<p>还原 Active Directory 证书服务证书和私钥。</p>
+<pre><code>certutil [options] -restorekey backupdirectory | pfxfile
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><strong>backupdirectory</strong> 是包含要还原的 PFX 文件的目录。</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName] [-p password]
+</code></pre>
+<h3 id="-importpfx">-importpfx</h3>
+<p>导入证书和私钥。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+<pre><code>certutil [options] -importpfx [certificatestorename] pfxfile [modifiers]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储区的名称。</p>
+</li>
+<li><p><strong>修饰符</strong> 是逗号分隔的列表，可以包含以下一个或多个列表：</p>
+<ol>
+<li><p><strong>AT_SIGNATURE</strong> - 将 keyspec 更改为签名</p>
+</li>
+<li><p><strong>AT_KEYEXCHANGE</strong> - 将 keyspec 更改为密钥交换</p>
+</li>
+<li><p><strong>NoExport</strong> - 使私钥不可导出</p>
+</li>
+<li><p><strong>NoCert</strong> - 不导入证书</p>
+</li>
+<li><p><strong>NoChain</strong> - 不导入证书链</p>
+</li>
+<li><p><strong>NoRoot</strong> - 不导入根证书</p>
+</li>
+<li><p><strong>保护</strong> - 使用密码保护密钥</p>
+</li>
+<li><p><strong>NoProtect</strong> - 不使用密码保护密钥</p>
+</li>
+</ol>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-p password] [-csp provider]
+</code></pre>
+<h4 id="remarks-3">注解</h4>
+<ul>
+<li>默认为个人计算机存储。</li>
+</ul>
+<h3 id="-dynamicfilelist">-dynamicfilelist</h3>
+<p>显示动态文件列表。</p>
+<pre><code>certutil [options] -dynamicfilelist
+</code></pre>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-databaselocations">-databaselocations</h3>
+<p>显示数据库位置。</p>
+<pre><code>certutil [options] -databaselocations
+</code></pre>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-hashfile">-hashfile</h3>
+<p>通过文件生成并显示加密哈希。</p>
+<pre><code>certutil [options] -hashfile infile [hashalgorithm]
+</code></pre>
+<h3 id="-store">-store</h3>
+<p>转储证书存储。</p>
+<pre><code>certutil [options] -store [certificatestorename [certID [outputfile]]]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储名称。 例如：</p>
+<ul>
+<li><p><code>My, CA (default), Root,</code></p>
+</li>
+<li><p><code>ldap:///CN=Certification Authorities,CN=Public Key Services,CN=Services,CN=Configuration,DC=cpandl,DC=com?cACertificate?one?objectClass=certificationAuthority (View Root Certificates)</code></p>
+</li>
+<li><p><code>ldap:///CN=CAName,CN=Certification Authorities,CN=Public Key Services,CN=Services,CN=Configuration,DC=cpandl,DC=com?cACertificate?base?objectClass=certificationAuthority (Modify Root Certificates)</code></p>
+</li>
+<li><p><code>ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services,CN=Services,CN=Configuration,DC=cpandl,DC=com?certificateRevocationList?base?objectClass=cRLDistributionPoint (View CRLs)</code></p>
+</li>
+<li><p><code>ldap:///CN=NTAuthCertificates,CN=Public Key Services,CN=Services,CN=Configuration,DC=cpandl,DC=com?cACertificate?base?objectClass=certificationAuthority (Enterprise CA Certificates)</code></p>
+</li>
+<li><p><code>ldap: (AD computer object certificates)</code></p>
+</li>
+<li><p><code>-user ldap: (AD user object certificates)</code></p>
+</li>
+</ul>
+</li>
+<li><p><strong>certID</strong> 是证书或 CRL 匹配令牌。 这可以是序列号、SHA-1 证书、CRL、CTL 或公钥哈希、数字证书索引 (0、1 等) 、数字 CRL 索引 (.0、.1 等，) 为数字 CTL 索引 (。0, ..1 等，例如) 、公钥、签名或扩展 ObjectId、证书使用者公用名、电子邮件地址、UPN 或 DNS 名称、密钥容器名称或 CSP 名称、模板名称或 ObjectId、EKU 或应用程序策略 ObjectId 或 CRL 颁发者公用名。 其中许多可能会导致多个匹配。</p>
+</li>
+<li><p><strong>outputfile</strong> 是用于保存匹配证书的文件。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-enterprise] [-service] [-grouppolicy] [-silent] [-split] [-dc DCName]
+</code></pre>
+<h4 id="options">选项</h4>
+<ul>
+<li><p>该 <code>-user</code> 选项访问用户存储而不是计算机存储。</p>
+</li>
+<li><p>该 <code>-enterprise</code> 选项访问计算机企业存储。</p>
+</li>
+<li><p>该 <code>-service</code> 选项访问计算机服务存储。</p>
+</li>
+<li><p>该 <code>-grouppolicy</code> 选项访问计算机组策略存储。</p>
+</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li><p><code>-enterprise NTAuth</code></p>
+</li>
+<li><p><code>-enterprise Root 37</code></p>
+</li>
+<li><p><code>-user My 26e0aaaf000000000004</code></p>
+</li>
+<li><p><code>CA .11</code></p>
+</li>
+</ul>
+<h3 id="-addstore">-addstore</h3>
+<p>向存储区添加证书。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+<pre><code>certutil [options] -addstore certificatestorename infile
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储名称。</p>
+</li>
+<li><p><strong>infile</strong> 是要添加到存储的证书或 CRL 文件。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-enterprise] [-grouppolicy] [-dc DCName]
+</code></pre>
+<h3 id="-delstore">-delstore</h3>
+<p>从存储区中删除证书。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+<pre><code>certutil [options] -delstore certificatestorename certID
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储名称。</p>
+</li>
+<li><p><strong>certID</strong> 是证书或 CRL 匹配令牌。</p>
+</li>
+</ul>
+<pre><code>[-enterprise] [-user] [-grouppolicy] [-dc DCName]
+</code></pre>
+<h3 id="-verifystore">-verifystore</h3>
+<p>验证存储区中的证书。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+<pre><code>certutil [options] -verifystore certificatestorename [certID]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储名称。</p>
+</li>
+<li><p><strong>certID</strong> 是证书或 CRL 匹配令牌。</p>
+</li>
+</ul>
+<pre><code>[-enterprise] [-user] [-grouppolicy] [-silent] [-split] [-dc DCName] [-t timeout]
+</code></pre>
+<h3 id="-repairstore">-repairstore</h3>
+<p>修复密钥关联或更新证书属性或密钥安全描述符。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+<pre><code>certutil [options] -repairstore certificatestorename certIDlist [propertyinffile | SDDLsecuritydescriptor]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储名称。</p>
+</li>
+<li><p><strong>certIDlist</strong> 是证书或 CRL 匹配令牌的逗号分隔列表。 有关详细信息，请参阅 <code>-store certID</code> 本文中的说明。</p>
+</li>
+<li><p><strong>propertyinffile</strong> 是包含外部属性的 INF 文件，包括：</p>
+<pre><code>[Properties]
+    19 = Empty ; Add archived property, OR:
+    19 =       ; Remove archived property
+
+    11 = {text}Friendly Name ; Add friendly name property
+
+    127 = {hex} ; Add custom hexadecimal property
+        _continue_ = 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+        _continue_ = 10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f
+
+    2 = {text} ; Add Key Provider Information property
+      _continue_ = Container=Container Name&amp;
+      _continue_ = Provider=Microsoft Strong Cryptographic Provider&amp;
+      _continue_ = ProviderType=1&amp;
+      _continue_ = Flags=0&amp;
+      _continue_ = KeySpec=2
+
+    9 = {text} ; Add Enhanced Key Usage property
+      _continue_ = 1.3.6.1.5.5.7.3.2,
+      _continue_ = 1.3.6.1.5.5.7.3.1,
+</code></pre>
+</li>
+</ul>
+<pre><code>[-f] [-enterprise] [-user] [-grouppolicy] [-silent] [-split] [-csp provider]
+</code></pre>
+<h3 id="-viewstore">-viewstore</h3>
+<p>转储证书存储。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+<pre><code>certutil [options] -viewstore [certificatestorename [certID [outputfile]]]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储名称。</p>
+</li>
+<li><p><strong>certID</strong> 是证书或 CRL 匹配令牌。</p>
+</li>
+<li><p><strong>outputfile</strong> 是用于保存匹配证书的文件。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-enterprise] [-service] [-grouppolicy] [-dc DCName]
+</code></pre>
+<h4 id="options-1">选项</h4>
+<ul>
+<li><p>该 <code>-user</code> 选项访问用户存储而不是计算机存储。</p>
+</li>
+<li><p>该 <code>-enterprise</code> 选项访问计算机企业存储。</p>
+</li>
+<li><p>该 <code>-service</code> 选项访问计算机服务存储。</p>
+</li>
+<li><p>该 <code>-grouppolicy</code> 选项访问计算机组策略存储。</p>
+</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li><p><code>-enterprise NTAuth</code></p>
+</li>
+<li><p><code>-enterprise Root 37</code></p>
+</li>
+<li><p><code>-user My 26e0aaaf000000000004</code></p>
+</li>
+<li><p><code>CA .11</code></p>
+</li>
+</ul>
+<h3 id="-viewdelstore">-viewdelstore</h3>
+<p>从存储区中删除证书。</p>
+<pre><code>certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>certificatestorename</strong> 是证书存储名称。</p>
+</li>
+<li><p><strong>certID</strong> 是证书或 CRL 匹配令牌。</p>
+</li>
+<li><p><strong>outputfile</strong> 是用于保存匹配证书的文件。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-enterprise] [-service] [-grouppolicy] [-dc DCName]
+</code></pre>
+<h4 id="options-2">选项</h4>
+<ul>
+<li><p>此选项 <code>-user</code> 访问用户存储而不是计算机存储。</p>
+</li>
+<li><p>此选项 <code>-enterprise</code> 访问计算机企业存储。</p>
+</li>
+<li><p>此选项 <code>-service</code> 访问计算机服务存储。</p>
+</li>
+<li><p>该 <code>-grouppolicy</code> 选项访问计算机组策略存储。</p>
+</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li><p><code>-enterprise NTAuth</code></p>
+</li>
+<li><p><code>-enterprise Root 37</code></p>
+</li>
+<li><p><code>-user My 26e0aaaf000000000004</code></p>
+</li>
+<li><p><code>CA .11</code></p>
+</li>
+</ul>
+<h3 id="-dspublish">-dspublish</h3>
+<p>将证书或证书吊销列表 (CRL) 发布到 Active Directory。</p>
+<pre><code>certutil [options] -dspublish certfile [NTAuthCA | RootCA | SubCA | CrossCA | KRA | User | Machine]
+</code></pre>
+<pre><code>certutil [options] -dspublish CRLfile [DSCDPContainer [DSCDPCN]]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>证书文件</strong> 是要发布的证书文件的名称。</p>
+</li>
+<li><p><strong>NTAuthCA</strong> 将证书发布到 DS Enterprise存储。</p>
+</li>
+<li><p><strong>RootCA</strong> 将证书发布到 DS 受信任的根存储。</p>
+</li>
+<li><p><strong>SubCA</strong> 将 CA 证书发布到 DS CA 对象。</p>
+</li>
+<li><p><strong>CrossCA</strong> 将跨证书发布到 DS CA 对象。</p>
+</li>
+<li><p><strong>KRA</strong> 将证书发布到 DS 密钥恢复代理对象。</p>
+</li>
+<li><p><strong>用户</strong> 将证书发布到 User DS 对象。</p>
+</li>
+<li><p><strong>计算机</strong> 将证书发布到 Machine DS 对象。</p>
+</li>
+<li><p><strong>CRLfile</strong> 是要发布的 CRL 文件的名称。</p>
+</li>
+<li><p><strong>DSCDPContainer</strong> 是 DS CDP 容器 CN，通常是 CA 计算机名称。</p>
+</li>
+<li><p><strong>DSCDPCN</strong> 是 DS CDP 对象 CN，通常基于清理的 CA 短名称和密钥索引。</p>
+</li>
+<li><p>用于 <code>-f</code> 创建新的 DS 对象。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-dc DCName]
+</code></pre>
+<h3 id="-adtemplate">-adtemplate</h3>
+<p>显示 Active Directory 模板。</p>
+<pre><code>certutil [options] -adtemplate [template]
+</code></pre>
+<pre><code>[-f] [-user] [-ut] [-mt] [-dc DCName]
+</code></pre>
+<h3 id="-template">-template</h3>
+<p>显示证书模板。</p>
+<pre><code>certutil [options] -template [template]
+</code></pre>
+<pre><code>[-f] [-user] [-silent] [-policyserver URLorID] [-anonymous] [-kerberos] [-clientcertificate clientcertID] [-username username] [-p password]
+</code></pre>
+<h3 id="-templatecas">-templatecas</h3>
+<p>显示证书模板的证书颁发机构 (CA) 。</p>
+<pre><code>certutil [options] -templatecas template
+</code></pre>
+<pre><code>[-f] [-user] [-dc DCName]
+</code></pre>
+<h3 id="-catemplates">-catemplates</h3>
+<p>显示证书颁发机构的模板。</p>
+<pre><code>certutil [options] -catemplates [template]
+</code></pre>
+<pre><code>[-f] [-user] [-ut] [-mt] [-config Machine\CAName] [-dc DCName]
+</code></pre>
+<h3 id="-setcasites">-setcasites</h3>
+<p>管理站点名称，包括设置、验证和删除证书颁发机构站点名称</p>
+<pre><code>certutil [options] -setcasites [set] [sitename]
+certutil [options] -setcasites verify [sitename]
+certutil [options] -setcasites delete
+</code></pre>
+<p>其中：</p>
+<ul>
+<li>仅当面向单个证书颁发机构时，才允许 <strong>sitename</strong>。</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName] [-dc DCName]
+</code></pre>
+<h4 id="remarks-4">注解</h4>
+<ul>
+<li><p>此选项 <code>-config</code> 面向单个证书颁发机构 (默认值为所有 CA) 。</p>
+</li>
+<li><p>此选项 <code>-f</code> 可用于替代指定 <strong>站点名称</strong> 的验证错误或删除所有 CA 站点名。</p>
+</li>
+</ul>
+<div class="NOTE">
+<p>注意</p>
+<p>有关为 Active Directory 域服务 (AD DS) 站点感知配置 CA 的详细信息，请参阅 <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)" data-linktype="absolute-path">AD DS 站点感知 AD CS 和 PKI 客户端</a>。</p>
+</div>
+<h3 id="-enrollmentserverurl">-enrollmentserverURL</h3>
+<p>显示、添加或删除与 CA 关联的注册服务器 URL。</p>
+<pre><code>certutil [options] -enrollmentServerURL [URL authenticationtype [priority] [modifiers]]
+certutil [options] -enrollmentserverURL URL delete
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>authenticationtype</strong> 指定以下客户端身份验证方法之一，同时添加 URL：</p>
+<ol>
+<li><p><strong>kerberos</strong> - 使用 Kerberos SSL 凭据。</p>
+</li>
+<li><p><strong>用户名</strong> - 对 SSL 凭据使用命名帐户。</p>
+</li>
+<li><p><strong>clientcertificate</strong>： - 使用 X.509 证书 SSL 凭据。</p>
+</li>
+<li><p><strong>匿名</strong> - 使用匿名 SSL 凭据。</p>
+</li>
+</ol>
+</li>
+<li><p><strong>删除</strong> 与 CA 关联的指定 URL。</p>
+</li>
+<li><p><strong>在</strong> 添加 URL 时，优先级默认为 <code>1</code> 未指定。</p>
+</li>
+<li><p><strong>修饰符</strong> 是逗号分隔的列表，其中包括一个或多个以下内容：</p>
+</li>
+</ul>
+<ol>
+<li><p><strong>allowrenewalsonly</strong> - 只能通过此 URL 提交到此 CA 的续订请求。</p>
+</li>
+<li><p><strong>allowkeybasedrenewal</strong> - 允许使用 AD 中没有关联帐户的证书。 这仅适用于 clientcertificate 和 allowrenewalsonly Mode</p>
+</li>
+</ol>
+<pre><code>[-config Machine\CAName] [-dc DCName]
+</code></pre>
+<h3 id="-adca">-adca</h3>
+<p>显示 Active Directory 证书颁发机构。</p>
+<pre><code>certutil [options] -adca [CAName]
+</code></pre>
+<pre><code>[-f] [-split] [-dc DCName]
+</code></pre>
+<h3 id="-ca">-ca</h3>
+<p>显示注册策略证书颁发机构。</p>
+<pre><code>certutil [options] -CA [CAName | templatename]
+</code></pre>
+<pre><code>[-f] [-user] [-silent] [-split] [-policyserver URLorID] [-anonymous] [-kerberos] [-clientcertificate clientcertID] [-username username] [-p password]
+</code></pre>
+<h3 id="-policy">-policy</h3>
+<p>显示注册策略。</p>
+<pre><code>[-f] [-user] [-silent] [-split] [-policyserver URLorID] [-anonymous] [-kerberos] [-clientcertificate clientcertID] [-username username] [-p password]
+</code></pre>
+<h3 id="-policycache">-policycache</h3>
+<p>显示或删除注册策略缓存条目。</p>
+<pre><code>certutil [options] -policycache [delete]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>删除</strong> 策略服务器缓存条目。</p>
+</li>
+<li><p><strong>-f</strong> 删除所有缓存条目</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-policyserver URLorID]
+</code></pre>
+<h3 id="-credstore">-credstore</h3>
+<p>显示、添加或删除凭据存储条目。</p>
+<pre><code>certutil [options] -credstore [URL]
+certutil [options] -credstore URL add
+certutil [options] -credstore URL delete
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>URL</strong> 是目标 URL。 还可以用于 <code>*</code> 匹配所有条目或 <code>https://machine*</code> 匹配 URL 前缀。</p>
+</li>
+<li><p><strong>添加</strong> 凭据存储项。 使用此选项还需要使用 SSL 凭据。</p>
+</li>
+<li><p><strong>删除</strong> 凭据存储项。</p>
+</li>
+<li><p><strong>-f</strong> 覆盖单个条目或删除多个条目。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-silent] [-anonymous] [-kerberos] [-clientcertificate clientcertID] [-username username] [-p password]
+</code></pre>
+<h3 id="-installdefaulttemplates">-installdefaulttemplates</h3>
+<p>安装默认证书模板。</p>
+<pre><code>certutil [options] -installdefaulttemplates
+</code></pre>
+<pre><code>[-dc DCName]
+</code></pre>
+<h3 id="-urlcache">-URLcache</h3>
+<p>显示或删除 URL 缓存条目。</p>
+<pre><code>certutil [options] -URLcache [URL | CRL | * [delete]]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>URL</strong> 是缓存的 URL。</p>
+</li>
+<li><p><strong>CRL</strong> 仅在所有缓存的 CRL URL 上运行。</p>
+</li>
+<li><p><strong>*</strong> 对所有缓存的 URL 进行操作。</p>
+</li>
+<li><p><strong>从</strong> 当前用户的本地缓存中删除相关 URL。</p>
+</li>
+<li><p><strong>-f</strong> 强制提取特定 URL 并更新缓存。</p>
+</li>
+</ul>
+<pre><code>[-f] [-split]
+</code></pre>
+<h3 id="-pulse">-pulse</h3>
+<p>脉冲自动注册事件。</p>
+<pre><code>certutil [options] -pulse
+</code></pre>
+<pre><code>[-user]
+</code></pre>
+<h3 id="-machineinfo">-machineinfo</h3>
+<p>显示有关 Active Directory 计算机对象的信息。</p>
+<pre><code>certutil [options] -machineinfo domainname\machinename$
+</code></pre>
+<h3 id="-dcinfo">-DCInfo</h3>
+<p>显示有关域控制器的信息。 默认显示未验证的 DC 证书。</p>
+<pre><code>certutil [options] -DCInfo [domain] [verify | deletebad | deleteall]
+</code></pre>
+<pre><code>[-f] [-user] [-urlfetch] [-dc DCName] [-t timeout]
+</code></pre>
+<div class="TIP">
+<p>提示</p>
+<p>指定Active Directory 域服务 (AD DS) 域 <strong>[Domain]</strong> 以及指定域控制器 (<strong>-dc</strong>) 的功能已添加到Windows Server 2012中。 若要成功运行此命令，必须使用属于<strong>域管理员</strong>或<strong>Enterprise管理员成员的</strong>帐户。 此命令的行为修改如下所示：<ol><li>1.如果未指定域且未指定特定域控制器，则此选项返回要从默认域控制器处理的域控制器列表。</li><li>2.如果未指定域，但指定了域控制器，则会生成指定域控制器上的证书报告。</li><li>3.如果指定了域，但未指定域控制器，则会生成域控制器列表以及列表中每个域控制器的证书报告。</li><li>4.如果指定了域和域控制器，则会从目标域控制器生成域控制器列表。 还会生成列表中每个域控制器的证书报告。</li></ol></p>
+<p>例如，假设有一个名为 CPANDL 的域，其中包含名为 CPANDL-DC1 的域控制器。 可以运行以下命令，从 CPANDL-DC1 检索域控制器及其证书的列表： <code>certutil -dc cpandl-dc1 -DCInfo cpandl</code></p>
+</div>
+<h3 id="-entinfo">-entinfo</h3>
+<p>显示有关企业证书颁发机构的信息。</p>
+<pre><code>certutil [options] -entinfo domainname\machinename$
+</code></pre>
+<pre><code>[-f] [-user]
+</code></pre>
+<h3 id="-tcainfo">-tcainfo</h3>
+<p>显示有关证书颁发机构的信息。</p>
+<pre><code>certutil [options] -tcainfo [domainDN | -]
+</code></pre>
+<pre><code>[-f] [-enterprise] [-user] [-urlfetch] [-dc DCName] [-t timeout]
+</code></pre>
+<h3 id="-scinfo">-scinfo</h3>
+<p>显示有关智能卡的信息。</p>
+<pre><code>certutil [options] -scinfo [readername [CRYPT_DELETEKEYSET]]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><strong>CRYPT_DELETEKEYSET</strong> 删除智能卡上的所有密钥。</li>
+</ul>
+<pre><code>[-silent] [-split] [-urlfetch] [-t timeout]
+</code></pre>
+<h3 id="-scroots">-scroots</h3>
+<p>管理智能卡根证书。</p>
+<pre><code>certutil [options] -scroots update [+][inputrootfile] [readername]
+certutil [options] -scroots save \@in\\outputrootfile [readername]
+certutil [options] -scroots view [inputrootfile | readername]
+certutil [options] -scroots delete [readername]
+</code></pre>
+<pre><code>[-f] [-split] [-p Password]
+</code></pre>
+<h3 id="-verifykeys">-verifykeys</h3>
+<p>验证公钥或私钥集。</p>
+<pre><code>certutil [options] -verifykeys [keycontainername cacertfile]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>keycontainername</strong> 是密钥要验证的密钥容器名称。 此选项默认为计算机密钥。 若要切换到用户密钥，请使用 <code>-user</code>。</p>
+</li>
+<li><p><strong>cacertfile</strong> 对证书文件进行签名或加密。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-silent] [-config Machine\CAName]
+</code></pre>
+<h4 id="remarks-5">注解</h4>
+<ul>
+<li><p>如果未指定任何参数，则针对其私钥验证每个签名 CA 证书。</p>
+</li>
+<li><p>此操作只能针对本地 CA 或本地密钥执行。</p>
+</li>
+</ul>
+<h3 id="-verify">-verify</h3>
+<p>验证证书、证书吊销列表 (CRL) 或证书链。</p>
+<pre><code>certutil [options] -verify certfile [applicationpolicylist | - [issuancepolicylist]]
+certutil [options] -verify certfile [cacertfile [crossedcacertfile]]
+certutil [options] -verify CRLfile cacertfile [issuedcertfile]
+certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>证书文件</strong> 是要验证的证书的名称。</p>
+</li>
+<li><p><strong>applicationpolicylist</strong> 是必需应用程序策略 ObjectIds 的可选逗号分隔列表。</p>
+</li>
+<li><p><strong>issuancepolicylist</strong> 是必需颁发策略 ObjectIds 的可选逗号分隔列表。</p>
+</li>
+<li><p><strong>cacertfile</strong> 是可选的颁发 CA 证书，用于验证该证书。</p>
+</li>
+<li><p><strong>crossedcacertfile</strong> 是证书 <strong>文件</strong>交叉认证的可选证书。</p>
+</li>
+<li><p><strong>CRLfile</strong> 是用于验证 <strong>cacertfile</strong> 的 CRL 文件。</p>
+</li>
+<li><p><strong>issuedcertfile</strong> 是 CRLfile 涵盖的可选颁发的证书。</p>
+</li>
+<li><p><strong>deltaCRLfile</strong> 是可选的增量 CRL 文件。</p>
+</li>
+</ul>
+<pre><code>[-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t timeout]
+</code></pre>
+<h4 id="remarks-6">注解</h4>
+<ul>
+<li><p>使用 <strong>applicationpolicylist</strong> 将链生成限制为仅对指定的应用程序策略有效的链。</p>
+</li>
+<li><p>使用 <strong>颁发策略将</strong> 链生成限制为仅对指定颁发策略有效的链。</p>
+</li>
+<li><p>使用 <strong>cacertfile</strong> 针对 <strong>certfile</strong> 或 <strong>CRLfile</strong> 验证文件中的字段。</p>
+</li>
+<li><p>使用 <strong>issuedcertfile</strong> 验证文件中针对 <strong>CRLfile</strong> 的字段。</p>
+</li>
+<li><p>使用 deltaCRLfile 会针对 <strong>证书文件</strong>验证文件中的字段。</p>
+</li>
+<li><p>如果未指定 <strong>cacertfile</strong> ，则会根据 <strong>证书文件</strong>生成并验证整个链。</p>
+</li>
+<li><p>如果同时指定 <strong>cacertfile</strong> 和 <strong>crossedcacertfile</strong> ，则针对 <strong>证书文件</strong>验证这两个文件中的字段。</p>
+</li>
+</ul>
+<h3 id="-verifyctl">-verifyCTL</h3>
+<p>验证 AuthRoot 或不允许的证书 CTL。</p>
+<pre><code>certutil [options] -verifyCTL CTLobject [certdir] [certfile]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>CTLobject</strong> 标识要验证的 CTL，包括：</p>
+<ul>
+<li><p><strong>AuthRootWU</strong> - 从 URL 缓存中读取 AuthRoot CAB 和匹配的证书。 改用<code>-f</code>从Windows 更新下载。</p>
+</li>
+<li><p><strong>不允许的WU</strong> - 从 URL 缓存读取不允许的证书 CAB 和不允许的证书存储文件。 改用<code>-f</code>从Windows 更新下载。</p>
+</li>
+<li><p><strong>AuthRoot</strong> - 读取注册表缓存的 AuthRoot CTL。 与不受信任的<strong>证书文件</strong>一起使用<code>-f</code>，以强制注册表缓存的身份验证根和不允许的证书 CCL 进行更新。</p>
+</li>
+<li><p><strong>不允许</strong> - 读取注册表缓存的不允许证书 CTL。 与不受信任的<strong>证书文件</strong>一起使用<code>-f</code>，以强制注册表缓存的身份验证根和不允许的证书 CCL 进行更新。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>CTLfilename</strong> 指定 CTL 或 CAB 文件的文件或 http 路径。</p>
+</li>
+<li><p><strong>certdir</strong> 指定包含与 CTL 条目匹配的证书的文件夹。 默认为 <strong>与 CTLobject</strong> 相同的文件夹或网站。 使用 http 文件夹路径需要在末尾使用路径分隔符。 如果未指定 <strong>AuthRoot</strong> 或 <strong>不允许</strong>，则会搜索多个位置来查找匹配的证书，包括本地证书存储、crypt32.dll资源和本地 URL 缓存。 用于<code>-f</code>根据需要从Windows 更新下载。</p>
+</li>
+<li><p><strong>证书文件</strong> 指定要验证的证书 () 。 证书与 CTL 条目匹配，显示结果。 此选项禁止大多数默认输出。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-split]
+</code></pre>
+<h3 id="-sign">-sign</h3>
+<p> (CRL) 或证书重新签名证书吊销列表。</p>
+<pre><code>certutil [options] -sign infilelist | serialnumber | CRL outfilelist [startdate+dd:hh] [+serialnumberlist | -serialnumberlist | -objectIDlist | \@extensionfile]
+certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgorithm] [+alternatesignaturealgorithm | -alternatesignaturealgorithm]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>infilelist</strong> 是证书或 CRL 文件的逗号分隔列表，用于修改和重新签名。</p>
+</li>
+<li><p><strong>serialnumber</strong> 是要创建的证书的序列号。 有效期和其他选项不能存在。</p>
+</li>
+<li><p><strong>CRL</strong> 创建空 CRL。 有效期和其他选项不能存在。</p>
+</li>
+<li><p><strong>outfilelist</strong> 是修改的证书或 CRL 输出文件的逗号分隔列表。 文件数必须与文件列表匹配。</p>
+</li>
+<li><p><strong>startdate+dd：hh</strong> 是证书或 CRL 文件的新有效期，包括：</p>
+<ul>
+<li><p>可选日期加上</p>
+</li>
+<li><p>可选天数和小时有效期</p>
+</li>
+</ul>
+<p>如果同时指定了两者，则必须使用加号 (+) 分隔符。 用于 <code>now[+dd:hh]</code> 从当前时间开始。 用于 <code>never</code> 仅) CRL 没有过期日期 (。</p>
+</li>
+<li><p><strong>serialnumberlist</strong> 是要添加或删除的文件的逗号分隔序列号列表。</p>
+</li>
+<li><p><strong>objectIDlist</strong> 是要删除的文件的逗号分隔扩展 ObjectId 列表。</p>
+</li>
+<li><p><strong>@extensionfile</strong> 是包含要更新或删除的扩展名的 INF 文件。 例如：</p>
+<pre><code>[Extensions]
+    2.5.29.31 = ; Remove CRL Distribution Points extension
+    2.5.29.15 = {hex} ; Update Key Usage extension
+    _continue_=03 02 01 86
+</code></pre>
+</li>
+<li><p><strong>hashalgorithm</strong> 是哈希算法的名称。 这只能是符号前面 <code>#</code> 的文本。</p>
+</li>
+<li><p><strong>alternatesignaturealgorithm</strong> 是备用签名算法说明符。</p>
+</li>
+</ul>
+<pre><code>[-nullsign] [-f] [-silent] [-cert certID]
+</code></pre>
+<h4 id="remarks-7">注解</h4>
+<ul>
+<li><p>使用减号 () 删除序列号和扩展。</p>
+</li>
+<li><p>使用加号 (+) 向 CRL 添加序列号。</p>
+</li>
+<li><p>可以使用列表同时从 CRL 中删除序列号和 ObjectID。</p>
+</li>
+<li><p>使用 <strong>alternatesignaturealgorithm</strong> 之前的减号，可以使用旧签名格式。 使用加号，可以使用备用签名格式。 如果未指定 <strong>alternatesignaturealgorithm</strong>，则使用证书或 CRL 中的签名格式。</p>
+</li>
+</ul>
+<h3 id="-vroot">-vroot</h3>
+<p>创建或删除 Web 虚拟根和文件共享。</p>
+<pre><code>certutil [options] -vroot [delete]
+</code></pre>
+<h3 id="-vocsproot">-vocsproot</h3>
+<p>为 OCSP Web 代理创建或删除 Web 虚拟根。</p>
+<pre><code>certutil [options] -vocsproot [delete]
+</code></pre>
+<h3 id="-addenrollmentserver">-addenrollmentserver</h3>
+<p>根据需要，为指定的证书颁发机构添加注册服务器应用程序和应用程序池。 此命令不安装二进制文件或包。</p>
+<pre><code>certutil [options] -addenrollmentserver kerberos | username | clientcertificate [allowrenewalsonly] [allowkeybasedrenewal]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>addenrollmentserver</strong> 要求对客户端连接到证书注册服务器使用身份验证方法，包括：</p>
+<ul>
+<li><p><strong>kerberos 使用 Kerberos</strong> SSL 凭据。</p>
+</li>
+<li><p><strong>用户名</strong> 使用命名帐户作为 SSL 凭据。</p>
+</li>
+<li><p><strong>clientcertificate</strong> 使用 X.509 证书 SSL 凭据。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>allowrenewalsonly</strong> 仅允许通过 URL 向证书颁发机构提交续订请求。</p>
+</li>
+<li><p><strong>allowkeybasedrenewal</strong> 允许在 Active Directory 中使用没有关联帐户的证书。 这适用于与 <strong>clientcertificate</strong> 和 <strong>allowrenewalsonly</strong> 模式一起使用。</p>
+</li>
+</ul>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-deleteenrollmentserver">-deleteenrollmentserver</h3>
+<p>如有必要，为指定的证书颁发机构删除注册服务器应用程序和应用程序池。 此命令不安装二进制文件或包。</p>
+<pre><code>certutil [options] -deleteenrollmentserver kerberos | username | clientcertificate
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>deleteenrollmentserver</strong> 要求对客户端连接到证书注册服务器使用身份验证方法，包括：</p>
+<ul>
+<li><p><strong>kerberos 使用 Kerberos</strong> SSL 凭据。</p>
+</li>
+<li><p><strong>用户名</strong> 使用命名帐户作为 SSL 凭据。</p>
+</li>
+<li><p><strong>clientcertificate</strong> 使用 X.509 证书 SSL 凭据。</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>[-config Machine\CAName]
+</code></pre>
+<h3 id="-addpolicyserver">-addpolicyserver</h3>
+<p>如有必要，请添加策略服务器应用程序和应用程序池。 此命令不安装二进制文件或包。</p>
+<pre><code>certutil [options] -addpolicyserver kerberos | username | clientcertificate [keybasedrenewal]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>addpolicyserver</strong> 要求对客户端连接到证书策略服务器使用身份验证方法，包括：</p>
+<ul>
+<li><p><strong>kerberos 使用 Kerberos</strong> SSL 凭据。</p>
+</li>
+<li><p><strong>用户名</strong> 使用命名帐户作为 SSL 凭据。</p>
+</li>
+<li><p><strong>clientcertificate</strong> 使用 X.509 证书 SSL 凭据。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>keybasedrenewal</strong> 允许使用返回给包含 keybasedrenewal 模板的客户端的策略。 此选项仅适用于 <strong>用户名</strong> 和 <strong>客户端证书</strong> 身份验证。</p>
+</li>
+</ul>
+<h3 id="-deletepolicyserver">-deletepolicyserver</h3>
+<p>如有必要，删除策略服务器应用程序和应用程序池。 此命令不会删除二进制文件或包。</p>
+<pre><code>certutil [options] -deletePolicyServer kerberos | username | clientcertificate [keybasedrenewal]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>deletepolicyserver</strong> 要求对客户端连接到证书策略服务器使用身份验证方法，包括：</p>
+<ul>
+<li><p><strong>kerberos 使用 Kerberos</strong> SSL 凭据。</p>
+</li>
+<li><p><strong>用户名</strong> 使用命名帐户作为 SSL 凭据。</p>
+</li>
+<li><p><strong>clientcertificate</strong> 使用 X.509 证书 SSL 凭据。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>keybasedrenewal</strong> 允许使用 KeyBasedRenewal 策略服务器。</p>
+</li>
+</ul>
+<h3 id="-oid">-oid</h3>
+<p>显示对象标识符或设置显示名称。</p>
+<pre><code>certutil [options] -oid objectID [displayname | delete [languageID [type]]]
+certutil [options] -oid groupID
+certutil [options] -oid agID | algorithmname [groupID]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>objectID</strong> 显示或添加显示名称。</p>
+</li>
+<li><p><strong>groupID</strong> 是 objectID 枚举的 groupID 数字 (十进制) 。</p>
+</li>
+<li><p><strong>algID</strong> 是 objectID 查找的十六进制 ID。</p>
+</li>
+<li><p><strong>algorithmname</strong> 是 objectID 查找的算法名称。</p>
+</li>
+<li><p><strong>displayname</strong> 显示要存储在 DS 中的名称。</p>
+</li>
+<li><p><strong>删除</strong> 删除显示名称。</p>
+</li>
+<li><p><strong>LanguageId</strong> 是语言 ID 值， (默认为当前：1033) 。</p>
+</li>
+<li><p><strong>类型</strong> 是要创建的 DS 对象的类型，包括：</p>
+<ul>
+<li><p><code>1</code> - 模板 (默认) </p>
+</li>
+<li><p><code>2</code> - 颁发策略</p>
+</li>
+<li><p><code>3</code> - 应用程序策略</p>
+</li>
+</ul>
+</li>
+<li><p><code>-f</code> 创建 DS 对象。</p>
+</li>
+</ul>
+<h3 id="-error">-error</h3>
+<p>显示与错误代码关联的消息文本。</p>
+<pre><code>certutil [options] -error errorcode
+</code></pre>
+<h3 id="-getreg">-getreg</h3>
+<p>显示注册表值。</p>
+<pre><code>certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]][registryvaluename]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>ca</strong> 使用证书颁发机构的注册表项。</p>
+</li>
+<li><p><strong>还原</strong> 使用证书颁发机构的还原注册表项。</p>
+</li>
+<li><p><strong>策略</strong> 使用策略模块的注册表项。</p>
+</li>
+<li><p><strong>exit</strong> 使用第一个退出模块的注册表项。</p>
+</li>
+<li><p><strong>模板</strong> 使用模板注册表项， (用于 <code>-user</code> 用户模板) 。</p>
+</li>
+<li><p><strong>enrollment</strong> 使用注册注册表项 (<code>-user</code> 用于用户上下文) 。</p>
+</li>
+<li><p><strong>chain</strong> 使用链配置注册表项。</p>
+</li>
+<li><p><strong>policyservers</strong> 使用策略服务器注册表项。</p>
+</li>
+<li><p><strong>progID</strong> 使用策略或退出模块的 ProgID (注册表子项名称) 。</p>
+</li>
+<li><p><strong>registryvaluename</strong> 使用注册表值名称 (用于 <code>Name*</code> 前缀匹配) 。</p>
+</li>
+<li><p><strong>值</strong> 使用新的数字、字符串或日期注册表值或文件名。 如果数值以 <code>+</code> 或开头 <code>-</code>，则新值中指定的位在现有注册表值中设置或清除。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-grouppolicy] [-config Machine\CAName]
+</code></pre>
+<h4 id="remarks-8">注解</h4>
+<ul>
+<li><p>如果字符串值以 <code>+</code> 或开头 <code>-</code>，并且现有值为 <code>REG_MULTI_SZ</code> 值，则字符串将添加到现有注册表值或从现有注册表值中删除。 若要强制创建 <code>REG_MULTI_SZ</code> 值，请 <code>\n</code> 添加到字符串值的末尾。</p>
+</li>
+<li><p>如果值开头 <code>\@</code>，则值的其余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其解析为 <code>[Date][+|-][dd:hh]</code> - 可选日期加上或减去可选天数和小时数。 如果同时指定两者，请使用加号 (+) 或减号 (-) 分隔符。 用于 <code>now+dd:hh</code> 相对于当前时间的日期。</p>
+</li>
+<li><p>用于 <code>chain\chaincacheresyncfiletime \@now</code> 有效刷新缓存的 CRL。</p>
+</li>
+</ul>
+<h3 id="-setreg">-setreg</h3>
+<p>设置注册表值。</p>
+<pre><code>certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]]registryvaluename value
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>ca</strong> 使用证书颁发机构的注册表项。</p>
+</li>
+<li><p><strong>还原</strong> 使用证书颁发机构的还原注册表项。</p>
+</li>
+<li><p><strong>策略</strong> 使用策略模块的注册表项。</p>
+</li>
+<li><p><strong>exit</strong> 使用第一个退出模块的注册表项。</p>
+</li>
+<li><p><strong>模板</strong> 使用模板注册表项， (用于 <code>-user</code> 用户模板) 。</p>
+</li>
+<li><p><strong>enrollment</strong> 使用注册注册表项 (<code>-user</code> 用于用户上下文) 。</p>
+</li>
+<li><p><strong>chain</strong> 使用链配置注册表项。</p>
+</li>
+<li><p><strong>policyservers</strong> 使用策略服务器注册表项。</p>
+</li>
+<li><p><strong>progID</strong> 使用策略或退出模块的 ProgID (注册表子项名称) 。</p>
+</li>
+<li><p><strong>registryvaluename</strong> 使用注册表值名称 (用于 <code>Name*</code> 前缀匹配) 。</p>
+</li>
+<li><p><strong>值</strong> 使用新的数字、字符串或日期注册表值或文件名。 如果数值以 <code>+</code> 或开头 <code>-</code>，则新值中指定的位在现有注册表值中设置或清除。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-grouppolicy] [-config Machine\CAName]
+</code></pre>
+<h4 id="remarks-9">注解</h4>
+<ul>
+<li><p>如果字符串值以 <code>+</code> 或开头 <code>-</code>，并且现有值为 <code>REG_MULTI_SZ</code> 值，则字符串将添加到现有注册表值或从现有注册表值中删除。 若要强制创建 <code>REG_MULTI_SZ</code> 值，请 <code>\n</code> 添加到字符串值的末尾。</p>
+</li>
+<li><p>如果值开头 <code>\@</code>，则值的其余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其解析为 <code>[Date][+|-][dd:hh]</code> - 可选日期加上或减去可选天数和小时数。 如果同时指定两者，请使用加号 (+) 或减号 () 分隔符。 用于 <code>now+dd:hh</code> 相对于当前时间的日期。</p>
+</li>
+<li><p>用于 <code>chain\chaincacheresyncfiletime \@now</code> 有效刷新缓存的 CRL。</p>
+</li>
+</ul>
+<h3 id="-delreg">-delreg</h3>
+<p>删除注册表值。</p>
+<pre><code>certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]][registryvaluename]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>ca</strong> 使用证书颁发机构的注册表项。</p>
+</li>
+<li><p><strong>还原</strong> 使用证书颁发机构的还原注册表项。</p>
+</li>
+<li><p><strong>策略</strong> 使用策略模块的注册表项。</p>
+</li>
+<li><p><strong>exit</strong> 使用第一个退出模块的注册表项。</p>
+</li>
+<li><p><strong>模板</strong> 使用模板注册表项， (用于 <code>-user</code> 用户模板) 。</p>
+</li>
+<li><p><strong>注册</strong> 使用注册注册表项， (用于 <code>-user</code> 用户上下文) 。</p>
+</li>
+<li><p><strong>chain</strong> 使用链配置注册表项。</p>
+</li>
+<li><p><strong>policyservers</strong> 使用策略服务器注册表项。</p>
+</li>
+<li><p><strong>progID</strong> 使用策略或退出模块的 ProgID (注册表子项名称) 。</p>
+</li>
+<li><p><strong>registryvaluename</strong> 使用注册表值名称 (用于 <code>Name*</code> 前缀匹配) 。</p>
+</li>
+<li><p><strong>value</strong> 使用新的数值、字符串或日期注册表值或文件名。 如果数值以 <code>+</code> 或开头 <code>-</code>，新值中指定的位将在现有注册表值中设置或清除。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-grouppolicy] [-config Machine\CAName]
+</code></pre>
+<h4 id="remarks-10">注解</h4>
+<ul>
+<li><p>如果字符串值以 <code>+</code> 值开头， <code>-</code>并且现有值是一个 <code>REG_MULTI_SZ</code> 值，则字符串将添加到现有注册表值或从现有注册表值中删除。 若要强制创建 <code>REG_MULTI_SZ</code> 值，请添加到 <code>\n</code> 字符串值的末尾。</p>
+</li>
+<li><p>如果值以开头 <code>\@</code>，则该值的其余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效文件，则会将其解析为 <code>[Date][+|-][dd:hh]</code> 可选日期加或减去可选天数和小时数。 如果同时指定两者，请使用加号 (+) 或减号 () 分隔符。 用于 <code>now+dd:hh</code> 相对于当前时间的日期。</p>
+</li>
+<li><p>用于 <code>chain\chaincacheresyncfiletime \@now</code> 有效刷新缓存的 CRL。</p>
+</li>
+</ul>
+<h3 id="-importkms">-importKMS</h3>
+<p>将用户密钥和证书导入服务器数据库中进行密钥存档。</p>
+<pre><code>certutil [options] -importKMS userkeyandcertfile [certID]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>userkeyandcertfile</strong> 是一个数据文件，其中包含要存档的用户私钥和证书。 此文件可以是：</p>
+<ul>
+<li><p>Exchange密钥管理服务器 (KMS) 导出文件。</p>
+</li>
+<li><p>PFX 文件。</p>
+</li>
+</ul>
+</li>
+<li><p>certID 是KMS导出文件解密证书匹配令牌。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+</li>
+<li><p><code>-f</code> 导入证书颁发机构未颁发的证书。</p>
+</li>
+</ul>
+<pre><code>[-f] [-silent] [-split] [-config Machine\CAName] [-p password] [-symkeyalg symmetrickeyalgorithm[,keylength]]
+</code></pre>
+<h3 id="-importcert">-importcert</h3>
+<p>将证书文件导入数据库。</p>
+<pre><code>certutil [options] -importcert certfile [existingrow]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>existingrow</strong> 导入证书来代替对同一密钥的挂起请求。</p>
+</li>
+<li><p><code>-f</code> 导入证书颁发机构未颁发的证书。</p>
+</li>
+</ul>
+<pre><code>[-f] [-config Machine\CAName]
+</code></pre>
+<h4 id="remarks-11">注解</h4>
+<p>可能需要将证书颁发机构配置为支持外国证书。 为此，请键入 <code>import - certutil -setreg ca\KRAFlags +KRAF_ENABLEFOREIGN</code>。</p>
+<h3 id="-getkey">-getkey</h3>
+<p>检索存档的私钥恢复 Blob、生成恢复脚本或恢复存档的密钥。</p>
+<pre><code>certutil [options] -getkey searchtoken [recoverybloboutfile]
+certutil [options] -getkey searchtoken script outputscriptfile
+certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p>如果找到多个匹配的恢复候选项，或者未) 指定输出文件，<strong>则脚本</strong>将生成用于检索和恢复密钥的脚本 (默认行为。</p>
+</li>
+<li><p>如果找到一个匹配的恢复候选项，并且指定输出文件) ，<strong>则检索检索</strong>一个或多个密钥恢复 Blob (默认行为。 使用此选项会截断任何扩展，并为每个密钥恢复 Blob 追加特定于证书的字符串和 .rec 扩展。  每个文件都包含证书链和关联的私钥，仍加密为一个或多个密钥恢复代理证书。</p>
+</li>
+<li><p><strong>在</strong> 一个步骤中恢复检索和恢复私钥 (需要密钥恢复代理证书和私钥) 。 使用此选项会截断任何扩展并追加 .p12 扩展。  每个文件都包含恢复的证书链和关联的私钥，存储为 PFX 文件。</p>
+</li>
+<li><p><strong>searchtoken</strong> 选择要恢复的密钥和证书，包括：</p>
+<ul>
+<li>
+<ol>
+<li>证书公用名</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>证书序列号</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>证书 SHA-1 哈希 (指纹) </li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>证书 KeyId SHA-1 哈希 (使用者密钥标识符) </li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>请求者名称 (域\用户) </li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>UPN (user@domain) </li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>recoverybloboutfile</strong> 输出具有证书链和关联的私钥的文件，仍会加密到一个或多个密钥恢复代理证书。</p>
+</li>
+<li><p><strong>outputscriptfile</strong> 输出包含批处理脚本的文件，用于检索和恢复私钥。</p>
+</li>
+<li><p><strong>outputfilebasename</strong> 输出文件基名称。</p>
+</li>
+</ul>
+<pre><code>[-f] [-unicodetext] [-silent] [-config Machine\CAName] [-p password] [-protectto SAMnameandSIDlist] [-csp provider]
+</code></pre>
+<h3 id="-recoverkey">-recoverkey</h3>
+<p>恢复存档的私钥。</p>
+<pre><code>certutil [options] -recoverkey recoveryblobinfile [PFXoutfile [recipientindex]]
+</code></pre>
+<pre><code>[-f] [-user] [-silent] [-split] [-p password] [-protectto SAMnameandSIDlist] [-csp provider] [-t timeout]
+</code></pre>
+<h3 id="-mergepfx">-mergePFX</h3>
+<p>合并 PFX 文件。</p>
+<pre><code>certutil [options] -mergePFX PFXinfilelist PFXoutfile [extendedproperties]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>PFXinfilelist</strong> 是 PFX 输入文件的逗号分隔列表。</p>
+</li>
+<li><p><strong>PFXoutfile</strong> 是 PFX 输出文件的名称。</p>
+</li>
+<li><p><strong>extendedproperties</strong> 包括任何扩展属性。</p>
+</li>
+</ul>
+<pre><code>[-f] [-user] [-split] [-p password] [-protectto SAMnameAndSIDlist] [-csp provider]
+</code></pre>
+<h4 id="remarks-12">注解</h4>
+<ul>
+<li><p>命令行中指定的密码必须是逗号分隔的密码列表。</p>
+</li>
+<li><p>如果指定了多个密码，则最后一个密码用于输出文件。 如果只提供一个密码，或者最后一个密码是 <code>*</code>，系统会提示用户输入输出文件密码。</p>
+</li>
+</ul>
+<h3 id="-convertepf">-convertEPF</h3>
+<p>将 PFX 文件转换为 EPF 文件。</p>
+<pre><code>certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcertID][,salt]
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>PFXinfilelist</strong> 是 PFX 输入文件的逗号分隔列表。</p>
+</li>
+<li><p><strong>PFXoutfile</strong> 是 PFX 输出文件的名称。</p>
+</li>
+<li><p><strong>EPF 是 EPF</strong> 输出文件的名称。</p>
+</li>
+<li><p><strong>强制转换</strong> 使用 CAST 64 加密。</p>
+</li>
+<li><p><strong>cast-</strong> 使用 CAST 64 加密 (导出) </p>
+</li>
+<li><p><strong>V3CAcertID 是 V3</strong> CA 证书匹配令牌。 有关详细信息，请参阅 <code>-store</code> 本文中的参数。</p>
+</li>
+<li><p><strong>salt</strong> 是 EPF 输出文件 salt 字符串。</p>
+</li>
+</ul>
+<pre><code>[-f] [-silent] [-split] [-dc DCName] [-p password] [-csp provider]
+</code></pre>
+<h4 id="remarks-13">注解</h4>
+<ul>
+<li><p>命令行中指定的密码必须是逗号分隔的密码列表。</p>
+</li>
+<li><p>如果指定了多个密码，则最后一个密码用于输出文件。 如果只提供一个密码，或者最后一个密码是 <code>*</code>，系统会提示用户输入输出文件密码。</p>
+</li>
+</ul>
+<h3 id="-">-?</h3>
+<p>显示参数列表。</p>
+<pre><code>certutil -?
+certutil &lt;name_of_parameter&gt; -?
+certutil -? -v
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><p><strong>-?</strong> 显示参数的完整列表</p>
+</li>
+<li><p><strong>-<code>&lt;name_of_parameter&gt;</code> -?</strong> 显示指定参数的帮助内容。</p>
+</li>
+<li><p><strong>-? -v 显示参数和选项的完整列表。</p>
+</li>
+</ul>
+<h2 id="options-3">选项</h2>
+<p>本部分根据命令定义能够指定的所有选项。 每个参数都包含有关哪些选项有效使用的信息。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-nullsign</td>
+<td>使用数据的哈希作为签名。</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强制覆盖。</td>
+</tr>
+<tr>
+<td>-enterprise</td>
+<td>使用本地计算机企业注册表证书存储。</td>
+</tr>
+<tr>
+<td>-user</td>
+<td>使用HKEY_CURRENT_USER密钥或证书存储。</td>
+</tr>
+<tr>
+<td>-GroupPolicy</td>
+<td>使用组策略证书存储。</td>
+</tr>
+<tr>
+<td>-ut</td>
+<td>显示用户模板。</td>
+</tr>
+<tr>
+<td>-mt</td>
+<td>显示计算机模板。</td>
+</tr>
+<tr>
+<td>-Unicode</td>
+<td>在 Unicode 中编写重定向输出。</td>
+</tr>
+<tr>
+<td>-UnicodeText</td>
+<td>在 Unicode 中写入输出文件。</td>
+</tr>
+<tr>
+<td>-gmt</td>
+<td>使用 GMT 显示时间。</td>
+</tr>
+<tr>
+<td>-seconds</td>
+<td>使用秒和毫秒显示时间。</td>
+</tr>
+<tr>
+<td>-silent</td>
+<td>使用 <code>silent</code> 标志获取 crypt 上下文。</td>
+</tr>
+<tr>
+<td>-split</td>
+<td>拆分嵌入的 ASN.1 元素，并将其保存到文件。</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>提供更详细的 (详细) 信息。</td>
+</tr>
+<tr>
+<td>-privatekey</td>
+<td>显示密码和私钥数据。</td>
+</tr>
+<tr>
+<td>-pin PIN</td>
+<td>智能卡 PIN。</td>
+</tr>
+<tr>
+<td>-urlfetch</td>
+<td>检索并验证 AIA 证书和 CDP CRL。</td>
+</tr>
+<tr>
+<td>-config Machine\CAName</td>
+<td>证书颁发机构和计算机名称字符串。</td>
+</tr>
+<tr>
+<td>-policyserver URLorID</td>
+<td>策略服务器 URL 或 ID。 对于选择 U/I，请使用 <code>-policyserver</code>。 对于所有策略服务器，请使用 <code>-policyserver *</code></td>
+</tr>
+<tr>
+<td>-anonymous</td>
+<td>使用匿名 SSL 凭据。</td>
+</tr>
+<tr>
+<td>-kerberos</td>
+<td>使用 Kerberos SSL 凭据。</td>
+</tr>
+<tr>
+<td>-clientcertificate clientcertID</td>
+<td>使用 X.509 证书 SSL 凭据。 对于选择 U/I，请使用 <code>-clientcertificate</code>。</td>
+</tr>
+<tr>
+<td>-username 用户名</td>
+<td>将命名帐户用于 SSL 凭据。 对于选择 U/I，请使用 <code>-username</code>。</td>
+</tr>
+<tr>
+<td>-cert cert certID</td>
+<td>签名证书。</td>
+</tr>
+<tr>
+<td>-dc DCName</td>
+<td>面向特定的域控制器。</td>
+</tr>
+<tr>
+<td>-restrict restrictionlist</td>
+<td>逗号分隔的限制列表。 每个限制都包含列名、关系运算符和常量整数、字符串或日期。 一个列名称可能前面有一个加号或减号来指示排序顺序。 例如，<code>requestID = 47</code>、<code>+requestername &gt;= a, requestername</code> 或 <code>-requestername &gt; DOMAIN, Disposition = 21</code></td>
+</tr>
+<tr>
+<td>-out 列列表</td>
+<td>逗号分隔列列表。</td>
+</tr>
+<tr>
+<td>-p 密码</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>-protectto SAMnameandSIDlist</td>
+<td>逗号分隔的 SAM 名称/SID 列表。</td>
+</tr>
+<tr>
+<td>-csp 提供程序</td>
+<td>提供程序</td>
+</tr>
+<tr>
+<td>-t 超时</td>
+<td>URL 提取超时（以毫秒为单位）。</td>
+</tr>
+<tr>
+<td>-symkeyalg symmetrickeyalgorithm[，keylength]</td>
+<td>具有可选密钥长度的对称密钥算法的名称。 例如：<code>AES,128</code> 或 <code>3DES</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-references">其他参考</h3>
+<p>有关如何使用此命令的更多示例，请参阅</p>
+<ul>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)" data-linktype="absolute-path">Active Directory 证书服务 (AD CS)</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10)" data-linktype="absolute-path">用于管理证书的 Certutil 任务</a></p>
+</li>
+<li><p><a href="certutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/certutil" data-linktype="relative-path">certutil 命令</a></p>
+</li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							class="font-size-sm right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="页面操作">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+									<h3>本文内容</h3>
+								</nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="操作面板" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

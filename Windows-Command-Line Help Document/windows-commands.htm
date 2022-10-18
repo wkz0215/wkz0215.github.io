@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="zh-cn" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="Windows å‘½ä»¤" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/windows-commands" />
+			<meta property="og:description" content="å‚è€ƒ" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@docsmsft" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="author" content="JasonGerend" />
+<meta name="breadcrumb_path" content="/windows-server/breadcrumbs/toc.json" />
+<meta name="depot_name" content="MSDN.WindowsServerDocs-pr" />
+<meta name="description" content="å‚è€ƒ" />
+<meta name="document_id" content="6d382ca0-6538-5e1d-3e83-e31c9ab6a911" />
+<meta name="document_version_independent_id" content="11eff296-6158-f89a-4941-8735529183e9" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/e2fc56b55638cdef98d4a888362f6faa7b050ed1/WindowsServerDocs/administration/windows-commands/windows-commands.md" />
+<meta name="loc_file_id" content="Github-175290469.live.MSDN.WindowsServerDocs-pr.administration/windows-commands/windows-commands.md" />
+<meta name="loc_source_id" content="Github-175290469#live" />
+<meta name="loc_version" content="2022-08-18T17:32:32.4846386Z" />
+<meta name="locale" content="zh-cn" />
+<meta name="manager" content="dongill" />
+<meta name="ms.assetid" content="c703d07c-8227-4e86-94a6-8ef390f94cdc" />
+<meta name="ms.author" content="jgerend" />
+<meta name="ms.contentlocale" content="zh-cn" />
+<meta name="ms.date" content="08/16/2022" />
+<meta name="ms.prod" content="windows-server" />
+<meta name="ms.technology" content="windows-commands" />
+<meta name="ms.topic" content="reference" />
+<meta name="ms.translationtype" content="MT" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/live/WindowsServerDocs/administration/windows-commands/windows-commands.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="recommendations" content="true" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="updated_at" content="2022-09-21 09:36 PM" />
+<meta name="word_count" content="2302" />
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/windows-commands/windows-commands.md" />
+<link href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/windows-commands" rel="canonical">
+	<title>Windows å‘½ä»¤ | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="89972844.site-ltr.css" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/styles/89972844.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-cn',
+			contentDir: 'ltr',
+			userLocale: 'zh-cn',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			extendBreadcrumb: true,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "JasonGerend", url: "https://github.com/JasonGerend" },
+						{ name: "Xelu86", url: "https://github.com/Xelu86" },
+						{ name: "LJSpiller", url: "https://github.com/LJSpiller" },
+						{ name: "dknappettmsft", url: "https://github.com/dknappettmsft" },
+						{ name: "sethmanheim", url: "https://github.com/sethmanheim" },
+						{ name: "v-kents", url: "https://github.com/v-kents" },
+						{ name: "BrianWasTaken", url: "https://github.com/BrianWasTaken" },
+						{ name: "eross-msft", url: "https://github.com/eross-msft" },
+						{ name: "DCtheGeek", url: "https://github.com/DCtheGeek" },
+						{ name: "iangpgh", url: "https://github.com/iangpgh" },
+						{ name: "mijacobs", url: "https://github.com/mijacobs" },
+						{ name: "lizap", url: "https://github.com/lizap" },
+						{ name: "garycentric", url: "https://github.com/garycentric" },
+						{ name: "coreyp-at-msft", url: "https://github.com/coreyp-at-msft" },
+						{ name: "doctordns", url: "https://github.com/doctordns" },
+						{ name: "Welshmilla", url: "https://github.com/Welshmilla" },
+						{ name: "MikeBlodge", url: "https://github.com/MikeBlodge" },
+						{ name: "LucasArona", url: "https://github.com/LucasArona" },
+						{ name: "KexyBiscuit", url: "https://github.com/KexyBiscuit" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="wcp-consent.js" tppabs="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="ms.jsll-3.min.js" tppabs="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="67a45209.deprecation.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/global/67a45209.deprecation.js"></script>
+		<script src="12bd6430.index-docs.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/scripts/12bd6430.index-docs.js"></script>
+</head>
+
+<body lang="zh-cn" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">è·³è½¬è‡³ä¸»å†…å®¹</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">æ­¤æµè§ˆå™¨ä¸å†å—æ”¯æŒã€‚</p>
+				<p style="font-size: 16px; margin-top: 16px;">è¯·å‡çº§åˆ° Microsoft Edge ä»¥ä½¿ç”¨æœ€æ–°çš„åŠŸèƒ½ã€å®‰å…¨æ›´æ–°å’ŒæŠ€æœ¯æ”¯æŒã€‚</p>
+				<div style="margin-top: 12px;">
+					<a href="javascript:if(confirm('https://go.microsoft.com/fwlink/p/?LinkID=2092881  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://go.microsoft.com/fwlink/p/?LinkID=2092881'" tppabs="https://go.microsoft.com/fwlink/p/?LinkID=2092881"
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+ä¸‹è½½ Microsoft Edge					</a>
+					<a href="javascript:if(confirm('https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge'" tppabs="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+æœ‰å…³ Internet Explorer å’Œ Microsoft Edge çš„è¯¦ç»†ä¿¡æ¯					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="javascript:if(confirm('https://www.microsoft.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.microsoft.com/'" tppabs="https://www.microsoft.com/" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="is-hidden"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+ç›®å½•						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>é€€å‡ºç„¦ç‚¹æ¨¡å¼</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="ä¸»è¦"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="zh-cn" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm" aria-label="æ‰€æœ‰ç—•è¿¹">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="ä½¿ç”¨è‹±è¯­é˜…è¯»" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>ä½¿ç”¨è‹±è¯­é˜…è¯»</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="æ·»åŠ åˆ°é›†åˆ">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">ä¿å­˜</span>
+											</button>
+										
+
+										
+
+										
+
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="æ›´å¤šæ“ä½œ">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														aria-label="ç›®å½•"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">ç›®å½•</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="ä½¿ç”¨è‹±è¯­é˜…è¯»" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>ä½¿ç”¨è‹±è¯­é˜…è¯»</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="æ·»åŠ åˆ°é›†åˆ"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">ä¿å­˜</span>
+													</button>
+
+
+
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="æ‰“å°"
+														type="button"
+														aria-label="æ‰“å°"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true"
+														hidden>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>æ‰“å°</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>ç”µå­é‚®ä»¶</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="ç›®å½•" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">ç›®å½•</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="windows-commands">Windows å‘½ä»¤</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-cn" dir="ltr">
+												<li>
+é¡¹ç›®												</li>
+												<li>
+													<time class="is-invisible" data-article-date aria-label="æ–‡ç« è¯„å®¡æ—¥æœŸ" datetime="2022-09-21T21:36:00Z" data-article-date-source="git">09/21/2022</time>
+												</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="æŸ¥çœ‹æ‰€æœ‰å‚ä¸è€…" class="contributors-button link-button" data-bi-name="contributors" title="æŸ¥çœ‹æ‰€æœ‰å‚ä¸è€…">
+																19 ä¸ªå‚ä¸è€…
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived>
+	<button
+		class="thumb-rating-button like link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-yes"
+		title="æœ¬æ–‡éå¸¸æœ‰ç”¨"
+		type="button"
+		data-bi-name="rating-yes"
+		data-bi-sat="1"
+	>
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button
+		class="thumb-rating-button dislike link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-no"
+		title="æœ¬æ–‡æ²¡æœ‰ç”¨"
+		type="button"
+		data-bi-name="rating-no"
+		data-bi-sat="0"
+	>
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="æ–‡ç« å¤§çº²">
+											<h3>æœ¬æ–‡å†…å®¹</h3>
+										</nav>
+
+								<!-- <content> -->
+									<p>æ‰€æœ‰å—æ”¯æŒçš„ Windows å’Œ Windows Server ç‰ˆæœ¬éƒ½æœ‰ä¸€ç»„å†…ç½® Win32 æ§åˆ¶å°å‘½ä»¤ã€‚ æ­¤æ–‡æ¡£é›†ä»‹ç»å¯ç”¨äºä½¿ç”¨è„šæœ¬æˆ–è„šæœ¬å·¥å…·è‡ªåŠ¨æ‰§è¡Œä»»åŠ¡çš„ Windows å‘½ä»¤ã€‚</p>
+<h2 id="command-line-shells">å‘½ä»¤è¡Œ shell</h2>
+<p>Windows æœ‰ä¸¤ä¸ªå‘½ä»¤è¡Œ shellï¼šCommand shell å’Œ <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/powershell/scripting/overview  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/powershell/scripting/overview'" tppabs="https://learn.microsoft.com/zh-cn/powershell/scripting/overview" data-linktype="absolute-path">PowerShell</a>ã€‚ æ¯ä¸ª shell éƒ½æ˜¯ä¸€ä¸ªè½¯ä»¶ç¨‹åºï¼Œæä¾›ä½ å’Œæ“ä½œç³»ç»Ÿæˆ–åº”ç”¨ç¨‹åºä¹‹é—´çš„ç›´æ¥é€šä¿¡ï¼Œæä¾›ä¸€ä¸ªç¯å¢ƒæ¥è‡ªåŠ¨æ‰§è¡Œ IT æ“ä½œã€‚</p>
+<p>Command shell æ˜¯ Windows ä¸­å†…ç½®çš„ç¬¬ä¸€ä¸ª shellï¼Œç”¨äºè‡ªåŠ¨æ‰§è¡Œå¸¸è§„ä»»åŠ¡ï¼Œä¾‹å¦‚ç”¨æˆ·å¸æˆ·ç®¡ç†æˆ–å¤œé—´å¤‡ä»½ï¼Œå…¶ä¸­åŒ…å«æ‰¹å¤„ç† (.bat) æ–‡ä»¶ã€‚ ä½¿ç”¨ Windows è„šæœ¬ä¸»æœºï¼Œå¯ä»¥åœ¨ Command shell ä¸­è¿è¡Œæ›´å¤æ‚çš„è„šæœ¬ã€‚ æœ‰å…³è¯¦ç»†ä¿¡æ¯ï¼Œè¯·å‚é˜… <a href="cscript.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cscript" data-linktype="relative-path">cscript</a> æˆ– <a href="wscript.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wscript" data-linktype="relative-path">wscript</a>ã€‚ å¯ä»¥ä½¿ç”¨è„šæœ¬æ¯”ä½¿ç”¨ç”¨æˆ·ç•Œé¢æ›´é«˜æ•ˆåœ°æ‰§è¡Œæ“ä½œã€‚ è„šæœ¬æ¥å—å‘½ä»¤è¡Œä¸­å¯ç”¨çš„æ‰€æœ‰å‘½ä»¤ã€‚</p>
+<p>PowerShell æ—¨åœ¨æ‰©å±• Command shell çš„åŠŸèƒ½ï¼Œä»¥è¿è¡Œåä¸º cmdlet çš„ PowerShell å‘½ä»¤ã€‚ Cmdlet ç±»ä¼¼äº Windows å‘½ä»¤ï¼Œä½†æä¾›äº†æ›´å¯æ‰©å±•çš„è„šæœ¬è¯­è¨€ã€‚ å¯ä»¥åœ¨ PowerShell ä¸­åŒæ—¶è¿è¡Œ Windows å‘½ä»¤å’Œ PowerShell cmdletï¼Œä½† Command shell åªèƒ½è¿è¡Œ Windows å‘½ä»¤ï¼Œè€Œä¸èƒ½è¿è¡Œ PowerShell cmdletã€‚</p>
+<p>å¯¹äºæœ€å¯é çš„æœ€æ–° Windows è‡ªåŠ¨åŒ–ï¼Œæˆ‘ä»¬å»ºè®®ä½¿ç”¨ PowerShell è€Œä¸æ˜¯ Windows å‘½ä»¤æˆ– Windows è„šæœ¬ä¸»æœºå®ç° Windows è‡ªåŠ¨åŒ–ã€‚</p>
+<p>å¯ä»¥åœ¨ <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/windows/win32/debug/system-error-codes  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/windows/win32/debug/system-error-codes'" tppabs="https://learn.microsoft.com/zh-cn/windows/win32/debug/system-error-codes" data-linktype="absolute-path">è°ƒè¯•ç³»ç»Ÿé”™è¯¯ä»£ç </a> æ–‡ç« ä¸­æ‰¾åˆ°æœ‰å…³ Windows å‘½ä»¤çš„é€€å‡ºå’Œé”™è¯¯ä»£ç çš„å‚è€ƒï¼Œè¿™äº›é”™è¯¯ä»£ç å¯èƒ½æœ‰åŠ©äºäº†è§£ç”Ÿæˆçš„é”™è¯¯ã€‚ Windows å‘½ä»¤è¿˜åŒ…æ‹¬å‘½ä»¤é‡å®šå‘è¿ç®—ç¬¦ã€‚ è‹¥è¦è¯¦ç»†äº†è§£å…¶ç”¨æ³•ï¼Œè¯·å‚é˜… <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-xp/bb490982(v=technet.10)  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-xp/bb490982(v=technet.10)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-xp/bb490982(v=technet.10)" data-linktype="absolute-path">ä½¿ç”¨å‘½ä»¤é‡å®šå‘è¿ç®—ç¬¦</a>ã€‚</p>
+<div class="NOTE">
+<p>å¤‡æ³¨</p>
+<p>è¿˜å¯ä»¥ä¸‹è½½å¹¶å®‰è£… <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell'" tppabs="https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell" data-linktype="absolute-path">PowerShell Coreï¼ˆPowerShell</a> å¼€æ”¾æºä»£ç  ç‰ˆæœ¬ï¼‰ã€‚</p>
+</div>
+<h2 id="command-shell-file-and-directory-name-automatic-completion">å‘½ä»¤ shell æ–‡ä»¶å’Œç›®å½•åç§°è‡ªåŠ¨å®Œæˆ</h2>
+<p>å½“æŒ‰ä¸‹æŒ‡å®šçš„æ§åˆ¶å­—ç¬¦æ—¶ï¼Œå¯ä»¥å°† Command shell é…ç½®ä¸ºè‡ªåŠ¨å®Œæˆè®¡ç®—æœºæˆ–ç”¨æˆ·ä¼šè¯ä¸Šçš„æ–‡ä»¶å’Œç›®å½•åç§°ã€‚ é»˜è®¤æƒ…å†µä¸‹ï¼Œæ­¤æ§åˆ¶å­—ç¬¦é…ç½®ä¸ºæ–‡ä»¶å’Œç›®å½•åç§°çš„ <strong>é€‰é¡¹å¡</strong> é”®ï¼Œå°½ç®¡å®ƒä»¬å¯èƒ½æœ‰æ‰€ä¸åŒã€‚ è‹¥è¦æ›´æ”¹æ­¤æ§åˆ¶å­—ç¬¦ï¼Œè¯·è¿è¡Œ <code>regedit.exe</code> å¹¶å¯¼èˆªåˆ°ä¸‹é¢çš„æ³¨å†Œè¡¨é¡¹å’Œæ¡ç›®ä¹‹ä¸€ï¼Œå…·ä½“å–å†³äºæ˜¯è¦ä»…æ›´æ”¹å½“å‰ç”¨æˆ·çš„å€¼ï¼Œè¿˜æ˜¯é’ˆå¯¹è®¡ç®—æœºçš„æ‰€æœ‰ç”¨æˆ·ã€‚</p>
+<div class="CAUTION">
+<p>æ³¨æ„</p>
+<p>ä¸æ­£ç¡®åœ°ç¼–è¾‘æ³¨å†Œè¡¨å¯èƒ½ä¼šå¯¹ç³»ç»Ÿé€ æˆä¸¥é‡æŸåã€‚ åœ¨å¯¹æ³¨å†Œè¡¨è¿›è¡Œä»¥ä¸‹æ›´æ”¹ä¹‹å‰ï¼Œåº”å¤‡ä»½è®¡ç®—æœºä¸Šçš„ä»»ä½•å€¼æ•°æ®ã€‚</p>
+</div>
+<pre><code>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Command Processor\CompletionChar
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Command Processor\PathCompletionChar
+</code></pre>
+<pre><code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor\CompletionChar
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor\PathCompletionChar
+</code></pre>
+<p>å°†è¿™äº›å€¼è®¾ç½®ä¸ºè¦ä½¿ç”¨çš„æ§ä»¶å­—ç¬¦ã€‚ æœ‰å…³å®Œæ•´åˆ—è¡¨ï¼Œè¯·å‚é˜… <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/windows/win32/inputdev/virtual-key-codes  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/windows/win32/inputdev/virtual-key-codes'" tppabs="https://learn.microsoft.com/zh-cn/windows/win32/inputdev/virtual-key-codes" data-linktype="absolute-path">è™šæ‹Ÿå¯†é’¥ä»£ç </a> ã€‚ è‹¥è¦åœ¨æ³¨å†Œè¡¨ä¸­ç¦ç”¨ç‰¹å®šå®Œæˆå­—ç¬¦ï¼Œè¯·ä½¿ç”¨ <strong>ç©ºæ ¼</strong> (0x20) çš„å€¼ï¼Œå› ä¸ºå®ƒä¸æ˜¯æœ‰æ•ˆçš„æ§åˆ¶å­—ç¬¦ã€‚ æ­¤æ³¨å†Œè¡¨é¡¹çš„å€¼çš„ç±»å‹ <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/windows/win32/sysinfo/registry-value-types  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/windows/win32/sysinfo/registry-value-types'" tppabs="https://learn.microsoft.com/zh-cn/windows/win32/sysinfo/registry-value-types" data-linktype="absolute-path">REG_DWORD</a>ï¼Œå¯ä»¥é€šè¿‡åå…­è¿›åˆ¶æˆ–åè¿›åˆ¶å€¼æŒ‡å®šã€‚</p>
+<p>è¿˜å¯ä»¥é€šè¿‡å‚æ•°å’Œå¼€å…³æˆ–å¼€å…³<code>/F:ON</code><code>/F:OFF</code>è¿è¡Œ<code>cmd.exe</code>ï¼Œå¯ç”¨æˆ–ç¦ç”¨å‘½ä»¤ shell çš„æ¯ä¸ªå®ä¾‹çš„æ–‡ä»¶å’Œç›®å½•åç§°å®Œæˆã€‚ å¦‚æœä½¿ç”¨å‚æ•°å’Œå¼€å…³å¯ç”¨ <code>/F:ON</code> åç§°å®Œæˆï¼Œåˆ™ç”¨äº <code>Ctrl-D</code> ç›®å½•åç§°å®Œæˆå’Œ <code>Ctrl-F</code> æ–‡ä»¶åå®Œæˆçš„ä¸¤ä¸ªæ§åˆ¶å­—ç¬¦ã€‚ ç”¨æˆ·æŒ‡å®šçš„è®¾ç½®ä¼˜å…ˆäºè®¡ç®—æœºè®¾ç½®ï¼Œå‘½ä»¤è¡Œé€‰é¡¹ä¼˜å…ˆäºæ³¨å†Œè¡¨è®¾ç½®ã€‚</p>
+<h2 id="command-line-reference-a-z">å‘½ä»¤è¡Œå‚è€ƒ A-Z</h2>
+<p>è‹¥è¦æŸ¥æ‰¾æœ‰å…³ç‰¹å®šå‘½ä»¤çš„ä¿¡æ¯ï¼Œè¯·åœ¨ä»¥ä¸‹ A-Z èœå•ä¸­ï¼Œé€‰æ‹©å‘½ä»¤å¼€å¤´çš„å­—æ¯ï¼Œç„¶åé€‰æ‹©å‘½ä»¤åç§°ã€‚</p>
+<p><a href="#a" data-linktype="self-bookmark">A</a> | <a href="#b" data-linktype="self-bookmark">B</a> | <a href="#c" data-linktype="self-bookmark">C</a> | <a href="#d" data-linktype="self-bookmark">D</a> | <a href="#e" data-linktype="self-bookmark">E</a> | <a href="#f" data-linktype="self-bookmark">F</a> | <a href="#g" data-linktype="self-bookmark">G</a> | <a href="#h" data-linktype="self-bookmark">H</a> | <a href="#i" data-linktype="self-bookmark">æˆ‘</a> | <a href="#j" data-linktype="self-bookmark">J</a> | <a href="#k" data-linktype="self-bookmark">K</a> | <a href="#l" data-linktype="self-bookmark">æˆ‘</a> | <a href="#m" data-linktype="self-bookmark">M</a> | <a href="#n" data-linktype="self-bookmark">N</a> | <a href="#o" data-linktype="self-bookmark">O</a> | <a href="#p" data-linktype="self-bookmark">P</a> | <a href="#q" data-linktype="self-bookmark">é—®</a> | <a href="#r" data-linktype="self-bookmark">R</a> | <a href="#s" data-linktype="self-bookmark">S</a> | <a href="#t" data-linktype="self-bookmark">T</a> | <a href="#u" data-linktype="self-bookmark">ç¾å›½</a> | <a href="#v" data-linktype="self-bookmark">V</a> | <a href="#w" data-linktype="self-bookmark">W</a> | <a href="#x" data-linktype="self-bookmark">X</a> |Y |Z</p>
+<h3 id="a">A</h3>
+<ul>
+<li><a href="active.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/active" data-linktype="relative-path">active</a></li>
+<li><a href="add.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/add" data-linktype="relative-path">add</a></li>
+<li><a href="add-alias.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/add-alias" data-linktype="relative-path">add alias</a></li>
+<li><a href="add-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/add-volume" data-linktype="relative-path">add volume</a></li>
+<li><a href="append.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/append" data-linktype="relative-path">append</a></li>
+<li><a href="arp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/arp" data-linktype="relative-path">arp</a></li>
+<li><a href="assign.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/assign" data-linktype="relative-path">assign</a></li>
+<li><a href="assoc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/assoc" data-linktype="relative-path">assoc</a></li>
+<li><a href="at.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/at" data-linktype="relative-path">at</a></li>
+<li><a href="atmadm.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/atmadm" data-linktype="relative-path">atmadm</a></li>
+<li><a href="attach-vdisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/attach-vdisk" data-linktype="relative-path">attach-vdisk</a></li>
+<li><a href="attrib.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/attrib" data-linktype="relative-path">attrib</a></li>
+<li><a href="attributes.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/attributes" data-linktype="relative-path">attributes</a>
+<ul>
+<li><a href="attributes-disk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/attributes-disk" data-linktype="relative-path">attributes disk</a></li>
+<li><a href="attributes-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/attributes-volume" data-linktype="relative-path">attributes volume</a></li>
+</ul>
+</li>
+<li><a href="auditpol.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol" data-linktype="relative-path">auditpol</a>
+<ul>
+<li><a href="auditpol-backup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-backup" data-linktype="relative-path">auditpol backup</a></li>
+<li><a href="auditpol-clear.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-clear" data-linktype="relative-path">auditpol clear</a></li>
+<li><a href="auditpol-get.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-get" data-linktype="relative-path">auditpol get</a></li>
+<li><a href="auditpol-list.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-list" data-linktype="relative-path">auditpol list</a></li>
+<li><a href="auditpol-remove.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-remove" data-linktype="relative-path">auditpol remove</a></li>
+<li><a href="auditpol-resourcesacl.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-resourcesacl" data-linktype="relative-path">auditpol resourcesacl</a></li>
+<li><a href="auditpol-restore.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-restore" data-linktype="relative-path">auditpol restore</a></li>
+<li><a href="auditpol-set.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/auditpol-set" data-linktype="relative-path">auditpol set</a></li>
+</ul>
+</li>
+<li><a href="autochk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/autochk" data-linktype="relative-path">autochk</a></li>
+<li><a href="autoconv.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/autoconv" data-linktype="relative-path">autoconv</a></li>
+<li><a href="autofmt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/autofmt" data-linktype="relative-path">autofmt</a></li>
+<li><a href="automount.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/automount" data-linktype="relative-path">automount</a></li>
+</ul>
+<h3 id="b">B</h3>
+<ul>
+<li><a href="bcdboot.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bcdboot" data-linktype="relative-path">bcdboot</a></li>
+<li><a href="bcdedit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bcdedit" data-linktype="relative-path">bcdedit</a></li>
+<li><a href="bdehdcfg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bdehdcfg" data-linktype="relative-path">bdehdcfg</a>
+<ul>
+<li><a href="bdehdcfg-driveinfo.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bdehdcfg-driveinfo" data-linktype="relative-path">bdehdcfg driveinfo</a></li>
+<li><a href="bdehdcfg-newdriveletter.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bdehdcfg-newdriveletter" data-linktype="relative-path">bdehdcfg newdriveletter</a></li>
+<li><a href="bdehdcfg-quiet.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bdehdcfg-quiet" data-linktype="relative-path">bdehdcfg quiet</a></li>
+<li><a href="bdehdcfg-restart.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bdehdcfg-restart" data-linktype="relative-path">bdehdcfg restart</a></li>
+<li><a href="bdehdcfg-size.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bdehdcfg-size" data-linktype="relative-path">bdehdcfg size</a></li>
+<li><a href="bdehdcfg-target.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bdehdcfg-target" data-linktype="relative-path">bdehdcfg target</a></li>
+</ul>
+</li>
+<li><a href="begin-backup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/begin-backup" data-linktype="relative-path">begin backup</a></li>
+<li><a href="begin-restore.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/begin-restore" data-linktype="relative-path">begin restore</a></li>
+<li><a href="bitsadmin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin" data-linktype="relative-path">bitsadmin</a>
+<ul>
+<li><a href="bitsadmin-addfile.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-addfile" data-linktype="relative-path">bitsadmin addfile</a></li>
+<li><a href="bitsadmin-addfileset.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-addfileset" data-linktype="relative-path">bitsadmin addfileset</a></li>
+<li><a href="bitsadmin-addfilewithranges.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-addfilewithranges" data-linktype="relative-path">bitsadmin addfilewithranges</a></li>
+<li><a href="bitsadmin-cache.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache" data-linktype="relative-path">bitsadmin cache</a>
+<ul>
+<li><a href="bitsadmin-cache-and-delete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-delete" data-linktype="relative-path">bitsadmin cache å’Œ delete</a></li>
+<li><a href="bitsadmin-cache-and-deleteurl.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-deleteurl" data-linktype="relative-path">bitsadmin cache å’Œ deleteurl</a></li>
+<li><a href="bitsadmin-cache-and-getexpirationtime.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-getexpirationtime" data-linktype="relative-path">bitsadmin cache å’Œ getexpirationtime</a></li>
+<li><a href="bitsadmin-cache-and-getlimit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-getlimit" data-linktype="relative-path">bitsadmin cache å’Œ getlimit</a></li>
+<li><a href="bitsadmin-cache-and-help.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-help" data-linktype="relative-path">bitsadmin cache å’Œ help</a></li>
+<li><a href="bitsadmin-cache-and-info.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-info" data-linktype="relative-path">bitsadmin cache å’Œ info</a></li>
+<li><a href="bitsadmin-cache-and-list.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-list" data-linktype="relative-path">bitsadmin cache å’Œ list</a></li>
+<li><a href="bitsadmin-cache-and-setexpirationtime.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-setexpirationtime" data-linktype="relative-path">bitsadmin cache å’Œ setexpirationtime</a></li>
+<li><a href="bitsadmin-cache-and-setlimit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-and-setlimit" data-linktype="relative-path">bitsadmin cache å’Œ setlimit</a></li>
+<li><a href="bitsadmin-cache-clear.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cache-clear" data-linktype="relative-path">bitsadmin cache å’Œ clear</a></li>
+</ul>
+</li>
+<li><a href="bitsadmin-cancel.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-cancel" data-linktype="relative-path">bitsadmin cancel</a></li>
+<li><a href="bitsadmin-complete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-complete" data-linktype="relative-path">bitsadmin complete</a></li>
+<li><a href="bitsadmin-create.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-create" data-linktype="relative-path">bitsadmin create</a></li>
+<li><a href="bitsadmin-examples.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-examples" data-linktype="relative-path">bitsadmin ç¤ºä¾‹</a></li>
+<li><a href="bitsadmin-getaclflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getaclflags" data-linktype="relative-path">bitsadmin getaclflags</a></li>
+<li><a href="bitsadmin-getbytestotal.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getbytestotal" data-linktype="relative-path">bitsadmin getbytestotal</a></li>
+<li><a href="bitsadmin-getbytestransferred.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getbytestransferred" data-linktype="relative-path">bitsadmin getbytestransferred</a></li>
+<li><a href="bitsadmin-getclientcertificate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getclientcertificate" data-linktype="relative-path">bitsadmin getclientcertificate</a></li>
+<li><a href="bitsadmin-getcompletiontime.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getcompletiontime" data-linktype="relative-path">bitsadmin getcompletiontime</a></li>
+<li><a href="bitsadmin-getcreationtime.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getcreationtime" data-linktype="relative-path">bitsadmin getcreationtime</a></li>
+<li><a href="bitsadmin-getcustomheaders.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getcustomheaders" data-linktype="relative-path">bitsadmin getcustomheaders</a></li>
+<li><a href="bitsadmin-getdescription.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getdescription" data-linktype="relative-path">bitsadmin getdescription</a></li>
+<li><a href="bitsadmin-getdisplayname.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getdisplayname" data-linktype="relative-path">bitsadmin getdisplayname</a></li>
+<li><a href="bitsadmin-geterror.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-geterror" data-linktype="relative-path">bitsadmin geterror</a></li>
+<li><a href="bitsadmin-geterrorcount.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-geterrorcount" data-linktype="relative-path">bitsadmin geterrorcount</a></li>
+<li><a href="bitsadmin-getfilestotal.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getfilestotal" data-linktype="relative-path">bitsadmin getfilestotal</a></li>
+<li><a href="bitsadmin-getfilestransferred.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getfilestransferred" data-linktype="relative-path">bitsadmin getfilestransferred</a></li>
+<li><a href="bitsadmin-gethelpertokenflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-gethelpertokenflags" data-linktype="relative-path">bitsadmin gethelpertokenflags</a></li>
+<li><a href="bitsadmin-gethelpertokensid.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-gethelpertokensid" data-linktype="relative-path">bitsadmin gethelpertokensid</a></li>
+<li><a href="bitsadmin-gethttpmethod.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-gethttpmethod" data-linktype="relative-path">bitsadmin gethttpmethod</a></li>
+<li><a href="bitsadmin-getmaxdownloadtime.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getmaxdownloadtime" data-linktype="relative-path">bitsadmin getmaxdownloadtime</a></li>
+<li><a href="bitsadmin-getminretrydelay.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getminretrydelay" data-linktype="relative-path">bitsadmin getminretrydelay</a></li>
+<li><a href="bitsadmin-getmodificationtime.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getmodificationtime" data-linktype="relative-path">bitsadmin getmodificationtime</a></li>
+<li><a href="bitsadmin-getnoprogresstimeout.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getnoprogresstimeout" data-linktype="relative-path">bitsadmin getnoprogresstimeout</a></li>
+<li><a href="bitsadmin-getnotifycmdline.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getnotifycmdline" data-linktype="relative-path">bitsadmin getnotifycmdline</a></li>
+<li><a href="bitsadmin-getnotifyflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getnotifyflags" data-linktype="relative-path">bitsadmin getnotifyflags</a></li>
+<li><a href="bitsadmin-getnotifyinterface.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getnotifyinterface" data-linktype="relative-path">bitsadmin getnotifyinterface</a></li>
+<li><a href="bitsadmin-getowner.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getowner" data-linktype="relative-path">bitsadmin getowner</a></li>
+<li><a href="bitsadmin-getpeercachingflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getpeercachingflags" data-linktype="relative-path">bitsadmin getpeercachingflags</a></li>
+<li><a href="bitsadmin-getpriority.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getpriority" data-linktype="relative-path">bitsadmin getpriority</a></li>
+<li><a href="bitsadmin-getproxybypasslist.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getproxybypasslist" data-linktype="relative-path">bitsadmin getproxybypasslist</a></li>
+<li><a href="bitsadmin-getproxylist.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getproxylist" data-linktype="relative-path">bitsadmin getproxylist</a></li>
+<li><a href="bitsadmin-getproxyusage.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getproxyusage" data-linktype="relative-path">bitsadmin getproxyusage</a></li>
+<li><a href="bitsadmin-getreplydata.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getreplydata" data-linktype="relative-path">bitsadmin getreplydata</a></li>
+<li><a href="bitsadmin-getreplyfilename.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getreplyfilename" data-linktype="relative-path">bitsadmin getreplyfilename</a></li>
+<li><a href="bitsadmin-getreplyprogress.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getreplyprogress" data-linktype="relative-path">bitsadmin getreplyprogress</a></li>
+<li><a href="bitsadmin-getsecurityflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getsecurityflags" data-linktype="relative-path">bitsadmin getsecurityflags</a></li>
+<li><a href="bitsadmin-getstate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getstate" data-linktype="relative-path">bitsadmin getstate</a></li>
+<li><a href="bitsadmin-gettemporaryname.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-gettemporaryname" data-linktype="relative-path">bitsadmin gettemporaryname</a></li>
+<li><a href="bitsadmin-gettype.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-gettype" data-linktype="relative-path">bitsadmin gettype</a></li>
+<li><a href="bitsadmin-getvalidationstate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-getvalidationstate" data-linktype="relative-path">bitsadmin getvalidationstate</a></li>
+<li><a href="bitsadmin-help.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-help" data-linktype="relative-path">bitsadmin help</a></li>
+<li><a href="bitsadmin-info.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-info" data-linktype="relative-path">bitsadmin info</a></li>
+<li><a href="bitsadmin-list.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-list" data-linktype="relative-path">bitsadmin list</a></li>
+<li><a href="bitsadmin-listfiles.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-listfiles" data-linktype="relative-path">bitsadmin listfiles</a></li>
+<li><a href="bitsadmin-makecustomheaderswriteonly.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-makecustomheaderswriteonly" data-linktype="relative-path">bitsadmin makecustomheaderswriteonly</a></li>
+<li><a href="bitsadmin-monitor.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-monitor" data-linktype="relative-path">bitsadmin monitor</a></li>
+<li><a href="bitsadmin-nowrap.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-nowrap" data-linktype="relative-path">bitsadmin nowrap</a></li>
+<li><a href="bitsadmin-peercaching.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peercaching" data-linktype="relative-path">bitsadmin peercaching</a>
+<ul>
+<li><a href="bitsadmin-peercaching-and-getconfigurationflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peercaching-and-getconfigurationflags" data-linktype="relative-path">bitsadmin peercaching å’Œ getconfigurationflags</a></li>
+<li><a href="bitsadmin-peercaching-and-help.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peercaching-and-help" data-linktype="relative-path">bitsadmin peercaching å’Œ help</a></li>
+<li><a href="bitsadmin-peercaching-and-setconfigurationflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peercaching-and-setconfigurationflags" data-linktype="relative-path">bitsadmin peercaching å’Œ setconfigurationflags</a></li>
+</ul>
+</li>
+<li><a href="bitsadmin-peers.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peers" data-linktype="relative-path">bitsadmin peers</a>
+<ul>
+<li><a href="bitsadmin-peers-and-clear.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peers-and-clear" data-linktype="relative-path">bitsadmin peers å’Œ clear</a></li>
+<li><a href="bitsadmin-peers-and-discover.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peers-and-discover" data-linktype="relative-path">bitsadmin peers å’Œ discover</a></li>
+<li><a href="bitsadmin-peers-and-help.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peers-and-help" data-linktype="relative-path">bitsadmin peers å’Œ help</a></li>
+<li><a href="bitsadmin-peers-and-list.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-peers-and-list" data-linktype="relative-path">bitsadmin peers å’Œ list</a></li>
+</ul>
+</li>
+<li><a href="bitsadmin-rawreturn.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-rawreturn" data-linktype="relative-path">bitsadmin rawreturn</a></li>
+<li><a href="bitsadmin-removeclientcertificate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-removeclientcertificate" data-linktype="relative-path">bitsadmin removeclientcertificate</a></li>
+<li><a href="bitsadmin-removecredentials.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-removecredentials" data-linktype="relative-path">bitsadmin removecredentials</a></li>
+<li><a href="bitsadmin-replaceremoteprefix.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-replaceremoteprefix" data-linktype="relative-path">bitsadmin replaceremoteprefix</a></li>
+<li><a href="bitsadmin-reset.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-reset" data-linktype="relative-path">bitsadmin reset</a></li>
+<li><a href="bitsadmin-resume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-resume" data-linktype="relative-path">bitsadmin resume</a></li>
+<li><a href="bitsadmin-setaclflag.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setaclflag" data-linktype="relative-path">bitsadmin setaclflag</a></li>
+<li><a href="bitsadmin-setclientcertificatebyid.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setclientcertificatebyid" data-linktype="relative-path">bitsadmin setclientcertificatebyid</a></li>
+<li><a href="bitsadmin-setclientcertificatebyname.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setclientcertificatebyname" data-linktype="relative-path">bitsadmin setclientcertificatebyname</a></li>
+<li><a href="bitsadmin-setcredentials.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setcredentials" data-linktype="relative-path">bitsadmin setcredentials</a></li>
+<li><a href="bitsadmin-setcustomheaders.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setcustomheaders" data-linktype="relative-path">bitsadmin setcustomheaders</a></li>
+<li><a href="bitsadmin-setdescription.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setdescription" data-linktype="relative-path">bitsadmin setdescription</a></li>
+<li><a href="bitsadmin-setdisplayname.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setdisplayname" data-linktype="relative-path">bitsadmin setdisplayname</a></li>
+<li><a href="bitsadmin-sethelpertoken.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-sethelpertoken" data-linktype="relative-path">bitsadmin sethelpertoken</a></li>
+<li><a href="bitsadmin-sethelpertokenflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-sethelpertokenflags" data-linktype="relative-path">bitsadmin sethelpertokenflags</a></li>
+<li><a href="bitsadmin-sethttpmethod.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-sethttpmethod" data-linktype="relative-path">bitsadmin sethttpmethod</a></li>
+<li><a href="bitsadmin-setmaxdownloadtime.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setmaxdownloadtime" data-linktype="relative-path">bitsadmin setmaxdownloadtime</a></li>
+<li><a href="bitsadmin-setminretrydelay.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setminretrydelay" data-linktype="relative-path">bitsadmin setminretrydelay</a></li>
+<li><a href="bitsadmin-setnoprogresstimeout.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setnoprogresstimeout" data-linktype="relative-path">bitsadmin setnoprogresstimeout</a></li>
+<li><a href="bitsadmin-setnotifycmdline.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setnotifycmdline" data-linktype="relative-path">bitsadmin setnotifycmdline</a></li>
+<li><a href="bitsadmin-setnotifyflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setnotifyflags" data-linktype="relative-path">bitsadmin setnotifyflags</a></li>
+<li><a href="bitsadmin-setpeercachingflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setpeercachingflags" data-linktype="relative-path">bitsadmin setpeercachingflags</a></li>
+<li><a href="bitsadmin-setpriority.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setpriority" data-linktype="relative-path">bitsadmin setpriority</a></li>
+<li><a href="bitsadmin-setproxysettings.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setproxysettings" data-linktype="relative-path">bitsadmin setproxysettings</a></li>
+<li><a href="bitsadmin-setreplyfilename.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setreplyfilename" data-linktype="relative-path">bitsadmin setreplyfilename</a></li>
+<li><a href="bitsadmin-setsecurityflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setsecurityflags" data-linktype="relative-path">bitsadmin setsecurityflags</a></li>
+<li><a href="bitsadmin-setvalidationstate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-setvalidationstate" data-linktype="relative-path">bitsadmin setvalidationstate</a></li>
+<li><a href="bitsadmin-suspend.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-suspend" data-linktype="relative-path">bitsadmin suspend</a></li>
+<li><a href="bitsadmin-takeownership.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-takeownership" data-linktype="relative-path">bitsadmin takeownership</a></li>
+<li><a href="bitsadmin-transfer.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-transfer" data-linktype="relative-path">bitsadmin transfer</a></li>
+<li><a href="bitsadmin-util.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-util" data-linktype="relative-path">bitsadmin util</a>
+<ul>
+<li><a href="bitsadmin-util-and-enableanalyticchannel.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-util-and-enableanalyticchannel" data-linktype="relative-path">bitsadmin util å’Œ enableanalyticchannel</a></li>
+<li><a href="bitsadmin-util-and-getieproxy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-util-and-getieproxy" data-linktype="relative-path">bitsadmin util å’Œ getieproxy</a></li>
+<li><a href="bitsadmin-util-and-help.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-util-and-help" data-linktype="relative-path">bitsadmin util å’Œ help</a></li>
+<li><a href="bitsadmin-util-and-repairservice.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-util-and-repairservice" data-linktype="relative-path">bitsadmin util å’Œ repairservice</a></li>
+<li><a href="bitsadmin-util-and-setieproxy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-util-and-setieproxy" data-linktype="relative-path">bitsadmin util å’Œ setieproxy</a></li>
+<li><a href="bitsadmin-util-and-version.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-util-and-version" data-linktype="relative-path">bitsadmin util å’Œ version</a></li>
+</ul>
+</li>
+<li><a href="bitsadmin-wrap.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bitsadmin-wrap" data-linktype="relative-path">bitsadmin wrap</a></li>
+</ul>
+</li>
+<li><a href="bootcfg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg" data-linktype="relative-path">bootcfg</a>
+<ul>
+<li><a href="bootcfg-addsw.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-addsw" data-linktype="relative-path">bootcfg addsw</a></li>
+<li><a href="bootcfg-copy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-copy" data-linktype="relative-path">bootcfg copy</a></li>
+<li><a href="bootcfg-dbg1394.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-dbg1394" data-linktype="relative-path">bootcfg dbg1394</a></li>
+<li><a href="bootcfg-debug.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-debug" data-linktype="relative-path">bootcfg debug</a></li>
+<li><a href="bootcfg-default.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-default" data-linktype="relative-path">bootcfg default</a></li>
+<li><a href="bootcfg-delete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-delete" data-linktype="relative-path">bootcfg delete</a></li>
+<li><a href="bootcfg-ems.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-ems" data-linktype="relative-path">bootcfg ems</a></li>
+<li><a href="bootcfg-query.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-query" data-linktype="relative-path">bootcfg query</a></li>
+<li><a href="bootcfg-raw.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-raw" data-linktype="relative-path">bootcfg raw</a></li>
+<li><a href="bootcfg-rmsw.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-rmsw" data-linktype="relative-path">bootcfg rmsw</a></li>
+<li><a href="bootcfg-timeout.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/bootcfg-timeout" data-linktype="relative-path">bootcfg timeout</a></li>
+</ul>
+</li>
+<li><a href="break.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/break" data-linktype="relative-path">break</a></li>
+</ul>
+<h3 id="c">C</h3>
+<ul>
+<li><a href="cacls.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cacls" data-linktype="relative-path">cacls</a></li>
+<li><a href="call.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/call" data-linktype="relative-path">call</a></li>
+<li><a href="cd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cd" data-linktype="relative-path">cd</a></li>
+<li><a href="certreq_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/certreq_1" data-linktype="relative-path">certreq</a></li>
+<li><a href="certutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/certutil" data-linktype="relative-path">certutil</a></li>
+<li><a href="change.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/change" data-linktype="relative-path">change</a>
+<ul>
+<li><a href="change-logon.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/change-logon" data-linktype="relative-path">change logon</a></li>
+<li><a href="change-port.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/change-port" data-linktype="relative-path">change port</a></li>
+<li><a href="change-user.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/change-user" data-linktype="relative-path">change user</a></li>
+</ul>
+</li>
+<li><a href="chcp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/chcp" data-linktype="relative-path">chcp</a></li>
+<li><a href="chdir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/chdir" data-linktype="relative-path">chdir</a></li>
+<li><a href="chglogon.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/chglogon" data-linktype="relative-path">chglogon</a></li>
+<li><a href="chgport.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/chgport" data-linktype="relative-path">chgport</a></li>
+<li><a href="chgusr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/chgusr" data-linktype="relative-path">chgusr</a></li>
+<li><a href="chkdsk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/chkdsk" data-linktype="relative-path">chkdsk</a></li>
+<li><a href="chkntfs.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/chkntfs" data-linktype="relative-path">chkntfs</a></li>
+<li><a href="choice.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/choice" data-linktype="relative-path">choice</a></li>
+<li><a href="cipher.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cipher" data-linktype="relative-path">cipher</a></li>
+<li><a href="clean.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/clean" data-linktype="relative-path">clean</a></li>
+<li><a href="cleanmgr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cleanmgr" data-linktype="relative-path">cleanmgr</a></li>
+<li><a href="clip.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/clip" data-linktype="relative-path">clip</a></li>
+<li><a href="cls.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cls" data-linktype="relative-path">cls</a></li>
+<li><a href="cmd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cmd" data-linktype="relative-path">cmd</a></li>
+<li><a href="cmdkey.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cmdkey" data-linktype="relative-path">cmdkey</a></li>
+<li><a href="cmstp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cmstp" data-linktype="relative-path">cmstp</a></li>
+<li><a href="color.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/color" data-linktype="relative-path">color</a></li>
+<li><a href="comp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/comp" data-linktype="relative-path">comp</a></li>
+<li><a href="compact.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/compact" data-linktype="relative-path">compact</a></li>
+<li><a href="compact-vdisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/compact-vdisk" data-linktype="relative-path">compact vdisk</a></li>
+<li><a href="convert.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/convert" data-linktype="relative-path">convert</a>
+<ul>
+<li><a href="convert-basic.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/convert-basic" data-linktype="relative-path">convert basic</a></li>
+<li><a href="convert-dynamic.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/convert-dynamic" data-linktype="relative-path">convert dynamic</a></li>
+<li><a href="convert-gpt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/convert-gpt" data-linktype="relative-path">convert gpt</a></li>
+<li><a href="convert-mbr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/convert-mbr" data-linktype="relative-path">convert mbr</a></li>
+</ul>
+</li>
+<li><a href="copy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/copy" data-linktype="relative-path">copy</a></li>
+<li><a href="cprofile.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cprofile" data-linktype="relative-path">cprofile</a></li>
+<li><a href="create.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create" data-linktype="relative-path">create</a>
+<ul>
+<li><a href="create-partition-efi.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-partition-efi" data-linktype="relative-path">create partition efi</a></li>
+<li><a href="create-partition-extended.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-partition-extended" data-linktype="relative-path">åˆ›å»ºæ‰©å±•åˆ†åŒº</a></li>
+<li><a href="create-partition-logical.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-partition-logical" data-linktype="relative-path">create partition logical</a></li>
+<li><a href="create-partition-msr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-partition-msr" data-linktype="relative-path">create partition msr</a></li>
+<li><a href="create-partition-primary.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-partition-primary" data-linktype="relative-path">create partition primary</a></li>
+<li><a href="create-volume-mirror.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-volume-mirror" data-linktype="relative-path">create volume mirror</a></li>
+<li><a href="create-volume-raid.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-volume-raid" data-linktype="relative-path">create volume raid</a></li>
+<li><a href="create-volume-simple.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-volume-simple" data-linktype="relative-path">create volume simple</a></li>
+<li><a href="create-volume-stripe.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/create-volume-stripe" data-linktype="relative-path">create volume stripe</a></li>
+</ul>
+</li>
+<li><a href="cscript.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/cscript" data-linktype="relative-path">cscript</a></li>
+</ul>
+<h3 id="d">D</h3>
+<ul>
+<li><a href="date.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/date" data-linktype="relative-path">date</a></li>
+<li><a href="dcgpofix.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dcgpofix" data-linktype="relative-path">dcgpofix</a></li>
+<li><a href="defrag.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/defrag" data-linktype="relative-path">defrag</a></li>
+<li><a href="del.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/del" data-linktype="relative-path">del</a></li>
+<li><a href="delete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/delete" data-linktype="relative-path">delete</a>
+<ul>
+<li><a href="delete-disk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/delete-disk" data-linktype="relative-path">delete disk</a></li>
+<li><a href="delete-partition.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/delete-partition" data-linktype="relative-path">delete partition</a></li>
+<li><a href="delete-shadows.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/delete-shadows" data-linktype="relative-path">delete shadows</a></li>
+<li><a href="delete-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/delete-volume" data-linktype="relative-path">delete volume</a></li>
+</ul>
+</li>
+<li><a href="detach-vdisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/detach-vdisk" data-linktype="relative-path">detach vdisk</a></li>
+<li><a href="detail.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/detail" data-linktype="relative-path">detail</a>
+<ul>
+<li><a href="detail-disk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/detail-disk" data-linktype="relative-path">detail disk</a></li>
+<li><a href="detail-partition.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/detail-partition" data-linktype="relative-path">detail partition</a></li>
+<li><a href="detail-vdisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/detail-vdisk" data-linktype="relative-path">detail vdisk</a></li>
+<li><a href="detail-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/detail-volume" data-linktype="relative-path">detail volume</a></li>
+</ul>
+</li>
+<li><a href="dfsdiag.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dfsdiag" data-linktype="relative-path">dfsdiag</a>
+<ul>
+<li><a href="dfsdiag-testdcs.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dfsdiag-testdcs" data-linktype="relative-path">dfsdiag testdcs</a></li>
+<li><a href="dfsdiag-testdfsconfig.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dfsdiag-testdfsconfig" data-linktype="relative-path">dfsdiag testdfsconfig</a></li>
+<li><a href="dfsdiag-testdfsintegrity.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dfsdiag-testdfsintegrity" data-linktype="relative-path">dfsdiag testdfsintegrity</a></li>
+<li><a href="dfsdiag-testreferral.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dfsdiag-testreferral" data-linktype="relative-path">dfsdiag testreferral</a></li>
+<li><a href="dfsdiag-testsites.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dfsdiag-testsites" data-linktype="relative-path">dfsdiag testsites</a></li>
+</ul>
+</li>
+<li><a href="dfsrmig.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dfsrmig" data-linktype="relative-path">dfsrmig</a></li>
+<li><a href="diantz.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/diantz" data-linktype="relative-path">diantz</a></li>
+<li><a href="dir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dir" data-linktype="relative-path">dir</a></li>
+<li><a href="diskcomp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/diskcomp" data-linktype="relative-path">diskcomp</a></li>
+<li><a href="diskcopy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/diskcopy" data-linktype="relative-path">diskcopy</a></li>
+<li><a href="diskpart.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/diskpart" data-linktype="relative-path">diskpart</a></li>
+<li><a href="diskperf.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/diskperf" data-linktype="relative-path">diskperf</a></li>
+<li><a href="diskraid.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/diskraid" data-linktype="relative-path">diskraid</a></li>
+<li><a href="diskshadow.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/diskshadow" data-linktype="relative-path">diskshadow</a></li>
+<li><a href="dispdiag.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dispdiag" data-linktype="relative-path">dispdiag</a></li>
+<li><a href="dnscmd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dnscmd" data-linktype="relative-path">dnscmd</a></li>
+<li><a href="doskey.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/doskey" data-linktype="relative-path">doskey</a></li>
+<li><a href="driverquery.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/driverquery" data-linktype="relative-path">driverquery</a></li>
+</ul>
+<h3 id="e">E</h3>
+<ul>
+<li><a href="echo.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/echo" data-linktype="relative-path">echo</a></li>
+<li><a href="edit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/edit" data-linktype="relative-path">edit</a></li>
+<li><a href="endlocal.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/endlocal" data-linktype="relative-path">endlocal</a></li>
+<li><a href="end-restore.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/end-restore" data-linktype="relative-path">end restore</a></li>
+<li><a href="erase.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/erase" data-linktype="relative-path">erase</a></li>
+<li><a href="eventcreate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/eventcreate" data-linktype="relative-path">eventcreate</a></li>
+<li><a href="eventquery.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/eventquery" data-linktype="relative-path">eventquery</a></li>
+<li><a href="eventtriggers.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/eventtriggers" data-linktype="relative-path">eventtriggers</a></li>
+<li><a href="evntcmd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/evntcmd" data-linktype="relative-path">Evntcmd</a></li>
+<li><a href="exec.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/exec" data-linktype="relative-path">exec</a></li>
+<li><a href="exit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/exit" data-linktype="relative-path">exit</a></li>
+<li><a href="expand.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/expand" data-linktype="relative-path">expand</a></li>
+<li><a href="expand-vdisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/expand-vdisk" data-linktype="relative-path">expand vdisk</a></li>
+<li><a href="expose.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/expose" data-linktype="relative-path">expose</a></li>
+<li><a href="extend.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/extend" data-linktype="relative-path">extend</a></li>
+<li><a href="extract.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/extract" data-linktype="relative-path">extract</a></li>
+</ul>
+<h3 id="f">F</h3>
+<ul>
+<li><a href="fc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fc" data-linktype="relative-path">fc</a></li>
+<li><a href="filesystems.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/filesystems" data-linktype="relative-path">filesystems</a></li>
+<li><a href="find.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/find" data-linktype="relative-path">find</a></li>
+<li><a href="findstr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/findstr" data-linktype="relative-path">findstr</a></li>
+<li><a href="finger.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/finger" data-linktype="relative-path">finger</a></li>
+<li><a href="flattemp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/flattemp" data-linktype="relative-path">flattemp</a></li>
+<li><a href="fondue.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fondue" data-linktype="relative-path">fondue</a></li>
+<li><a href="for.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/for" data-linktype="relative-path">for</a></li>
+<li><a href="forfiles.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles" data-linktype="relative-path">forfiles</a></li>
+<li><a href="format.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/format" data-linktype="relative-path">format</a></li>
+<li><a href="freedisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/freedisk" data-linktype="relative-path">freedisk</a></li>
+<li><a href="fsutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil" data-linktype="relative-path">fsutil</a>
+<ul>
+<li><a href="fsutil-8dot3name.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-8dot3name" data-linktype="relative-path">fsutil 8dot3name</a></li>
+<li><a href="fsutil-behavior.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-behavior" data-linktype="relative-path">fsutil behavior</a></li>
+<li><a href="fsutil-dirty.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-dirty" data-linktype="relative-path">fsutil dirty</a></li>
+<li><a href="fsutil-file.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-file" data-linktype="relative-path">fsutil file</a></li>
+<li><a href="fsutil-fsinfo.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-fsinfo" data-linktype="relative-path">fsutil fsinfo</a></li>
+<li><a href="fsutil-hardlink.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-hardlink" data-linktype="relative-path">fsutil hardlink</a></li>
+<li><a href="fsutil-objectid.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-objectid" data-linktype="relative-path">fsutil objectid</a></li>
+<li><a href="fsutil-quota.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-quota" data-linktype="relative-path">fsutil quota</a></li>
+<li><a href="fsutil-repair.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-repair" data-linktype="relative-path">fsutil repair</a></li>
+<li><a href="fsutil-reparsepoint.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-reparsepoint" data-linktype="relative-path">fsutil reparsepoint</a></li>
+<li><a href="fsutil-resource.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-resource" data-linktype="relative-path">fsutil resource</a></li>
+<li><a href="fsutil-sparse.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-sparse" data-linktype="relative-path">fsutil sparse</a></li>
+<li><a href="fsutil-tiering.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-tiering" data-linktype="relative-path">fsutil tiering</a></li>
+<li><a href="fsutil-transaction.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-transaction" data-linktype="relative-path">fsutil transaction</a></li>
+<li><a href="fsutil-usn.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-usn" data-linktype="relative-path">fsutil usn</a></li>
+<li><a href="fsutil-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-volume" data-linktype="relative-path">fsutil volume</a></li>
+<li><a href="fsutil-wim.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fsutil-wim" data-linktype="relative-path">fsutil wim</a></li>
+</ul>
+</li>
+<li><a href="ftp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp" data-linktype="relative-path">ftp</a>
+<ul>
+<li><a href="ftp-append.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-append" data-linktype="relative-path">ftp append</a></li>
+<li><a href="ftp-ascii.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-ascii" data-linktype="relative-path">ftp ascii</a></li>
+<li><a href="ftp-bell_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-bell_1" data-linktype="relative-path">ftp bell</a></li>
+<li><a href="ftp-binary.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-binary" data-linktype="relative-path">ftp binary</a></li>
+<li><a href="ftp-bye.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-bye" data-linktype="relative-path">ftp bye</a></li>
+<li><a href="ftp-cd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-cd" data-linktype="relative-path">ftp cd</a></li>
+<li><a href="ftp-close_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-close_1" data-linktype="relative-path">ftp close</a></li>
+<li><a href="ftp-debug.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-debug" data-linktype="relative-path">ftp debug</a></li>
+<li><a href="ftp-delete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-delete" data-linktype="relative-path">ftp delete</a></li>
+<li><a href="ftp-dir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-dir" data-linktype="relative-path">ftp dir</a></li>
+<li><a href="ftp-disconnect_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-disconnect_1" data-linktype="relative-path">ftp disconnect</a></li>
+<li><a href="ftp-get.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-get" data-linktype="relative-path">ftp get</a></li>
+<li><a href="ftp-glob_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-glob_1" data-linktype="relative-path">ftp glob</a></li>
+<li><a href="ftp-hash_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-hash_1" data-linktype="relative-path">ftp hash</a></li>
+<li><a href="ftp-lcd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-lcd" data-linktype="relative-path">ftp lcd</a></li>
+<li><a href="ftp-literal_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-literal_1" data-linktype="relative-path">ftp literal</a></li>
+<li><a href="ftp-ls_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-ls_1" data-linktype="relative-path">ftp ls</a></li>
+<li><a href="ftp-mget.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-mget" data-linktype="relative-path">ftp mget</a></li>
+<li><a href="ftp-mkdir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-mkdir" data-linktype="relative-path">ftp mkdir</a></li>
+<li><a href="ftp-mls_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-mls_1" data-linktype="relative-path">ftp mls</a></li>
+<li><a href="ftp-mput_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-mput_1" data-linktype="relative-path">ftp mput</a></li>
+<li><a href="ftp-open_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-open_1" data-linktype="relative-path">ftp open</a></li>
+<li><a href="ftp-prompt_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-prompt_1" data-linktype="relative-path">ftp prompt</a></li>
+<li><a href="ftp-put.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-put" data-linktype="relative-path">ftp put</a></li>
+<li><a href="ftp-pwd_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-pwd_1" data-linktype="relative-path">ftp pwd</a></li>
+<li><a href="ftp-quit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-quit" data-linktype="relative-path">ftp quit</a></li>
+<li><a href="ftp-quote.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-quote" data-linktype="relative-path">ftp quote</a></li>
+<li><a href="ftp-recv.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-recv" data-linktype="relative-path">ftp recv</a></li>
+<li><a href="ftp-remotehelp_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-remotehelp_1" data-linktype="relative-path">ftp remotehelp</a></li>
+<li><a href="ftp-rename.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-rename" data-linktype="relative-path">ftp rename</a></li>
+<li><a href="ftp-rmdir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-rmdir" data-linktype="relative-path">ftp rmdir</a></li>
+<li><a href="ftp-send_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-send_1" data-linktype="relative-path">ftp send</a></li>
+<li><a href="ftp-status.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-status" data-linktype="relative-path">ftp status</a></li>
+<li><a href="ftp-trace_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-trace_1" data-linktype="relative-path">ftp trace</a></li>
+<li><a href="ftp-type.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-type" data-linktype="relative-path">ftp type</a></li>
+<li><a href="ftp-user.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-user" data-linktype="relative-path">ftp user</a></li>
+<li><a href="ftp-verbose_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp-verbose_1" data-linktype="relative-path">ftp verbose</a></li>
+<li><a href="ftp.mdelete_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp.mdelete_1" data-linktype="relative-path">ftp mdelete</a></li>
+<li><a href="ftp.mdir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftp.mdir" data-linktype="relative-path">ftp mdir</a></li>
+</ul>
+</li>
+<li><a href="ftype.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ftype" data-linktype="relative-path">ftype</a></li>
+<li><a href="fveupdate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/fveupdate" data-linktype="relative-path">fveupdate</a></li>
+</ul>
+<h3 id="g">G</h3>
+<ul>
+<li><a href="getmac.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/getmac" data-linktype="relative-path">getmac</a></li>
+<li><a href="gettype.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/gettype" data-linktype="relative-path">gettype</a></li>
+<li><a href="goto.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/goto" data-linktype="relative-path">goto</a></li>
+<li><a href="gpfixup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/gpfixup" data-linktype="relative-path">gpfixup</a></li>
+<li><a href="gpresult.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/gpresult" data-linktype="relative-path">gpresult</a></li>
+<li><a href="gpt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/gpt" data-linktype="relative-path">gpt</a></li>
+<li><a href="gpupdate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/gpupdate" data-linktype="relative-path">gpupdate</a></li>
+<li><a href="graftabl.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/graftabl" data-linktype="relative-path">graftabl</a></li>
+</ul>
+<h3 id="h">H</h3>
+<ul>
+<li><a href="help.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/help" data-linktype="relative-path">help</a></li>
+<li><a href="helpctr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/helpctr" data-linktype="relative-path">helpctr</a></li>
+<li><a href="hostname.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/hostname" data-linktype="relative-path">hostname</a></li>
+</ul>
+<h3 id="i">I</h3>
+<ul>
+<li><a href="icacls.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/icacls" data-linktype="relative-path">icacls</a></li>
+<li><a href="if.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/if" data-linktype="relative-path">if</a></li>
+<li><a href="import.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/import" data-linktype="relative-path">import (shadowdisk)</a></li>
+<li><a href="import_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/import_1" data-linktype="relative-path">import (diskpart)</a></li>
+<li><a href="inactive.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/inactive" data-linktype="relative-path">inactive</a></li>
+<li><a href="inuse.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/inuse" data-linktype="relative-path">inuse</a></li>
+<li><a href="ipconfig.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ipconfig" data-linktype="relative-path">ipconfig</a></li>
+<li><a href="ipxroute.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ipxroute" data-linktype="relative-path">ipxroute</a></li>
+<li><a href="irftp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/irftp" data-linktype="relative-path">irftp</a></li>
+</ul>
+<h3 id="j">J</h3>
+<ul>
+<li><a href="jetpack.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/jetpack" data-linktype="relative-path">jetpack</a></li>
+</ul>
+<h3 id="k">K</h3>
+<ul>
+<li><a href="klist.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/klist" data-linktype="relative-path">klist</a></li>
+<li><a href="ksetup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup" data-linktype="relative-path">ksetup</a>
+<ul>
+<li><a href="ksetup-addenctypeattr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-addenctypeattr" data-linktype="relative-path">ksetup addenctypeattr</a></li>
+<li><a href="ksetup-addhosttorealmmap.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-addhosttorealmmap" data-linktype="relative-path">ksetup addhosttorealmmap</a></li>
+<li><a href="ksetup-addkdc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-addkdc" data-linktype="relative-path">ksetup addkdc</a></li>
+<li><a href="ksetup-addkpasswd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-addkpasswd" data-linktype="relative-path">ksetup addkpasswd</a></li>
+<li><a href="ksetup-addrealmflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-addrealmflags" data-linktype="relative-path">ksetup addrealmflags</a></li>
+<li><a href="ksetup-changepassword.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-changepassword" data-linktype="relative-path">ksetup changepassword</a></li>
+<li><a href="ksetup-delenctypeattr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-delenctypeattr" data-linktype="relative-path">ksetup delenctypeattr</a></li>
+<li><a href="ksetup-delhosttorealmmap.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-delhosttorealmmap" data-linktype="relative-path">ksetup delhosttorealmmap</a></li>
+<li><a href="ksetup-delkdc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-delkdc" data-linktype="relative-path">ksetup delkdc</a></li>
+<li><a href="ksetup-delkpasswd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-delkpasswd" data-linktype="relative-path">ksetup delkpasswd</a></li>
+<li><a href="ksetup-delrealmflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-delrealmflags" data-linktype="relative-path">ksetup delrealmflags</a></li>
+<li><a href="ksetup-domain.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-domain" data-linktype="relative-path">ksetup domain</a></li>
+<li><a href="ksetup-dumpstate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-dumpstate" data-linktype="relative-path">ksetup dumpstate</a></li>
+<li><a href="ksetup-getenctypeattr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-getenctypeattr" data-linktype="relative-path">ksetup getenctypeattr</a></li>
+<li><a href="ksetup-listrealmflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-listrealmflags" data-linktype="relative-path">ksetup listrealmflags</a></li>
+<li><a href="ksetup-mapuser.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-mapuser" data-linktype="relative-path">ksetup mapuser</a></li>
+<li><a href="ksetup-removerealm.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-removerealm" data-linktype="relative-path">ksetup removerealm</a></li>
+<li><a href="ksetup-server.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-server" data-linktype="relative-path">ksetup server</a></li>
+<li><a href="ksetup-setcomputerpassword.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-setcomputerpassword" data-linktype="relative-path">ksetup setcomputerpassword</a></li>
+<li><a href="ksetup-setenctypeattr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-setenctypeattr" data-linktype="relative-path">ksetup setenctypeattr</a></li>
+<li><a href="ksetup-setrealm.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-setrealm" data-linktype="relative-path">ksetup setrealm</a></li>
+<li><a href="ksetup-setrealmflags.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ksetup-setrealmflags" data-linktype="relative-path">ksetup setrealmflags</a></li>
+</ul>
+</li>
+<li><a href="ktmutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ktmutil" data-linktype="relative-path">ktmutil</a></li>
+<li><a href="ktpass.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ktpass" data-linktype="relative-path">ktpass</a></li>
+</ul>
+<h3 id="l">L</h3>
+<ul>
+<li><a href="label.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/label" data-linktype="relative-path">label</a></li>
+<li><a href="list.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/list" data-linktype="relative-path">list</a>
+<ul>
+<li><a href="list-providers.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/list-providers" data-linktype="relative-path">list providers</a></li>
+<li><a href="list-shadows.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/list-shadows" data-linktype="relative-path">list shadows</a></li>
+<li><a href="list-writers.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/list-writers" data-linktype="relative-path">list writers</a></li>
+</ul>
+</li>
+<li><a href="load-metadata.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/load-metadata" data-linktype="relative-path">load metadata</a></li>
+<li><a href="lodctr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/lodctr" data-linktype="relative-path">lodctr</a></li>
+<li><a href="logman.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman" data-linktype="relative-path">logman</a>
+<ul>
+<li><a href="logman-create.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-create" data-linktype="relative-path">logman create</a></li>
+<li><a href="logman-create-alert.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-create-alert" data-linktype="relative-path">logman create alert</a></li>
+<li><a href="logman-create-api.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-create-api" data-linktype="relative-path">logman create api</a></li>
+<li><a href="logman-create-cfg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-create-cfg" data-linktype="relative-path">logman create cfg</a></li>
+<li><a href="logman-create-counter.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-create-counter" data-linktype="relative-path">logman create counter</a></li>
+<li><a href="logman-create-trace.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-create-trace" data-linktype="relative-path">logman create trace</a></li>
+<li><a href="logman-delete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-delete" data-linktype="relative-path">logman delete</a></li>
+<li><a href="logman-import-export.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-import-export" data-linktype="relative-path">logman import and logman export</a></li>
+<li><a href="logman-query.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-query" data-linktype="relative-path">logman query</a></li>
+<li><a href="logman-start-stop.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-start-stop" data-linktype="relative-path">logman start and logman stop</a></li>
+<li><a href="logman-update.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-update" data-linktype="relative-path">logman update</a></li>
+<li><a href="logman-update-alert.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-update-alert" data-linktype="relative-path">logman update alert</a></li>
+<li><a href="logman-update-api.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-update-api" data-linktype="relative-path">logman update api</a></li>
+<li><a href="logman-update-cfg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-update-cfg" data-linktype="relative-path">logman update cfg</a></li>
+<li><a href="logman-update-counter.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-update-counter" data-linktype="relative-path">logman update counter</a></li>
+<li><a href="logman-update-trace.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logman-update-trace" data-linktype="relative-path">logman update trace</a></li>
+</ul>
+</li>
+<li><a href="logoff.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/logoff" data-linktype="relative-path">logoff</a></li>
+<li><a href="lpq.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/lpq" data-linktype="relative-path">lpq</a></li>
+<li><a href="lpr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/lpr" data-linktype="relative-path">lpr</a></li>
+</ul>
+<h3 id="m">M</h3>
+<ul>
+<li><a href="macfile.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/macfile" data-linktype="relative-path">macfile</a></li>
+<li><a href="makecab.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/makecab" data-linktype="relative-path">makecab</a></li>
+<li><a href="manage-bde.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde" data-linktype="relative-path">manage bde</a>
+<ul>
+<li><a href="manage-bde-status.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-status" data-linktype="relative-path">manage bde status</a></li>
+<li><a href="manage-bde-on.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-on" data-linktype="relative-path">manage bde on</a></li>
+<li><a href="manage-bde-off.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-off" data-linktype="relative-path">manage bde off</a></li>
+<li><a href="manage-bde-pause.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-pause" data-linktype="relative-path">manage bde pause</a></li>
+<li><a href="manage-bde-resume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-resume" data-linktype="relative-path">manage bde resume</a></li>
+<li><a href="manage-bde-lock.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-lock" data-linktype="relative-path">manage bde lock</a></li>
+<li><a href="manage-bde-unlock.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-unlock" data-linktype="relative-path">manage bde unlock</a></li>
+<li><a href="manage-bde-autounlock.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-autounlock" data-linktype="relative-path">manage bde autounlock</a></li>
+<li><a href="manage-bde-protectors.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-protectors" data-linktype="relative-path">manage bde protectors</a></li>
+<li><a href="manage-bde-tpm.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-tpm" data-linktype="relative-path">manage bde tpm</a></li>
+<li><a href="manage-bde-setidentifier.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-setidentifier" data-linktype="relative-path">manage bde setidentifier</a></li>
+<li><a href="manage-bde-forcerecovery.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-forcerecovery" data-linktype="relative-path">manage bde forcerecovery</a></li>
+<li><a href="manage-bde-changepassword.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-changepassword" data-linktype="relative-path">manage bde changepassword</a></li>
+<li><a href="manage-bde-changepin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-changepin" data-linktype="relative-path">manage bde changepin</a></li>
+<li><a href="manage-bde-changekey.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-changekey" data-linktype="relative-path">manage bde changekey</a></li>
+<li><a href="manage-bde-keypackage.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-keypackage" data-linktype="relative-path">manage bde keypackage</a></li>
+<li><a href="manage-bde-upgrade.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-upgrade" data-linktype="relative-path">manage bde upgrade</a></li>
+<li><a href="manage-bde-wipefreespace.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/manage-bde-wipefreespace" data-linktype="relative-path">manage bde wipefreespace</a></li>
+</ul>
+</li>
+<li><a href="mapadmin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mapadmin" data-linktype="relative-path">mapadmin</a></li>
+<li><a href="md.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/md" data-linktype="relative-path">md</a></li>
+<li><a href="merge-vdisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/merge-vdisk" data-linktype="relative-path">merge vdisk</a></li>
+<li><a href="mkdir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mkdir" data-linktype="relative-path">mkdir</a></li>
+<li><a href="mklink.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mklink" data-linktype="relative-path">mklink</a></li>
+<li><a href="mmc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mmc" data-linktype="relative-path">mmc</a></li>
+<li><a href="mode.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mode" data-linktype="relative-path">mode</a></li>
+<li><a href="more.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/more" data-linktype="relative-path">more</a></li>
+<li><a href="mount.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mount" data-linktype="relative-path">mount</a></li>
+<li><a href="mountvol.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mountvol" data-linktype="relative-path">mountvol</a></li>
+<li><a href="move.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/move" data-linktype="relative-path">move</a></li>
+<li><a href="mqbkup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mqbkup" data-linktype="relative-path">mqbkup</a></li>
+<li><a href="mqsvc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mqsvc" data-linktype="relative-path">mqsvc</a></li>
+<li><a href="mqtgsvc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mqtgsvc" data-linktype="relative-path">mqtgsvc</a></li>
+<li><a href="msdt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/msdt" data-linktype="relative-path">msdt</a></li>
+<li><a href="msg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/msg" data-linktype="relative-path">msg</a></li>
+<li><a href="msiexec.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/msiexec" data-linktype="relative-path">msiexec</a></li>
+<li><a href="msinfo32.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/msinfo32" data-linktype="relative-path">msinfo32</a></li>
+<li><a href="mstsc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/mstsc" data-linktype="relative-path">mstsc</a></li>
+</ul>
+<h3 id="n">N</h3>
+<ul>
+<li><a href="nbtstat.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nbtstat" data-linktype="relative-path">nbtstat</a></li>
+<li><a href="netcfg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/netcfg" data-linktype="relative-path">netcfg</a></li>
+<li><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc772217(v=ws.11)  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc772217(v=ws.11)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc772217(v=ws.11)" data-linktype="absolute-path">netdom</a></li>
+<li><a href="net-print.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/net-print" data-linktype="relative-path">net print</a></li>
+<li><a href="netsh.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/netsh" data-linktype="relative-path">netsh</a></li>
+<li><a href="netstat.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/netstat" data-linktype="relative-path">netstat</a></li>
+<li><a href="nfsadmin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nfsadmin" data-linktype="relative-path">nfsadmin</a></li>
+<li><a href="nfsshare.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nfsshare" data-linktype="relative-path">nfsshare</a></li>
+<li><a href="nfsstat.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nfsstat" data-linktype="relative-path">nfsstat</a></li>
+<li><a href="nlbmgr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nlbmgr" data-linktype="relative-path">nlbmgr</a></li>
+<li><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11)  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11)" data-linktype="absolute-path">nltest</a></li>
+<li><a href="nslookup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup" data-linktype="relative-path">nslookup</a>
+<ul>
+<li><a href="nslookup-exit-command.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-exit-command" data-linktype="relative-path">nslookup exit å‘½ä»¤</a></li>
+<li><a href="nslookup-finger-command.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-finger-command" data-linktype="relative-path">nslookup finger å‘½ä»¤</a></li>
+<li><a href="nslookup-help.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-help" data-linktype="relative-path">nslookup help</a></li>
+<li><a href="nslookup-ls.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-ls" data-linktype="relative-path">nslookup ls</a></li>
+<li><a href="nslookup-lserver.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-lserver" data-linktype="relative-path">nslookup lserver</a></li>
+<li><a href="nslookup-root.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-root" data-linktype="relative-path">nslookup root</a></li>
+<li><a href="nslookup-server.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-server" data-linktype="relative-path">nslookup server</a></li>
+<li><a href="nslookup-set.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set" data-linktype="relative-path">nslookup set</a></li>
+<li><a href="nslookup-set-all.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-all" data-linktype="relative-path">nslookup set all</a></li>
+<li><a href="nslookup-set-class.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-class" data-linktype="relative-path">nslookup set class</a></li>
+<li><a href="nslookup-set-d2.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-d2" data-linktype="relative-path">nslookup set d2</a></li>
+<li><a href="nslookup-set-debug.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-debug" data-linktype="relative-path">nslookup set debug</a></li>
+<li><a href="nslookup-set-domain.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-domain" data-linktype="relative-path">nslookup set domain</a></li>
+<li><a href="nslookup-set-port.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-port" data-linktype="relative-path">nslookup set port</a></li>
+<li><a href="nslookup-set-querytype.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-querytype" data-linktype="relative-path">nslookup set querytype</a></li>
+<li><a href="nslookup-set-recurse.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-recurse" data-linktype="relative-path">nslookup set recurse</a></li>
+<li><a href="nslookup-set-retry.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-retry" data-linktype="relative-path">nslookup set retry</a></li>
+<li><a href="nslookup-set-root.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-root" data-linktype="relative-path">nslookup set root</a></li>
+<li><a href="nslookup-set-search.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-search" data-linktype="relative-path">nslookup set search</a></li>
+<li><a href="nslookup-set-srchlist.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-srchlist" data-linktype="relative-path">nslookup set srchlist</a></li>
+<li><a href="nslookup-set-timeout.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-timeout" data-linktype="relative-path">nslookup set timeout</a></li>
+<li><a href="nslookup-set-type.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-type" data-linktype="relative-path">nslookup set type</a></li>
+<li><a href="nslookup-set-vc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-set-vc" data-linktype="relative-path">nslookup set vc</a></li>
+<li><a href="nslookup-view.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/nslookup-view" data-linktype="relative-path">nslookup view</a></li>
+</ul>
+</li>
+<li><a href="ntbackup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ntbackup" data-linktype="relative-path">ntbackup</a></li>
+<li><a href="ntcmdprompt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ntcmdprompt" data-linktype="relative-path">ntcmdprompt</a></li>
+<li><a href="ntfrsutl.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ntfrsutl" data-linktype="relative-path">ntfrsutl</a></li>
+</ul>
+<h3 id="o">O</h3>
+<ul>
+<li><a href="offline.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/offline" data-linktype="relative-path">offline</a>
+<ul>
+<li><a href="offline-disk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/offline-disk" data-linktype="relative-path">offline disk</a></li>
+<li><a href="offline-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/offline-volume" data-linktype="relative-path">offline volume</a></li>
+</ul>
+</li>
+<li><a href="online.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/online" data-linktype="relative-path">online</a>
+<ul>
+<li><a href="online-disk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/online-disk" data-linktype="relative-path">online disk</a></li>
+<li><a href="online-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/online-volume" data-linktype="relative-path">online volume</a></li>
+</ul>
+</li>
+<li><a href="openfiles.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/openfiles" data-linktype="relative-path">openfiles</a></li>
+</ul>
+<h3 id="p">P</h3>
+<ul>
+<li><a href="pagefileconfig.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pagefileconfig" data-linktype="relative-path">pagefileconfig</a></li>
+<li><a href="path.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/path" data-linktype="relative-path">path</a></li>
+<li><a href="pathping.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pathping" data-linktype="relative-path">pathping</a></li>
+<li><a href="pause.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pause" data-linktype="relative-path">pause</a></li>
+<li><a href="pbadmin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pbadmin" data-linktype="relative-path">pbadmin</a></li>
+<li><a href="pentnt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pentnt" data-linktype="relative-path">pentnt</a></li>
+<li><a href="perfmon.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/perfmon" data-linktype="relative-path">perfmon</a></li>
+<li><a href="ping.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ping" data-linktype="relative-path">ping</a></li>
+<li><a href="pktmon.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pktmon" data-linktype="relative-path">pktmon</a></li>
+<li><a href="pnpunattend.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pnpunattend" data-linktype="relative-path">pnpunattend</a></li>
+<li><a href="pnputil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pnputil" data-linktype="relative-path">pnputil</a></li>
+<li><a href="popd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/popd" data-linktype="relative-path">popd</a></li>
+<li><a href="powershell.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/powershell" data-linktype="relative-path">powershell</a></li>
+<li><a href="powershell_ise.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/powershell_ise" data-linktype="relative-path">powershell ise</a></li>
+<li><a href="print.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/print" data-linktype="relative-path">print</a></li>
+<li><a href="prncnfg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/prncnfg" data-linktype="relative-path">prncnfg</a></li>
+<li><a href="prndrvr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/prndrvr" data-linktype="relative-path">prndrvr</a></li>
+<li><a href="prnjobs.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/prnjobs" data-linktype="relative-path">prnjobs</a></li>
+<li><a href="prnmngr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/prnmngr" data-linktype="relative-path">prnmngr</a></li>
+<li><a href="prnport.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/prnport" data-linktype="relative-path">prnport</a></li>
+<li><a href="prnqctl.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/prnqctl" data-linktype="relative-path">prnqctl</a></li>
+<li><a href="prompt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/prompt" data-linktype="relative-path">prompt</a></li>
+<li><a href="pubprn.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pubprn" data-linktype="relative-path">pubprn</a></li>
+<li><a href="pushd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pushd" data-linktype="relative-path">pushd</a></li>
+<li><a href="pushprinterconnections.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pushprinterconnections" data-linktype="relative-path">pushprinterconnections</a></li>
+<li><a href="pwlauncher.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/pwlauncher" data-linktype="relative-path">pwlauncher</a></li>
+<li><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_pwsh  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_pwsh'" tppabs="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_pwsh" data-linktype="absolute-path">pwsh</a></li>
+</ul>
+<h3 id="q">Q</h3>
+<ul>
+<li><a href="qappsrv.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/qappsrv" data-linktype="relative-path">qappsrv</a></li>
+<li><a href="qprocess.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/qprocess" data-linktype="relative-path">qprocess</a></li>
+<li><a href="query.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/query" data-linktype="relative-path">æŸ¥è¯¢</a>
+<ul>
+<li><a href="query-process.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/query-process" data-linktype="relative-path">query process</a></li>
+<li><a href="query-session.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/query-session" data-linktype="relative-path">query session</a></li>
+<li><a href="query-termserver.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/query-termserver" data-linktype="relative-path">query termserver</a></li>
+<li><a href="query-user.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/query-user" data-linktype="relative-path">query user</a></li>
+</ul>
+</li>
+<li><a href="quser.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/quser" data-linktype="relative-path">quser</a></li>
+<li><a href="qwinsta.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/qwinsta" data-linktype="relative-path">qwinsta</a></li>
+</ul>
+<h3 id="r">R</h3>
+<ul>
+<li><a href="rcp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rcp" data-linktype="relative-path">rcp</a></li>
+<li><a href="rd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rd" data-linktype="relative-path">rd</a></li>
+<li><a href="rdpsign.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rdpsign" data-linktype="relative-path">rdpsign</a></li>
+<li><a href="recover.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/recover" data-linktype="relative-path">recover</a></li>
+<li><a href="recover_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/recover_1" data-linktype="relative-path">recover disk group</a></li>
+<li><a href="refsutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/refsutil" data-linktype="relative-path">refsutil</a></li>
+<li><a href="reg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg" data-linktype="relative-path">reg</a>
+<ul>
+<li><a href="reg-add.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-add" data-linktype="relative-path">reg add</a></li>
+<li><a href="reg-compare.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-compare" data-linktype="relative-path">reg compare</a></li>
+<li><a href="reg-copy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-copy" data-linktype="relative-path">reg copy</a></li>
+<li><a href="reg-delete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-delete" data-linktype="relative-path">reg delete</a></li>
+<li><a href="reg-export.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-export" data-linktype="relative-path">reg export</a></li>
+<li><a href="reg-import.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-import" data-linktype="relative-path">reg import</a></li>
+<li><a href="reg-load.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-load" data-linktype="relative-path">reg load</a></li>
+<li><a href="reg-query.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-query" data-linktype="relative-path">reg query</a></li>
+<li><a href="reg-restore.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-restore" data-linktype="relative-path">reg restore</a></li>
+<li><a href="reg-save.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-save" data-linktype="relative-path">reg save</a></li>
+<li><a href="reg-unload.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reg-unload" data-linktype="relative-path">reg unload</a></li>
+</ul>
+</li>
+<li><a href="regini.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/regini" data-linktype="relative-path">regini</a></li>
+<li><a href="regsvr32.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/regsvr32" data-linktype="relative-path">regsvr32</a></li>
+<li><a href="relog.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/relog" data-linktype="relative-path">relog</a></li>
+<li><a href="rem.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rem" data-linktype="relative-path">rem</a></li>
+<li><a href="remove.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/remove" data-linktype="relative-path">åˆ é™¤</a></li>
+<li><a href="ren.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ren" data-linktype="relative-path">ren</a></li>
+<li><a href="rename.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rename" data-linktype="relative-path">rename</a></li>
+<li><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc770963(v=ws.11)  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc770963(v=ws.11)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc770963(v=ws.11)" data-linktype="absolute-path">repadmin</a></li>
+<li><a href="repair.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/repair" data-linktype="relative-path">repair</a>
+<ul>
+<li><a href="repair-bde.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/repair-bde" data-linktype="relative-path">repair bde</a></li>
+</ul>
+</li>
+<li><a href="replace.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/replace" data-linktype="relative-path">replace</a></li>
+<li><a href="rescan.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rescan" data-linktype="relative-path">rescan</a></li>
+<li><a href="reset.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reset" data-linktype="relative-path">reset</a>
+<ul>
+<li><a href="reset-session.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/reset-session" data-linktype="relative-path">reset session</a></li>
+</ul>
+</li>
+<li><a href="retain.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/retain" data-linktype="relative-path">retain</a></li>
+<li><a href="revert.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/revert" data-linktype="relative-path">revert</a></li>
+<li><a href="rexec.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rexec" data-linktype="relative-path">rexec</a></li>
+<li><a href="risetup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/risetup" data-linktype="relative-path">risetup</a></li>
+<li><a href="rmdir.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rmdir" data-linktype="relative-path">rmdir</a></li>
+<li><a href="robocopy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy" data-linktype="relative-path">robocopy</a></li>
+<li><a href="route_ws2008.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/route_ws2008" data-linktype="relative-path">route ws2008</a></li>
+<li><a href="rpcinfo.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rpcinfo" data-linktype="relative-path">rpcinfo</a></li>
+<li><a href="rpcping.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rpcping" data-linktype="relative-path">rpcping</a></li>
+<li><a href="rsh.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rsh" data-linktype="relative-path">rsh</a></li>
+<li><a href="rundll32.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rundll32" data-linktype="relative-path">rundll32</a></li>
+<li><a href="rundll32-printui.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rundll32-printui" data-linktype="relative-path">rundll32 printui</a></li>
+<li><a href="rwinsta.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/rwinsta" data-linktype="relative-path">rwinsta</a></li>
+</ul>
+<h3 id="s">S</h3>
+<ul>
+<li><a href="san.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/san" data-linktype="relative-path">san</a></li>
+<li><a href="sc-config.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sc-config" data-linktype="relative-path">sc config</a></li>
+<li><a href="sc-create.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sc-create" data-linktype="relative-path">sc create</a></li>
+<li><a href="sc-delete.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sc-delete" data-linktype="relative-path">sc delete</a></li>
+<li><a href="sc-query.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sc-query" data-linktype="relative-path">sc query</a></li>
+<li><a href="schtasks.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/schtasks" data-linktype="relative-path">schtasks</a></li>
+<li><a href="scwcmd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/scwcmd" data-linktype="relative-path">scwcmd</a>
+<ul>
+<li><a href="scwcmd-analyze.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/scwcmd-analyze" data-linktype="relative-path">scwcmd analyze</a></li>
+<li><a href="scwcmd-configure.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/scwcmd-configure" data-linktype="relative-path">scwcmd configure</a></li>
+<li><a href="scwcmd-register.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/scwcmd-register" data-linktype="relative-path">scwcmd register</a></li>
+<li><a href="scwcmd-rollback.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/scwcmd-rollback" data-linktype="relative-path">scwcmd rollback</a></li>
+<li><a href="scwcmd-transform.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/scwcmd-transform" data-linktype="relative-path">scwcmd transform</a></li>
+<li><a href="scwcmd-view.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/scwcmd-view" data-linktype="relative-path">scwcmd view</a></li>
+</ul>
+</li>
+<li><a href="secedit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/secedit" data-linktype="relative-path">secedit</a>
+<ul>
+<li><a href="secedit-analyze.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/secedit-analyze" data-linktype="relative-path">secedit analyze</a></li>
+<li><a href="secedit-configure.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/secedit-configure" data-linktype="relative-path">secedit configure</a></li>
+<li><a href="secedit-export.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/secedit-export" data-linktype="relative-path">secedit export</a></li>
+<li><a href="secedit-generaterollback.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/secedit-generaterollback" data-linktype="relative-path">secedit generaterollback</a></li>
+<li><a href="secedit-import.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/secedit-import" data-linktype="relative-path">secedit import</a></li>
+<li><a href="secedit-validate.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/secedit-validate" data-linktype="relative-path">secedit validate</a></li>
+</ul>
+</li>
+<li><a href="select.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/select" data-linktype="relative-path">select</a>
+<ul>
+<li><a href="select-disk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/select-disk" data-linktype="relative-path">select disk</a></li>
+<li><a href="select-partition.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/select-partition" data-linktype="relative-path">select partition</a></li>
+<li><a href="select-vdisk.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/select-vdisk" data-linktype="relative-path">select vdisk</a></li>
+<li><a href="select-volume.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/select-volume" data-linktype="relative-path">select volume</a></li>
+</ul>
+</li>
+<li><a href="serverceipoptin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/serverceipoptin" data-linktype="relative-path">serverceipoptin</a></li>
+<li><a href="servermanagercmd.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/servermanagercmd" data-linktype="relative-path">servermanagercmd</a></li>
+<li><a href="serverweroptin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/serverweroptin" data-linktype="relative-path">serverweroptin</a></li>
+<li><a href="set_1.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/set_1" data-linktype="relative-path">set environmental variables</a></li>
+<li><a href="set.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/set" data-linktype="relative-path">set shadow copy</a>
+<ul>
+<li><a href="set-context.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/set-context" data-linktype="relative-path">set context</a></li>
+<li><a href="set-id.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/set-id" data-linktype="relative-path">set id</a></li>
+<li><a href="setlocal.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/setlocal" data-linktype="relative-path">setlocal</a></li>
+<li><a href="set-metadata.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/set-metadata" data-linktype="relative-path">set metadata</a></li>
+<li><a href="set-option.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/set-option" data-linktype="relative-path">set option</a></li>
+<li><a href="set-verbose.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/set-verbose" data-linktype="relative-path">set verbose</a></li>
+</ul>
+</li>
+<li><a href="setx.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/setx" data-linktype="relative-path">setx</a></li>
+<li><a href="sfc.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sfc" data-linktype="relative-path">sfc</a></li>
+<li><a href="shadow.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/shadow" data-linktype="relative-path">shadow</a></li>
+<li><a href="shift.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/shift" data-linktype="relative-path">shift</a></li>
+<li><a href="showmount.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/showmount" data-linktype="relative-path">showmount</a></li>
+<li><a href="shrink.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/shrink" data-linktype="relative-path">shrink</a></li>
+<li><a href="shutdown.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/shutdown" data-linktype="relative-path">shutdown</a></li>
+<li><a href="simulate-restore.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/simulate-restore" data-linktype="relative-path">simulate restore</a></li>
+<li><a href="sort.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sort" data-linktype="relative-path">sort</a></li>
+<li><a href="start.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/start" data-linktype="relative-path">start</a></li>
+<li><a href="wdsutil-set-device.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-device" data-linktype="relative-path">subcommand set device</a></li>
+<li><a href="wdsutil-set-drivergroup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-drivergroup" data-linktype="relative-path">subcommand set drivergroup</a></li>
+<li><a href="wdsutil-set-drivergroupfilter.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-drivergroupfilter" data-linktype="relative-path">subcommand set drivergroupfilter</a></li>
+<li><a href="wdsutil-set-driverpackage.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-driverpackage" data-linktype="relative-path">subcommand set driverpackage</a></li>
+<li><a href="wdsutil-set-image.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-image" data-linktype="relative-path">subcommand set image</a></li>
+<li><a href="wdsutil-set-imagegroup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-imagegroup" data-linktype="relative-path">subcommand set imagegroup</a></li>
+<li><a href="wdsutil-set-server.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-server" data-linktype="relative-path">subcommand set server</a></li>
+<li><a href="wdsutil-set-transportserver.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-set-transportserver" data-linktype="relative-path">subcommand set transportserver</a></li>
+<li><a href="wdsutil-start-multicasttransmission.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-start-multicasttransmission" data-linktype="relative-path">subcommand set multicasttransmission</a></li>
+<li><a href="wdsutil-start-namespace.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-start-namespace" data-linktype="relative-path">subcommand start namespace</a></li>
+<li><a href="wdsutil-start-server.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-start-server" data-linktype="relative-path">subcommand start server</a></li>
+<li><a href="wdsutil-start-transportserver.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-start-transportserver" data-linktype="relative-path">subcommand start transportserver</a></li>
+<li><a href="wdsutil-stop-server.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-stop-server" data-linktype="relative-path">subcommand stop server</a></li>
+<li><a href="wdsutil-stop-transportserver.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil-stop-transportserver" data-linktype="relative-path">subcommand stop transportserver</a></li>
+<li><a href="subst.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/subst" data-linktype="relative-path">subst</a></li>
+<li><a href="sxstrace.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sxstrace" data-linktype="relative-path">sxstrace</a></li>
+<li><a href="sysocmgr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sysocmgr" data-linktype="relative-path">sysocmgr</a></li>
+<li><a href="systeminfo.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/systeminfo" data-linktype="relative-path">systeminfo</a></li>
+</ul>
+<h3 id="t">T</h3>
+<ul>
+<li><a href="takeown.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/takeown" data-linktype="relative-path">takeown</a></li>
+<li><a href="tapicfg.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tapicfg" data-linktype="relative-path">tapicfg</a></li>
+<li><a href="taskkill.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/taskkill" data-linktype="relative-path">taskkill</a></li>
+<li><a href="tasklist.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tasklist" data-linktype="relative-path">tasklist</a></li>
+<li><a href="tcmsetup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tcmsetup" data-linktype="relative-path">tcmsetup</a></li>
+<li><a href="telnet.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet" data-linktype="relative-path">telnet</a>
+<ul>
+<li><a href="telnet-close.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-close" data-linktype="relative-path">telnet close</a></li>
+<li><a href="telnet-display.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-display" data-linktype="relative-path">telnet display</a></li>
+<li><a href="telnet-open.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-open" data-linktype="relative-path">telnet open</a></li>
+<li><a href="telnet-quit.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-quit" data-linktype="relative-path">telnet quit</a></li>
+<li><a href="telnet-send.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-send" data-linktype="relative-path">telnet send</a></li>
+<li><a href="telnet-set.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-set" data-linktype="relative-path">telnet set</a></li>
+<li><a href="telnet-status.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-status" data-linktype="relative-path">telnet status</a></li>
+<li><a href="telnet-unset.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/telnet-unset" data-linktype="relative-path">telnet unset</a></li>
+</ul>
+</li>
+<li><a href="tftp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tftp" data-linktype="relative-path">tftp</a></li>
+<li><a href="time.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/time" data-linktype="relative-path">time</a></li>
+<li><a href="timeout.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/timeout" data-linktype="relative-path">timeout</a></li>
+<li><a href="title.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/title" data-linktype="relative-path">title</a></li>
+<li><a href="tlntadmn.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tlntadmn" data-linktype="relative-path">tlntadmn</a></li>
+<li><a href="tpmtool.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tpmtool" data-linktype="relative-path">tpmtool</a></li>
+<li><a href="tpmvscmgr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tpmvscmgr" data-linktype="relative-path">tpmvscmgr</a></li>
+<li><a href="tracerpt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tracerpt" data-linktype="relative-path">tracerpt</a></li>
+<li><a href="tracert.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tracert" data-linktype="relative-path">tracert</a></li>
+<li><a href="tree.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tree" data-linktype="relative-path">tree</a></li>
+<li><a href="tscon.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tscon" data-linktype="relative-path">tscon</a></li>
+<li><a href="tsdiscon.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tsdiscon" data-linktype="relative-path">tsdiscon</a></li>
+<li><a href="tsecimp.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tsecimp" data-linktype="relative-path">tsecimp</a></li>
+<li><a href="tskill.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tskill" data-linktype="relative-path">tskill</a></li>
+<li><a href="tsprof.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tsprof" data-linktype="relative-path">tsprof</a></li>
+<li><a href="type.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/type" data-linktype="relative-path">type</a></li>
+<li><a href="typeperf.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/typeperf" data-linktype="relative-path">typeperf</a></li>
+<li><a href="tzutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/tzutil" data-linktype="relative-path">tzutil</a></li>
+</ul>
+<h3 id="u">U</h3>
+<ul>
+<li><a href="unexpose.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/unexpose" data-linktype="relative-path">unexpose</a></li>
+<li><a href="uniqueid.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/uniqueid" data-linktype="relative-path">uniqueid</a></li>
+<li><a href="unlodctr.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/unlodctr" data-linktype="relative-path">unlodctr</a></li>
+</ul>
+<h3 id="v">V</h3>
+<ul>
+<li><a href="ver.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ver" data-linktype="relative-path">ver</a></li>
+<li><a href="verifier.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/verifier" data-linktype="relative-path">verifier</a></li>
+<li><a href="verify.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/verify" data-linktype="relative-path">verify</a></li>
+<li><a href="vol.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/vol" data-linktype="relative-path">vol</a></li>
+<li><a href="vssadmin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/vssadmin" data-linktype="relative-path">vssadmin</a>
+<ul>
+<li><a href="vssadmin-delete-shadows.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/vssadmin-delete-shadows" data-linktype="relative-path">vssadmin delete shadows</a></li>
+<li><a href="vssadmin-list-shadows.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/vssadmin-list-shadows" data-linktype="relative-path">vssadmin list shadows</a></li>
+<li><a href="vssadmin-list-writers.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/vssadmin-list-writers" data-linktype="relative-path">vssadmin list writers</a></li>
+<li><a href="vssadmin-resize-shadowstorage.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/vssadmin-resize-shadowstorage" data-linktype="relative-path">vssadmin resize shadowstorage</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="w">W</h3>
+<ul>
+<li><a href="waitfor.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/waitfor" data-linktype="relative-path">waitfor</a></li>
+<li><a href="wbadmin.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin" data-linktype="relative-path">wbadmin</a>
+<ul>
+<li><a href="wbadmin-delete-catalog.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-delete-catalog" data-linktype="relative-path">wbadmin delete catalog</a></li>
+<li><a href="wbadmin-delete-systemstatebackup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-delete-systemstatebackup" data-linktype="relative-path">wbadmin delete systemstatebackup</a></li>
+<li><a href="wbadmin-disable-backup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-disable-backup" data-linktype="relative-path">wbadmin disable backup</a></li>
+<li><a href="wbadmin-enable-backup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-enable-backup" data-linktype="relative-path">wbadmin enable backup</a></li>
+<li><a href="wbadmin-get-disks.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-get-disks" data-linktype="relative-path">wbadmin get disks</a></li>
+<li><a href="wbadmin-get-items.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-get-items" data-linktype="relative-path">wbadmin get items</a></li>
+<li><a href="wbadmin-get-status.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-get-status" data-linktype="relative-path">wbadmin get status</a></li>
+<li><a href="wbadmin-get-versions.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-get-versions" data-linktype="relative-path">wbadmin get versions</a></li>
+<li><a href="wbadmin-restore-catalog.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-restore-catalog" data-linktype="relative-path">wbadmin restore catalog</a></li>
+<li><a href="wbadmin-start-backup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-start-backup" data-linktype="relative-path">wbadmin start backup</a></li>
+<li><a href="wbadmin-start-recovery.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-start-recovery" data-linktype="relative-path">wbadmin start recovery</a></li>
+<li><a href="wbadmin-start-sysrecovery.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-start-sysrecovery" data-linktype="relative-path">wbadmin start sysrecovery</a></li>
+<li><a href="wbadmin-start-systemstatebackup.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-start-systemstatebackup" data-linktype="relative-path">wbadmin start systemstatebackup</a></li>
+<li><a href="wbadmin-start-systemstaterecovery.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-start-systemstaterecovery" data-linktype="relative-path">wbadmin start systemstaterecovery</a></li>
+<li><a href="wbadmin-stop-job.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wbadmin-stop-job" data-linktype="relative-path">wbadmin stop job</a></li>
+</ul>
+</li>
+<li><a href="wdsutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wdsutil" data-linktype="relative-path">wdsutil</a></li>
+<li><a href="wecutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wecutil" data-linktype="relative-path">wecutil</a></li>
+<li><a href="wevtutil.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wevtutil" data-linktype="relative-path">wevtutil</a></li>
+<li><a href="where.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/where" data-linktype="relative-path">where</a></li>
+<li><a href="whoami.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/whoami" data-linktype="relative-path">whoami</a></li>
+<li><a href="winnt.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/winnt" data-linktype="relative-path">winnt</a></li>
+<li><a href="winnt32.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/winnt32" data-linktype="relative-path">winnt32</a></li>
+<li><a href="winpop.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/winpop" data-linktype="relative-path">winpop</a></li>
+<li><a href="winrs.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/winrs" data-linktype="relative-path">winrs</a></li>
+<li><a href="winsat-mem.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/winsat-mem" data-linktype="relative-path">winsat mem</a></li>
+<li><a href="winsat-mfmedia.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/winsat-mfmedia" data-linktype="relative-path">winsat mfmedia</a></li>
+<li><a href="wmic.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wmic" data-linktype="relative-path">wmic</a></li>
+<li><a href="writer.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/writer" data-linktype="relative-path">writer</a></li>
+<li><a href="wscript.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/wscript" data-linktype="relative-path">wscript</a></li>
+</ul>
+<h3 id="x">x</h3>
+<ul>
+<li><a href="xcopy.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/xcopy" data-linktype="relative-path">xcopy</a></li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="ä¸»é¢˜" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>ä¸»é¢˜</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+äº®					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+æš—					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+é«˜å¯¹æ¯”åº¦					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">æ—©æœŸç‰ˆæœ¬</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">åšå®¢</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">å‚ä¸</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">éšç§å’Œ Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">ä½¿ç”¨æ¡æ¬¾</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">å•†æ ‡</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							class="font-size-sm right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="é¡µé¢æ“ä½œ">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="æ–‡ç« å¤§çº²">
+									<h3>æœ¬æ–‡å†…å®¹</h3>
+								</nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="ä¸»é¢˜" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>ä¸»é¢˜</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+äº®					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+æš—					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+é«˜å¯¹æ¯”åº¦					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">æ—©æœŸç‰ˆæœ¬</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">åšå®¢</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">å‚ä¸</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">éšç§å’Œ Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">ä½¿ç”¨æ¡æ¬¾</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">å•†æ ‡</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="æ“ä½œé¢æ¿" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

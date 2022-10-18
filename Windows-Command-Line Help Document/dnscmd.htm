@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="zh-cn" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="dnscmd" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dnscmd" />
+			<meta property="og:description" content="dnscmd 命令的参考文章，它是用于管理 DNS 服务器的命令行接口。" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@docsmsft" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="author" content="JasonGerend" />
+<meta name="breadcrumb_path" content="/windows-server/breadcrumbs/toc.json" />
+<meta name="depot_name" content="MSDN.WindowsServerDocs-pr" />
+<meta name="description" content="dnscmd 命令的参考文章，它是用于管理 DNS 服务器的命令行接口。" />
+<meta name="document_id" content="708cd94f-5ac0-3d74-1e4d-3fb32c24d142" />
+<meta name="document_version_independent_id" content="747d7471-a27b-bb25-3d3d-4222fc48698e" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/e057d07062045e3a97715861a3a762434ce23dd9/WindowsServerDocs/administration/windows-commands/dnscmd.md" />
+<meta name="loc_file_id" content="Github-175290469.live.MSDN.WindowsServerDocs-pr.administration/windows-commands/dnscmd.md" />
+<meta name="loc_source_id" content="Github-175290469#live" />
+<meta name="loc_version" content="2022-04-15T17:37:34.7158244Z" />
+<meta name="locale" content="zh-cn" />
+<meta name="manager" content="mtillman" />
+<meta name="ms.assetid" content="e7f31cb5-a426-4e25-b714-88712b8defd5" />
+<meta name="ms.author" content="jgerend" />
+<meta name="ms.contentlocale" content="zh-cn" />
+<meta name="ms.date" content="10/16/2017" />
+<meta name="ms.prod" content="windows-server" />
+<meta name="ms.technology" content="windows-commands" />
+<meta name="ms.topic" content="reference" />
+<meta name="ms.translationtype" content="MT" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/live/WindowsServerDocs/administration/windows-commands/dnscmd.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="recommendations" content="true" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="updated_at" content="2022-09-21 09:36 PM" />
+<meta name="word_count" content="12567" />
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/68cb9039-df60-49b0-8ef8-89ad96497f63" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e" data-source="generated" />
+
+	<meta name="cmProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/b65b6118-d894-4103-b2a3-0331bc81655a" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/windows-commands/dnscmd.md" />
+<link href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/dnscmd" rel="canonical">
+	<title>dnscmd | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="89972844.site-ltr.css" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/styles/89972844.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-cn',
+			contentDir: 'ltr',
+			userLocale: 'zh-cn',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			extendBreadcrumb: true,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "JasonGerend", url: "https://github.com/JasonGerend" },
+						{ name: "dknappettmsft", url: "https://github.com/dknappettmsft" },
+						{ name: "khdownie", url: "https://github.com/khdownie" },
+						{ name: "eross-msft", url: "https://github.com/eross-msft" },
+						{ name: "john-par", url: "https://github.com/john-par" },
+						{ name: "DCtheGeek", url: "https://github.com/DCtheGeek" },
+						{ name: "mijacobs", url: "https://github.com/mijacobs" },
+						{ name: "lizap", url: "https://github.com/lizap" },
+						{ name: "coreyp-at-msft", url: "https://github.com/coreyp-at-msft" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="wcp-consent.js" tppabs="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="ms.jsll-3.min.js" tppabs="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="67a45209.deprecation.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/global/67a45209.deprecation.js"></script>
+		<script src="12bd6430.index-docs.js" tppabs="https://learn.microsoft.com/_themes/docs.theme/master/zh-cn/_themes/scripts/12bd6430.index-docs.js"></script>
+</head>
+
+<body lang="zh-cn" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">跳转至主内容</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">此浏览器不再受支持。</p>
+				<p style="font-size: 16px; margin-top: 16px;">请升级到 Microsoft Edge 以使用最新的功能、安全更新和技术支持。</p>
+				<div style="margin-top: 12px;">
+					<a href="javascript:if(confirm('https://go.microsoft.com/fwlink/p/?LinkID=2092881  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/p/?LinkID=2092881'" tppabs="https://go.microsoft.com/fwlink/p/?LinkID=2092881"
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+下载 Microsoft Edge					</a>
+					<a href="javascript:if(confirm('https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge'" tppabs="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+有关 Internet Explorer 和 Microsoft Edge 的详细信息					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="javascript:if(confirm('https://www.microsoft.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/'" tppabs="https://www.microsoft.com/" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="is-hidden"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+目录						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>退出焦点模式</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="主要"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="zh-cn" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm" aria-label="所有痕迹">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="使用英语阅读" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>使用英语阅读</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="添加到集合">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">保存</span>
+											</button>
+										
+
+										
+
+										
+
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="更多操作">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														aria-label="目录"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">目录</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="使用英语阅读" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>使用英语阅读</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="添加到集合"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">保存</span>
+													</button>
+
+
+
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="打印"
+														type="button"
+														aria-label="打印"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true"
+														hidden>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>打印</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>电子邮件</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="目录" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">目录</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="dnscmd">Dnscmd</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-cn" dir="ltr">
+												<li>
+项目												</li>
+												<li>
+													<time class="is-invisible" data-article-date aria-label="文章评审日期" datetime="2022-09-21T21:36:00Z" data-article-date-source="git">09/21/2022</time>
+												</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="查看所有参与者" class="contributors-button link-button" data-bi-name="contributors" title="查看所有参与者">
+																9 个参与者
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived>
+	<button
+		class="thumb-rating-button like link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-yes"
+		title="本文非常有用"
+		type="button"
+		data-bi-name="rating-yes"
+		data-bi-sat="1"
+	>
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button
+		class="thumb-rating-button dislike link-button margin-xxs margin-right-none"
+		data-binary-rating-response="rating-no"
+		title="本文没有用"
+		type="button"
+		data-bi-name="rating-no"
+		data-bi-sat="0"
+	>
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+											<h3>本文内容</h3>
+										</nav>
+
+								<!-- <content> -->
+									<blockquote>
+<p>适用范围：Windows Server 2022、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012</p>
+</blockquote>
+<p>用于管理 DNS 服务器的命令行界面。 此实用工具可用于编写批处理文件脚本，以帮助自动执行常规 DNS 管理任务，或在网络上执行简单的无人参与设置和配置新 DNS 服务器。</p>
+<h2 id="syntax">语法</h2>
+<pre><code>dnscmd &lt;servername&gt; &lt;command&gt; [&lt;command parameters&gt;]
+</code></pre>
+<h3 id="parameters">参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>远程或本地 DNS 服务器的 IP 地址或主机名。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-ageallrecords-command">dnscmd /ageallrecords 命令</h2>
+<p>设置 DNS 服务器上指定区域或节点上资源记录的时间戳上的当前时间。</p>
+<h3 id="syntax-1">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /ageallrecords &lt;zonename&gt;[&lt;nodename&gt;] | [/tree]|[/f]
+</code></pre>
+<h4 id="parameters-1">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定管理员计划管理的 DNS 服务器，这些服务器由 IP 地址表示、完全限定的域名 (FQDN) 或主机名。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定区域的 FQDN。</td>
+</tr>
+<tr>
+<td><code>&lt;nodename&gt;</code></td>
+<td>使用以下方法指定区域中的特定节点或子树：<ul><li><strong>@</strong> 根区域或 FQDN</li><li>节点的 FQDN () 名称，末尾的句点为 (.) </li><li>相对于区域根的名称的单个标签。</li></ul></td>
+</tr>
+<tr>
+<td>/tree</td>
+<td>指定所有子节点也都会收到时间戳。</td>
+</tr>
+<tr>
+<td>/f</td>
+<td>运行命令而不要求确认。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks">注解</h5>
+<ul>
+<li><p><strong>ageallrecords</strong> 命令用于向后兼容当前版本的 DNS 和以前版本的 DNS，其中不支持老化和清理。 它向没有时间戳的资源记录添加具有当前时间的时间戳，并在具有时间戳的资源记录上设置当前时间。</p>
+</li>
+<li><p>除非记录已加时间戳，否则不会发生记录清理。 名称服务器 (NS) 资源记录、颁发机构启动 (SOA) 资源记录，以及Windows Internet 名称服务 (WINS) 资源记录不包括在清理过程中，即使<strong>运行 ageallrecords</strong> 命令，也不会时间戳。</p>
+</li>
+<li><p>除非为 DNS 服务器和区域启用了清理，否则此命令将失败。 有关如何为区域启用清理的信息，请参阅本文中命令的<code>dnscmd /config</code>语法中的<strong>老化</strong>参数。</p>
+</li>
+<li><p>将时间戳添加到 DNS 资源记录后，它们与在Windows服务器以外的操作系统上运行的 DNS 服务器不兼容。 无法使用 <strong>ageallrecords</strong> 命令添加的时间戳。</p>
+</li>
+<li><p>如果未指定任何可选参数，该命令将返回指定节点上的所有资源记录。 如果为至少一个可选参数指定了值， <strong>则 dnscmd</strong> 仅枚举与可选参数或参数中指定的值相对应的资源记录。</p>
+</li>
+</ul>
+<h3 id="examples">示例</h3>
+<p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records" data-linktype="absolute-path">示例 1：将时间戳上的当前时间设置为资源记录</a></p>
+<h2 id="dnscmd-clearcache-command">dnscmd /clearcache 命令</h2>
+<p>清除指定 DNS 服务器上的资源记录的 DNS 缓存内存。</p>
+<h3 id="syntax-2">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /clearcache
+</code></pre>
+<h4 id="parameters-2">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">示例</h3>
+<pre><code>dnscmd dnssvr1.contoso.com /clearcache
+</code></pre>
+<h2 id="dnscmd-config-command">dnscmd /config 命令</h2>
+<p>更改 DNS 服务器和单个区域的注册表中的值。 此命令还会修改指定服务器的配置。 接受服务器级和区域级设置。</p>
+<div class="CAUTION">
+<p>注意</p>
+<p>除非没有替代项，否则不要直接编辑注册表。 注册表编辑器绕过标准安全措施，允许降低性能、损坏系统甚至要求重新安装Windows的设置。 可以使用 控制面板 中的程序或 Microsoft 管理控制台 (mmc) 安全地更改大多数注册表设置。 如果必须直接编辑注册表，请先备份它。 有关详细信息，请阅读注册表编辑器帮助。</p>
+</div>
+<h3 id="server-level-syntax">服务器级语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /config &lt;parameter&gt;
+</code></pre>
+<h4 id="parameters-3">参数</h4>
+<div class="NOTE">
+<p>注意</p>
+<p>本文包含对术语“从属”的引用，这是 Microsoft 不再使用的术语。 在从软件中删除该术语后，我们会将其从本文中删除。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由本地计算机语法、IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;parameter&gt;</code></td>
+<td>指定设置，并将值指定为选项。 参数值使用此语法： <em>参数</em> [<em>value</em>]。</td>
+</tr>
+<tr>
+<td>/addressanswerlimit<code>[0|5-28]</code></td>
+<td>指定 DNS 服务器可以发送的最大主机记录数，以响应查询。 该值可以是零 (0) ，也可以介于 5 到 28 条记录的范围内。 默认值为零 (0)。</td>
+</tr>
+<tr>
+<td>/bindsecondaries<code>[0|1]</code></td>
+<td>更改区域传输的格式，使其可以实现最大压缩和效率。 接受值：<ul><li><strong>0</strong> - 使用最大压缩，并且仅与 BIND 版本 4.9.4 及更高版本兼容</li><li><strong>1</strong> - 仅向非 Microsoft DNS 服务器发送一条资源记录，并且与 4.9.4 之前的 BIND 版本兼容。 这是默认设置。</li></ul></td>
+</tr>
+<tr>
+<td>/bootmethod<code>[0|1|2|3]</code></td>
+<td>确定 DNS 服务器从中获取其配置信息的源。 接受值：<ul><li><strong>0</strong> - 清除配置信息的来源。</li><li><strong>1</strong> - 从位于 DNS 目录中的 BIND 文件加载，默认情况下。<code>%systemroot%\System32\DNS</code></li><li><strong>2</strong> - 从注册表加载。</li><li><strong>3</strong> - 从 AD DS 和注册表加载。 这是默认设置。</li></ul></td>
+</tr>
+<tr>
+<td>/defaultagingstate<code>[0|1]</code></td>
+<td>确定是否在新建的区域上默认启用 DNS 清理功能。 接受值：<ul><li><strong>0</strong> - 禁用清理。 这是默认设置。</li><li><strong>1</strong> - 启用清理。</li></ul></td>
+</tr>
+<tr>
+<td>/defaultnorefreshinterval<code>[0x1-0xFFFFFFFF|0xA8]</code></td>
+<td>设置动态更新记录不接受刷新的时间段。 服务器上的区域会自动继承此值。<p>若要更改默认值，请在 <strong>0x1 0xFFFFFFFF</strong>范围内键入值。 服务器的默认值 <strong>为0xA8</strong>。</td>
+</tr>
+<tr>
+<td>/defaultrefreshinterval <code>[0x1-0xFFFFFFFF|0xA8]</code></td>
+<td>设置允许动态更新 DNS 记录的时间段。 服务器上的区域会自动继承此值。<p>若要更改默认值，请在 <strong>0x1 0xFFFFFFFF</strong>范围内键入值。 服务器的默认值 <strong>为0xA8</strong>。</td>
+</tr>
+<tr>
+<td>/disableautoreversezones <code>[0|1]</code></td>
+<td>启用或禁用自动创建反向查找区域。 反向查找区域提供对 DNS 域名的 Internet 协议 (IP) 地址的解析。 接受值：<ul><li><strong>0</strong> - 启用反向查找区域的自动创建。 这是默认设置。</li><li><strong>1</strong> - 禁用反向查找区域的自动创建。</li></ul></td>
+</tr>
+<tr>
+<td>/disablensrecordsautocreation <code>[0|1]</code></td>
+<td>指定 DNS 服务器是否自动为其托管的区域创建名称服务器 (NS) 资源记录。 接受值：<ul><li><strong>0</strong> - 为 DNS 服务器托管的区域自动创建名称服务器 (NS) 资源记录。</li><li><strong>1</strong> - 不会自动为 DNS 服务器托管的区域创建名称服务器 (NS) 资源记录。</li></ul></td>
+</tr>
+<tr>
+<td>/dspollinginterval <code>[0-30]</code></td>
+<td>指定 DNS 服务器轮询 AD DS 在 Active Directory 集成区域中的更改的频率。</td>
+</tr>
+<tr>
+<td>/dstombstoneinterval <code>[1-30]</code></td>
+<td>在 AD DS 中保留已删除记录的时间（以秒为单位）。</td>
+</tr>
+<tr>
+<td>/ednscachetimeout <code>[3600-15724800]</code></td>
+<td>指定缓存扩展 DNS (EDNS) 信息的秒数。 最小值为 <strong>3600</strong>，最大值 <strong>为 15，724，800</strong>。 默认值为 <strong>604，800</strong> 秒， (一周) 。</td>
+</tr>
+<tr>
+<td>/enableednsprobes <code>[0|1]</code></td>
+<td>启用或禁用服务器探测其他服务器以确定它们是否支持 EDNS。 接受值：<ul><li><strong>0</strong> - 禁用对 EDNS 探测的活动支持。</li><li><strong>1</strong> - 启用对 EDNS 探测的活动支持。</li></ul></td>
+</tr>
+<tr>
+<td>/enablednssec <code>[0|1]</code></td>
+<td>启用或禁用对 DNS 安全扩展插件 (DNSSEC) 的支持。 接受值：<ul><li><strong>0</strong> - 禁用 DNSSEC。</li><li><strong>1</strong> - 启用 DNSSEC。</li></ul></td>
+</tr>
+<tr>
+<td>/enableglobalnamessupport <code>[0|1]</code></td>
+<td>启用或禁用对 GlobalNames 区域的支持。 GlobalNames 区域支持跨林解析单标签 DNS 名称。 接受值：<ul><li><strong>0</strong> - 禁用对 GlobalNames 区域的支持。 将此命令的值设置为 0 时，DNS 服务器服务不会解析 GlobalNames 区域中的单标签名称。</li><li><strong>1</strong> - 启用对 GlobalNames 区域的支持。 将此命令的值设置为 1 时，DNS 服务器服务将解析 GlobalNames 区域中的单标签名称。</li></ul></td>
+</tr>
+<tr>
+<td>/enableglobalqueryblocklist <code>[0|1]</code></td>
+<td>启用或禁用对阻止列表中名称解析的全局查询块列表的支持。 当服务首次启动时，DNS 服务器服务会创建并启用全局查询块列表。 若要查看当前全局查询块列表，请使用 dnscmd <strong>/info /globalqueryblocklist</strong> 命令。 接受值：<ul><li><strong>0</strong> - 禁用对全局查询块列表的支持。 将此命令的值设置为 0 时，DNS 服务器服务将响应块列表中的名称查询。</li><li><strong>1</strong> - 启用对全局查询块列表的支持。 将此命令的值设置为 1 时，DNS 服务器服务不会响应块列表中的名称查询。</li></ul></td>
+</tr>
+<tr>
+<td>/eventloglevel <code>[0|1|2|4]</code></td>
+<td>确定事件查看器 DNS 服务器日志中记录的事件。 接受值：<ul><li><strong>0</strong> - 不记录任何事件。</li><li><strong>1</strong> - 仅记录错误。</li><li><strong>2</strong> - 仅记录错误和警告。</li><li><strong>4</strong> - 记录错误、警告和信息性事件。 这是默认设置。</li></ul></td>
+</tr>
+<tr>
+<td>/forwarddelegations <code>[0|1]</code></td>
+<td>确定 DNS 服务器如何处理委托子区域的查询。 这些查询可以发送到查询中引用的子区域，也可以发送到为 DNS 服务器命名的转发器列表。 仅当启用转发时，才会使用设置中的条目。 接受值：<ul><li><strong>0</strong> - 自动将引用委派子区域的查询发送到相应的子区域。 这是默认设置。</li><li><strong>1</strong> - 将引用委托子区域的查询转发到现有转发器。</li></ul></td>
+</tr>
+<tr>
+<td>/forwardingtimeout <code>[&lt;seconds&gt;]</code></td>
+<td>确定 DNS 服务器在尝试另一个转发器之前等待转发器做出响应的秒数 () <strong>0x1 0xFFFFFFFF</strong> 。 默认值 <strong>为 0x5</strong>，即 5 秒。</td>
+</tr>
+<tr>
+<td>/globalneamesqueryorder <code>[0|1]</code></td>
+<td>指定 DNS 服务器服务在解析名称时是否首先出现在 GlobalNames 区域或本地区域中。 接受值：<ul><li><strong>0</strong> - DNS 服务器服务尝试通过查询 GlobalNames 区域来解析名称，然后再查询其权威区域。</li><li><strong>1</strong> - DNS 服务器服务尝试通过查询其权威区域来解析名称，然后再查询 GlobalNames 区域。</li></ul></td>
+</tr>
+<tr>
+<td>/globalqueryblocklist<code>[[&lt;name&gt; [&lt;name&gt;]...]</code></td>
+<td>将当前全局查询块列表替换为指定的名称列表。 如果未指定任何名称，此命令将清除块列表。 默认情况下，全局查询块列表包含以下项：<ul><li>isatap</li><li>wpad</li></ul>如果 DNS 服务器服务在首次启动时会删除其中一个或两个名称，如果在现有区域中找到这些名称。</td>
+</tr>
+<tr>
+<td>/isslave <code>[0|1]</code></td>
+<td>确定 DNS 服务器在转发的查询未收到响应时如何响应。 接受值：<ul><li><strong>0</strong> - 指定 DNS 服务器不是从属服务器。 如果转发器没有响应，则 DNS 服务器会尝试解析查询本身。 这是默认设置。</li><li><strong>1</strong> - 指定 DNS 服务器是从属服务器。 如果转发器未响应，则 DNS 服务器将终止搜索并将失败消息发送到解析程序。</li></ul></td>
+</tr>
+<tr>
+<td>/localnetpriority <code>[0|1]</code></td>
+<td>确定 DNS 服务器具有相同名称的多个主机记录时返回主机记录的顺序。 接受值：<ul><li><strong>0</strong> - 按 DNS 数据库中列出的顺序返回记录。</li><li><strong>1</strong> - 首先返回具有类似 IP 网络地址的记录。 这是默认设置。</li></ul></td>
+</tr>
+<tr>
+<td>/logfilemaxsize <code>[&lt;size&gt;]</code></td>
+<td>指定 Dns.log 文件的 <strong> (0x10000 0xFFFFFFFF</strong>) 的最大大小（以字节为单位）。 当文件达到其最大大小时，DNS 将覆盖最早的事件。 默认大小 <strong>为 0x400000</strong>，即 4 MB (MB) 。</td>
+</tr>
+<tr>
+<td>/logfilepath <code>[&lt;path+logfilename&gt;]</code></td>
+<td>指定 Dns.log 文件的路径。 默认路径为 <code>%systemroot%\System32\Dns\Dns.log</code>。 可以使用格式 <code>path+logfilename</code>指定其他路径。</td>
+</tr>
+<tr>
+<td>/logipfilterlist <code>&lt;IPaddress&gt; [,&lt;IPaddress&gt;...]</code></td>
+<td>指定在调试日志文件中记录哪些数据包。 这些条目是 IP 地址的列表。 仅记录在列表中传入和传出 IP 地址的数据包。</td>
+</tr>
+<tr>
+<td>/loglevel <code>[&lt;eventtype&gt;]</code></td>
+<td>确定 Dns.log 文件中记录的事件类型。 每个事件类型都由十六进制数表示。 如果需要日志中的多个事件，请使用十六进制加法添加值，然后输入总和。 接受值：<ul><li><strong>0x0</strong> - DNS 服务器不会创建日志。 这是默认条目。</li><li><strong>0x10</strong> - 记录查询和通知。</li><li><strong>0x20</strong> - 日志更新。</li><li><strong>0xFE</strong> - 记录非查询事务。</li><li><strong>0x100</strong> - 记录问题事务。</li><li><strong>0x200</strong> - 记录答案。</li><li><strong>0x1000</strong> - 日志发送数据包。</li><li><strong>0x2000</strong> - 日志接收数据包。</li><li><strong>0x4000</strong> - 记录用户数据报协议 (UDP) 数据包。</li><li><strong>0x8000</strong> - 日志传输控制协议 (TCP) 数据包。</li><li><strong>0xFFFF</strong> - 记录所有数据包。</li><li><strong>0x10000</strong> - 记录 Active Directory 写入事务。</li><li><strong>0x20000</strong> - 记录 Active Directory 更新事务。</li><li><strong>0x1000000</strong> - 记录完整数据包。</li><li><strong>0x80000000</strong> - 记录写入事务。</li><li></ul></td>
+</tr>
+<tr>
+<td>/maxcachesize</td>
+<td>指定 DNS 服务器内存缓存的最大大小（以 KB (KB) 为单位）。</td>
+</tr>
+<tr>
+<td>/maxcachettl <code>[&lt;seconds&gt;]</code></td>
+<td>确定) 记录保存在缓存中的秒数 <strong> (0x0 0xFFFFFFFF</strong> 。 如果使用 <strong>0x0</strong> 设置，则 DNS 服务器不会缓存记录。 默认设置 <strong>0x15180 (</strong> 86，400 秒或 1 天) 。</td>
+</tr>
+<tr>
+<td>/maxnegativecachettl <code>[&lt;seconds&gt;]</code></td>
+<td>指定 (<strong>0x1 0xFFFFFFFF</strong> 的秒数) 记录对查询的负答案的条目仍存储在 DNS 缓存中。 默认设置 <strong>0x384</strong> (900 秒) 。</td>
+</tr>
+<tr>
+<td>/namecheckflag <code>[0|1|2|3]</code></td>
+<td>指定检查 DNS 名称时使用哪个字符标准。 接受值：<ul><li><strong>0</strong> - 使用符合 Internet 工程任务组的 ANSI 字符 (IETF) 注释请求 (Rfcs) 。</li><li><strong>1</strong> - 使用不一定符合 IETF Rfcs 的 ANSI 字符。</li><li><strong>2</strong> - 使用多字节 UCS 转换格式 8 (UTF-8) 字符。 这是默认设置。</li><li><strong>3</strong> - 使用所有字符。</li></ul></td>
+</tr>
+<tr>
+<td>/norecursion <code>[0|1]</code></td>
+<td>确定 DNS 服务器是否执行递归名称解析。 接受值：<ul><li><strong>0</strong> - DNS 服务器在查询中请求时执行递归名称解析。 这是默认设置。</li><li><strong>1</strong> - DNS 服务器不执行递归名称解析。</li></ul></td>
+</tr>
+<tr>
+<td>/notcp</td>
+<td>此参数已过时，在当前版本的 Windows Server 中不起作用。</td>
+</tr>
+<tr>
+<td>/recursionretry <code>[&lt;seconds&gt;]</code></td>
+<td>确定 DNS 服务器再次尝试联系远程服务器之前等待的秒数 <strong> (0x1 0xFFFFFFFF</strong>) 。 默认设置 <strong>0x3 (</strong> 三秒) 。 当通过较慢的广域网 (WAN) 链接发生递归时，应增加此值。</td>
+</tr>
+<tr>
+<td>/recursiontimeout <code>[&lt;seconds&gt;]</code></td>
+<td>确定 DNS 服务器在停止尝试联系远程服务器之前等待的秒数 (<strong>0x1 0xFFFFFFFF</strong>) 。 设置范围从 <strong>0x1</strong> 到 <strong>0xFFFFFFFF</strong>。 默认设置 <strong>0xF (</strong> 15 秒) 。 当通过慢速 WAN 链接进行递归时，应增加此值。</td>
+</tr>
+<tr>
+<td>/roundrobin <code>[0|1]</code></td>
+<td>确定当服务器具有相同名称的多个主机记录时返回主机记录的顺序。 接受值：<ul><li><strong>0</strong> - DNS 服务器不使用轮循机制。 而是将第一条记录返回到每个查询。</li><li><strong>1</strong> - DNS 服务器在从顶部到匹配记录列表底部返回的记录之间旋转。 这是默认设置。</li></ul></td>
+</tr>
+<tr>
+<td>/rpcprotocol <code>[0x0|0x1|0x2|0x4|0xFFFFFFFF]</code></td>
+<td>指定远程过程调用 (RPC) 从 DNS 服务器建立连接时使用的协议。 接受值：<ul><li><strong>0x0</strong> - 禁用 DNS RPC。</li><li><strong>0x01</strong> - 使用 TCP/IP</li><li><strong>0x2</strong> - 使用命名管道。</li><li><strong>0x4</strong> - 使用本地过程调用 (LPC) 。</li><li><strong>0xFFFFFFFF</strong> - 所有协议。 这是默认设置。</li></ul></td>
+</tr>
+<tr>
+<td>/scavenginginterval <code>[&lt;hours&gt;]</code></td>
+<td>确定是否启用了 DNS 服务器的清理功能，并在清理周期之间设置 (<strong>0x0 0xFFFFFFFF</strong>) 小时数。 默认设置 <strong>为0x0</strong>，用于禁用 DNS 服务器的清理。 大于 <strong>0x0</strong> 的设置允许对服务器进行清理，并设置清理周期之间的小时数。</td>
+</tr>
+<tr>
+<td>/secureresponses <code>[0|1]</code></td>
+<td>确定 DNS 是否筛选缓存中保存的记录。 接受值：<ul><li><strong>0</strong> - 将所有响应保存到缓存中命名查询。 这是默认设置。</li><li><strong>1</strong> - 仅将属于同一 DNS 子树的记录保存到缓存中。</li></ul></td>
+</tr>
+<tr>
+<td>/sendport <code>[&lt;port&gt;]</code></td>
+<td>指定 DNS 用于向其他 DNS 服务器发送递归查询 <strong>的端口号 (0x0) 0xFFFFFFFF</strong> 。 默认设置 <strong>为0x0</strong>，这意味着会随机选择端口号。</td>
+</tr>
+<tr>
+<td>/serverlevelplugindll<code>[&lt;dllpath&gt;]</code></td>
+<td>指定自定义插件的路径。 当 Dllpath 指定有效 DNS 服务器插件的完全限定路径名称时，DNS 服务器调用插件中的函数来解析所有本地托管区域范围之外的名称查询。 如果查询的名称超过插件的范围，则 DNS 服务器会按照配置使用转发或递归执行名称解析。 如果未指定 Dllpath，则如果以前配置自定义插件，DNS 服务器将停止使用自定义插件。</td>
+</tr>
+<tr>
+<td>/strictfileparsing <code>[0|1]</code></td>
+<td>在加载区域时遇到错误记录时，确定 DNS 服务器的行为。 接受值：<ul><li><strong>0</strong> - 即使服务器遇到错误记录，DNS 服务器也会继续加载区域。 错误记录在 DNS 日志中。 这是默认设置。</li><li><strong>1</strong> - DNS 服务器停止加载区域，并在 DNS 日志中记录错误。</li></ul></td>
+</tr>
+<tr>
+<td>/updateoptions <code>&lt;RecordValue&gt;</code></td>
+<td>禁止对指定类型的记录进行动态更新。 如果希望日志中禁止多个记录类型，请使用十六进制加法添加值，然后输入总和。 接受值：<ul><li><strong>0x0</strong> - 不限制任何记录类型。</li><li><strong>0x1</strong> - 排除 (SOA) 资源记录的授权启动。</li><li><strong>0x2</strong> - 排除名称服务器 (NS) 资源记录。</li><li><strong>0x4</strong> - 排除名称服务器委派 (NS) 资源记录。</li><li><strong>0x8</strong> - 排除服务器主机记录。</li><li><strong>0x100</strong> - 在安全动态更新期间，排除 (SOA) 资源记录的授权启动。</li><li><strong>0x200</strong> - 在安全动态更新期间，排除根名称服务器 (NS) 资源记录。</li><li><strong>0x30F</strong> - 在标准动态更新期间，排除名称服务器 (NS) 资源记录、颁发机构 (SOA) 资源记录和服务器主机记录的启动。 在安全动态更新期间，排除根名称服务器 (NS) 资源记录和颁发机构启动 (SOA) 资源记录。 允许委派和服务器主机更新。</li><li><strong>0x400</strong> - 在安全动态更新期间，排除委派名称服务器 (NS) 资源记录。</li><li><strong>0x800</strong> - 在安全动态更新期间，排除服务器主机记录。</li><li><strong>0x1000000</strong> - 排除 DS () 记录的委派签名者。</li><li><strong>0x80000000</strong> - 禁用 DNS 动态更新。</li></ul></td>
+</tr>
+<tr>
+<td>/writeauthorityns <code>[0|1]</code></td>
+<td>确定 DNS 服务器何时在响应的“颁发机构”部分中写入名称服务器 (NS) 资源记录。 接受值：<ul><li><strong>0</strong> - 仅在引荐的“颁发机构”部分中写入名称服务器 (NS) 资源记录。 此设置符合 Rfc 1034、域名概念和设施，以及 Rfc 2181、DNS 规范的澄清。 这是默认设置。</li><li><strong>1</strong> - 在所有成功的权威响应的“颁发机构”部分中写入名称服务器 (NS) 资源记录。</li></ul></td>
+</tr>
+<tr>
+<td>/xfrconnecttimeout <code>[&lt;seconds&gt;]</code></td>
+<td>确定主 DNS 服务器) <strong> (0x0 0xFFFFFFFF</strong> 秒数等待其辅助服务器的传输响应。 默认值 <strong>为 0x1E</strong> (30 秒) 。 超时值过期后，连接将终止。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zone-level-syntax">区域级语法</h3>
+<p>修改指定区域的配置。 只能为区域级别参数指定区域名称。</p>
+<pre><code>dnscmd /config &lt;parameters&gt;
+</code></pre>
+<h4 id="parameters-4">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;parameter&gt;</code></td>
+<td>指定设置、区域名称，并将值指定为选项。 参数值使用此语法： <code>zonename parameter [value]</code></td>
+</tr>
+<tr>
+<td>/aging <code>&lt;zonename&gt;</code></td>
+<td>启用或禁用特定区域中的清理。</td>
+</tr>
+<tr>
+<td>/allownsrecordsautocreation <code>&lt;zonename&gt;</code><code>[value]</code></td>
+<td>替代 DNS 服务器的名称服务器 (NS) 资源记录自动创建设置。 名称服务器 (NS) 以前为此区域注册的资源记录不受影响。 因此，如果不希望它们，则必须手动删除它们。</td>
+</tr>
+<tr>
+<td>/allowupdate <code>&lt;zonename&gt;</code></td>
+<td>确定指定的区域是否接受动态更新。</td>
+</tr>
+<tr>
+<td>/forwarderslave <code>&lt;zonename&gt;</code></td>
+<td>重写 DNS 服务器 <strong>/isslave</strong> 设置。</td>
+</tr>
+<tr>
+<td>/forwardertimeout <code>&lt;zonename&gt;</code></td>
+<td>确定 DNS 区域在尝试另一个转发器之前等待转发器响应的秒数。 此值替代在服务器级别设置的值。</td>
+</tr>
+<tr>
+<td>/norefreshinterval <code>&lt;zonename&gt;</code></td>
+<td>设置区域时间间隔，在此期间，任何刷新都无法动态更新指定区域中的 DNS 记录。</td>
+</tr>
+<tr>
+<td>/refreshinterval <code>&lt;zonename&gt;</code></td>
+<td>设置区域时间间隔，在此期间刷新可以动态更新指定区域中的 DNS 记录。</td>
+</tr>
+<tr>
+<td>/securesecondaries <code>&lt;zonename&gt;</code></td>
+<td>确定哪些辅助服务器可以从此区域的主服务器接收区域更新。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-createbuiltindirectorypartitions-command">dnscmd /createbuiltindirectorypartitions 命令</h2>
+<p>创建 DNS 应用程序目录分区。 安装 DNS 后，会在林和域级别创建服务的应用程序目录分区。 使用此命令创建已删除或从未创建的 DNS 应用程序目录分区。 如果没有参数，此命令将为域创建内置的 DNS 目录分区。</p>
+<h3 id="syntax-3">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /createbuiltindirectorypartitions [/forest] [/alldomains]
+</code></pre>
+<h4 id="parameters-5">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td>/forest</td>
+<td>为林创建 DNS 目录分区。</td>
+</tr>
+<tr>
+<td>/alldomains</td>
+<td>为林中的所有域创建 DNS 分区。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-createdirectorypartition-command">dnscmd /createdirectorypartition 命令</h2>
+<p>创建 DNS 应用程序目录分区。 安装 DNS 后，会在林和域级别创建服务的应用程序目录分区。 此操作将创建其他 DNS 应用程序目录分区。</p>
+<h3 id="syntax-4">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /createdirectorypartition &lt;partitionFQDN&gt;
+</code></pre>
+<h4 id="parameters-6">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;partitionFQDN&gt;</code></td>
+<td>将创建的 DNS 应用程序目录分区的 FQDN。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-deletedirectorypartition-command">dnscmd /deletedirectorypartition 命令</h2>
+<p>删除现有的 DNS 应用程序目录分区。</p>
+<h3 id="syntax-5">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /deletedirectorypartition &lt;partitionFQDN&gt;
+</code></pre>
+<h4 id="parameters-7">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;partitionFQDN&gt;</code></td>
+<td>将删除的 DNS 应用程序目录分区的 FQDN。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-directorypartitioninfo-command">dnscmd /directorypartitioninfo 命令</h2>
+<p>列出有关指定 DNS 应用程序目录分区的信息。</p>
+<h3 id="syntax-6">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /directorypartitioninfo &lt;partitionFQDN&gt; [/detail]
+</code></pre>
+<h4 id="parameters-8">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;partitionFQDN&gt;</code></td>
+<td>DNS 应用程序目录分区的 FQDN。</td>
+</tr>
+<tr>
+<td>/detail</td>
+<td>列出有关应用程序目录分区的所有信息。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-enlistdirectorypartition-command">dnscmd /enlistdirectorypartition 命令</h2>
+<p>将 DNS 服务器添加到指定目录分区的副本集。</p>
+<h3 id="syntax-7">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /enlistdirectorypartition &lt;partitionFQDN&gt;
+</code></pre>
+<h4 id="parameters-9">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;partitionFQDN&gt;</code></td>
+<td>DNS 应用程序目录分区的 FQDN。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-enumdirectorypartitions-command">dnscmd /enumdirectorypartitions 命令</h2>
+<p>列出指定服务器的 DNS 应用程序目录分区。</p>
+<h3 id="syntax-8">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /enumdirectorypartitions [/custom]
+</code></pre>
+<h4 id="parameters-10">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td>/custom</td>
+<td>仅列出用户创建的目录分区。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-enumrecords-command">dnscmd /enumrecords 命令</h2>
+<p>列出 DNS 区域中指定节点的资源记录。</p>
+<h3 id="syntax-9">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /enumrecords &lt;zonename&gt; &lt;nodename&gt; [/type &lt;rrtype&gt; &lt;rrdata&gt;] [/authority] [/glue] [/additional] [/node | /child | /startchild&lt;childname&gt;] [/continue | /detail]
+</code></pre>
+<h4 id="parameters-11">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td>/enumrecords</td>
+<td>列出指定区域中的资源记录。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定资源记录所属区域的名称。</td>
+</tr>
+<tr>
+<td><code>&lt;nodename&gt;</code></td>
+<td>指定资源记录的节点的名称。</td>
+</tr>
+<tr>
+<td><code>[/type &lt;rrtype&gt; &lt;rrdata&gt;]</code></td>
+<td>指定要列出的资源记录的类型和预期的数据类型。 接受值：<ul><li><code>&lt;rrtype&gt;</code> - 指定要列出的资源记录的类型。</li><li><code>&lt;rrdata&gt;</code> - 指定预期记录的数据的类型。</li></ul></td>
+</tr>
+<tr>
+<td>/authority</td>
+<td>包括权威数据。</td>
+</tr>
+<tr>
+<td>/glue</td>
+<td>包括粘附数据。</td>
+</tr>
+<tr>
+<td>/additional</td>
+<td>包括有关列出的资源记录的所有其他信息。</td>
+</tr>
+<tr>
+<td>/node</td>
+<td>仅列出指定节点的资源记录。</td>
+</tr>
+<tr>
+<td>/child</td>
+<td>仅列出指定子域的资源记录。</td>
+</tr>
+<tr>
+<td>/startchild<code>&lt;childname&gt;</code></td>
+<td>从指定的子域开始列表。</td>
+</tr>
+<tr>
+<td>/continue</td>
+<td>仅列出具有其类型和数据的资源记录。</td>
+</tr>
+<tr>
+<td>/detail</td>
+<td>列出有关资源记录的所有信息。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-1">示例</h4>
+<pre><code>dnscmd /enumrecords test.contoso.com test /additional
+</code></pre>
+<h2 id="dnscmd-enumzones-command">dnscmd /enumzones 命令</h2>
+<p>列出指定 DNS 服务器上存在的区域。 <strong>枚举区域</strong>参数充当区域列表的筛选器。 如果未指定筛选器，则返回区域的完整列表。 指定筛选器时，仅将符合该筛选器条件的区域包含在返回的区域列表中。</p>
+<h3 id="syntax-10">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /enumzones [/primary | /secondary | /forwarder | /stub | /cache | /auto-created] [/forward | /reverse | /ds | /file] [/domaindirectorypartition | /forestdirectorypartition | /customdirectorypartition | /legacydirectorypartition | /directorypartition &lt;partitionFQDN&gt;]
+</code></pre>
+<h4 id="parameters-12">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td>/primary</td>
+<td>列出标准主区域或 Active Directory 集成区域的所有区域。</td>
+</tr>
+<tr>
+<td>/secondary</td>
+<td>列出所有标准次要区域。</td>
+</tr>
+<tr>
+<td>/forwarder</td>
+<td>列出将未解析的查询转发到另一个 DNS 服务器的区域。</td>
+</tr>
+<tr>
+<td>/stub</td>
+<td>列出所有存根区域。</td>
+</tr>
+<tr>
+<td>/cache</td>
+<td>仅列出加载到缓存中的区域。</td>
+</tr>
+<tr>
+<td>/auto-created]</td>
+<td>列出在 DNS 服务器安装过程中自动创建的区域。</td>
+</tr>
+<tr>
+<td>/forward</td>
+<td>列出向前查找区域。</td>
+</tr>
+<tr>
+<td>/reverse</td>
+<td>列出反向查找区域。</td>
+</tr>
+<tr>
+<td>/ds</td>
+<td>列出 Active Directory 集成区域。</td>
+</tr>
+<tr>
+<td>/file</td>
+<td>列出由文件支持的区域。</td>
+</tr>
+<tr>
+<td>/domaindirectorypartition</td>
+<td>列出存储在域目录分区中的区域。</td>
+</tr>
+<tr>
+<td>/forestdirectorypartition</td>
+<td>列出存储在林 DNS 应用程序目录分区中的区域。</td>
+</tr>
+<tr>
+<td>/customdirectorypartition</td>
+<td>列出存储在用户定义的应用程序目录分区中的所有区域。</td>
+</tr>
+<tr>
+<td>/legacydirectorypartition</td>
+<td>列出存储在域目录分区中的所有区域。</td>
+</tr>
+<tr>
+<td>/directorypartition <code>&lt;partitionFQDN&gt;</code></td>
+<td>列出存储在指定目录分区中的所有区域。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-1">示例</h4>
+<ul>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server" data-linktype="absolute-path">示例 2：在 DNS 服务器上显示区域的完整列表</a>) </p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server" data-linktype="absolute-path">示例 3：在 DNS 服务器上显示自动创建区域的列表</a></p>
+</li>
+</ul>
+<h2 id="dnscmd-exportsettings-command">dnscmd /exportsettings 命令</h2>
+<p>创建一个文本文件，其中列出了 DNS 服务器的配置详细信息。 文本文件 <em>DnsSettings.txt命名 </em>。 它位于 <code>%systemroot%\system32\dns</code> 服务器的目录中。 可以使用 <strong>dnscmd /exportsettings</strong> 创建的文件中的信息来排查配置问题，或确保你已相同配置多个服务器。</p>
+<h3 id="syntax-11">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /exportsettings
+</code></pre>
+<h4 id="parameters-13">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-info-command">dnscmd /info 命令</h2>
+<p>显示指定服务器的 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters</code>注册表的 DNS 部分的设置。 若要显示区域级注册表设置，请使用 <code>dnscmd zoneinfo</code> 命令。</p>
+<h3 id="syntax-12">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /info [&lt;settings&gt;]
+</code></pre>
+<h4 id="parameters-14">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;settings&gt;</code></td>
+<td><strong>信息</strong>命令返回的任何设置都可以单独指定。 如果未指定设置，则返回通用设置的报告。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-2">示例</h4>
+<ul>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server" data-linktype="absolute-path">示例 4：显示来自 DNS 服务器的 IsSlave 设置</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server" data-linktype="absolute-path">示例 5：显示来自 DNS 服务器的递归Timeout 设置</a></p>
+</li>
+</ul>
+<h2 id="dnscmd-ipvalidate-command">dnscmd /ipvalidate 命令</h2>
+<p>测试 IP 地址是标识正常运行的 DNS 服务器，还是 DNS 服务器可以充当转发器、根提示服务器还是特定区域的主服务器。</p>
+<h3 id="syntax-13">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /ipvalidate &lt;context&gt; [&lt;zonename&gt;] [[&lt;IPaddress&gt;]]
+</code></pre>
+<h4 id="parameters-15">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;context&gt;</code></td>
+<td>指定要执行的测试的类型。 可以指定以下任何测试：<ul><li><strong>/dnsservers</strong> - 测试具有所指定地址的计算机是否正常运行的 DNS 服务器。</li><li><strong>/forwarders</strong> - 测试指定用于标识可充当转发器的 DNS 服务器的地址。</li><li><strong>/roothints</strong> - 测试指定用于标识可充当根提示名称服务器的 DNS 服务器的地址。</li><li><strong>/zonemasters</strong> - 测试指定的地址，这些地址是 <em>区域名称</em>的主服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>标识区域。 将此参数与 <strong>/zonemasters</strong> 参数配合使用。</td>
+</tr>
+<tr>
+<td><code>&lt;IPaddress&gt;</code></td>
+<td>指定命令测试的 IP 地址。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-2">示例</h4>
+<pre><code>nscmd dnssvr1.contoso.com /ipvalidate /dnsservers 10.0.0.1 10.0.0.2
+dnscmd dnssvr1.contoso.com /ipvalidate /zonemasters corp.contoso.com 10.0.0.2
+</code></pre>
+<h2 id="dnscmd-nodedelete-command">dnscmd /nodedelete 命令</h2>
+<p>删除指定主机的所有记录。</p>
+<h3 id="syntax-14">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /nodedelete &lt;zonename&gt; &lt;nodename&gt; [/tree] [/f]
+</code></pre>
+<h4 id="parameters-16">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定区域的名称。</td>
+</tr>
+<tr>
+<td><code>&lt;nodename&gt;</code></td>
+<td>指定要删除的节点的主机名。</td>
+</tr>
+<tr>
+<td>/tree</td>
+<td>删除所有子记录。</td>
+</tr>
+<tr>
+<td>/f</td>
+<td>执行命令而不要求确认。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-3">示例</h4>
+<p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node" data-linktype="absolute-path">示例 6：从节点中删除记录</a></p>
+<h2 id="dnscmd-recordadd-command">dnscmd /recordadd 命令</h2>
+<p>将记录添加到 DNS 服务器中的指定区域。</p>
+<h3 id="syntax-15">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /recordadd &lt;zonename&gt; &lt;nodename&gt; &lt;rrtype&gt; &lt;rrdata&gt;
+</code></pre>
+<h4 id="parameters-17">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定记录所在的区域。</td>
+</tr>
+<tr>
+<td><code>&lt;nodename&gt;</code></td>
+<td>指定区域中的特定节点。</td>
+</tr>
+<tr>
+<td><code>&lt;rrtype&gt;</code></td>
+<td>指定要添加的记录的类型。</td>
+</tr>
+<tr>
+<td><code>&lt;rrdata&gt;</code></td>
+<td>指定预期数据类型。</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<p>注意</p>
+<p>添加记录后，请确保使用正确的数据类型和数据格式。 有关资源记录类型和相应数据类型的列表，请参阅 <a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)" data-linktype="absolute-path">Dnscmd 示例</a>。</p>
+</div>
+<h4 id="examples-3">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /recordadd test A 10.0.0.5
+dnscmd /recordadd test.contoso.com test MX 10 mailserver.test.contoso.com
+</code></pre>
+<h2 id="dnscmd-recorddelete-command">dnscmd /recorddelete 命令</h2>
+<p>将资源记录删除到指定区域。</p>
+<h3 id="syntax-16">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /recorddelete &lt;zonename&gt; &lt;nodename&gt; &lt;rrtype&gt; &lt;rrdata&gt; [/f]
+</code></pre>
+<h4 id="parameters-18">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定资源记录所在的区域。</td>
+</tr>
+<tr>
+<td><code>&lt;nodename&gt;</code></td>
+<td>指定主机的名称。</td>
+</tr>
+<tr>
+<td><code>&lt;rrtype&gt;</code></td>
+<td>指定要删除的资源记录的类型。</td>
+</tr>
+<tr>
+<td><code>&lt;rrdata&gt;</code></td>
+<td>指定预期数据类型。</td>
+</tr>
+<tr>
+<td>/f</td>
+<td>执行命令而不要求确认。 由于节点可以有多个资源记录，因此此命令要求你非常具体地了解要删除的资源记录的类型。 如果指定数据类型且未指定资源记录数据类型，则删除具有指定节点的特定数据类型的所有记录。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-4">示例</h4>
+<pre><code>dnscmd /recorddelete test.contoso.com test MX 10 mailserver.test.contoso.com
+</code></pre>
+<h2 id="dnscmd-resetforwarders-command">dnscmd /resetforwarders 命令</h2>
+<p>选择或重置 DNS 服务器在本地无法解析 DNS 查询时转发 DNS 查询的 IP 地址。</p>
+<h3 id="syntax-17">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /resetforwarders &lt;IPaddress&gt; [,&lt;IPaddress&gt;]...][/timeout &lt;timeout&gt;] [/slave | /noslave]
+</code></pre>
+<h4 id="parameters-19">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;IPaddress&gt;</code></td>
+<td>列出 DNS 服务器转发未解析查询的 IP 地址。</td>
+</tr>
+<tr>
+<td>/timeout <code>&lt;timeout&gt;</code></td>
+<td>设置 DNS 服务器等待转发器响应的秒数。 默认情况下，此值为 5 秒。</td>
+</tr>
+<tr>
+<td>/slave</td>
+<td>如果转发器无法解析查询，则阻止 DNS 服务器执行自己的迭代查询。</td>
+</tr>
+<tr>
+<td>/noslave</td>
+<td>如果转发器无法解析查询，则允许 DNS 服务器执行自己的迭代查询。 这是默认设置。</td>
+</tr>
+<tr>
+<td>/f</td>
+<td>在不要求确认的情况下执行命令。 由于节点可以有多个资源记录，因此此命令要求你非常具体地了解要删除的资源记录的类型。 如果指定数据类型且未指定资源记录数据类型，则删除具有指定节点的特定数据类型的所有记录。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-1">注解</h5>
+<ul>
+<li><p>默认情况下，DNS 服务器在无法解析查询时执行迭代查询。</p>
+</li>
+<li><p>使用 <strong>resetforwarders</strong> 命令设置 IP 地址会导致 DNS 服务器在指定的 IP 地址处对 DNS 服务器执行递归查询。 如果转发器未解析查询，则 DNS 服务器可以执行其自己的迭代查询。</p>
+</li>
+<li><p>如果使用 <strong>/slave</strong> 参数，则 DNS 服务器不会执行其自己的迭代查询。 这意味着 DNS 服务器仅将未解析的查询转发到列表中的 DNS 服务器，如果转发器未解析查询，则不会尝试迭代查询。 将一个 IP 地址设置为 DNS 服务器的转发器更有效。 可以将网络内部服务器的 <strong>resetforwarders</strong> 命令用于将未解析的查询转发到具有外部连接的一个 DNS 服务器。</p>
+</li>
+<li><p>列出转发器 IP 地址两次会导致 DNS 服务器尝试转发到该服务器两次。</p>
+</li>
+</ul>
+<h4 id="examples-5">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /resetforwarders 10.0.0.1 /timeout 7 /slave
+dnscmd dnssvr1.contoso.com /resetforwarders /noslave
+</code></pre>
+<h2 id="dnscmd-resetlistenaddresses-command">dnscmd /resetlistenaddresses 命令</h2>
+<p>指定侦听 DNS 客户端请求的服务器上的 IP 地址。 默认情况下，DNS 服务器上的所有 IP 地址侦听客户端 DNS 请求。</p>
+<h3 id="syntax-18">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /resetlistenaddresses &lt;listenaddress&gt;
+</code></pre>
+<h4 id="parameters-20">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;listenaddress&gt;</code></td>
+<td>指定 DNS 服务器上的 IP 地址，用于侦听 DNS 客户端请求。 如果未指定侦听地址，则服务器上的所有 IP 地址侦听客户端请求。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-6">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /resetlistenaddresses 10.0.0.1
+</code></pre>
+<h2 id="dnscmd-startscavenging-command">dnscmd /startscavenging 命令</h2>
+<p>告知 DNS 服务器尝试在指定的 DNS 服务器中立即搜索过时的资源记录。</p>
+<h3 id="syntax-19">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /startscavenging
+</code></pre>
+<h4 id="parameters-21">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-2">注解</h5>
+<ul>
+<li><p>此命令成功完成会立即启动复仇。 如果复仇失败，则不会显示任何警告消息。</p>
+</li>
+<li><p>尽管启动复仇的命令似乎已成功完成，但除非满足以下先决条件，否则该复仇不会启动：</p>
+<ul>
+<li><p>为服务器和区域启用清理。</p>
+</li>
+<li><p>区域已启动。</p>
+</li>
+<li><p>资源记录具有时间戳。</p>
+</li>
+</ul>
+</li>
+<li><p>有关如何为服务器启用清理的信息，请参阅 <strong>/config</strong> 部分中<strong>的服务器级语法</strong>下的 <strong>scavenginginterval</strong> 参数。</p>
+</li>
+<li><p>有关如何为区域启用清理的信息，请参阅 <strong>/config</strong> 部分的区域<strong>级别语法</strong>下的<strong>老化</strong>参数。</p>
+</li>
+<li><p>有关如何重启暂停区域的信息，请参阅本文中的 <strong>zoneresume</strong> 参数。</p>
+</li>
+<li><p>有关如何检查时间戳的资源记录的信息，请参阅本文中的 <strong>ageallrecords</strong> 参数。</p>
+</li>
+</ul>
+<h4 id="examples-7">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /startscavenging
+</code></pre>
+<h2 id="dnscmd-statistics-command">dnscmd /statistics 命令</h2>
+<p>显示或清除指定 DNS 服务器的数据。</p>
+<h3 id="syntax-20">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /statistics [&lt;statid&gt;] [/clear]
+</code></pre>
+<h4 id="parameters-22">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;statid&gt;</code></td>
+<td>指定要显示的统计信息或统计信息的组合。 <strong>统计信息</strong>命令显示在启动或恢复 DNS 服务器上开始的计数器。 标识号用于标识统计信息。 如果未指定统计信息 ID 号，则显示所有统计信息。 可以指定的数字以及显示的相应统计信息可以包括：<ul><li><strong>00000001</strong> - 时间</li><li><strong>00000002</strong> - 查询</li><li><strong>00000004</strong> - Query2</li><li><strong>00000008</strong> - 递归</li><li><strong>00000010</strong> - 主控形状</li><li><strong>00000020</strong> - 辅助数据库</li><li><strong>00000040</strong> - WINS</li><li><strong>00000100</strong> - 更新</li><li><strong>00000200</strong> - SkwanSec</li><li><strong>00000400</strong> - Ds</li><li><strong>00010000</strong> - 内存</li><li><strong>00100000</strong> - PacketMem</li><li><strong>00040000</strong> - Dbase</li><li><strong>00080000</strong> - 记录</li><li><strong>00200000</strong> - NbstatMem</li><li><strong>/clear</strong> - 将指定的统计信息计数器重置为零。</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-8">示例</h4>
+<ul>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server" data-linktype="absolute-path">示例 7： </a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server" data-linktype="absolute-path">示例 8：显示 DNS 服务器的 NbstatMem 统计信息</a></p>
+</li>
+</ul>
+<h2 id="dnscmd-unenlistdirectorypartition-command">dnscmd /unenlistdirectorypartition 命令</h2>
+<p>从指定目录分区的副本集中删除 DNS 服务器。</p>
+<h3 id="syntax-21">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /unenlistdirectorypartition &lt;partitionFQDN&gt;
+</code></pre>
+<h4 id="parameters-23">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;partitionFQDN&gt;</code></td>
+<td>将删除的 DNS 应用程序目录分区的 FQDN。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-writebackfiles-command">dnscmd /writebackfiles 命令</h2>
+<p>检查 DNS 服务器内存中是否有更改，并将其写入永久性存储。 <strong>写回文件</strong>命令更新所有脏区域或指定区域。 当内存中尚未写入永久性存储的更改时，区域会很脏。 这是检查所有区域的服务器级操作。 可以在此操作中指定一个区域，也可以使用 <strong>zonewriteback</strong> 操作。</p>
+<h3 id="syntax-22">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /writebackfiles &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-24">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要更新的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-9">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /writebackfiles
+</code></pre>
+<h2 id="dnscmd-zoneadd-command">dnscmd /zoneadd 命令</h2>
+<p>将区域添加到 DNS 服务器。</p>
+<h3 id="syntax-23">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneadd &lt;zonename&gt; &lt;zonetype&gt; [/dp &lt;FQDN&gt; | {/domain | enterprise | legacy}]
+</code></pre>
+<h4 id="parameters-25">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定区域的名称。</td>
+</tr>
+<tr>
+<td><code>&lt;zonetype&gt;</code></td>
+<td>指定要创建的区域类型。 指定 <strong>/forwarder</strong> 或 <strong>/dsforwarder</strong> 的区域类型会创建执行条件转发的区域。 每个区域类型都有不同的必需参数：<ul><li><strong>/dsprimary</strong> - 创建 Active Directory 集成区域。</li><li><strong>/primary /file <code>&lt;filename&gt;</code></strong> - 创建标准主区域，并指定将存储区域信息的文件的名称。</li><li><strong>/secondary <code>&lt;masterIPaddress&gt; [&lt;masterIPaddress&gt;...]</code></strong> - 创建标准次要区域。</li><li><strong>/stub <code>&lt;masterIPaddress&gt; [&lt;masterIPaddress&gt;...]</code> /file <code>&lt;filename&gt;</code></strong> - 创建文件支持的存根区域。</li><li><strong>/dsstub <code>&lt;masterIPaddress&gt; [&lt;masterIPaddress&gt;...]</code></strong> - 创建 Active Directory 集成存根区域。</li><li><strong>/forwarder <code>&lt;masterIPaddress&gt; [&lt;masterIPaddress&gt;]</code>... /file <code>&lt;filename&gt;</code></strong> - 指定创建的区域将未解析的查询转发到另一个 DNS 服务器。</li><li><strong>/dsforwarder</strong> - 指定创建的 Active Directory 集成区域将未解析的查询转发到另一个 DNS 服务器。</li></ul></td>
+</tr>
+<tr>
+<td><code>&lt;FQDN&gt;</code></td>
+<td>指定目录分区的 FQDN。</td>
+</tr>
+<tr>
+<td>/domain</td>
+<td>将区域存储在域目录分区上。</td>
+</tr>
+<tr>
+<td>/enterprise</td>
+<td>将区域存储在企业目录分区上。</td>
+</tr>
+<tr>
+<td>/legacy</td>
+<td>将区域存储在旧目录分区上。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-10">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zoneadd test.contoso.com /dsprimary
+dnscmd dnssvr1.contoso.com /zoneadd secondtest.contoso.com /secondary 10.0.0.2
+</code></pre>
+<h2 id="dnscmd-zonechangedirectorypartition-command">dnscmd /zonechangedirectorypartition 命令</h2>
+<p>更改指定区域所在的目录分区。</p>
+<h3 id="syntax-24">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zonechangedirectorypartition &lt;zonename&gt; {[&lt;newpartitionname&gt;] | [&lt;zonetype&gt;]}
+</code></pre>
+<h4 id="parameters-26">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>区域所在的当前目录分区的 FQDN。</td>
+</tr>
+<tr>
+<td><code>&lt;newpartitionname&gt;</code></td>
+<td>区域将移动到的目录分区的 FQDN。</td>
+</tr>
+<tr>
+<td><code>&lt;zonetype&gt;</code></td>
+<td>指定区域将移动到的目录分区的类型。</td>
+</tr>
+<tr>
+<td>/domain</td>
+<td>将区域移动到内置域目录分区。</td>
+</tr>
+<tr>
+<td>/forest</td>
+<td>将区域移动到内置林目录分区。</td>
+</tr>
+<tr>
+<td>/legacy</td>
+<td>将区域移到为预 Active Directory 域控制器创建的目录分区。 本机模式不需要这些目录分区。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-zonedelete-command">dnscmd /zonedelete 命令</h2>
+<p>删除指定的区域。</p>
+<h3 id="syntax-25">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zonedelete &lt;zonename&gt; [/dsdel] [/f]
+</code></pre>
+<h4 id="parameters-27">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要删除的区域的名称。</td>
+</tr>
+<tr>
+<td>/dsdel</td>
+<td>从 Azure Directory 域服务 (AD DS) 中删除区域。</td>
+</tr>
+<tr>
+<td>/f</td>
+<td>在不要求确认的情况下运行命令。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-11">示例</h4>
+<ul>
+<li><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server" data-linktype="absolute-path">示例 9：从 DNS 服务器中删除区域</a></li>
+</ul>
+<h2 id="dnscmd-zoneexport-command">dnscmd /zoneexport 命令</h2>
+<p>创建一个文本文件，其中列出了指定区域的资源记录。 <strong>zoneexport</strong> 操作为 Active Directory 集成区域创建资源记录文件，以便进行故障排除。 默认情况下，此命令创建的文件放置在 DNS 目录中，该目录默认 <code>%systemroot%/System32/Dns</code> 为该目录。</p>
+<h3 id="syntax-26">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneexport &lt;zonename&gt; &lt;zoneexportfile&gt;
+</code></pre>
+<h4 id="parameters-28">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定区域的名称。</td>
+</tr>
+<tr>
+<td><code>&lt;zoneexportfile&gt;</code></td>
+<td>指定要创建的文件的名称。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-12">示例</h4>
+<ul>
+<li><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file" data-linktype="absolute-path">示例 10：将区域资源记录列表导出到文件</a></li>
+</ul>
+<h2 id="dnscmd-zoneinfo">dnscmd /zoneinfo</h2>
+<p>显示指定区域的注册表部分中的设置： <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\&lt;zonename&gt;</code></p>
+<h3 id="syntax-27">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneinfo &lt;zonename&gt; [&lt;setting&gt;]
+</code></pre>
+<h4 id="parameters-29">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定区域的名称。</td>
+</tr>
+<tr>
+<td><code>&lt;setting&gt;</code></td>
+<td>可以单独指定 <strong>zoneinfo</strong> 命令返回的任何设置。 如果未指定设置，则返回所有设置。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-3">注解</h5>
+<ul>
+<li><p>若要显示服务器级注册表设置，请使用 <strong>/info</strong> 命令。</p>
+</li>
+<li><p>若要查看可以使用此命令显示的设置列表，请参阅 <strong>/config</strong> 命令。</p>
+</li>
+</ul>
+<h4 id="examples-13">示例</h4>
+<ul>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry" data-linktype="absolute-path">示例 11：从注册表显示 RefreshInterval 设置</a></p>
+</li>
+<li><p><a href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry" data-linktype="absolute-path">示例 12：从注册表显示老化设置</a></p>
+</li>
+</ul>
+<h2 id="dnscmd-zonepause-command">dnscmd /zonepause 命令</h2>
+<p>暂停指定的区域，然后忽略查询请求。</p>
+<h3 id="syntax-28">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zonepause &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-30">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要暂停的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-4">注解</h5>
+<ul>
+<li>若要恢复某个区域并在暂停后使其可用，请使用 <strong>/zoneresume</strong> 命令。</li>
+</ul>
+<h4 id="examples-14">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zonepause test.contoso.com
+</code></pre>
+<h2 id="dnscmd-zoneprint-command">dnscmd /zoneprint 命令</h2>
+<p>列出区域中的记录。</p>
+<h3 id="syntax-29">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneprint &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-31">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要列出的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dnscmd-zonerefresh-command">dnscmd /zonerefresh 命令</h2>
+<p>强制辅助 DNS 区域从主区域更新。</p>
+<h3 id="syntax-30">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zonerefresh &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-32">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要刷新的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-5">注解</h5>
+<ul>
+<li><p><strong>zonerefresh</strong> 命令强制检查主服务器的颁发机构启动 (SOA) 资源记录中的版本号。 如果主服务器上的版本号高于辅助服务器的版本号，则会启动区域传输来更新辅助服务器。 如果版本号相同，则不会发生区域传输。</p>
+</li>
+<li><p>默认情况下，强制检查每 15 分钟进行一次。 若要更改默认值，请使用 <code>dnscmd config refreshinterval</code> 命令。</p>
+</li>
+</ul>
+<h4 id="examples-15">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zonerefresh test.contoso.com
+</code></pre>
+<h2 id="dnscmd-zonereload-command">dnscmd /zonereload 命令</h2>
+<p>从其源复制区域信息。</p>
+<h3 id="syntax-31">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zonereload &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-33">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要重新加载的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-6">注解</h5>
+<ul>
+<li><p>如果区域已集成 Active Directory，它将从 AD DS) Active Directory 域服务 (重新加载。</p>
+</li>
+<li><p>如果区域是标准文件支持的区域，则会从文件重新加载。</p>
+</li>
+</ul>
+<h4 id="examples-16">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zonereload test.contoso.com
+</code></pre>
+<h2 id="dnscmd-zoneresetmasters-command">dnscmd /zoneresetmasters 命令</h2>
+<p>重置主服务器的 IP 地址，该服务器提供区域传输到次要区域的信息。</p>
+<h3 id="syntax-32">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneresetmasters &lt;zonename&gt; [/local] [&lt;IPaddress&gt; [&lt;IPaddress&gt;]...]
+</code></pre>
+<h4 id="parameters-34">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要重置的区域的名称。</td>
+</tr>
+<tr>
+<td>/local</td>
+<td>设置本地主列表。 此参数用于 Active Directory 集成区域。</td>
+</tr>
+<tr>
+<td><code>&lt;IPaddress&gt;</code></td>
+<td>辅助区域的主服务器的 IP 地址。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-7">注解</h5>
+<ul>
+<li>创建次要区域时，最初设置此值。 在辅助服务器上使用 <strong>zoneresetmasters</strong> 命令。 如果在主 DNS 服务器上设置此值，则此值不起作用。</li>
+</ul>
+<h4 id="examples-17">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zoneresetmasters test.contoso.com 10.0.0.1
+dnscmd dnssvr1.contoso.com /zoneresetmasters test.contoso.com /local
+</code></pre>
+<h2 id="dnscmd-zoneresetscavengeservers-command">dnscmd /zoneresetscavengeservers 命令</h2>
+<p>更改可以报复指定区域的服务器的 IP 地址。</p>
+<h3 id="syntax-33">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneresetscavengeservers &lt;zonename&gt; [/local] [&lt;IPaddress&gt; [&lt;IPaddress&gt;]...]
+</code></pre>
+<h4 id="parameters-35">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要复仇的区域。</td>
+</tr>
+<tr>
+<td>/local</td>
+<td>设置本地主列表。 此参数用于 Active Directory 集成区域。</td>
+</tr>
+<tr>
+<td><code>&lt;IPaddress&gt;</code></td>
+<td>列出可以执行复仇的服务器 IP 地址。 如果省略此参数，托管此区域的所有服务器都可以为其复仇。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-8">注解</h5>
+<ul>
+<li><p>默认情况下，托管区域的所有服务器都可以为该区域复仇。</p>
+</li>
+<li><p>如果区域托管在多个 DNS 服务器上，则可以使用此命令减少清理区域次数。</p>
+</li>
+<li><p>必须在受此命令影响的 DNS 服务器和区域上启用清理。</p>
+</li>
+</ul>
+<h4 id="examples-18">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zoneresetscavengeservers test.contoso.com 10.0.0.1 10.0.0.2
+</code></pre>
+<h2 id="dnscmd-zoneresetsecondaries-command">dnscmd /zoneresetsecondaries 命令</h2>
+<p>指定主服务器在请求区域传输时响应的辅助服务器的 IP 地址列表。</p>
+<h3 id="syntax-34">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneresetsecondaries &lt;zonename&gt; {/noxfr | /nonsecure | /securens | /securelist &lt;securityIPaddresses&gt;} {/nonotify | /notify | /notifylist &lt;notifyIPaddresses&gt;}
+</code></pre>
+<h4 id="parameters-36">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定将重置其辅助服务器的区域的名称。</td>
+</tr>
+<tr>
+<td>/local</td>
+<td>设置本地主列表。 此参数用于 Active Directory 集成区域。</td>
+</tr>
+<tr>
+<td>/noxfr</td>
+<td>指定不允许任何区域传输。</td>
+</tr>
+<tr>
+<td>/nonsecure</td>
+<td>指定授予所有区域传输请求。</td>
+</tr>
+<tr>
+<td>/securens</td>
+<td>指定仅向区域授予传输 (NS) 资源记录的名称服务器中列出的服务器。</td>
+</tr>
+<tr>
+<td>/securelist</td>
+<td>指定仅向服务器列表授予区域传输。 此参数必须后跟主服务器使用的 IP 地址或地址。</td>
+</tr>
+<tr>
+<td><code>&lt;securityIPaddresses&gt;</code></td>
+<td>列出从主服务器接收区域传输的 IP 地址。 此参数仅用于 <strong>/securelist</strong> 参数。</td>
+</tr>
+<tr>
+<td>/nonotify</td>
+<td>指定不会将更改通知发送到辅助服务器。</td>
+</tr>
+<tr>
+<td>/notify</td>
+<td>指定将更改通知发送到所有辅助服务器。</td>
+</tr>
+<tr>
+<td>/notifylist</td>
+<td>指定仅将更改通知发送到服务器列表。 此命令必须后跟主服务器使用的 IP 地址或地址。</td>
+</tr>
+<tr>
+<td><code>&lt;notifyIPaddresses&gt;</code></td>
+<td>指定将更改通知发送到的辅助服务器或服务器的 IP 地址或地址。 此列表仅用于 <strong>/notifylist</strong> 参数。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-9">注解</h5>
+<ul>
+<li>使用主服务器上的 <strong>zoneresetsecondaries</strong> 命令指定它如何响应来自辅助服务器的区域传输请求。</li>
+</ul>
+<h4 id="examples-19">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zoneresetsecondaries test.contoso.com /noxfr /nonotify
+dnscmd dnssvr1.contoso.com /zoneresetsecondaries test.contoso.com /securelist 11.0.0.2
+</code></pre>
+<h2 id="dnscmd-zoneresettype-command">dnscmd /zoneresettype 命令</h2>
+<p>更改区域的类型。</p>
+<h3 id="syntax-35">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneresettype &lt;zonename&gt; &lt;zonetype&gt; [/overwrite_mem | /overwrite_ds]
+</code></pre>
+<h4 id="parameters-37">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>标识类型将更改的区域。</td>
+</tr>
+<tr>
+<td><code>&lt;zonetype&gt;</code></td>
+<td>指定要创建的区域类型。 每种类型都有不同的必需参数，包括：<ul><li><strong>/dsprimary</strong> - 创建 Active Directory 集成区域。</li><li><strong>/primary /file <code>&lt;filename&gt;</code></strong> - 创建标准主区域。</li><li><strong>/secondary <code>&lt;masterIPaddress&gt; [,&lt;masterIPaddress&gt;...]</code></strong> - 创建标准次要区域。</li><li><strong>/stub <code>&lt;masterIPaddress&gt;[,&lt;masterIPaddress&gt;...]</code> /file <code>&lt;filename&gt;</code></strong> - 创建文件支持的存根区域。</li><li><strong>/dsstub <code>&lt;masterIPaddress&gt;[,&lt;masterIPaddress&gt;...]</code></strong> - 创建 Active Directory 集成存根区域。</li><li><strong>/forwarder <code>&lt;masterIPaddress[,&lt;masterIPaddress&gt;]</code>... /file<code>&lt;filename&gt;</code></strong> - 指定创建的区域将未解析的查询转发到另一个 DNS 服务器。</li><li><strong>/dsforwarder</strong> - 指定创建的 Active Directory 集成区域将未解析的查询转发到另一个 DNS 服务器。</li></ul></td>
+</tr>
+<tr>
+<td>/overwrite_mem</td>
+<td>覆盖 AD DS 中的数据中的 DNS 数据。</td>
+</tr>
+<tr>
+<td>/overwrite_ds</td>
+<td>覆盖 AD DS 中的现有数据。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-10">注解</h5>
+<ul>
+<li>将区域类型设置为 <strong>/dsforwarder</strong> 将创建执行条件转发的区域。</li>
+</ul>
+<h4 id="examples-20">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zoneresettype test.contoso.com /primary /file test.contoso.com.dns
+dnscmd dnssvr1.contoso.com /zoneresettype second.contoso.com /secondary 10.0.0.2
+</code></pre>
+<h2 id="dnscmd-zoneresume-command">dnscmd /zoneresume 命令</h2>
+<p>启动以前暂停的指定区域。</p>
+<h3 id="syntax-36">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneresume &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-38">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要恢复的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-11">注解</h5>
+<ul>
+<li>可以使用此操作从 <strong>/zonepause</strong> 操作重启。</li>
+</ul>
+<h4 id="examples-21">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zoneresume test.contoso.com
+</code></pre>
+<h2 id="dnscmd-zoneupdatefromds-command">dnscmd /zoneupdatefromds 命令</h2>
+<p>从 AD DS 更新指定的 Active Directory 集成区域。</p>
+<h3 id="syntax-37">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zoneupdatefromds &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-39">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要更新的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-12">注解</h5>
+<ul>
+<li>默认情况下，Active Directory 集成区域每隔五分钟执行此更新。 若要更改此参数，请使用 <code>dnscmd config dspollinginterval</code> 命令。</li>
+</ul>
+<h4 id="examples-22">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zoneupdatefromds
+</code></pre>
+<h2 id="dnscmd-zonewriteback-command">dnscmd /zonewriteback 命令</h2>
+<p>检查 DNS 服务器内存中是否存在与指定区域相关的更改，并将其写入永久性存储。</p>
+<h3 id="syntax-38">语法</h3>
+<pre><code>dnscmd [&lt;servername&gt;] /zonewriteback &lt;zonename&gt;
+</code></pre>
+<h4 id="parameters-40">参数</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;servername&gt;</code></td>
+<td>指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;zonename&gt;</code></td>
+<td>指定要更新的区域的名称。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="remarks-13">注解</h5>
+<ul>
+<li>这是区域级操作。 可以使用 <strong>/writebackfiles</strong> 操作更新 DNS 服务器上的所有区域。</li>
+</ul>
+<h4 id="examples-23">示例</h4>
+<pre><code>dnscmd dnssvr1.contoso.com /zonewriteback test.contoso.com
+</code></pre>
+<h2 id="additional-references">其他参考</h2>
+<ul>
+<li><a href="command-line-syntax-key.htm" tppabs="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/command-line-syntax-key" data-linktype="relative-path">命令行语法项</a></li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							class="font-size-sm right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="页面操作">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="文章大纲">
+									<h3>本文内容</h3>
+								</nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="主题" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>主题</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+亮					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+暗					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+高对比度					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/previous-versions/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/previous-versions/'" tppabs="https://learn.microsoft.com/zh-cn/previous-versions/" data-bi-name="archivelink">早期版本</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog'" tppabs="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">博客</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/contribute/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/contribute/'" tppabs="https://learn.microsoft.com/zh-cn/contribute/" data-bi-name="contributorGuide">参与</a></li>
+					<li><a data-mscc-ic="false" href="javascript:if(confirm('https://go.microsoft.com/fwlink/?LinkId=521839  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://go.microsoft.com/fwlink/?LinkId=521839'" tppabs="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隐私和 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://learn.microsoft.com/zh-cn/legal/termsofuse  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://learn.microsoft.com/zh-cn/legal/termsofuse'" tppabs="https://learn.microsoft.com/zh-cn/legal/termsofuse" data-bi-name="termsofuse">使用条款</a></li>
+				<li><a data-mscc-ic="false" href="javascript:if(confirm('https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx'" tppabs="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商标</a></li>
+		<li>&copy; Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="操作面板" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>
