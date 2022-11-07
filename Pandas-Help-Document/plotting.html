@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<title>Plotting &#8212; pandas 1.5.1 documentation</title>
+<script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+
+<link href="theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link href="pydata-sphinx-theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link rel="stylesheet" href="all.min.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/vendor/fontawesome/6.1.2/css/all.min.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="stylesheet" type="text/css" href="pygments.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pygments.css" />
+<link rel="stylesheet" type="text/css" href="plot_directive.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/plot_directive.css" />
+<link rel="stylesheet" type="text/css" href="copybutton.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.css" />
+<link rel="stylesheet" type="text/css" href="panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+<link rel="stylesheet" type="text/css" href="panels-variables.06eb56fa6e07937060861dad626602ad.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+<link rel="stylesheet" type="text/css" href="getting_started.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/getting_started.css" />
+<link rel="stylesheet" type="text/css" href="pandas.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/pandas.css" />
+
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+<script data-url_root="../" id="documentation_options" src="documentation_options.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/documentation_options.js"></script>
+<script src="jquery.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/jquery.js"></script>
+<script src="underscore.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/underscore.js"></script>
+<script src="doctools.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/doctools.js"></script>
+<script src="clipboard.min.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/clipboard.min.js"></script>
+<script src="copybutton.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.js"></script>
+<script src="toggleprompt.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/toggleprompt.js"></script>
+<script src="embed-amd.js" tppabs="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+<script async="async" src="analytics.js" tppabs="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                    window.ga = window.ga || function () {
+                        (ga.q = ga.q || []).push(arguments) };
+                    ga.l = +new Date;
+                    ga('create', 'UA-27880019-2', 'auto');
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+                </script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'reference/plotting';</script>
+<script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pandas.pydata.org/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.1';
+        </script>
+<link rel="shortcut icon" href="../_static/favicon.ico" />
+<link rel="index" title="Index" href="../genindex.html" />
+<link rel="search" title="Search" href="../search.html" />
+<link rel="next" title="pandas.plotting.andrews_curves" href="api/pandas.plotting.andrews_curves.html" />
+<link rel="prev" title="pandas.io.formats.style.Styler.loader" href="api/pandas.io.formats.style.Styler.loader.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+</head>
+<body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+<input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+<label class="overlay overlay-primary" for="__primary"></label>
+<input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center" action="https://pandas.pydata.org/pandas-docs/stable/search.html" method="get">
+<i class="icon fas fa-search"></i>
+<input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fas fa-bars"></span>
+</label>
+<div id="navbar-start">
+<a class="navbar-brand logo" href="index-5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/index.html">
+<img src="pandas.svg" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pandas.svg" class="logo__image only-light" alt="Logo image">
+<img src="pandas_white.svg" tppabs="https://pandas.pydata.org/static/img/pandas_white.svg" class="logo__image only-dark" alt="Logo image">
+</a>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div id="navbar-center" class="mr-auto">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item navbar-end__search-button-container">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fas fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sidebar-start-items sidebar-primary__section">
+<div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+<div class="bd-toc-item navbar-nav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="io-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/io.html">
+Input/output
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="general_functions.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html">
+General functions
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="series.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/series.html">
+Series
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="frame.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html">
+DataFrame
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="arrays.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/arrays.html">
+pandas arrays, scalars, and data types
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indexing-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/indexing.html">
+Index objects
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="offset_frequency.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/offset_frequency.html">
+Date offsets
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="window-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/window.html">
+Window
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="groupby-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html">
+GroupBy
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="resampling.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/resampling.html">
+Resampling
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="style-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/style.html">
+Style
+</a>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="current reference internal" href="#">
+Plotting
+</a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox" />
+<label class="toctree-toggle" for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.andrews_curves.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.andrews_curves.html">
+pandas.plotting.andrews_curves
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.autocorrelation_plot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.autocorrelation_plot.html">
+pandas.plotting.autocorrelation_plot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.bootstrap_plot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.bootstrap_plot.html">
+pandas.plotting.bootstrap_plot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.boxplot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.boxplot.html">
+pandas.plotting.boxplot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.deregister_matplotlib_converters.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.deregister_matplotlib_converters.html">
+pandas.plotting.deregister_matplotlib_converters
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.lag_plot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.lag_plot.html">
+pandas.plotting.lag_plot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.parallel_coordinates.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.parallel_coordinates.html">
+pandas.plotting.parallel_coordinates
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.plot_params.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.plot_params.html">
+pandas.plotting.plot_params
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.radviz.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.radviz.html">
+pandas.plotting.radviz
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.register_matplotlib_converters.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.register_matplotlib_converters.html">
+pandas.plotting.register_matplotlib_converters
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.scatter_matrix.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.scatter_matrix.html">
+pandas.plotting.scatter_matrix
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.plotting.table.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.table.html">
+pandas.plotting.table
+</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="options-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/options.html">
+Options and settings
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="extensions.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/extensions.html">
+Extensions
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="testing.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/testing.html">
+Testing
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="sidebar-end-items sidebar-primary__section">
+<div class="sidebar-end-items__item">
+</div>
+</div>
+</div>
+<main class="bd-main">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+</div>
+<article class="bd-article" role="main">
+<section id="plotting">
+<span id="api-plotting"></span><h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h1>
+<p>The following functions are contained in the <code class="docutils literal notranslate"><span class="pre">pandas.plotting</span></code> module.</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.plotting.andrews_curves.html#pandas.plotting.andrews_curves" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.andrews_curves.html#pandas.plotting.andrews_curves" title="pandas.plotting.andrews_curves"><code class="xref py py-obj docutils literal notranslate"><span class="pre">andrews_curves</span></code></a>(frame,聽class_column[,聽ax,聽...])</p></td>
+<td><p>Generate a matplotlib plot for visualising clusters of multivariate data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.plotting.autocorrelation_plot.html#pandas.plotting.autocorrelation_plot" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.autocorrelation_plot.html#pandas.plotting.autocorrelation_plot" title="pandas.plotting.autocorrelation_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">autocorrelation_plot</span></code></a>(series[,聽ax])</p></td>
+<td><p>Autocorrelation plot for time series.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.plotting.bootstrap_plot.html#pandas.plotting.bootstrap_plot" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.bootstrap_plot.html#pandas.plotting.bootstrap_plot" title="pandas.plotting.bootstrap_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bootstrap_plot</span></code></a>(series[,聽fig,聽size,聽samples])</p></td>
+<td><p>Bootstrap plot on mean, median and mid-range statistics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.plotting.boxplot.html#pandas.plotting.boxplot" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.boxplot.html#pandas.plotting.boxplot" title="pandas.plotting.boxplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boxplot</span></code></a>(data[,聽column,聽by,聽ax,聽fontsize,聽...])</p></td>
+<td><p>Make a box plot from DataFrame columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.plotting.deregister_matplotlib_converters.html#pandas.plotting.deregister_matplotlib_converters" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.deregister_matplotlib_converters.html#pandas.plotting.deregister_matplotlib_converters" title="pandas.plotting.deregister_matplotlib_converters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deregister_matplotlib_converters</span></code></a>()</p></td>
+<td><p>Remove pandas formatters and converters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.plotting.lag_plot.html#pandas.plotting.lag_plot" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.lag_plot.html#pandas.plotting.lag_plot" title="pandas.plotting.lag_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lag_plot</span></code></a>(series[,聽lag,聽ax])</p></td>
+<td><p>Lag plot for time series.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.plotting.parallel_coordinates.html#pandas.plotting.parallel_coordinates" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.parallel_coordinates.html#pandas.plotting.parallel_coordinates" title="pandas.plotting.parallel_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_coordinates</span></code></a>(frame,聽class_column[,聽...])</p></td>
+<td><p>Parallel coordinates plotting.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.plotting.plot_params.html#pandas.plotting.plot_params" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.plot_params.html#pandas.plotting.plot_params" title="pandas.plotting.plot_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_params</span></code></a></p></td>
+<td><p>Stores pandas plotting options.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.plotting.radviz.html#pandas.plotting.radviz" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.radviz.html#pandas.plotting.radviz" title="pandas.plotting.radviz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radviz</span></code></a>(frame,聽class_column[,聽ax,聽color,聽...])</p></td>
+<td><p>Plot a multidimensional dataset in 2D.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.plotting.register_matplotlib_converters.html#pandas.plotting.register_matplotlib_converters" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.register_matplotlib_converters.html#pandas.plotting.register_matplotlib_converters" title="pandas.plotting.register_matplotlib_converters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_matplotlib_converters</span></code></a>()</p></td>
+<td><p>Register pandas formatters and converters with matplotlib.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.plotting.scatter_matrix.html#pandas.plotting.scatter_matrix" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.scatter_matrix.html#pandas.plotting.scatter_matrix" title="pandas.plotting.scatter_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_matrix</span></code></a>(frame[,聽alpha,聽figsize,聽ax,聽...])</p></td>
+<td><p>Draw a matrix of scatter plots.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.plotting.table.html#pandas.plotting.table" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.table.html#pandas.plotting.table" title="pandas.plotting.table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">table</span></code></a>(ax,聽data[,聽rowLabels,聽colLabels])</p></td>
+<td><p>Helper function to convert DataFrame and Series to matplotlib.table.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</article>
+<footer class="bd-footer-article">
+
+<div class='prev-next-area'>
+<a class='left-prev' id="prev-link" href="pandas.io.formats.style.Styler.loader.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.formats.style.Styler.loader.html" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">pandas.io.formats.style.Styler.loader</p>
+</div>
+</a>
+<a class='right-next' id="next-link" href="pandas.plotting.andrews_curves.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.andrews_curves.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">pandas.plotting.andrews_curves</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc">
+<div class="toc-item">
+</div>
+<div class="toc-item">
+<div class="tocsection sourcelink">
+<a href="plotting.rst.txt" tppabs="https://pandas.pydata.org/pandas-docs/stable/_sources/reference/plotting.rst.txt">
+<i class="fas fa-file-alt"></i> Show Source
+</a>
+</div>
+</div>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner">
+</div>
+</footer>
+</main>
+</div>
+</div>
+
+<script src="pydata-sphinx-theme.js-digest=9b1a4fa89bdd0e95b23b" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+<div class="footer-item">
+<p class="copyright">
+&copy 2022 pandas via <a href="javascript:if(confirm('https://numfocus.org/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://numfocus.org/'" tppabs="https://numfocus.org/">NumFOCUS, Inc.</a> Hosted by <a href="javascript:if(confirm('https://www.ovhcloud.com/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://www.ovhcloud.com/'" tppabs="https://www.ovhcloud.com/">OVHcloud</a>.
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="javascript:if(confirm('http://sphinx-doc.org/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://sphinx-doc.org/'" tppabs="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

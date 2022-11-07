@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<title>pandas.DataFrame.lookup &#8212; pandas 1.5.1 documentation</title>
+<script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+
+<link href="theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link href="pydata-sphinx-theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link rel="stylesheet" href="all.min.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/vendor/fontawesome/6.1.2/css/all.min.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="stylesheet" type="text/css" href="pygments.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pygments.css" />
+<link rel="stylesheet" type="text/css" href="plot_directive.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/plot_directive.css" />
+<link rel="stylesheet" type="text/css" href="copybutton.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.css" />
+<link rel="stylesheet" type="text/css" href="panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+<link rel="stylesheet" type="text/css" href="panels-variables.06eb56fa6e07937060861dad626602ad.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+<link rel="stylesheet" type="text/css" href="getting_started.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/getting_started.css" />
+<link rel="stylesheet" type="text/css" href="pandas.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/pandas.css" />
+
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+<script data-url_root="../../" id="documentation_options" src="documentation_options.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/documentation_options.js"></script>
+<script src="jquery.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/jquery.js"></script>
+<script src="underscore.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/underscore.js"></script>
+<script src="doctools.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/doctools.js"></script>
+<script src="clipboard.min.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/clipboard.min.js"></script>
+<script src="copybutton.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.js"></script>
+<script src="toggleprompt.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/toggleprompt.js"></script>
+<script src="embed-amd.js" tppabs="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+<script async="async" src="analytics.js" tppabs="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                    window.ga = window.ga || function () {
+                        (ga.q = ga.q || []).push(arguments) };
+                    ga.l = +new Date;
+                    ga('create', 'UA-27880019-2', 'auto');
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+                </script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'reference/api/pandas.DataFrame.lookup';</script>
+<script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pandas.pydata.org/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.1';
+        </script>
+<link rel="shortcut icon" href="../../_static/favicon.ico" />
+<link rel="index" title="Index" href="../../genindex.html" />
+<link rel="search" title="Search" href="../../search.html" />
+<link rel="next" title="pandas.DataFrame.lt" href="pandas.DataFrame.lt.html" />
+<link rel="prev" title="pandas.DataFrame.le" href="pandas.DataFrame.le.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+</head>
+<body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+<input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+<label class="overlay overlay-primary" for="__primary"></label>
+<input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center" action="https://pandas.pydata.org/pandas-docs/stable/search.html" method="get">
+<i class="icon fas fa-search"></i>
+<input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fas fa-bars"></span>
+</label>
+<div id="navbar-start">
+<a class="navbar-brand logo" href="index-5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/index.html">
+<img src="pandas.svg" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pandas.svg" class="logo__image only-light" alt="Logo image">
+<img src="pandas_white.svg" tppabs="https://pandas.pydata.org/static/img/pandas_white.svg" class="logo__image only-dark" alt="Logo image">
+</a>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div id="navbar-center" class="mr-auto">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item navbar-end__search-button-container">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fas fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sidebar-start-items sidebar-primary__section">
+<div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+<div class="bd-toc-item navbar-nav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="io-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/io.html">
+Input/output
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="general_functions.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html">
+General functions
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="series.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/series.html">
+Series
+</a>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="frame.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html">
+DataFrame
+</a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox" />
+<label class="toctree-toggle" for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">
+pandas.DataFrame
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html">
+pandas.DataFrame.index
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.columns.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.columns.html">
+pandas.DataFrame.columns
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.dtypes.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html">
+pandas.DataFrame.dtypes
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.info.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.info.html">
+pandas.DataFrame.info
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.select_dtypes.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.select_dtypes.html">
+pandas.DataFrame.select_dtypes
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.values.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.values.html">
+pandas.DataFrame.values
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.axes.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.axes.html">
+pandas.DataFrame.axes
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.ndim.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ndim.html">
+pandas.DataFrame.ndim
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.size.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.size.html">
+pandas.DataFrame.size
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.shape.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.shape.html">
+pandas.DataFrame.shape
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.memory_usage.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.memory_usage.html">
+pandas.DataFrame.memory_usage
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.empty.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.empty.html">
+pandas.DataFrame.empty
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.set_flags.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_flags.html">
+pandas.DataFrame.set_flags
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.astype.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.astype.html">
+pandas.DataFrame.astype
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.convert_dtypes.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.convert_dtypes.html">
+pandas.DataFrame.convert_dtypes
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.infer_objects.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.infer_objects.html">
+pandas.DataFrame.infer_objects
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.copy.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html">
+pandas.DataFrame.copy
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.bool.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.bool.html">
+pandas.DataFrame.bool
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.head.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html">
+pandas.DataFrame.head
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.at.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html">
+pandas.DataFrame.at
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.iat.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html">
+pandas.DataFrame.iat
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.loc.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html">
+pandas.DataFrame.loc
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.iloc.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html">
+pandas.DataFrame.iloc
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.insert.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.insert.html">
+pandas.DataFrame.insert
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.__iter__.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.__iter__.html">
+pandas.DataFrame.__iter__
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.items.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.items.html">
+pandas.DataFrame.items
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.iteritems.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iteritems.html">
+pandas.DataFrame.iteritems
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.keys.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.keys.html">
+pandas.DataFrame.keys
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.iterrows.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iterrows.html">
+pandas.DataFrame.iterrows
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.itertuples.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.itertuples.html">
+pandas.DataFrame.itertuples
+</a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+pandas.DataFrame.lookup
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.pop.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pop.html">
+pandas.DataFrame.pop
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.tail.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tail.html">
+pandas.DataFrame.tail
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.xs.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.xs.html">
+pandas.DataFrame.xs
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.get.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.get.html">
+pandas.DataFrame.get
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.isin.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isin.html">
+pandas.DataFrame.isin
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.where.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.where.html">
+pandas.DataFrame.where
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.mask.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mask.html">
+pandas.DataFrame.mask
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.query.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html">
+pandas.DataFrame.query
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.add.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.add.html">
+pandas.DataFrame.add
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sub.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sub.html">
+pandas.DataFrame.sub
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.mul.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mul.html">
+pandas.DataFrame.mul
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.div.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.div.html">
+pandas.DataFrame.div
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.truediv.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.truediv.html">
+pandas.DataFrame.truediv
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.floordiv.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.floordiv.html">
+pandas.DataFrame.floordiv
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.mod.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mod.html">
+pandas.DataFrame.mod
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.pow.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pow.html">
+pandas.DataFrame.pow
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.dot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dot.html">
+pandas.DataFrame.dot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.radd.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.radd.html">
+pandas.DataFrame.radd
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rsub.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rsub.html">
+pandas.DataFrame.rsub
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rmul.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rmul.html">
+pandas.DataFrame.rmul
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rdiv.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rdiv.html">
+pandas.DataFrame.rdiv
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rtruediv.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rtruediv.html">
+pandas.DataFrame.rtruediv
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rfloordiv.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rfloordiv.html">
+pandas.DataFrame.rfloordiv
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rmod.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rmod.html">
+pandas.DataFrame.rmod
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rpow.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rpow.html">
+pandas.DataFrame.rpow
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.lt.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.lt.html">
+pandas.DataFrame.lt
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.gt.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.gt.html">
+pandas.DataFrame.gt
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.le.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.le.html">
+pandas.DataFrame.le
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.ge.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ge.html">
+pandas.DataFrame.ge
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.ne.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ne.html">
+pandas.DataFrame.ne
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.eq.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.eq.html">
+pandas.DataFrame.eq
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.combine.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.combine.html">
+pandas.DataFrame.combine
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.combine_first.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.combine_first.html">
+pandas.DataFrame.combine_first
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.apply.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html">
+ pandas.DataFrame.apply
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.applymap.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.applymap.html">
+pandas.DataFrame.applymap
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.pipe.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pipe.html">
+pandas.DataFrame.pipe
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.agg.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html">
+pandas.DataFrame.agg
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.aggregate.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html">
+pandas.DataFrame.aggregate
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.transform.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html">
+pandas.DataFrame.transform
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.groupby.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">
+pandas.DataFrame.groupby
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rolling.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html">
+pandas.DataFrame.rolling
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.expanding.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html">
+pandas.DataFrame.expanding
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.ewm.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ewm.html">
+pandas.DataFrame.ewm
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.abs.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.abs.html">
+pandas.DataFrame.abs
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.all.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.all.html">
+pandas.DataFrame.all
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.any.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.any.html">
+pandas.DataFrame.any
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.clip.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.clip.html">
+pandas.DataFrame.clip
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.corr.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html">
+pandas.DataFrame.corr
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.corrwith.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corrwith.html">
+pandas.DataFrame.corrwith
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.count.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.count.html">
+pandas.DataFrame.count
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.cov.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cov.html">
+pandas.DataFrame.cov
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.cummax.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cummax.html">
+pandas.DataFrame.cummax
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.cummin.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cummin.html">
+pandas.DataFrame.cummin
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.cumprod.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumprod.html">
+pandas.DataFrame.cumprod
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.cumsum.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumsum.html">
+pandas.DataFrame.cumsum
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.describe.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">
+pandas.DataFrame.describe
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.diff.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.diff.html">
+pandas.DataFrame.diff
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.eval.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.eval.html">
+pandas.DataFrame.eval
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.kurt.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.kurt.html">
+pandas.DataFrame.kurt
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.kurtosis.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.kurtosis.html">
+pandas.DataFrame.kurtosis
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.mad.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mad.html">
+pandas.DataFrame.mad
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.max.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.max.html">
+pandas.DataFrame.max
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.mean.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html">
+pandas.DataFrame.mean
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.median.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.median.html">
+pandas.DataFrame.median
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.min.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.min.html">
+pandas.DataFrame.min
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.mode.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mode.html">
+pandas.DataFrame.mode
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.pct_change.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pct_change.html">
+pandas.DataFrame.pct_change
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.prod.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.prod.html">
+pandas.DataFrame.prod
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.product.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.product.html">
+pandas.DataFrame.product
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.quantile.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.quantile.html">
+pandas.DataFrame.quantile
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rank.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rank.html">
+pandas.DataFrame.rank
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.round.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.round.html">
+pandas.DataFrame.round
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sem.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sem.html">
+pandas.DataFrame.sem
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.skew.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.skew.html">
+pandas.DataFrame.skew
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sum.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html">
+pandas.DataFrame.sum
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.std.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html">
+pandas.DataFrame.std
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.var.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.var.html">
+pandas.DataFrame.var
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.nunique.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.nunique.html">
+pandas.DataFrame.nunique
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.value_counts.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.value_counts.html">
+pandas.DataFrame.value_counts
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.add_prefix.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.add_prefix.html">
+pandas.DataFrame.add_prefix
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.add_suffix.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.add_suffix.html">
+pandas.DataFrame.add_suffix
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.align.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.align.html">
+pandas.DataFrame.align
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.at_time.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at_time.html">
+pandas.DataFrame.at_time
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.between_time.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.between_time.html">
+pandas.DataFrame.between_time
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.drop.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html">
+pandas.DataFrame.drop
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.drop_duplicates.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html">
+pandas.DataFrame.drop_duplicates
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.duplicated.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html">
+pandas.DataFrame.duplicated
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.equals.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.equals.html">
+pandas.DataFrame.equals
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.filter.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html">
+pandas.DataFrame.filter
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.first.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.first.html">
+pandas.DataFrame.first
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.head.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html">
+pandas.DataFrame.head
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.idxmax.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.idxmax.html">
+pandas.DataFrame.idxmax
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.idxmin.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.idxmin.html">
+pandas.DataFrame.idxmin
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.last.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.last.html">
+pandas.DataFrame.last
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.reindex.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html">
+pandas.DataFrame.reindex
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.reindex_like.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex_like.html">
+pandas.DataFrame.reindex_like
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rename.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html">
+pandas.DataFrame.rename
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.rename_axis.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename_axis.html">
+pandas.DataFrame.rename_axis
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.reset_index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html">
+pandas.DataFrame.reset_index
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sample.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sample.html">
+pandas.DataFrame.sample
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.set_axis.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_axis.html">
+pandas.DataFrame.set_axis
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.set_index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html">
+pandas.DataFrame.set_index
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.tail.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tail.html">
+pandas.DataFrame.tail
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.take.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.take.html">
+pandas.DataFrame.take
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.truncate.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.truncate.html">
+pandas.DataFrame.truncate
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.backfill.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.backfill.html">
+pandas.DataFrame.backfill
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.bfill.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.bfill.html">
+pandas.DataFrame.bfill
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.dropna.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">
+pandas.DataFrame.dropna
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.ffill.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ffill.html">
+pandas.DataFrame.ffill
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.fillna.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html">
+pandas.DataFrame.fillna
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.interpolate.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html">
+pandas.DataFrame.interpolate
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.isna.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isna.html">
+pandas.DataFrame.isna
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.isnull.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isnull.html">
+pandas.DataFrame.isnull
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.notna.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.notna.html">
+pandas.DataFrame.notna
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.notnull.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.notnull.html">
+pandas.DataFrame.notnull
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.pad.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pad.html">
+pandas.DataFrame.pad
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.replace.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html">
+pandas.DataFrame.replace
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.droplevel.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.droplevel.html">
+pandas.DataFrame.droplevel
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.pivot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html">
+pandas.DataFrame.pivot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.pivot_table.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot_table.html">
+pandas.DataFrame.pivot_table
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.reorder_levels.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reorder_levels.html">
+pandas.DataFrame.reorder_levels
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sort_values.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html">
+pandas.DataFrame.sort_values
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sort_index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html">
+pandas.DataFrame.sort_index
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.nlargest.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.nlargest.html">
+pandas.DataFrame.nlargest
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.nsmallest.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.nsmallest.html">
+pandas.DataFrame.nsmallest
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.swaplevel.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.swaplevel.html">
+pandas.DataFrame.swaplevel
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.stack.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html">
+pandas.DataFrame.stack
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.unstack.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html">
+pandas.DataFrame.unstack
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.swapaxes.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.swapaxes.html">
+pandas.DataFrame.swapaxes
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.melt.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.melt.html">
+pandas.DataFrame.melt
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.explode.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.explode.html">
+pandas.DataFrame.explode
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.squeeze.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.squeeze.html">
+pandas.DataFrame.squeeze
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_xarray.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_xarray.html">
+pandas.DataFrame.to_xarray
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.T.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.T.html">
+pandas.DataFrame.T
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.transpose.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transpose.html">
+pandas.DataFrame.transpose
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.append.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html">
+pandas.DataFrame.append
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.assign.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html">
+pandas.DataFrame.assign
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.compare.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.compare.html">
+pandas.DataFrame.compare
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.join.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html">
+pandas.DataFrame.join
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.merge.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html">
+pandas.DataFrame.merge
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.update.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.update.html">
+pandas.DataFrame.update
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.asfreq.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.asfreq.html">
+pandas.DataFrame.asfreq
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.asof.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.asof.html">
+pandas.DataFrame.asof
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.shift.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.shift.html">
+pandas.DataFrame.shift
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.slice_shift.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.slice_shift.html">
+pandas.DataFrame.slice_shift
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.tshift.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tshift.html">
+pandas.DataFrame.tshift
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.first_valid_index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.first_valid_index.html">
+pandas.DataFrame.first_valid_index
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.last_valid_index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.last_valid_index.html">
+pandas.DataFrame.last_valid_index
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.resample.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html">
+pandas.DataFrame.resample
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_period.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_period.html">
+pandas.DataFrame.to_period
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_timestamp.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_timestamp.html">
+pandas.DataFrame.to_timestamp
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.tz_convert.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tz_convert.html">
+pandas.DataFrame.tz_convert
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.tz_localize.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.tz_localize.html">
+pandas.DataFrame.tz_localize
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.Flags.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Flags.html">
+pandas.Flags
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.attrs.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.attrs.html">
+pandas.DataFrame.attrs
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">
+pandas.DataFrame.plot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.area.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.area.html">
+pandas.DataFrame.plot.area
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.bar.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.bar.html">
+pandas.DataFrame.plot.bar
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.barh.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.barh.html">
+pandas.DataFrame.plot.barh
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.box.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.box.html">
+pandas.DataFrame.plot.box
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.density.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.density.html">
+pandas.DataFrame.plot.density
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.hexbin.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.hexbin.html">
+pandas.DataFrame.plot.hexbin
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.hist.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.hist.html">
+pandas.DataFrame.plot.hist
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.kde.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.kde.html">
+pandas.DataFrame.plot.kde
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.line.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.line.html">
+pandas.DataFrame.plot.line
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.pie.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.pie.html">
+pandas.DataFrame.plot.pie
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.plot.scatter.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.scatter.html">
+pandas.DataFrame.plot.scatter
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.boxplot.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html">
+pandas.DataFrame.boxplot
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.hist.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.hist.html">
+pandas.DataFrame.hist
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sparse.density.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sparse.density.html">
+pandas.DataFrame.sparse.density
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sparse.from_spmatrix.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sparse.from_spmatrix.html">
+pandas.DataFrame.sparse.from_spmatrix
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sparse.to_coo.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sparse.to_coo.html">
+pandas.DataFrame.sparse.to_coo
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.sparse.to_dense.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sparse.to_dense.html">
+ pandas.DataFrame.sparse.to_dense
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.from_dict.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.from_dict.html">
+pandas.DataFrame.from_dict
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.from_records.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.from_records.html">
+pandas.DataFrame.from_records
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_orc.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_orc.html">
+pandas.DataFrame.to_orc
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_parquet.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html">
+pandas.DataFrame.to_parquet
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_pickle.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html">
+pandas.DataFrame.to_pickle
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_csv.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html">
+pandas.DataFrame.to_csv
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_hdf.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_hdf.html">
+pandas.DataFrame.to_hdf
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_sql.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html">
+pandas.DataFrame.to_sql
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_dict.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_dict.html">
+pandas.DataFrame.to_dict
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_excel.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html">
+pandas.DataFrame.to_excel
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_json.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html">
+pandas.DataFrame.to_json
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_html.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html">
+pandas.DataFrame.to_html
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_feather.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_feather.html">
+pandas.DataFrame.to_feather
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_latex.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_latex.html">
+pandas.DataFrame.to_latex
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_stata.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_stata.html">
+pandas.DataFrame.to_stata
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_gbq.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_gbq.html">
+pandas.DataFrame.to_gbq
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_records.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_records.html">
+pandas.DataFrame.to_records
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_string.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_string.html">
+pandas.DataFrame.to_string
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_clipboard.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_clipboard.html">
+pandas.DataFrame.to_clipboard
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.to_markdown.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_markdown.html">
+pandas.DataFrame.to_markdown
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.style.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.style.html">
+pandas.DataFrame.style
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="pandas.DataFrame.__dataframe__.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.__dataframe__.html">
+pandas.DataFrame.__dataframe__
+</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="arrays.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/arrays.html">
+pandas arrays, scalars, and data types
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indexing-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/indexing.html">
+Index objects
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="offset_frequency.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/offset_frequency.html">
+Date offsets
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="window-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/window.html">
+Window
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="groupby-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html">
+GroupBy
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="resampling.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/resampling.html">
+Resampling
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="style-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/style.html">
+Style
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="plotting.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/plotting.html">
+Plotting
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="options-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/options.html">
+Options and settings
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="extensions.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/extensions.html">
+Extensions
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="testing.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/testing.html">
+Testing
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="sidebar-end-items sidebar-primary__section">
+<div class="sidebar-end-items__item">
+</div>
+</div>
+</div>
+<main class="bd-main">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+</div>
+<article class="bd-article" role="main">
+<section id="pandas-dataframe-lookup">
+<h1>pandas.DataFrame.lookup<a class="headerlink" href="#pandas-dataframe-lookup" title="Permalink to this headline">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pandas.DataFrame.lookup">
+<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_labels</span></span></em><span class="sig-paren">)</span><a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/blob/v1.5.1/pandas/core/frame.py  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/blob/v1.5.1/pandas/core/frame.py#L4916-L4977'" tppabs="https://github.com/pandas-dev/pandas/blob/v1.5.1/pandas/core/frame.py#L4916-L4977"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.lookup" title="Permalink to this definition">#</a></dt>
+<dd><p>Label-based ‚Äúfancy indexing‚Äù function for DataFrame.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.0: </span>DataFrame.lookup is deprecated,
+use pandas.factorize and NumPy indexing instead.
+For further details see
+<a class="reference internal" href="indexing.html#indexing-lookup" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-lookup"><span class="std std-ref">Looking up values by index/column labels</span></a>.</p>
+</div>
+<p>Given equal-length arrays of row and column labels, return an
+array of the values corresponding to each (row, col) pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>row_labels</strong><span class="classifier">sequence</span></dt><dd><p>The row labels to use for lookup.</p>
+</dd>
+<dt><strong>col_labels</strong><span class="classifier">sequence</span></dt><dd><p>The column labels to use for lookup.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The found values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+</section>
+</article>
+<footer class="bd-footer-article">
+
+<div class='prev-next-area'>
+<a class='left-prev' id="prev-link" href="pandas.DataFrame.le.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.le.html" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">pandas.DataFrame.le</p>
+</div>
+</a>
+<a class='right-next' id="next-link" href="pandas.DataFrame.lt.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.lt.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">pandas.DataFrame.lt</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc">
+<div class="toc-item">
+</div>
+<div class="toc-item">
+<div class="tocsection sourcelink">
+<a href="javascript:if(confirm('https://pandas.pydata.org/pandas-docs/stable/_sources/reference/api/pandas.tseries.offsets.YearEnd.month.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÎÀ¸µƒ∆Ù ºµÿ÷∑∫‹‘∂µƒ¡¥Ω”°£»Áπ˚ƒ„‘ˆ¥Û∆Ù ºµÿ÷∑”Úƒ⁄…Ó∂»…Ë÷√, ∏√Œƒº˛Ω´±ªº”»Îœ¬‘ÿ∂”¡–°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://pandas.pydata.org/pandas-docs/stable/_sources/reference/api/pandas.tseries.offsets.YearEnd.month.html'" tppabs="https://pandas.pydata.org/pandas-docs/stable/_sources/reference/api/pandas.DataFrame.lookup.rst.txt">
+<i class="fas fa-file-alt"></i> Show Source
+</a>
+</div>
+</div>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner">
+</div>
+</footer>
+</main>
+</div>
+</div>
+
+<script src="pydata-sphinx-theme.js-digest=9b1a4fa89bdd0e95b23b" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+<div class="footer-item">
+<p class="copyright">
+&copy 2022 pandas via <a href="javascript:if(confirm('https://numfocus.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://numfocus.org/'" tppabs="https://numfocus.org/">NumFOCUS, Inc.</a> Hosted by <a href="javascript:if(confirm('https://www.ovhcloud.com/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.ovhcloud.com/'" tppabs="https://www.ovhcloud.com/">OVHcloud</a>.
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="javascript:if(confirm('http://sphinx-doc.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://sphinx-doc.org/'" tppabs="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

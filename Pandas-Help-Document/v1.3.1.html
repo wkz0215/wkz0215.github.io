@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<title>What‚Äôs new in 1.3.1 (July 25, 2021) &#8212; pandas 1.5.1 documentation</title>
+<script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+
+<link href="theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link href="pydata-sphinx-theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link rel="stylesheet" href="all.min.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/vendor/fontawesome/6.1.2/css/all.min.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="stylesheet" type="text/css" href="pygments.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pygments.css" />
+<link rel="stylesheet" type="text/css" href="plot_directive.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/plot_directive.css" />
+<link rel="stylesheet" type="text/css" href="copybutton.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.css" />
+<link rel="stylesheet" type="text/css" href="panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+<link rel="stylesheet" type="text/css" href="panels-variables.06eb56fa6e07937060861dad626602ad.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+<link rel="stylesheet" type="text/css" href="getting_started.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/getting_started.css" />
+<link rel="stylesheet" type="text/css" href="pandas.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/pandas.css" />
+
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+<script data-url_root="../" id="documentation_options" src="documentation_options.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/documentation_options.js"></script>
+<script src="jquery.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/jquery.js"></script>
+<script src="underscore.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/underscore.js"></script>
+<script src="doctools.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/doctools.js"></script>
+<script src="clipboard.min.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/clipboard.min.js"></script>
+<script src="copybutton.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.js"></script>
+<script src="toggleprompt.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/toggleprompt.js"></script>
+<script src="embed-amd.js" tppabs="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+<script async="async" src="analytics.js" tppabs="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                    window.ga = window.ga || function () {
+                        (ga.q = ga.q || []).push(arguments) };
+                    ga.l = +new Date;
+                    ga('create', 'UA-27880019-2', 'auto');
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+                </script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'whatsnew/v1.3.1';</script>
+<script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pandas.pydata.org/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.1';
+        </script>
+<link rel="shortcut icon" href="../_static/favicon.ico" />
+<link rel="index" title="Index" href="../genindex.html" />
+<link rel="search" title="Search" href="../search.html" />
+<link rel="next" title="What‚Äôs new in 1.3.0 (July 2, 2021)" href="v1.3.0.html" />
+<link rel="prev" title="What‚Äôs new in 1.3.2 (August 15, 2021)" href="v1.3.2.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+</head>
+<body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+<input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+<label class="overlay overlay-primary" for="__primary"></label>
+<input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center" action="https://pandas.pydata.org/pandas-docs/stable/search.html" method="get">
+<i class="icon fas fa-search"></i>
+<input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fas fa-bars"></span>
+</label>
+<div id="navbar-start">
+<a class="navbar-brand logo" href="index-5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/index.html">
+<img src="pandas.svg" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pandas.svg" class="logo__image only-light" alt="Logo image">
+<img src="pandas_white.svg" tppabs="https://pandas.pydata.org/static/img/pandas_white.svg" class="logo__image only-dark" alt="Logo image">
+</a>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div id="navbar-center" class="mr-auto">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item navbar-end__search-button-container">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fas fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sidebar-start-items sidebar-primary__section">
+<div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+<div class="bd-toc-item navbar-nav">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v1.5.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.5.1.html">
+What‚Äôs new in 1.5.1 (October 19, 2022)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.5.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.5.0.html">
+What‚Äôs new in 1.5.0 (September 19, 2022)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v1.4.4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.4.html">
+What‚Äôs new in 1.4.4 (August 31, 2022)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.4.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.3.html">
+What‚Äôs new in 1.4.3 (June 23, 2022)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.4.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.2.html">
+What‚Äôs new in 1.4.2 (April 2, 2022)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.4.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.1.html">
+What‚Äôs new in 1.4.1 (February 12, 2022)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.4.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.0.html">
+What‚Äôs new in 1.4.0 (January 22, 2022)
+</a>
+</li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v1.3.5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.5.html">
+What‚Äôs new in 1.3.5 (December 12, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.3.4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.4.html">
+What‚Äôs new in 1.3.4 (October 17, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.3.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.3.html">
+What‚Äôs new in 1.3.3 (September 12, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.3.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.2.html">
+What‚Äôs new in 1.3.2 (August 15, 2021)
+</a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+What‚Äôs new in 1.3.1 (July 25, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.3.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.0.html">
+What‚Äôs new in 1.3.0 (July 2, 2021)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v1.2.5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.5.html">
+What‚Äôs new in 1.2.5 (June 22, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.2.4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.4.html">
+What‚Äôs new in 1.2.4 (April 12, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.2.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.3.html">
+What‚Äôs new in 1.2.3 (March 02, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.2.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.2.html">
+What‚Äôs new in 1.2.2 (February 09, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.2.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.1.html">
+What‚Äôs new in 1.2.1 (January 20, 2021)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.2.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.0.html">
+What‚Äôs new in 1.2.0 (December 26, 2020)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v1.1.5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.5.html">
+What‚Äôs new in 1.1.5 (December 07, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.1.4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.4.html">
+What‚Äôs new in 1.1.4 (October 30, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.1.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.3.html">
+What‚Äôs new in 1.1.3 (October 5, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.1.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.2.html">
+What‚Äôs new in 1.1.2 (September 8, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.1.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.1.html">
+What‚Äôs new in 1.1.1 (August 20, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.1.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.0.html">
+What‚Äôs new in 1.1.0 (July 28, 2020)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v1.0.5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.0.5.html">
+What‚Äôs new in 1.0.5 (June 17, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.0.4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.0.4.html">
+What‚Äôs new in 1.0.4 (May 28, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.0.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.0.3.html">
+What‚Äôs new in 1.0.3 (March 17, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.0.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.0.2.html">
+What‚Äôs new in 1.0.2 (March 12, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.0.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.0.1.html">
+What‚Äôs new in 1.0.1 (February 5, 2020)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v1.0.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.0.0.html">
+What‚Äôs new in 1.0.0 (January 29, 2020)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.25.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.25.3.html">
+What‚Äôs new in 0.25.3 (October 31, 2019)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.25.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.25.2.html">
+What‚Äôs new in 0.25.2 (October 15, 2019)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.25.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.25.1.html">
+What‚Äôs new in 0.25.1 (August 21, 2019)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.25.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.25.0.html">
+What‚Äôs new in 0.25.0 (July 18, 2019)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.24.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.24.2.html">
+What‚Äôs new in 0.24.2 (March 12, 2019)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.24.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.24.1.html">
+What‚Äôs new in 0.24.1 (February 3, 2019)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.24.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.24.0.html">
+What‚Äôs new in 0.24.0 (January 25, 2019)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.23.4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.23.4.html">
+What‚Äôs new in 0.23.4 (August 3, 2018)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.23.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.23.3.html">
+What‚Äôs new in 0.23.3 (July 7, 2018)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.23.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.23.2.html">
+What‚Äôs new in 0.23.2 (July 5, 2018)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.23.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.23.1.html">
+What‚Äôs new in 0.23.1 (June 12, 2018)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.23.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.23.0.html">
+What‚Äôs new in 0.23.0 (May 15, 2018)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.22.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.22.0.html">
+Version 0.22.0 (December 29, 2017)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.21.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.21.1.html">
+Version 0.21.1 (December 12, 2017)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.21.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.21.0.html">
+Version 0.21.0 (October 27, 2017)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.20.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.20.3.html">
+Version 0.20.3 (July 7, 2017)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.20.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.20.2.html">
+Version 0.20.2 (June 4, 2017)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.20.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.20.0.html">
+Version 0.20.1 (May 5, 2017)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.19.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.19.2.html">
+Version 0.19.2 (December 24, 2016)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.19.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.19.1.html">
+Version 0.19.1 (November 3, 2016)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.19.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.19.0.html">
+Version 0.19.0 (October 2, 2016)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.18.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.18.1.html">
+Version 0.18.1 (May 3, 2016)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.18.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.18.0.html">
+Version 0.18.0 (March 13, 2016)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.17.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.17.1.html">
+Version 0.17.1 (November 21, 2015)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.17.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.17.0.html">
+Version 0.17.0 (October 9, 2015)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.16.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.16.2.html">
+Version 0.16.2 (June 12, 2015)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.16.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.16.1.html">
+Version 0.16.1 (May 11, 2015)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.16.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.16.0.html">
+Version 0.16.0 (March 22, 2015)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.15.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.15.2.html">
+Version 0.15.2 (December 12, 2014)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.15.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.15.1.html">
+Version 0.15.1 (November 9, 2014)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.15.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.15.0.html">
+Version 0.15.0 (October 18, 2014)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.14.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.14.1.html">
+Version 0.14.1 (July 11, 2014)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.14.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.14.0.html">
+Version 0.14.0 (May 31 , 2014)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.13.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.13.1.html">
+Version 0.13.1 (February 3, 2014)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.13.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.13.0.html">
+Version 0.13.0 (January 3, 2014)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.12.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.12.0.html">
+Version 0.12.0 (July 24, 2013)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.11.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.11.0.html">
+Version 0.11.0 (April 22, 2013)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.10.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.10.1.html">
+Version 0.10.1 (January 22, 2013)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.10.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.10.0.html">
+Version 0.10.0 (December 17, 2012)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.9.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.9.1.html">
+Version 0.9.1 (November 14, 2012)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.9.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.9.0.html">
+Version 0.9.0 (October 7, 2012)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.8.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.8.1.html">
+Version 0.8.1 (July 22, 2012)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.8.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.8.0.html">
+Version 0.8.0 (June 29, 2012)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.7.3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.7.3.html">
+Version 0.7.3 (April 12, 2012)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.7.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.7.2.html">
+Version 0.7.2 (March 16, 2012)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.7.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.7.1.html">
+Version 0.7.1 (February 29, 2012)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.7.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.7.0.html">
+Version 0.7.0 (February 9, 2012)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.6.1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.6.1.html">
+Version 0.6.1 (December 13, 2011)
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="v0.6.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.6.0.html">
+Version 0.6.0 (November 25, 2011)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.5.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.5.0.html">
+Version 0.5.0 (October 24, 2011)
+</a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="v0.4.x.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v0.4.x.html">
+Versions 0.4.1 through 0.4.3 (September 25 - October 9, 2011)
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="sidebar-end-items sidebar-primary__section">
+<div class="sidebar-end-items__item">
+</div>
+</div>
+</div>
+<main class="bd-main">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+</div>
+<article class="bd-article" role="main">
+<section id="what-s-new-in-1-3-1-july-25-2021">
+<span id="whatsnew-131"></span><h1>What‚Äôs new in 1.3.1 (July 25, 2021)<a class="headerlink" href="#what-s-new-in-1-3-1-july-25-2021" title="Permalink to this headline">#</a></h1>
+<p>These are the changes in pandas 1.3.1. See <a class="reference internal" href="index-4.html#release" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html#release"><span class="std std-ref">Release notes</span></a> for a full changelog
+including other versions of pandas.</p>
+<section id="fixed-regressions">
+<span id="whatsnew-131-regressions"></span><h2>Fixed regressions<a class="headerlink" href="#fixed-regressions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Pandas could not be built on PyPy (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M17.93 18.64l-7-18C10.78.27 10.42 0 10 0s-.78.27-.93.64l-7 18c-.04.11-.07.23-.07.36 0 .55.45 1 1 1 .42 0 .78-.27.93-.64L6.41 13h7.19l2.47 6.36c.15.37.51.64.93.64.55 0 1-.45 1-1 0-.13-.03-.25-.07-.36zM7.18 11L10 3.76 12.82 11H7.18z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M17.93 18.64l-7-18C10.78.27 10.42 0 10 0s-.78.27-.93.64l-7 18c-.04.11-.07.23-.07.36 0 .55.45 1 1 1 .42 0 .78-.27.93-.64L6.41 13h7.19l2.47 6.36c.15.37.51.64.93.64.55 0 1-.45 1-1 0-.13-.03-.25-.07-.36zM7.18 11L10 3.76 12.82 11H7.18z'" tppabs="https://github.com/pandas-dev/pandas/issues/42355">GH42355</a>)</p></li>
+<li><p><a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> constructed with an older version of pandas could not be unpickled (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M10.14 5.82H8.73c.4-1.66.94-2.87 1.6-3.64.4-.48.8-.72 1.18-.72.08 0 .14.02.19.07.05.05.07.1.07.18 0 .07-.05.19-.16.37s-.16.36-.16.52c0 .23.08.43.25.59a.9.9 0 00.64.25c.28 0 .51-.1.7-.3.19-.2.28-.47.28-.81 0-.39-.14-.7-.42-.94-.28-.24-.74-.36-1.36-.36-.97 0-1.86.29-2.65.87-.79.56-1.54 1.52-2.26 2.85-.24.46-.48.75-.7.88-.22.13-.57.19-1.06.19l-.32 1.15H5.9l-1.99 7.85c-.33 1.29-.56 2.09-.67 2.39-.17.44-.43.81-.77 1.12a.74.74 0 01-.5.19c-.05 0-.1-.02-.14-.05l-.04-.07c0-.03.05-.1.15-.2.1-.1.15-.26.15-.47 0-.23-.08-.42-.23-.57-.16-.15-.38-.23-.67-.23-.35 0-.63.1-.85.29-.21.2-.32.43-.32.7 0 .29.13.54.39.75.25.22.65.33 1.2.33.88 0 1.66-.23 2.33-.69.68-.46 1.27-1.17 1.78-2.14.51-.96 1.03-2.52 1.56-4.66l1.14-4.54H9.8l.34-1.15zm6.8 1.95c.25-.2.51-.29.78-.29.1 0 .29.04.56.11.27.08.51.11.72.11.29 0 .52-.1.72-.3.18-.19.28-.45.28-.77 0-.33-.1-.6-.29-.8-.19-.2-.47-.29-.82-.29-.32 0-.62.08-.9.23-.28.15-.64.49-1.08 1-.33.38-.81 1.05-1.44 2a9.712 9.712 0 00-1.31-3.22l-3.4.59-.07.37c.25-.05.47-.08.64-.08.34 0 .62.15.84.44.35.46.84 1.85 1.46 4.19-.49.66-.82 1.09-1 1.3-.3.33-.55.54-.74.64-.15.08-.32.12-.51.12-.14 0-.38-.08-.7-.24-.22-.1-.42-.16-.59-.16-.33 0-.6.11-.82.32-.21.22-.32.49-.32.83 0 .31.1.57.3.77.2.2.47.29.8.29.32 0 .63-.07.92-.21.29-.14.64-.43 1.08-.88.43-.45 1.03-1.16 1.79-2.14.29.93.55 1.61.76 2.03.21.42.46.73.74.91.28.19.62.28 1.04.28.4 0 .81-.15 1.23-.44.55-.38 1.1-1.04 1.68-1.97l-.35-.21c-.39.55-.68.89-.87 1.03-.12.09-.27.13-.44.13-.2 0-.4-.13-.59-.38-.33-.43-.77-1.63-1.33-3.6.47-.86.89-1.44 1.23-1.71z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M10.14 5.82H8.73c.4-1.66.94-2.87 1.6-3.64.4-.48.8-.72 1.18-.72.08 0 .14.02.19.07.05.05.07.1.07.18 0 .07-.05.19-.16.37s-.16.36-.16.52c0 .23.08.43.25.59a.9.9 0 00.64.25c.28 0 .51-.1.7-.3.19-.2.28-.47.28-.81 0-.39-.14-.7-.42-.94-.28-.24-.74-.36-1.36-.36-.97 0-1.86.29-2.65.87-.79.56-1.54 1.52-2.26 2.85-.24.46-.48.75-.7.88-.22.13-.57.19-1.06.19l-.32 1.15H5.9l-1.99 7.85c-.33 1.29-.56 2.09-.67 2.39-.17.44-.43.81-.77 1.12a.74.74 0 01-.5.19c-.05 0-.1-.02-.14-.05l-.04-.07c0-.03.05-.1.15-.2.1-.1.15-.26.15-.47 0-.23-.08-.42-.23-.57-.16-.15-.38-.23-.67-.23-.35 0-.63.1-.85.29-.21.2-.32.43-.32.7 0 .29.13.54.39.75.25.22.65.33 1.2.33.88 0 1.66-.23 2.33-.69.68-.46 1.27-1.17 1.78-2.14.51-.96 1.03-2.52 1.56-4.66l1.14-4.54H9.8l.34-1.15zm6.8 1.95c.25-.2.51-.29.78-.29.1 0 .29.04.56.11.27.08.51.11.72.11.29 0 .52-.1.72-.3.18-.19.28-.45.28-.77 0-.33-.1-.6-.29-.8-.19-.2-.47-.29-.82-.29-.32 0-.62.08-.9.23-.28.15-.64.49-1.08 1-.33.38-.81 1.05-1.44 2a9.712 9.712 0 00-1.31-3.22l-3.4.59-.07.37c.25-.05.47-.08.64-.08.34 0 .62.15.84.44.35.46.84 1.85 1.46 4.19-.49.66-.82 1.09-1 1.3-.3.33-.55.54-.74.64-.15.08-.32.12-.51.12-.14 0-.38-.08-.7-.24-.22-.1-.42-.16-.59-.16-.33 0-.6.11-.82.32-.21.22-.32.49-.32.83 0 .31.1.57.3.77.2.2.47.29.8.29.32 0 .63-.07.92-.21.29-.14.64-.43 1.08-.88.43-.45 1.03-1.16 1.79-2.14.29.93.55 1.61.76 2.03.21.42.46.73.74.91.28.19.62.28 1.04.28.4 0 .81-.15 1.23-.44.55-.38 1.1-1.04 1.68-1.97l-.35-.21c-.39.55-.68.89-.87 1.03-.12.09-.27.13-.44.13-.2 0-.4-.13-.59-.38-.33-.43-.77-1.63-1.33-3.6.47-.86.89-1.44 1.23-1.71z'" tppabs="https://github.com/pandas-dev/pandas/issues/42345">GH42345</a>)</p></li>
+<li><p>Performance regression in constructing a <a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> from a dictionary of dictionaries (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M8 18.88c-3.79 0-6.88-3.09-6.88-6.88 0-.61.08-1.22.23-1.79.03.01.06-.01.1-.01h.09v.55c0 .23.21.42.44.42.04 0 .09-.01.12-.02l.9.88c.09.09.23.09.32 0s.09-.23 0-.32l-.86-.9c0-.02.05-.04.05-.07v-.13c0-.18.1-.25.29-.41h.53c.1 0 .19-.01.27-.05.01-.01.02 0 .03-.01.02-.01.03-.02.05-.04.01-.01.02-.01.02-.02l.02-.02 1.13-1.13c-.16-.32-.3-.65-.42-.99h-.64v-.53c0-.01.06.06.06-.1h.38c-.04-.16-.08-.32-.1-.48h-.71c.2-.16.42-.31.64-.45C4.02 6.09 4 5.8 4 5.5c0-.14.01-.28.02-.43C1.62 6.46 0 9.04 0 12c0 4.41 3.59 8 8 8 3.87 0 7.09-2.77 7.82-6.44l-.97-1.1c-.26 3.57-3.23 6.42-6.85 6.42zm-2.12-3.67v-.35h.15c.29 0 .49-.23.49-.53v-.68c0-.01.01-.01 0-.02L4.71 11.8h-.77c-.29 0-.47.24-.47.53v2c0 .29.18.53.47.53h.33v2.02c0 .28.28.51.56.51s.56-.23.56-.51v-1.22h-.01c.29 0 .5-.16.5-.45zm13.83-2.92l-3.68-3.68c.14-.21.27-.42.38-.65.02-.04.04-.07.05-.11.11-.22.2-.45.28-.69v-.01c.07-.24.13-.48.17-.73l.03-.17c.04-.24.06-.49.06-.75C17 2.46 14.54 0 11.5 0S6 2.46 6 5.5 8.46 11 11.5 11c.26 0 .51-.02.76-.06l.17-.03c.25-.04.49-.1.73-.17h.01c.24-.08.47-.17.69-.28.04-.02.07-.04.11-.05.23-.11.44-.24.65-.38l3.68 3.68c.17.18.42.29.7.29a1.003 1.003 0 00.71-1.71zM11.5 9.5c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm1.93 5.33v-.65c0-.11-.13-.21-.24-.21-.11 0-.24.09-.24.21v.65c0 .11.13.21.24.21.11 0 .24-.1.24-.21zm-2.41.67h.83c.29 0 .46-.21.46-.5v-1.86l.23-.22c-.34.05-.69.08-1.04.08-.36 0-.7-.03-1.05-.08.03.05.06.1.08.16V15c.01.29.2.5.49.5z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M8 18.88c-3.79 0-6.88-3.09-6.88-6.88 0-.61.08-1.22.23-1.79.03.01.06-.01.1-.01h.09v.55c0 .23.21.42.44.42.04 0 .09-.01.12-.02l.9.88c.09.09.23.09.32 0s.09-.23 0-.32l-.86-.9c0-.02.05-.04.05-.07v-.13c0-.18.1-.25.29-.41h.53c.1 0 .19-.01.27-.05.01-.01.02 0 .03-.01.02-.01.03-.02.05-.04.01-.01.02-.01.02-.02l.02-.02 1.13-1.13c-.16-.32-.3-.65-.42-.99h-.64v-.53c0-.01.06.06.06-.1h.38c-.04-.16-.08-.32-.1-.48h-.71c.2-.16.42-.31.64-.45C4.02 6.09 4 5.8 4 5.5c0-.14.01-.28.02-.43C1.62 6.46 0 9.04 0 12c0 4.41 3.59 8 8 8 3.87 0 7.09-2.77 7.82-6.44l-.97-1.1c-.26 3.57-3.23 6.42-6.85 6.42zm-2.12-3.67v-.35h.15c.29 0 .49-.23.49-.53v-.68c0-.01.01-.01 0-.02L4.71 11.8h-.77c-.29 0-.47.24-.47.53v2c0 .29.18.53.47.53h.33v2.02c0 .28.28.51.56.51s.56-.23.56-.51v-1.22h-.01c.29 0 .5-.16.5-.45zm13.83-2.92l-3.68-3.68c.14-.21.27-.42.38-.65.02-.04.04-.07.05-.11.11-.22.2-.45.28-.69v-.01c.07-.24.13-.48.17-.73l.03-.17c.04-.24.06-.49.06-.75C17 2.46 14.54 0 11.5 0S6 2.46 6 5.5 8.46 11 11.5 11c.26 0 .51-.02.76-.06l.17-.03c.25-.04.49-.1.73-.17h.01c.24-.08.47-.17.69-.28.04-.02.07-.04.11-.05.23-.11.44-.24.65-.38l3.68 3.68c.17.18.42.29.7.29a1.003 1.003 0 00.71-1.71zM11.5 9.5c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm1.93 5.33v-.65c0-.11-.13-.21-.24-.21-.11 0-.24.09-.24.21v.65c0 .11.13.21.24.21.11 0 .24-.1.24-.21zm-2.41.67h.83c.29 0 .46-.21.46-.5v-1.86l.23-.22c-.34.05-.69.08-1.04.08-.36 0-.7-.03-1.05-.08.03.05.06.1.08.16V15c.01.29.2.5.49.5z'" tppabs="https://github.com/pandas-dev/pandas/issues/42248">GH42248</a>)</p></li>
+<li><p>Fixed regression in <a class="reference internal" href="pandas.DataFrame.agg.html#pandas.DataFrame.agg" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html#pandas.DataFrame.agg" title="pandas.DataFrame.agg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.agg()</span></code></a> dropping values when the DataFrame had an Extension Array dtype, a duplicate index, and <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M17 6V0H3v6c0 3.53 2.61 6.43 6 6.92V18H6c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1h-3v-5.08c3.39-.49 6-3.39 6-6.92z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M17 6V0H3v6c0 3.53 2.61 6.43 6 6.92V18H6c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1h-3v-5.08c3.39-.49 6-3.39 6-6.92z'" tppabs="https://github.com/pandas-dev/pandas/issues/42380">GH42380</a>)</p></li>
+<li><p>Fixed regression in <a class="reference internal" href="pandas.DataFrame.astype.html#pandas.DataFrame.astype" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.astype.html#pandas.DataFrame.astype" title="pandas.DataFrame.astype"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.astype()</span></code></a> changing the order of noncontiguous data (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M7.53 4.37c.1-.1.1-.26 0-.35l-.68-.68c-.1-.1-.25-.1-.35 0-.1.1-.1.26 0 .35l.68.68c.1.1.25.1.35 0zm3.17.06h.3c.09 0 .16-.01.16-.1 0-.09-.07-.1-.16-.1h-.3c-.09 0-.16.01-.16.1s.07.1.16.1zm.98 1.15c.09 0 .19-.08.19-.17v-.42c0-.09-.1-.17-.19-.17s-.19.08-.19.17v.42c0 .09.1.17.19.17zm-6.5 4.19c-.35 0-.56.28-.56.63v2.37c0 .35.21.62.56.62h.39v2.4c0 .34.33.61.67.61s.67-.27.67-.61v-1.44h-.02c.35 0 .6-.19.6-.54v-.41h.18c.35 0 .58-.28.58-.62v-.81c0-.01.01-.01 0-.02L6.1 9.77h-.92zM10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.42 0-8-3.58-8-8 0-.74.11-1.46.3-2.14h.03v.65c0 .28.25.5.53.5.05 0 .1-.01.15-.02l1.05 1.05c.1.11.28.11.38 0 .1-.1.11-.27 0-.38L3.42 8.59c0-.03.05-.05.05-.08v-.16c0-.22.12-.3.34-.49h.63c.12 0 .23-.01.32-.07.01-.01.02 0 .03-.01.02-.02.04-.03.06-.04.01-.01.02-.01.03-.02l.02-.02 2.15-2.15c.24-.24.24-.63 0-.86-.23-.24-.62-.19-.86.04l-.41.46H5v-.64c0-.01.07.07.07-.12h.87c.17 0 .3-.12.3-.29 0-.17-.13-.29-.3-.29H4.88C6.27 2.7 8.05 2 10 2s3.73.7 5.12 1.86h-1.58l-.01-.04c-.06 0-.12 0-.17.04l-.71.7c-.09.09-.09.23 0 .31.09.09.23.09.32 0l.56-.6.01-.03h.34c0 .19-.1.13-.1.16v.1c0 .29-.2.5-.49.5h-.51c-.25 0-.52.28-.52.54v.23h-.12c-.16 0-.27.08-.27.24v.33h-.32c-.23 0-.41.15-.41.38 0 .22.18.35.41.35.1 0 .19.04.26-.16l.06.01.66-.59h.23l.53.5c.04.04.11.03.16-.01.04-.04.04-.16 0-.2L13 6.15h.32l.12.16c.25.25.65.23.89-.02l.12-.14H15c.02 0 .11.07.11.07v.33s-.06-.01-.07-.01h-.49c-.16 0-.28.13-.28.29 0 .16.13.29.28.29h.49c.01 0 .07-.01.07-.01v.2c-.19.28-.33.57-.62.57h-1.28s0-.01-.01-.01l-.58-.58a.622.622 0 00-.89 0l-.58.58s0 .01-.01.01h-.34c-.35 0-.67.28-.67.63v1.25c0 .35.32.61.67.61h1.22c.46.19.78.48.97.94v2.28c0 .35.23.6.58.6h.98c.35 0 .54-.25.54-.6v-2.2l1.21-1.17.04-.02.02-.01h.04c.1-.11.2-.26.2-.42V8.49c0-.25-.22-.44-.42-.63h.58c.02.38.29.57.63.57h.43c.13.51.18 1.03.18 1.57 0 4.42-3.58 8-8 8zm6.16-5.65c-.14 0-.29.11-.29.25v.77c0 .14.15.25.29.25.14 0 .29-.11.29-.25v-.77c0-.14-.15-.25-.29-.25zM10.5 3.48c0-.34-.28-.57-.62-.57h-.74c-.34 0-.57.25-.57.59 0 .05-.13.06.06.1v.64c0 .2.09.36.29.36.2 0 .29-.16.29-.36v-.19h.68c.33 0 .61-.23.61-.57z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M7.53 4.37c.1-.1.1-.26 0-.35l-.68-.68c-.1-.1-.25-.1-.35 0-.1.1-.1.26 0 .35l.68.68c.1.1.25.1.35 0zm3.17.06h.3c.09 0 .16-.01.16-.1 0-.09-.07-.1-.16-.1h-.3c-.09 0-.16.01-.16.1s.07.1.16.1zm.98 1.15c.09 0 .19-.08.19-.17v-.42c0-.09-.1-.17-.19-.17s-.19.08-.19.17v.42c0 .09.1.17.19.17zm-6.5 4.19c-.35 0-.56.28-.56.63v2.37c0 .35.21.62.56.62h.39v2.4c0 .34.33.61.67.61s.67-.27.67-.61v-1.44h-.02c.35 0 .6-.19.6-.54v-.41h.18c.35 0 .58-.28.58-.62v-.81c0-.01.01-.01 0-.02L6.1 9.77h-.92zM10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.42 0-8-3.58-8-8 0-.74.11-1.46.3-2.14h.03v.65c0 .28.25.5.53.5.05 0 .1-.01.15-.02l1.05 1.05c.1.11.28.11.38 0 .1-.1.11-.27 0-.38L3.42 8.59c0-.03.05-.05.05-.08v-.16c0-.22.12-.3.34-.49h.63c.12 0 .23-.01.32-.07.01-.01.02 0 .03-.01.02-.02.04-.03.06-.04.01-.01.02-.01.03-.02l.02-.02 2.15-2.15c.24-.24.24-.63 0-.86-.23-.24-.62-.19-.86.04l-.41.46H5v-.64c0-.01.07.07.07-.12h.87c.17 0 .3-.12.3-.29 0-.17-.13-.29-.3-.29H4.88C6.27 2.7 8.05 2 10 2s3.73.7 5.12 1.86h-1.58l-.01-.04c-.06 0-.12 0-.17.04l-.71.7c-.09.09-.09.23 0 .31.09.09.23.09.32 0l.56-.6.01-.03h.34c0 .19-.1.13-.1.16v.1c0 .29-.2.5-.49.5h-.51c-.25 0-.52.28-.52.54v.23h-.12c-.16 0-.27.08-.27.24v.33h-.32c-.23 0-.41.15-.41.38 0 .22.18.35.41.35.1 0 .19.04.26-.16l.06.01.66-.59h.23l.53.5c.04.04.11.03.16-.01.04-.04.04-.16 0-.2L13 6.15h.32l.12.16c.25.25.65.23.89-.02l.12-.14H15c.02 0 .11.07.11.07v.33s-.06-.01-.07-.01h-.49c-.16 0-.28.13-.28.29 0 .16.13.29.28.29h.49c.01 0 .07-.01.07-.01v.2c-.19.28-.33.57-.62.57h-1.28s0-.01-.01-.01l-.58-.58a.622.622 0 00-.89 0l-.58.58s0 .01-.01.01h-.34c-.35 0-.67.28-.67.63v1.25c0 .35.32.61.67.61h1.22c.46.19.78.48.97.94v2.28c0 .35.23.6.58.6h.98c.35 0 .54-.25.54-.6v-2.2l1.21-1.17.04-.02.02-.01h.04c.1-.11.2-.26.2-.42V8.49c0-.25-.22-.44-.42-.63h.58c.02.38.29.57.63.57h.43c.13.51.18 1.03.18 1.57 0 4.42-3.58 8-8 8zm6.16-5.65c-.14 0-.29.11-.29.25v.77c0 .14.15.25.29.25.14 0 .29-.11.29-.25v-.77c0-.14-.15-.25-.29-.25zM10.5 3.48c0-.34-.28-.57-.62-.57h-.74c-.34 0-.57.25-.57.59 0 .05-.13.06.06.1v.64c0 .2.09.36.29.36.2 0 .29-.16.29-.36v-.19h.68c.33 0 .61-.23.61-.57z'" tppabs="https://github.com/pandas-dev/pandas/issues/42396">GH42396</a>)</p></li>
+<li><p>Performance regression in <a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> in reduction operations requiring casting such as <a class="reference internal" href="pandas.DataFrame.mean.html#pandas.DataFrame.mean" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html#pandas.DataFrame.mean" title="pandas.DataFrame.mean"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.mean()</span></code></a> on integer data (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm7.39 7h-3.63c-.31-1.99-.92-3.66-1.72-4.73 2.45.65 4.41 2.42 5.35 4.73zM13 10c0 .69-.04 1.36-.11 2H7.11a18.419 18.419 0 010-4h5.77c.08.64.12 1.31.12 2zm-3-8c1.07 0 2.25 2.05 2.75 5h-5.5c.5-2.95 1.68-5 2.75-5zm-2.04.27C7.16 3.34 6.55 5.01 6.24 7H2.61c.94-2.31 2.9-4.08 5.35-4.73zM2 10c0-.69.11-1.36.28-2h3.83a18.419 18.419 0 000 4H2.28c-.17-.64-.28-1.31-.28-2zm.61 3h3.63c.31 1.99.92 3.66 1.72 4.73A7.996 7.996 0 012.61 13zM10 18c-1.07 0-2.25-2.05-2.75-5h5.5c-.5 2.95-1.68 5-2.75 5zm2.04-.27c.79-1.07 1.4-2.74 1.72-4.73h3.63a7.996 7.996 0 01-5.35 4.73zM13.89 12a18.419 18.419 0 000-4h3.83c.17.64.28 1.31.28 2s-.11 1.36-.28 2h-3.83z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm7.39 7h-3.63c-.31-1.99-.92-3.66-1.72-4.73 2.45.65 4.41 2.42 5.35 4.73zM13 10c0 .69-.04 1.36-.11 2H7.11a18.419 18.419 0 010-4h5.77c.08.64.12 1.31.12 2zm-3-8c1.07 0 2.25 2.05 2.75 5h-5.5c.5-2.95 1.68-5 2.75-5zm-2.04.27C7.16 3.34 6.55 5.01 6.24 7H2.61c.94-2.31 2.9-4.08 5.35-4.73zM2 10c0-.69.11-1.36.28-2h3.83a18.419 18.419 0 000 4H2.28c-.17-.64-.28-1.31-.28-2zm.61 3h3.63c.31 1.99.92 3.66 1.72 4.73A7.996 7.996 0 012.61 13zM10 18c-1.07 0-2.25-2.05-2.75-5h5.5c-.5 2.95-1.68 5-2.75 5zm2.04-.27c.79-1.07 1.4-2.74 1.72-4.73h3.63a7.996 7.996 0 01-5.35 4.73zM13.89 12a18.419 18.419 0 000-4h3.83c.17.64.28 1.31.28 2s-.11 1.36-.28 2h-3.83z'" tppabs="https://github.com/pandas-dev/pandas/issues/38592">GH38592</a>)</p></li>
+<li><p>Performance regression in <a class="reference internal" href="pandas.DataFrame.to_dict.html#pandas.DataFrame.to_dict" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_dict.html#pandas.DataFrame.to_dict" title="pandas.DataFrame.to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_dict()</span></code></a> and <a class="reference internal" href="pandas.Series.to_dict.html#pandas.Series.to_dict" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.to_dict.html#pandas.Series.to_dict" title="pandas.Series.to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.to_dict()</span></code></a> when <code class="docutils literal notranslate"><span class="pre">orient</span></code> argument one of ‚Äúrecords‚Äù, ‚Äúdict‚Äù, or ‚Äúsplit‚Äù (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M17.41 4l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L16 2.59 13.71.3A.965.965 0 0013 0a1.003 1.003 0 00-.71 1.71L14.59 4 12.3 6.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L16 5.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L17.41 4zM19 10c-.83 0-1.55-.36-2.09-.91l-.03.03-.88-.88-.88.88a2.996 2.996 0 11-4.24-4.24l.88-.88-.88-.88.03-.03C10.36 2.55 10 1.83 10 1c0-.35.07-.68.18-.99-.06 0-.12-.01-.18-.01C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10c0-.06-.01-.12-.01-.18-.31.11-.64.18-.99.18z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M17.41 4l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 00-1.71-.71L16 2.59 13.71.3A.965.965 0 0013 0a1.003 1.003 0 00-.71 1.71L14.59 4 12.3 6.29c-.19.18-.3.43-.3.71a1.003 1.003 0 001.71.71L16 5.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71L17.41 4zM19 10c-.83 0-1.55-.36-2.09-.91l-.03.03-.88-.88-.88.88a2.996 2.996 0 11-4.24-4.24l.88-.88-.88-.88.03-.03C10.36 2.55 10 1.83 10 1c0-.35.07-.68.18-.99-.06 0-.12-.01-.18-.01C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10c0-.06-.01-.12-.01-.18-.31.11-.64.18-.99.18z'" tppabs="https://github.com/pandas-dev/pandas/issues/42352">GH42352</a>)</p></li>
+<li><p>Fixed regression in indexing with a <code class="docutils literal notranslate"><span class="pre">list</span></code> subclass incorrectly raising <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M17.68 9.84C15.91 9 14.27 6.49 13.45 4.9 12.41 2.43 12.21 0 7.87 0 5.49 0 3.95.76 3.05 2.65 2.31 4.2 2 5.48 2 9.79v.99c0 .82.69 1.48 1.54 1.48.38 0 .73-.14 1-.36.19.6.78 1.05 1.47 1.05.47 0 .89-.2 1.17-.52.26.47.77.79 1.36.79.65 0 1.2-.39 1.43-.93l.03.77v5.44c0 .48.23.91.59 1.18.21.19.5.32.85.32h.06c.83 0 1.5-.67 1.5-1.5v-8.24l.01-.67c.85.98 1.92 1.76 3.24 1.89 1.79.19 2.09-1.33 1.43-1.64z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M17.68 9.84C15.91 9 14.27 6.49 13.45 4.9 12.41 2.43 12.21 0 7.87 0 5.49 0 3.95.76 3.05 2.65 2.31 4.2 2 5.48 2 9.79v.99c0 .82.69 1.48 1.54 1.48.38 0 .73-.14 1-.36.19.6.78 1.05 1.47 1.05.47 0 .89-.2 1.17-.52.26.47.77.79 1.36.79.65 0 1.2-.39 1.43-.93l.03.77v5.44c0 .48.23.91.59 1.18.21.19.5.32.85.32h.06c.83 0 1.5-.67 1.5-1.5v-8.24l.01-.67c.85.98 1.92 1.76 3.24 1.89 1.79.19 2.09-1.33 1.43-1.64z'" tppabs="https://github.com/pandas-dev/pandas/issues/42433">GH42433</a>, <a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M15.1 6.54c-1.58-.81-4.09-2.46-4.94-4.23-.31-.65-1.82-.35-1.64 1.43.13 1.33.91 2.4 1.89 3.24L9.74 7H1.5C.67 7 0 7.67 0 8.5v.06c0 .36.13.64.32.85.27.36.7.59 1.18.59h5.44l.78.01c-.54.23-.93.78-.93 1.43 0 .59.32 1.1.79 1.36-.32.28-.52.7-.52 1.17 0 .69.44 1.28 1.05 1.47-.22.27-.36.62-.36 1 0 .85.66 1.54 1.48 1.54h.99c4.31 0 5.59-.31 7.14-1.05 1.89-.9 2.65-2.44 2.65-4.82-.01-4.32-2.44-4.52-4.91-5.57z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M15.1 6.54c-1.58-.81-4.09-2.46-4.94-4.23-.31-.65-1.82-.35-1.64 1.43.13 1.33.91 2.4 1.89 3.24L9.74 7H1.5C.67 7 0 7.67 0 8.5v.06c0 .36.13.64.32.85.27.36.7.59 1.18.59h5.44l.78.01c-.54.23-.93.78-.93 1.43 0 .59.32 1.1.79 1.36-.32.28-.52.7-.52 1.17 0 .69.44 1.28 1.05 1.47-.22.27-.36.62-.36 1 0 .85.66 1.54 1.48 1.54h.99c4.31 0 5.59-.31 7.14-1.05 1.89-.9 2.65-2.44 2.65-4.82-.01-4.32-2.44-4.52-4.91-5.57z'" tppabs="https://github.com/pandas-dev/pandas/issues/42461">GH42461</a>)</p></li>
+<li><p>Fixed regression in <a class="reference internal" href="pandas.DataFrame.isin.html#pandas.DataFrame.isin" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isin.html#pandas.DataFrame.isin" title="pandas.DataFrame.isin"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.isin()</span></code></a> and <a class="reference internal" href="pandas.Series.isin.html#pandas.Series.isin" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isin.html#pandas.Series.isin" title="pandas.Series.isin"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.isin()</span></code></a> raising <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> with nullable data containing at least one missing value (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M20 8.5c0-.83-.67-1.5-1.5-1.5h-8.24l-.67-.01c.98-.85 1.76-1.92 1.89-3.24.18-1.79-1.33-2.08-1.65-1.43-.84 1.76-3.35 3.41-4.93 4.23C2.43 7.59 0 7.79 0 12.13c0 2.38.76 3.92 2.65 4.82C4.2 17.69 5.48 18 9.79 18h.99c.82 0 1.48-.69 1.48-1.54 0-.38-.14-.73-.36-1 .6-.19 1.05-.78 1.05-1.47 0-.47-.2-.89-.52-1.17.47-.26.79-.77.79-1.36 0-.65-.39-1.2-.93-1.43l.77-.03h5.44c.48 0 .91-.23 1.18-.59.19-.21.32-.49.32-.85v-.03-.03z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M20 8.5c0-.83-.67-1.5-1.5-1.5h-8.24l-.67-.01c.98-.85 1.76-1.92 1.89-3.24.18-1.79-1.33-2.08-1.65-1.43-.84 1.76-3.35 3.41-4.93 4.23C2.43 7.59 0 7.79 0 12.13c0 2.38.76 3.92 2.65 4.82C4.2 17.69 5.48 18 9.79 18h.99c.82 0 1.48-.69 1.48-1.54 0-.38-.14-.73-.36-1 .6-.19 1.05-.78 1.05-1.47 0-.47-.2-.89-.52-1.17.47-.26.79-.77.79-1.36 0-.65-.39-1.2-.93-1.43l.77-.03h5.44c.48 0 .91-.23 1.18-.59.19-.21.32-.49.32-.85v-.03-.03z'" tppabs="https://github.com/pandas-dev/pandas/issues/42405">GH42405</a>)</p></li>
+<li><p>Regression in <a class="reference internal" href="pandas.concat.html#pandas.concat" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html#pandas.concat" title="pandas.concat"><code class="xref py py-func docutils literal notranslate"><span class="pre">concat()</span></code></a> between objects with bool dtype and integer dtype casting to object instead of to integer (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M16.46 7.74c-.38 0-.73.14-1 .36-.19-.6-.78-1.05-1.47-1.05-.47 0-.89.2-1.17.52-.26-.47-.77-.79-1.36-.79-.65 0-1.2.39-1.43.93L10 6.94V1.5c0-.48-.23-.91-.59-1.18C9.2.13 8.92 0 8.56 0H8.5C7.67 0 7 .67 7 1.5v8.24l-.01.67c-.84-.98-1.92-1.76-3.24-1.89-1.79-.18-2.08 1.33-1.43 1.65 1.77.84 3.41 3.35 4.23 4.94 1.05 2.47 1.25 4.9 5.58 4.9 2.38 0 3.92-.76 4.82-2.65.74-1.56 1.05-2.84 1.05-7.15v-.99c0-.81-.69-1.48-1.54-1.48z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M16.46 7.74c-.38 0-.73.14-1 .36-.19-.6-.78-1.05-1.47-1.05-.47 0-.89.2-1.17.52-.26-.47-.77-.79-1.36-.79-.65 0-1.2.39-1.43.93L10 6.94V1.5c0-.48-.23-.91-.59-1.18C9.2.13 8.92 0 8.56 0H8.5C7.67 0 7 .67 7 1.5v8.24l-.01.67c-.84-.98-1.92-1.76-3.24-1.89-1.79-.18-2.08 1.33-1.43 1.65 1.77.84 3.41 3.35 4.23 4.94 1.05 2.47 1.25 4.9 5.58 4.9 2.38 0 3.92-.76 4.82-2.65.74-1.56 1.05-2.84 1.05-7.15v-.99c0-.81-.69-1.48-1.54-1.48z'" tppabs="https://github.com/pandas-dev/pandas/issues/42092">GH42092</a>)</p></li>
+<li><p>Bug in <a class="reference internal" href="pandas.Series.html#pandas.Series" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="pandas.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> constructor not accepting a <code class="docutils literal notranslate"><span class="pre">dask.Array</span></code> (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M10 0c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1s-1-.45-1-1V9H2v6c0 .55-.45 1-1 1s-1-.45-1-1V1c0-.55.45-1 1-1s1 .45 1 1v6h7V1c0-.55.45-1 1-1zm7.4 10.77c.17-.2.29-.46.34-.77H19v10h-1.5v-7.11H15v-1.24c.32 0 .63-.03.93-.08.31-.06.58-.16.83-.29.26-.12.47-.3.64-.51z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M10 0c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1s-1-.45-1-1V9H2v6c0 .55-.45 1-1 1s-1-.45-1-1V1c0-.55.45-1 1-1s1 .45 1 1v6h7V1c0-.55.45-1 1-1zm7.4 10.77c.17-.2.29-.46.34-.77H19v10h-1.5v-7.11H15v-1.24c.32 0 .63-.03.93-.08.31-.06.58-.16.83-.29.26-.12.47-.3.64-.51z'" tppabs="https://github.com/pandas-dev/pandas/issues/38645">GH38645</a>)</p></li>
+<li><p>Fixed regression for <code class="docutils literal notranslate"><span class="pre">SettingWithCopyWarning</span></code> displaying incorrect stacklevel (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M10.989 1c0-.55-.45-1-.999-1-.55 0-.999.45-.999 1v6H1.998V1c0-.55-.45-1-.999-1C.449 0 0 .45 0 1v14c0 .55.45 1 .999 1 .55 0 .999-.45.999-1V9h6.993v6c0 .55.45 1 .999 1 .55 0 .999-.45.999-1V1zm7.461 13.645c.49.11.87.38 1.14.82.27.44.41.97.41 1.61a3 3 0 01-.24 1.23c-.16.36-.38.67-.66.92-.27.25-.59.44-.96.58-.37.14-.75.21-1.16.21-.5 0-.93-.08-1.3-.24a2.55 2.55 0 01-.93-.68c-.25-.29-.44-.65-.57-1.06-.13-.42-.2-.88-.21-1.38h1.39c-.02.58.11 1.07.38 1.46.28.39.68.58 1.23.58.47 0 .86-.15 1.17-.45.31-.3.47-.72.47-1.27 0-.37-.07-.67-.2-.89-.13-.22-.3-.39-.51-.5-.21-.11-.45-.18-.71-.21-.26-.03-.53-.04-.81-.03v-1.17c.22.01.45 0 .68-.05.23-.05.43-.13.61-.24.18-.11.32-.27.43-.47.11-.2.16-.45.16-.74 0-.41-.12-.74-.37-.99s-.57-.37-.96-.37c-.24 0-.45.06-.63.17-.18.11-.33.26-.45.45s-.2.4-.26.63c-.05.23-.08.47-.07.72h-1.39c.01-.47.09-.9.23-1.3s.33-.75.57-1.04c.24-.3.53-.53.87-.69.34-.17.73-.25 1.16-.25.33 0 .66.05.98.16.32.11.61.27.87.48.26.21.47.47.62.8.15.32.23.7.23 1.12 0 .48-.09.91-.29 1.27-.2.36-.5.63-.92.79v.02z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M10.989 1c0-.55-.45-1-.999-1-.55 0-.999.45-.999 1v6H1.998V1c0-.55-.45-1-.999-1C.449 0 0 .45 0 1v14c0 .55.45 1 .999 1 .55 0 .999-.45.999-1V9h6.993v6c0 .55.45 1 .999 1 .55 0 .999-.45.999-1V1zm7.461 13.645c.49.11.87.38 1.14.82.27.44.41.97.41 1.61a3 3 0 01-.24 1.23c-.16.36-.38.67-.66.92-.27.25-.59.44-.96.58-.37.14-.75.21-1.16.21-.5 0-.93-.08-1.3-.24a2.55 2.55 0 01-.93-.68c-.25-.29-.44-.65-.57-1.06-.13-.42-.2-.88-.21-1.38h1.39c-.02.58.11 1.07.38 1.46.28.39.68.58 1.23.58.47 0 .86-.15 1.17-.45.31-.3.47-.72.47-1.27 0-.37-.07-.67-.2-.89-.13-.22-.3-.39-.51-.5-.21-.11-.45-.18-.71-.21-.26-.03-.53-.04-.81-.03v-1.17c.22.01.45 0 .68-.05.23-.05.43-.13.61-.24.18-.11.32-.27.43-.47.11-.2.16-.45.16-.74 0-.41-.12-.74-.37-.99s-.57-.37-.96-.37c-.24 0-.45.06-.63.17-.18.11-.33.26-.45.45s-.2.4-.26.63c-.05.23-.08.47-.07.72h-1.39c.01-.47.09-.9.23-1.3s.33-.75.57-1.04c.24-.3.53-.53.87-.69.34-.17.73-.25 1.16-.25.33 0 .66.05.98.16.32.11.61.27.87.48.26.21.47.47.62.8.15.32.23.7.23 1.12 0 .48-.09.91-.29 1.27-.2.36-.5.63-.92.79v.02z'" tppabs="https://github.com/pandas-dev/pandas/issues/42570">GH42570</a>)</p></li>
+<li><p>Fixed regression for <a class="reference internal" href="pandas.merge_asof.html#pandas.merge_asof" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge_asof.html#pandas.merge_asof" title="pandas.merge_asof"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_asof()</span></code></a> raising <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> when one of the <code class="docutils literal notranslate"><span class="pre">by</span></code> columns is in the index (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M20 6.25C20 3.35 17.65 1 14.75 1c-1.02 0-1.95.31-2.75.82v-.04c-.09.06-.17.12-.26.19-.04.03-.09.06-.14.1-.68.51-1.24 1.18-1.6 1.96-.4-.86-1.04-1.57-1.8-2.1-.04-.02-.07-.05-.1-.08a7 7 0 00-.6-.33c-.13-.04-.23-.1-.35-.15-.05-.02-.1-.05-.15-.07v.02C6.45 1.13 5.87 1 5.25 1A5.25 5.25 0 000 6.25c0 .09.01.17.01.25H0c0 .06.01.12.02.18s.01.12.02.18C.13 7.89.44 9 1.07 10.17 2.23 12.33 4.1 14.11 7 16.53v.01c.9.75 1.89 1.55 3 2.46.71-.58 1.38-1.12 2-1.63 3.48-2.86 5.64-4.78 6.93-7.18.63-1.17.94-2.27 1.03-3.3.01-.07.01-.14.02-.21 0-.06.01-.11.02-.17h-.01c0-.09.01-.17.01-.26z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M20 6.25C20 3.35 17.65 1 14.75 1c-1.02 0-1.95.31-2.75.82v-.04c-.09.06-.17.12-.26.19-.04.03-.09.06-.14.1-.68.51-1.24 1.18-1.6 1.96-.4-.86-1.04-1.57-1.8-2.1-.04-.02-.07-.05-.1-.08a7 7 0 00-.6-.33c-.13-.04-.23-.1-.35-.15-.05-.02-.1-.05-.15-.07v.02C6.45 1.13 5.87 1 5.25 1A5.25 5.25 0 000 6.25c0 .09.01.17.01.25H0c0 .06.01.12.02.18s.01.12.02.18C.13 7.89.44 9 1.07 10.17 2.23 12.33 4.1 14.11 7 16.53v.01c.9.75 1.89 1.55 3 2.46.71-.58 1.38-1.12 2-1.63 3.48-2.86 5.64-4.78 6.93-7.18.63-1.17.94-2.27 1.03-3.3.01-.07.01-.14.02-.21 0-.06.01-.11.02-.17h-.01c0-.09.01-.17.01-.26z'" tppabs="https://github.com/pandas-dev/pandas/issues/34488">GH34488</a>)</p></li>
+<li><p>Fixed regression in <a class="reference internal" href="pandas.to_datetime.html#pandas.to_datetime" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime" title="pandas.to_datetime"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_datetime()</span></code></a> returning pd.NaT for inputs that produce duplicated values, when <code class="docutils literal notranslate"><span class="pre">cache=True</span></code> (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M8.11 7.45C8.05 7.31 8 7.16 8 7c0-.07.03-.13.04-.19h-.02l.86-4.32A5.159 5.159 0 005.25 1 5.25 5.25 0 000 6.25c0 .09.01.17.01.25H0c0 .06.01.12.02.18s.01.12.02.18C.13 7.89.44 9 1.07 10.17c1.38 2.58 3.76 4.6 7.71 7.83l-.76-3.8h.02c-.01-.07-.04-.13-.04-.2 0-.21.08-.39.18-.54l-.02-.01 1.68-2.52-1.73-3.48zM20 6.25C20 3.35 17.65 1 14.75 1c-1.54 0-2.92.67-3.88 1.73l-.83 4.13 1.85 3.69h-.01c.07.14.12.29.12.45 0 .21-.08.39-.18.54l.02.01-1.77 2.66.81 4.07c4.16-3.39 6.63-5.45 8.05-8.1.63-1.17.94-2.27 1.03-3.3.01-.07.01-.14.02-.21 0-.06.01-.11.02-.17h-.01c0-.08.01-.16.01-.25z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M8.11 7.45C8.05 7.31 8 7.16 8 7c0-.07.03-.13.04-.19h-.02l.86-4.32A5.159 5.159 0 005.25 1 5.25 5.25 0 000 6.25c0 .09.01.17.01.25H0c0 .06.01.12.02.18s.01.12.02.18C.13 7.89.44 9 1.07 10.17c1.38 2.58 3.76 4.6 7.71 7.83l-.76-3.8h.02c-.01-.07-.04-.13-.04-.2 0-.21.08-.39.18-.54l-.02-.01 1.68-2.52-1.73-3.48zM20 6.25C20 3.35 17.65 1 14.75 1c-1.54 0-2.92.67-3.88 1.73l-.83 4.13 1.85 3.69h-.01c.07.14.12.29.12.45 0 .21-.08.39-.18.54l.02.01-1.77 2.66.81 4.07c4.16-3.39 6.63-5.45 8.05-8.1.63-1.17.94-2.27 1.03-3.3.01-.07.01-.14.02-.21 0-.06.01-.11.02-.17h-.01c0-.08.01-.16.01-.25z'" tppabs="https://github.com/pandas-dev/pandas/issues/42259">GH42259</a>)</p></li>
+<li><p>Fixed regression in <code class="xref py py-meth docutils literal notranslate"><span class="pre">SeriesGroupBy.value_counts()</span></code> that resulted in an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> when called on a Series with one row (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M11.22 14.09l3.03-3.03.71.71L20 6.73l-5.71-5.71-5.04 5.04.71.71-3.02 3.04 4.28 4.28zm6.8 3.91h-16c-.55 0-1 .45-1 1s.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1zm-15-1h4.04c.28 0 .53-.11.71-.3l2.02-2.02-3.44-3.45-4.04 4.04c-.18.18-.3.44-.3.71.01.57.46 1.02 1.01 1.02z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M11.22 14.09l3.03-3.03.71.71L20 6.73l-5.71-5.71-5.04 5.04.71.71-3.02 3.04 4.28 4.28zm6.8 3.91h-16c-.55 0-1 .45-1 1s.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1zm-15-1h4.04c.28 0 .53-.11.71-.3l2.02-2.02-3.44-3.45-4.04 4.04c-.18.18-.3.44-.3.71.01.57.46 1.02 1.01 1.02z'" tppabs="https://github.com/pandas-dev/pandas/issues/42618">GH42618</a>)</p></li>
+</ul>
+</section>
+<section id="bug-fixes">
+<span id="whatsnew-131-bug-fixes"></span><h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Fixed bug in <a class="reference internal" href="pandas.DataFrame.transpose.html#pandas.DataFrame.transpose" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose" title="pandas.DataFrame.transpose"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.transpose()</span></code></a> dropping values when the DataFrame had an Extension Array dtype and a duplicate index (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M17 6V0H3v6c0 3.53 2.61 6.43 6 6.92V18H6c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1h-3v-5.08c3.39-.49 6-3.39 6-6.92z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M17 6V0H3v6c0 3.53 2.61 6.43 6 6.92V18H6c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1h-3v-5.08c3.39-.49 6-3.39 6-6.92z'" tppabs="https://github.com/pandas-dev/pandas/issues/42380">GH42380</a>)</p></li>
+<li><p>Fixed bug in <a class="reference internal" href="pandas.DataFrame.to_xml.html#pandas.DataFrame.to_xml" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_xml.html#pandas.DataFrame.to_xml" title="pandas.DataFrame.to_xml"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_xml()</span></code></a> raising <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> when called with <code class="docutils literal notranslate"><span class="pre">index=False</span></code> and an offset index (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M2 12v7c0 .55.45 1 1 1h5v-7h4v7h5c.55 0 1-.45 1-1v-7l-8-8-8 8zm17.71-2.71L17 6.59V3c0-.55-.45-1-1-1s-1 .45-1 1v1.59L10.71.3C10.53.11 10.28 0 10 0s-.53.11-.71.29l-9 9a1.003 1.003 0 001.42 1.42L10 2.41l8.29 8.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M2 12v7c0 .55.45 1 1 1h5v-7h4v7h5c.55 0 1-.45 1-1v-7l-8-8-8 8zm17.71-2.71L17 6.59V3c0-.55-.45-1-1-1s-1 .45-1 1v1.59L10.71.3C10.53.11 10.28 0 10 0s-.53.11-.71.29l-9 9a1.003 1.003 0 001.42 1.42L10 2.41l8.29 8.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z'" tppabs="https://github.com/pandas-dev/pandas/issues/42458">GH42458</a>)</p></li>
+<li><p>Fixed bug in <a class="reference internal" href="pandas.io.formats.style.Styler.set_sticky.html#pandas.io.formats.style.Styler.set_sticky" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.formats.style.Styler.set_sticky.html#pandas.io.formats.style.Styler.set_sticky" title="pandas.io.formats.style.Styler.set_sticky"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Styler.set_sticky()</span></code></a> not handling index names correctly for single index columns case (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M20 9c0-.55-.45-1-1-1H5c-.43 0-.79.27-.93.65h-.01l-3 8h.01c-.04.11-.07.23-.07.35 0 .55.45 1 1 1h14c.43 0 .79-.27.93-.65h.01l3-8h-.01c.04-.11.07-.23.07-.35zM3.07 7.63C3.22 7.26 3.58 7 4 7h14V5c0-.55-.45-1-1-1H8.41l-1.7-1.71A.997.997 0 006 2H1c-.55 0-1 .45-1 1v12.31l3.07-7.68z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M20 9c0-.55-.45-1-1-1H5c-.43 0-.79.27-.93.65h-.01l-3 8h.01c-.04.11-.07.23-.07.35 0 .55.45 1 1 1h14c.43 0 .79-.27.93-.65h.01l3-8h-.01c.04-.11.07-.23.07-.35zM3.07 7.63C3.22 7.26 3.58 7 4 7h14V5c0-.55-.45-1-1-1H8.41l-1.7-1.71A.997.997 0 006 2H1c-.55 0-1 .45-1 1v12.31l3.07-7.68z'" tppabs="https://github.com/pandas-dev/pandas/issues/42537">GH42537</a>)</p></li>
+<li><p>Fixed bug in <a class="reference internal" href="pandas.DataFrame.copy.html#pandas.DataFrame.copy" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html#pandas.DataFrame.copy" title="pandas.DataFrame.copy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.copy()</span></code></a> failing to consolidate blocks in the result (<a class="reference external" href="javascript:if(confirm('https://github.com/pandas-dev/pandas/issues/M10.262 3l1.958 1.958v.05H4.65l-2.67 5.997H5c.55 0 1 .45 1 .999v1h8v-1c0-.55.45-1 1-1h3.02l-.635-1.426.625-.63c.354-.353.598-.8.707-1.289L20 10.545v6.456c0 .55-.45.999-1 .999H1c-.55 0-1-.45-1-1v-6.455L3.08 3.62l.01-.02c.15-.35.5-.6.91-.6h6.262zm9.088-3a.642.642 0 01.46 1.1l-3.03 3.03v2.95c0 .18-.07.34-.19.46l-1.28 1.29c-.11.1-.27.17-.45.17-.35 0-.64-.29-.64-.64V4.13L11.19 1.1a.642.642 0 01.45-1.1h7.71z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas/issues/M10.262 3l1.958 1.958v.05H4.65l-2.67 5.997H5c.55 0 1 .45 1 .999v1h8v-1c0-.55.45-1 1-1h3.02l-.635-1.426.625-.63c.354-.353.598-.8.707-1.289L20 10.545v6.456c0 .55-.45.999-1 .999H1c-.55 0-1-.45-1-1v-6.455L3.08 3.62l.01-.02c.15-.35.5-.6.91-.6h6.262zm9.088-3a.642.642 0 01.46 1.1l-3.03 3.03v2.95c0 .18-.07.34-.19.46l-1.28 1.29c-.11.1-.27.17-.45.17-.35 0-.64-.29-.64-.64V4.13L11.19 1.1a.642.642 0 01.45-1.1h7.71z'" tppabs="https://github.com/pandas-dev/pandas/issues/42579">GH42579</a>)</p></li>
+</ul>
+</section>
+<section id="contributors">
+<span id="whatsnew-131-contributors"></span><h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">#</a></h2>
+<p>A total of 17 people contributed patches to this release. People with a
+‚Äú+‚Äù by their names contributed a patch for the first time.
+</p>
+<ul class="simple">
+<li><p>Fangchen Li</p></li>
+<li><p>GYvan +</p></li>
+<li><p>Matthew Roeschke</p></li>
+<li><p>Matthew Zeitlin</p></li>
+<li><p>MeeseeksMachine</p></li>
+<li><p>Pandas Development Team</p></li>
+<li><p>Patrick Hoefler</p></li>
+<li><p>Richard Shadrach</p></li>
+<li><p>Shoham Debnath +</p></li>
+<li><p>Simon Hawkins</p></li>
+<li><p>Stephan He√üelmann +</p></li>
+<li><p>Stephen +</p></li>
+<li><p>Thomas Li</p></li>
+<li><p>Zheyuan +</p></li>
+<li><p>attack68</p></li>
+<li><p>jbrockmendel</p></li>
+<li><p>neelmraman +</p></li>
+</ul>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+
+<div class='prev-next-area'>
+<a class='left-prev' id="prev-link" href="v1.3.2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.2.html" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">What‚Äôs new in 1.3.2 (August 15, 2021)</p>
+</div>
+</a>
+<a class='right-next' id="next-link" href="v1.3.0.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.0.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">What‚Äôs new in 1.3.0 (July 2, 2021)</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fixed-regressions">
+Fixed regressions
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#bug-fixes">
+Bug fixes
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#contributors">
+Contributors
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<div class="toc-item">
+<div class="tocsection sourcelink">
+<a href="javascript:if(confirm('https://pandas.pydata.org/pandas-docs/stable/_sources/whatsnew/M7.427 3a7.467 7.467 0 00-.411 2.009H4.65l-2.67 5.996H5c.55 0 1 .45 1 .999v1h8V13c.165.01.332 0 .5 0a7.48 7.48 0 005.5-2.4V17c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-6.455L3.08 3.62l.01-.02c.15-.35.5-.6.91-.6h3.427zm5.715-.596a.133.133 0 01-.193 0l-.374-.374a.133.133 0 010-.193.133.133 0 01.193 0l.373.374a.133.133 0 010 .193zm1.743.033c-.05 0-.088-.006-.088-.055 0-.05.038-.056.088-.056h.165c.05 0 .088.006.088.055 0 .05-.038.056-.088.056h-.165zm.539.632c-.05 0-.104-.044-.104-.094v-.23c0-.05.054-.094.104-.094.05 0 .104.044.104.094v.23c0 .05-.055.094-.104.094zm-3.575 2.304h.506l1.182 1.2c.006.005 0 .005 0 .01v.446c0 .187-.126.341-.319.341h-.098v.226c0 .192-.138.296-.33.296h.01v.792c0 .188-.181.336-.368.336s-.369-.149-.369-.335v-1.32h-.214c-.193 0-.308-.149-.308-.341V5.72c0-.192.115-.346.308-.346zM14.5 0C17.536 0 20 2.464 20 5.5S17.536 11 14.5 11A5.502 5.502 0 019 5.5C9 2.464 11.464 0 14.5 0zm0 9.9c2.431 0 4.4-1.969 4.4-4.4 0-.297-.027-.583-.099-.864h-.236c-.188 0-.336-.104-.347-.313h-.319c.11.104.231.209.231.346v.705c0 .088-.055.17-.11.23h-.022l-.011.006-.022.011-.666.643v1.21c0 .193-.104.33-.296.33h-.54c-.192 0-.319-.137-.319-.33V6.221a.915.915 0 00-.533-.518h-.671c-.192 0-.368-.143-.368-.335V4.68c0-.192.176-.346.368-.346l.193-.005.319-.32a.342.342 0 01.489 0l.319.32c.005 0 .005.005.005.005h.704c.16 0 .237-.16.341-.313v-.11l-.038.005h-.27a.159.159 0 01-.153-.16c0-.087.066-.159.154-.159h.269l.039.006V3.42s-.05-.038-.061-.038h-.302l-.067.076a.342.342 0 01-.489.011l-.066-.088h-.176l.248.259c.021.022.021.088 0 .11-.028.022-.067.028-.088.006l-.292-.276h-.127l-.363.325-.033-.006c-.038.11-.087.089-.143.089-.126 0-.225-.072-.225-.193 0-.127.099-.209.225-.209h.176v-.182c0-.088.061-.131.149-.131h.066v-.127c0-.143.149-.297.286-.297h.28c.16 0 .27-.115.27-.275V2.42c0-.016.055.017.055-.088h-.187l-.005.017-.308.33a.123.123 0 01-.177 0c-.049-.044-.049-.121 0-.171l.391-.385c.027-.022.06-.022.094-.022l.005.022h.869A4.376 4.376 0 0014.5 1.1a4.402 4.402 0 00-2.816 1.018h.583c.094 0 .165.066.165.159s-.072.16-.165.16h-.478c0 .104-.039.06-.039.066v.351h.429l.226-.252c.132-.127.346-.155.473-.022a.332.332 0 010 .473l-1.183 1.182-.011.011c-.005.005-.011.005-.016.011a.115.115 0 00-.034.022c-.005.006-.01 0-.016.006a.309.309 0 01-.176.038h-.347c-.12.104-.187.148-.187.27v.088c0 .016-.027.027-.027.043l.561.589c.06.06.055.154 0 .209a.143.143 0 01-.209 0l-.578-.578a.425.425 0 01-.082.011c-.154 0-.292-.12-.292-.274v-.358h-.016c-.104.374-.165.77-.165 1.177 0 2.431 1.969 4.4 4.4 4.4zm3.388-3.107c.077 0 .16.06.16.137v.424c0 .077-.083.137-.16.137s-.16-.06-.16-.137V6.93c0-.077.083-.137.16-.137zm-3.113-4.879c0 .187-.154.314-.335.314h-.374v.104c0 .11-.05.198-.16.198s-.16-.088-.16-.198V1.98c-.104-.022-.033-.028-.033-.055 0-.187.127-.325.314-.325h.407c.187 0 .341.127.341.314z  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ≤ªø…”√, ªÚ∑≈∆˙¡Àœ¬‘ÿ, ªÚœÓƒøº¥Ω´Õ£÷π°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://pandas.pydata.org/pandas-docs/stable/_sources/whatsnew/M7.427 3a7.467 7.467 0 00-.411 2.009H4.65l-2.67 5.996H5c.55 0 1 .45 1 .999v1h8V13c.165.01.332 0 .5 0a7.48 7.48 0 005.5-2.4V17c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-6.455L3.08 3.62l.01-.02c.15-.35.5-.6.91-.6h3.427zm5.715-.596a.133.133 0 01-.193 0l-.374-.374a.133.133 0 010-.193.133.133 0 01.193 0l.373.374a.133.133 0 010 .193zm1.743.033c-.05 0-.088-.006-.088-.055 0-.05.038-.056.088-.056h.165c.05 0 .088.006.088.055 0 .05-.038.056-.088.056h-.165zm.539.632c-.05 0-.104-.044-.104-.094v-.23c0-.05.054-.094.104-.094.05 0 .104.044.104.094v.23c0 .05-.055.094-.104.094zm-3.575 2.304h.506l1.182 1.2c.006.005 0 .005 0 .01v.446c0 .187-.126.341-.319.341h-.098v.226c0 .192-.138.296-.33.296h.01v.792c0 .188-.181.336-.368.336s-.369-.149-.369-.335v-1.32h-.214c-.193 0-.308-.149-.308-.341V5.72c0-.192.115-.346.308-.346zM14.5 0C17.536 0 20 2.464 20 5.5S17.536 11 14.5 11A5.502 5.502 0 019 5.5C9 2.464 11.464 0 14.5 0zm0 9.9c2.431 0 4.4-1.969 4.4-4.4 0-.297-.027-.583-.099-.864h-.236c-.188 0-.336-.104-.347-.313h-.319c.11.104.231.209.231.346v.705c0 .088-.055.17-.11.23h-.022l-.011.006-.022.011-.666.643v1.21c0 .193-.104.33-.296.33h-.54c-.192 0-.319-.137-.319-.33V6.221a.915.915 0 00-.533-.518h-.671c-.192 0-.368-.143-.368-.335V4.68c0-.192.176-.346.368-.346l.193-.005.319-.32a.342.342 0 01.489 0l.319.32c.005 0 .005.005.005.005h.704c.16 0 .237-.16.341-.313v-.11l-.038.005h-.27a.159.159 0 01-.153-.16c0-.087.066-.159.154-.159h.269l.039.006V3.42s-.05-.038-.061-.038h-.302l-.067.076a.342.342 0 01-.489.011l-.066-.088h-.176l.248.259c.021.022.021.088 0 .11-.028.022-.067.028-.088.006l-.292-.276h-.127l-.363.325-.033-.006c-.038.11-.087.089-.143.089-.126 0-.225-.072-.225-.193 0-.127.099-.209.225-.209h.176v-.182c0-.088.061-.131.149-.131h.066v-.127c0-.143.149-.297.286-.297h.28c.16 0 .27-.115.27-.275V2.42c0-.016.055.017.055-.088h-.187l-.005.017-.308.33a.123.123 0 01-.177 0c-.049-.044-.049-.121 0-.171l.391-.385c.027-.022.06-.022.094-.022l.005.022h.869A4.376 4.376 0 0014.5 1.1a4.402 4.402 0 00-2.816 1.018h.583c.094 0 .165.066.165.159s-.072.16-.165.16h-.478c0 .104-.039.06-.039.066v.351h.429l.226-.252c.132-.127.346-.155.473-.022a.332.332 0 010 .473l-1.183 1.182-.011.011c-.005.005-.011.005-.016.011a.115.115 0 00-.034.022c-.005.006-.01 0-.016.006a.309.309 0 01-.176.038h-.347c-.12.104-.187.148-.187.27v.088c0 .016-.027.027-.027.043l.561.589c.06.06.055.154 0 .209a.143.143 0 01-.209 0l-.578-.578a.425.425 0 01-.082.011c-.154 0-.292-.12-.292-.274v-.358h-.016c-.104.374-.165.77-.165 1.177 0 2.431 1.969 4.4 4.4 4.4zm3.388-3.107c.077 0 .16.06.16.137v.424c0 .077-.083.137-.16.137s-.16-.06-.16-.137V6.93c0-.077.083-.137.16-.137zm-3.113-4.879c0 .187-.154.314-.335.314h-.374v.104c0 .11-.05.198-.16.198s-.16-.088-.16-.198V1.98c-.104-.022-.033-.028-.033-.055 0-.187.127-.325.314-.325h.407c.187 0 .341.127.341.314z'" tppabs="https://pandas.pydata.org/pandas-docs/stable/_sources/whatsnew/v1.3.1.rst.txt">
+<i class="fas fa-file-alt"></i> Show Source
+</a>
+</div>
+</div>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner">
+</div>
+</footer>
+</main>
+</div>
+</div>
+
+<script src="pydata-sphinx-theme.js-digest=9b1a4fa89bdd0e95b23b" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+<div class="footer-item">
+<p class="copyright">
+&copy 2022 pandas via <a href="javascript:if(confirm('https://numfocus.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://numfocus.org/'" tppabs="https://numfocus.org/">NumFOCUS, Inc.</a> Hosted by <a href="javascript:if(confirm('https://www.ovhcloud.com/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.ovhcloud.com/'" tppabs="https://www.ovhcloud.com/">OVHcloud</a>.
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="javascript:if(confirm('http://sphinx-doc.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://sphinx-doc.org/'" tppabs="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

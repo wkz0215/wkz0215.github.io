@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<title>Creating a development environment &#8212; pandas 1.5.1 documentation</title>
+<script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+
+<link href="theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link href="pydata-sphinx-theme.css-digest=9b1a4fa89bdd0e95b23b.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link rel="stylesheet" href="all.min.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/vendor/fontawesome/6.1.2/css/all.min.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="stylesheet" type="text/css" href="pygments.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pygments.css" />
+<link rel="stylesheet" type="text/css" href="plot_directive.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/plot_directive.css" />
+<link rel="stylesheet" type="text/css" href="copybutton.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.css" />
+<link rel="stylesheet" type="text/css" href="panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+<link rel="stylesheet" type="text/css" href="panels-variables.06eb56fa6e07937060861dad626602ad.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+<link rel="stylesheet" type="text/css" href="getting_started.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/getting_started.css" />
+<link rel="stylesheet" type="text/css" href="pandas.css" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/css/pandas.css" />
+
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+<script data-url_root="../" id="documentation_options" src="documentation_options.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/documentation_options.js"></script>
+<script src="jquery.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/jquery.js"></script>
+<script src="underscore.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/underscore.js"></script>
+<script src="doctools.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/doctools.js"></script>
+<script src="clipboard.min.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/clipboard.min.js"></script>
+<script src="copybutton.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/copybutton.js"></script>
+<script src="toggleprompt.js" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/toggleprompt.js"></script>
+<script src="embed-amd.js" tppabs="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+<script async="async" src="analytics.js" tppabs="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                    window.ga = window.ga || function () {
+                        (ga.q = ga.q || []).push(arguments) };
+                    ga.l = +new Date;
+                    ga('create', 'UA-27880019-2', 'auto');
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+                </script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'development/contributing_environment';</script>
+<script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pandas.pydata.org/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.5.1';
+        </script>
+<link rel="shortcut icon" href="../_static/favicon.ico" />
+<link rel="index" title="Index" href="../genindex.html" />
+<link rel="search" title="Search" href="../search.html" />
+<link rel="next" title="Contributing to the documentation" href="contributing_documentation.html" />
+<link rel="prev" title="Contributing to pandas" href="contributing.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+</head>
+<body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+<input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+<label class="overlay overlay-primary" for="__primary"></label>
+<input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center" action="https://pandas.pydata.org/pandas-docs/stable/search.html" method="get">
+<i class="icon fas fa-search"></i>
+<input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fas fa-bars"></span>
+</label>
+<div id="navbar-start">
+<a class="navbar-brand logo" href="index-5.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/index.html">
+<img src="pandas.svg" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/pandas.svg" class="logo__image only-light" alt="Logo image">
+<img src="pandas_white.svg" tppabs="https://pandas.pydata.org/static/img/pandas_white.svg" class="logo__image only-dark" alt="Logo image">
+</a>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div id="navbar-center" class="mr-auto">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item navbar-end__search-button-container">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fas fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-center-item">
+<nav class="navbar-nav">
+<p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+Site Navigation
+</p>
+<ul id="navbar-main-elements" class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">
+Getting started
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-1.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">
+User Guide
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-2.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">
+API reference
+</a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link" href="index-3.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/index.html">
+Development
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index-4.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/whatsnew/index.html">
+Release notes
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-end-item">
+<div class="version-switcher__container dropdown">
+<button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-toggle="dropdown">
+1.5.1 
+<span class="caret"></span>
+</button>
+<div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+
+</div>
+</div>
+</div>
+<div class="navbar-end-item">
+<span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+<a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+<a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+<a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+</div>
+<div class="navbar-end-item">
+<ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<li class="nav-item">
+<a href="javascript:if(confirm('https://github.com/pandas-dev/pandas  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pandas-dev/pandas'" tppabs="https://github.com/pandas-dev/pandas" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a href="javascript:if(confirm('https://twitter.com/pandas_dev  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://twitter.com/pandas_dev'" tppabs="https://twitter.com/pandas_dev" title="Twitter" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sidebar-start-items sidebar-primary__section">
+<div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+<div class="bd-toc-item navbar-nav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="contributing.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing.html">
+Contributing to pandas
+</a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+Creating a development environment
+</a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="contributing_documentation.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing_documentation.html">
+Contributing to the documentation
+</a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox" />
+<label class="toctree-toggle" for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="contributing_docstring.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing_docstring.html">
+pandas docstring guide
+</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="contributing_codebase.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing_codebase.html">
+Contributing to the code base
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="maintaining.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/maintaining.html">
+pandas maintenance
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="internals.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/internals.html">
+Internals
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="debugging_extensions.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/debugging_extensions.html">
+Debugging C extensions
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="extending.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/extending.html">
+Extending pandas
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="developer.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/developer.html">
+Developer
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="policies.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/policies.html">
+Policies
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="roadmap.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/roadmap.html">
+Roadmap
+</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="community.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/community.html">
+Contributor community
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="sidebar-end-items sidebar-primary__section">
+<div class="sidebar-end-items__item">
+</div>
+</div>
+</div>
+<main class="bd-main">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+</div>
+<article class="bd-article" role="main">
+<section id="creating-a-development-environment">
+<span id="contributing-environment"></span><h1>Creating a development environment<a class="headerlink" href="#creating-a-development-environment" title="Permalink to this headline">#</a></h1>
+<p>To test out code changes, you‚Äôll need to build pandas from source, which
+requires a C/C++ compiler and Python environment. If you‚Äôre making documentation
+changes, you can skip to <a class="reference internal" href="contributing_documentation.html#contributing-documentation" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing_documentation.html#contributing-documentation"><span class="std std-ref">contributing to the documentation</span></a> but if you skip
+creating the development environment you won‚Äôt be able to build the documentation
+locally before pushing your changes.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of contents:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#creating-an-environment-using-docker" id="id1">Creating an environment using Docker</a></p></li>
+<li><p><a class="reference internal" href="#creating-an-environment-without-docker" id="id2">Creating an environment without Docker</a></p>
+<ul>
+<li><p><a class="reference internal" href="#installing-a-c-compiler" id="id3">Installing a C compiler</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-python-environment" id="id4">Creating a Python environment</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-python-environment-pip" id="id5">Creating a Python environment (pip)</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="creating-an-environment-using-docker">
+<h2><a class="toc-backref" href="#id1">Creating an environment using Docker</a><a class="headerlink" href="#creating-an-environment-using-docker" title="Permalink to this headline">#</a></h2>
+<p>Instead of manually setting up a development environment, you can use <a class="reference external" href="javascript:if(confirm('https://docs.docker.com/get-docker/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://docs.docker.com/get-docker/'" tppabs="https://docs.docker.com/get-docker/">Docker</a> to automatically create the environment with just several
+commands. pandas provides a <code class="docutils literal notranslate"><span class="pre">DockerFile</span></code> in the root directory to build a Docker image
+with a full pandas development environment.</p>
+<p><strong>Docker Commands</strong></p>
+<p>Build the Docker image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the image pandas-yourname-env</span>
+<span class="n">docker</span> <span class="n">build</span> <span class="o">--</span><span class="n">tag</span> <span class="n">pandas</span><span class="o">-</span><span class="n">yourname</span><span class="o">-</span><span class="n">env</span> <span class="o">.</span>
+<span class="c1"># Or build the image by passing your GitHub username to use your own fork</span>
+<span class="n">docker</span> <span class="n">build</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">arg</span> <span class="n">gh_username</span><span class="o">=</span><span class="n">yourname</span> <span class="o">--</span><span class="n">tag</span> <span class="n">pandas</span><span class="o">-</span><span class="n">yourname</span><span class="o">-</span><span class="n">env</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>Run Container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run a container and bind your local repo to the container</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pandas</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">local</span><span class="o">-</span><span class="n">pandas</span><span class="o">-</span><span class="n">repo</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pandas</span> <span class="n">pandas</span><span class="o">-</span><span class="n">yourname</span><span class="o">-</span><span class="n">env</span>
+</pre></div>
+</div>
+<p>Then a <code class="docutils literal notranslate"><span class="pre">pandas-dev</span></code> virtual environment will be available with all the development dependencies.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><a href="javascript:if(confirm('https://pandas.pydata.org/cdn-cgi/l/email-protection  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://pandas.pydata.org/cdn-cgi/l/email-protection'" tppabs="https://pandas.pydata.org/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb8994948fbbd5d5d5">[email&#160;protected]</a> :/home/pandas# conda env list
+<span class="c1"># conda environments:</span>
+<span class="c1">#</span>
+base                  *  /opt/conda
+pandas-dev               /opt/conda/envs/pandas-dev
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you bind your local repo for the first time, you have to build the C extensions afterwards.
+Run the following command inside the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_ext</span> <span class="o">-</span><span class="n">j</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>You need to rebuild the C extensions anytime the Cython code in <code class="docutils literal notranslate"><span class="pre">pandas/_libs</span></code> changes.
+This most frequently occurs when changing or merging branches.</p>
+</div>
+<p><em>Even easier, you can integrate Docker with the following IDEs:</em></p>
+<p><strong>Visual Studio Code</strong></p>
+<p>You can use the DockerFile to launch a remote session with Visual Studio Code,
+a popular free IDE, using the <code class="docutils literal notranslate"><span class="pre">.devcontainer.json</span></code> file.
+See <a class="reference external" href="javascript:if(confirm('https://code.visualstudio.com/docs/remote/containers  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://code.visualstudio.com/docs/remote/containers'" tppabs="https://code.visualstudio.com/docs/remote/containers">https://code.visualstudio.com/docs/remote/containers</a> for details.</p>
+<p><strong>PyCharm (Professional)</strong></p>
+<p>Enable Docker support and use the Services tool window to build and manage images as well as
+run and interact with containers.
+See <a class="reference external" href="javascript:if(confirm('https://www.jetbrains.com/help/pycharm/docker.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.jetbrains.com/help/pycharm/docker.html'" tppabs="https://www.jetbrains.com/help/pycharm/docker.html">https://www.jetbrains.com/help/pycharm/docker.html</a> for details.</p>
+</section>
+<section id="creating-an-environment-without-docker">
+<h2><a class="toc-backref" href="#id2">Creating an environment without Docker</a><a class="headerlink" href="#creating-an-environment-without-docker" title="Permalink to this headline">#</a></h2>
+<section id="installing-a-c-compiler">
+<h3><a class="toc-backref" href="#id3">Installing a C compiler</a><a class="headerlink" href="#installing-a-c-compiler" title="Permalink to this headline">#</a></h3>
+<p>pandas uses C extensions (mostly written using Cython) to speed up certain
+operations. To install pandas from source, you need to compile these C
+extensions, which means you need a C compiler. This process depends on which
+platform you‚Äôre using.</p>
+<p>If you have setup your environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, the packages <code class="docutils literal notranslate"><span class="pre">c-compiler</span></code>
+and <code class="docutils literal notranslate"><span class="pre">cxx-compiler</span></code> will install a fitting compiler for your platform that is
+compatible with the remaining conda packages. On Windows and macOS, you will
+also need to install the SDKs as they have to be distributed separately.
+These packages will automatically be installed by using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code>
+<code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.</p>
+<p><strong>Windows</strong></p>
+<p>You will need <a class="reference external" href="javascript:if(confirm('https://visualstudio.microsoft.com/downloads/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://visualstudio.microsoft.com/downloads/'" tppabs="https://visualstudio.microsoft.com/downloads/">Build Tools for Visual Studio 2019</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You DO NOT need to install Visual Studio 2019.
+You only need ‚ÄúBuild Tools for Visual Studio 2019‚Äù found by
+scrolling down to ‚ÄúAll downloads‚Äù -&gt; ‚ÄúTools for Visual Studio 2019‚Äù.
+In the installer, select the ‚ÄúC++ build tools‚Äù workload.</p>
+</div>
+<p>You can install the necessary components on the commandline using
+<a class="reference external" href="javascript:if(confirm('https://download.visualstudio.microsoft.com/download/pr/9a26f37e-6001-429b-a5db-c5455b93953c/460d80ab276046de2455a4115cc4e2f1e6529c9e6cb99501844ecafd16c619c4/vs_BuildTools.exe  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://download.visualstudio.microsoft.com/download/pr/9a26f37e-6001-429b-a5db-c5455b93953c/460d80ab276046de2455a4115cc4e2f1e6529c9e6cb99501844ecafd16c619c4/vs_BuildTools.exe'" tppabs="https://download.visualstudio.microsoft.com/download/pr/9a26f37e-6001-429b-a5db-c5455b93953c/460d80ab276046de2455a4115cc4e2f1e6529c9e6cb99501844ecafd16c619c4/vs_BuildTools.exe">vs_buildtools.exe</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vs_buildtools</span><span class="o">.</span><span class="n">exe</span> <span class="o">--</span><span class="n">quiet</span> <span class="o">--</span><span class="n">wait</span> <span class="o">--</span><span class="n">norestart</span> <span class="o">--</span><span class="n">nocache</span> <span class="o">^</span>
+    <span class="o">--</span><span class="n">installPath</span> <span class="n">C</span><span class="p">:</span>\<span class="n">BuildTools</span> <span class="o">^</span>
+    <span class="o">--</span><span class="n">add</span> <span class="s2">&quot;Microsoft.VisualStudio.Workload.VCTools;includeRecommended&quot;</span> <span class="o">^</span>
+    <span class="o">--</span><span class="n">add</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">VisualStudio</span><span class="o">.</span><span class="n">Component</span><span class="o">.</span><span class="n">VC</span><span class="o">.</span><span class="n">v141</span> <span class="o">^</span>
+    <span class="o">--</span><span class="n">add</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">VisualStudio</span><span class="o">.</span><span class="n">Component</span><span class="o">.</span><span class="n">VC</span><span class="o">.</span><span class="n">v141</span><span class="o">.</span><span class="n">x86</span><span class="o">.</span><span class="n">x64</span> <span class="o">^</span>
+    <span class="o">--</span><span class="n">add</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">VisualStudio</span><span class="o">.</span><span class="n">Component</span><span class="o">.</span><span class="n">Windows10SDK</span><span class="mf">.17763</span>
+</pre></div>
+</div>
+<p>To setup the right paths on the commandline, call
+<code class="docutils literal notranslate"><span class="pre">&quot;C:\BuildTools\VC\Auxiliary\Build\vcvars64.bat&quot;</span> <span class="pre">-vcvars_ver=14.16</span> <span class="pre">10.0.17763.0</span></code>.</p>
+<p><strong>macOS</strong></p>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">conda</span></code>-based compilers, you will need to install the
+Developer Tools using <code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code>. Otherwise
+information about compiler installation can be found here:
+<a class="reference external" href="javascript:if(confirm('https://devguide.python.org/setup/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://devguide.python.org/setup/#macos'" tppabs="https://devguide.python.org/setup/#macos">https://devguide.python.org/setup/#macos</a></p>
+<p><strong>Linux</strong></p>
+<p>For Linux-based <code class="docutils literal notranslate"><span class="pre">conda</span></code> installations, you won‚Äôt have to install any
+additional components outside of the conda environment. The instructions
+below are only needed if your setup isn‚Äôt based on conda environments.</p>
+<p>Some Linux distributions will come with a pre-installed C compiler. To find out
+which compilers (and versions) are installed on your system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># for Debian/Ubuntu:</span>
+<span class="n">dpkg</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">compiler</span>
+<span class="c1"># for Red Hat/RHEL/CentOS/Fedora:</span>
+<span class="n">yum</span> <span class="nb">list</span> <span class="n">installed</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="o">--</span><span class="n">color</span> <span class="n">compiler</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="javascript:if(confirm('https://gcc.gnu.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://gcc.gnu.org/'" tppabs="https://gcc.gnu.org/">GCC (GNU Compiler Collection)</a>, is a widely used
+compiler, which supports C and a number of other languages. If GCC is listed
+as an installed compiler nothing more is required. If no C compiler is
+installed (or you wish to install a newer version) you can install a compiler
+(GCC in the example code below) with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># for recent Debian/Ubuntu:</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span>
+<span class="c1"># for Red Had/RHEL/CentOS/Fedora</span>
+<span class="n">yum</span> <span class="n">groupinstall</span> <span class="s2">&quot;Development Tools&quot;</span>
+</pre></div>
+</div>
+<p>For other Linux distributions, consult your favorite search engine for
+compiler installation instructions.</p>
+<p>Let us know if you have any difficulties by opening an issue or reaching out on <a class="reference external" href="javascript:if(confirm('https://gitter.im/pydata/pandas/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://gitter.im/pydata/pandas/'" tppabs="https://gitter.im/pydata/pandas/">Gitter</a>.</p>
+</section>
+<section id="creating-a-python-environment">
+<h3><a class="toc-backref" href="#id4">Creating a Python environment</a><a class="headerlink" href="#creating-a-python-environment" title="Permalink to this headline">#</a></h3>
+<p>Now create an isolated pandas development environment:</p>
+<ul class="simple">
+<li><p>Install either <a class="reference external" href="javascript:if(confirm('https://www.anaconda.com/products/individual  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.anaconda.com/products/individual'" tppabs="https://www.anaconda.com/products/individual">Anaconda</a>, <a class="reference external" href="javascript:if(confirm('https://docs.conda.io/en/latest/miniconda.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://docs.conda.io/en/latest/miniconda.html'" tppabs="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>, or <a class="reference external" href="javascript:if(confirm('https://github.com/conda-forge/miniforge  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/conda-forge/miniforge'" tppabs="https://github.com/conda-forge/miniforge">miniforge</a></p></li>
+<li><p>Make sure your conda is up to date (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>)</p></li>
+<li><p>Make sure that you have <a class="reference internal" href="contributing.html#contributing-forking" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing.html#contributing-forking"><span class="std std-ref">cloned the repository</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> to the pandas source directory</p></li>
+</ul>
+<p>We‚Äôll now kick off a three-step process:</p>
+<ol class="arabic simple">
+<li><p>Install the build dependencies</p></li>
+<li><p>Build and install pandas</p></li>
+<li><p>Install the optional dependencies</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Create and activate the build environment
+conda env create -f environment.yml
+conda activate pandas-dev
+
+# or with older versions of Anaconda:
+source activate pandas-dev
+
+# Build and install pandas
+python setup.py build_ext -j 4
+python -m pip install -e . --no-build-isolation --no-use-pep517
+</pre></div>
+</div>
+<p>At this point you should be able to import pandas from your locally built version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+&gt;&gt;&gt; import pandas
+&gt;&gt;&gt; print(pandas.__version__)
+0.22.0.dev0+29.g4ad6d4d74
+</pre></div>
+</div>
+<p>This will create the new environment, and not touch any of your existing environments,
+nor any existing Python installation.</p>
+<p>To view your environments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">-</span><span class="n">e</span>
+</pre></div>
+</div>
+<p>To return to your root environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
+</pre></div>
+</div>
+<p>See the full conda docs <a class="reference external" href="javascript:if(confirm('https://conda.io/projects/conda/en/latest/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://conda.io/projects/conda/en/latest/'" tppabs="https://conda.io/projects/conda/en/latest/">here</a>.</p>
+</section>
+<section id="creating-a-python-environment-pip">
+<h3><a class="toc-backref" href="#id5">Creating a Python environment (pip)</a><a class="headerlink" href="#creating-a-python-environment-pip" title="Permalink to this headline">#</a></h3>
+<p>If you aren‚Äôt using conda for your development environment, follow these instructions.
+You‚Äôll need to have at least the <a class="reference internal" href="install.html#install-version" tppabs="https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html#install-version"><span class="std std-ref">minimum Python version</span></a> that pandas supports.
+You also need to have <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> 51.0.0 or later to build pandas.</p>
+<p><strong>Unix</strong>/<strong>macOS with virtualenv</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a virtual environment</span>
+<span class="c1"># Use an ENV_DIR of your choice. We&#39;ll use ~/virtualenvs/pandas-dev</span>
+<span class="c1"># Any parent directories should already exist</span>
+python3 -m venv ~/virtualenvs/pandas-dev
+
+<span class="c1"># Activate the virtualenv</span>
+. ~/virtualenvs/pandas-dev/bin/activate
+
+<span class="c1"># Install the build dependencies</span>
+python -m pip install -r requirements-dev.txt
+
+<span class="c1"># Build and install pandas</span>
+python setup.py build_ext -j <span class="m">4</span>
+python -m pip install -e . --no-build-isolation --no-use-pep517
+</pre></div>
+</div>
+<p><strong>Unix</strong>/<strong>macOS with pyenv</strong></p>
+<p>Consult the docs for setting up pyenv <a class="reference external" href="javascript:if(confirm('https://github.com/pyenv/pyenv  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/pyenv/pyenv'" tppabs="https://github.com/pyenv/pyenv">here</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a virtual environment</span>
+<span class="c1"># Use an ENV_DIR of your choice. We&#39;ll use ~/Users/&lt;yourname&gt;/.pyenv/versions/pandas-dev</span>
+
+pyenv virtualenv &lt;version&gt; &lt;name-to-give-it&gt;
+
+<span class="c1"># For instance:</span>
+pyenv virtualenv <span class="m">3</span>.9.10 pandas-dev
+
+<span class="c1"># Activate the virtualenv</span>
+pyenv activate pandas-dev
+
+<span class="c1"># Now install the build dependencies in the cloned pandas repo</span>
+python -m pip install -r requirements-dev.txt
+
+<span class="c1"># Build and install pandas</span>
+python setup.py build_ext -j <span class="m">4</span>
+python -m pip install -e . --no-build-isolation --no-use-pep517
+</pre></div>
+</div>
+<p><strong>Windows</strong></p>
+<p>Below is a brief overview on how to set-up a virtual environment with Powershell
+under Windows. For details please refer to the
+<a class="reference external" href="javascript:if(confirm('https://virtualenv.pypa.io/en/latest/user_guide.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://virtualenv.pypa.io/en/latest/user_guide.html#activators'" tppabs="https://virtualenv.pypa.io/en/latest/user_guide.html#activators">official virtualenv user guide</a></p>
+<p>Use an ENV_DIR of your choice. We‚Äôll use ~\virtualenvs\pandas-dev where
+‚Äò~‚Äô is the folder pointed to by either $env:USERPROFILE (Powershell) or
+%USERPROFILE% (cmd.exe) environment variable. Any parent directories
+should already exist.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># Create a virtual environment</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="nv">$env:USERPROFILE</span><span class="p">\</span><span class="n">virtualenvs</span><span class="p">\</span><span class="n">pandas-dev</span>
+
+<span class="c"># Activate the virtualenv. Use activate.bat for cmd.exe</span>
+<span class="p">~\</span><span class="n">virtualenvs</span><span class="p">\</span><span class="n">pandas-dev</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+
+<span class="c"># Install the build dependencies</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements-dev</span><span class="p">.</span><span class="n">txt</span>
+
+<span class="c"># Build and install pandas</span>
+<span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">build_ext</span> <span class="n">-j</span> <span class="n">4</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-e</span> <span class="p">.</span> <span class="p">-</span><span class="n">-no-build-isolation</span> <span class="p">-</span><span class="n">-no-use-pep517</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+
+<div class='prev-next-area'>
+<a class='left-prev' id="prev-link" href="contributing.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing.html" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Contributing to pandas</p>
+</div>
+</a>
+<a class='right-next' id="next-link" href="contributing_documentation.html" tppabs="https://pandas.pydata.org/pandas-docs/stable/development/contributing_documentation.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Contributing to the documentation</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#creating-an-environment-using-docker">
+Creating an environment using Docker
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#creating-an-environment-without-docker">
+Creating an environment without Docker
+</a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installing-a-c-compiler">
+Installing a C compiler
+</a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#creating-a-python-environment">
+Creating a Python environment
+</a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#creating-a-python-environment-pip">
+Creating a Python environment (pip)
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<div class="toc-item">
+<div class="tocsection sourcelink">
+<a href="contributing_environment.rst.txt.htm" tppabs="https://pandas.pydata.org/pandas-docs/stable/_sources/development/contributing_environment.rst.txt">
+<i class="fas fa-file-alt"></i> Show Source
+</a>
+</div>
+</div>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner">
+</div>
+</footer>
+</main>
+</div>
+</div>
+
+<script data-cfasync="false" src="email-decode.min.js" tppabs="https://pandas.pydata.org/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="pydata-sphinx-theme.js-digest=9b1a4fa89bdd0e95b23b" tppabs="https://pandas.pydata.org/pandas-docs/stable/_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+<div class="footer-item">
+<p class="copyright">
+&copy 2022 pandas via <a href="javascript:if(confirm('https://numfocus.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://numfocus.org/'" tppabs="https://numfocus.org/">NumFOCUS, Inc.</a> Hosted by <a href="javascript:if(confirm('https://www.ovhcloud.com/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.ovhcloud.com/'" tppabs="https://www.ovhcloud.com/">OVHcloud</a>.
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="javascript:if(confirm('http://sphinx-doc.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://sphinx-doc.org/'" tppabs="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
